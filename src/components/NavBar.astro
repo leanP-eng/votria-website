@@ -10,8 +10,8 @@ import Button from './Button.astro';
     </a>
 
     <!-- Nav desktop -->
-    <div class="hidden md:flex items-center gap-8" role="menubar">
-      <a href="/methode-integration-ia" class="hover:text-orange-400 transition-colors font-medium" role="menuitem">Méthode</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/methode-integration-ia" class="hover:text-orange-400 transition-colors font-medium">Méthode</a>
 
       <!-- Dropdown IA par métier -->
       <div class="relative" id="metier-dropdown-wrapper">
@@ -40,7 +40,7 @@ import Button from './Button.astro';
         </div>
       </div>
 
-      <a href="/a-propos-consultant-ia" class="hover:text-orange-400 transition-colors font-medium" role="menuitem">À propos</a>
+      <a href="/a-propos-consultant-ia" class="hover:text-orange-400 transition-colors font-medium">À propos</a>
     </div>
 
     <!-- CTA desktop -->
@@ -66,21 +66,21 @@ import Button from './Button.astro';
   <div
     id="mobile-menu"
     class="hidden md:hidden bg-navy-800 px-6 pb-6"
-    role="menu"
+    role="navigation"
     aria-label="Menu mobile"
   >
     <div class="flex flex-col gap-4 pt-4">
-      <a href="/methode-integration-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700" role="menuitem">Méthode</a>
+      <a href="/methode-integration-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700">Méthode</a>
       <div>
         <p class="py-2 font-medium text-gray-300 text-sm uppercase tracking-wide">IA par métier</p>
         <div class="flex flex-col gap-2 pl-4">
-          <a href="/ia-direction-pme" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Direction</a>
-          <a href="/ia-commercial-entreprise" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Commercial</a>
-          <a href="/ia-marketing-pme" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Marketing</a>
-          <a href="/ia-administratif-rh" class="py-2 hover:text-orange-400 transition-colors border-b border-navy-700 pb-4" role="menuitem">Admin / RH</a>
+          <a href="/ia-direction-pme" class="py-2 hover:text-orange-400 transition-colors">Direction</a>
+          <a href="/ia-commercial-entreprise" class="py-2 hover:text-orange-400 transition-colors">Commercial</a>
+          <a href="/ia-marketing-pme" class="py-2 hover:text-orange-400 transition-colors">Marketing</a>
+          <a href="/ia-administratif-rh" class="py-2 hover:text-orange-400 transition-colors border-b border-navy-700 pb-4">Admin / RH</a>
         </div>
       </div>
-      <a href="/a-propos-consultant-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700" role="menuitem">À propos</a>
+      <a href="/a-propos-consultant-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700">À propos</a>
       <Button href="/contact-diagnostic-ia" variant="primary" class="mt-2 w-full text-center">Diagnostic gratuit</Button>
     </div>
   </div>

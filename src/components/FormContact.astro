@@ -1,4 +1,5 @@
 ---
+import Button from './Button.astro';
 const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud/webhook/contact';
 ---
 
@@ -129,9 +130,9 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
   <div id="form-error" role="alert" aria-live="polite" class="hidden mb-4 p-4 bg-red-50 border border-red-300 rounded-lg text-red-800 text-sm"></div>
 
   <!-- Submit -->
-  <button type="submit" class="w-full bg-orange-500 text-navy-900 font-bold py-4 rounded-lg hover:bg-orange-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 min-h-[44px]">
+  <Button type="submit" variant="primary" class="w-full">
     Envoyer ma demande
-  </button>
+  </Button>
 
   <!-- Message de succès -->
   <div id="success-message" role="status" class="hidden mt-6 p-6 bg-green-50 border border-green-300 rounded-lg text-green-800">
