@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout
+  title="Politique de confidentialité | VotrIA"
+  description="Politique de confidentialité de VotrIA — Lean Perform. Traitement de vos données personnelles, cookies GA4, droits CNIL."
+>
+  <Section variant="white">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold mb-8 text-navy-900">Politique de confidentialité</h1>
+      <p class="text-sm text-gray-500 mb-10">Dernière mise à jour : juin 2026</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">1. Responsable de traitement</h2>
+      <p class="text-gray-700 mb-2"><strong>Lean Perform</strong> — JF</p>
+      <p class="text-gray-700 mb-6">
+        Email : <a href="mailto:contact@votria-pro.fr" class="text-navy-900 hover:text-orange-600 underline">contact@votria-pro.fr</a>
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">2. Données collectées</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-navy-900">a) Formulaire de diagnostic gratuit</h3>
+      <p class="text-gray-700 mb-2"><strong>Données :</strong> Prénom, nom, entreprise, secteur, effectif, sujet, message (optionnel), email</p>
+      <p class="text-gray-700 mb-2"><strong>Finalité :</strong> Traiter votre demande de diagnostic IA</p>
+      <p class="text-gray-700 mb-2"><strong>Base légale :</strong> Consentement explicite (case à cocher obligatoire)</p>
+      <p class="text-gray-700 mb-2"><strong>Destinataires :</strong> Lean Perform — n8n Cloud (traitement automatisé) — Google Sheets (stockage)</p>
+      <p class="text-gray-700 mb-6"><strong>Durée de conservation :</strong> 12 mois après le dernier contact</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-navy-900">b) Google Analytics 4</h3>
+      <p class="text-gray-700 mb-2"><strong>Données :</strong> Pages visitées, durée, appareil, navigateur, ville approximative (IP anonymisée)</p>
+      <p class="text-gray-700 mb-2"><strong>Finalité :</strong> Analyser le trafic du site</p>
+      <p class="text-gray-700 mb-2"><strong>Base légale :</strong> Consentement (bandeau cookies, Consent Mode v2)</p>
+      <p class="text-gray-700 mb-2"><strong>Destinataire :</strong> Google LLC — serveurs UE/USA (clauses contractuelles types)</p>
+      <p class="text-gray-700 mb-6"><strong>Durée :</strong> 14 mois (paramètre GA4 par défaut)</p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-navy-900">c) Email de confirmation (OVHcloud)</h3>
+      <p class="text-gray-700 mb-2"><strong>Données :</strong> Adresse email du visiteur</p>
+      <p class="text-gray-700 mb-2"><strong>Finalité :</strong> Envoi de l'email de confirmation après soumission du formulaire</p>
+      <p class="text-gray-700 mb-6"><strong>Hébergeur :</strong> OVHcloud — serveurs France</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">3. Cookies</h2>
+      <p class="text-gray-700 mb-2">Ce site utilise :</p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+        <li><strong>Cookies analytics (GA4) :</strong> activés uniquement après votre consentement explicite</li>
+        <li><strong>Cookies de préférence :</strong> stockage de votre choix de consentement (localStorage)</li>
+        <li><strong>Aucun cookie publicitaire</strong> ni tracking transversal</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">4. Vos droits (CNIL)</h2>
+      <p class="text-gray-700 mb-4">Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+        <li>Droit d'accès : recevoir une copie de vos données</li>
+        <li>Droit de rectification : corriger vos données inexactes</li>
+        <li>Droit à l'effacement : demander la suppression de vos données</li>
+        <li>Droit à la portabilité : exporter vos données dans un format ouvert</li>
+        <li>Droit d'opposition : refuser tout traitement de vos données</li>
+        <li>Droit de retirer votre consentement à tout moment</li>
+      </ul>
+      <p class="text-gray-700 mb-6">
+        Pour exercer vos droits :
+        <a href="mailto:contact@votria-pro.fr" class="text-navy-900 hover:text-orange-600 underline">contact@votria-pro.fr</a>
+        — Délai de réponse : 30 jours maximum.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">5. Plainte auprès de la CNIL</h2>
+      <p class="text-gray-700 mb-6">
+        Vous avez le droit de déposer une plainte auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) :
+        <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer" class="text-navy-900 hover:text-orange-600 underline">cnil.fr/fr/plaintes</a>
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4 text-navy-900">6. Modifications</h2>
+      <p class="text-gray-700">
+        Cette politique peut être mise à jour. La date de dernière révision est indiquée en haut de page.
+        Tout changement substantiel vous sera notifié.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>
