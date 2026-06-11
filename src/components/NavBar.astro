@@ -1,0 +1,100 @@
+---
+import Button from './Button.astro';
+---
+
+<nav class="bg-navy-900 text-white sticky top-0 z-50 shadow-lg" aria-label="Navigation principale">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold text-white hover:text-orange-400 transition-colors" aria-label="VotrIA - Accueil">
+      VotrIA
+    </a>
+
+    <!-- Nav desktop -->
+    <div class="hidden md:flex items-center gap-8" role="menubar">
+      <a href="/methode-integration-ia" class="hover:text-orange-400 transition-colors font-medium" role="menuitem">Méthode</a>
+
+      <!-- Dropdown IA par métier -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-orange-400 transition-colors font-medium" aria-haspopup="true" aria-expanded="false">
+          IA par métier
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 mt-2 w-52 bg-white text-navy-900 rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="/ia-direction-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors rounded-t-lg">Direction</a>
+          <a href="/ia-commercial-entreprise" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors">Commercial</a>
+          <a href="/ia-marketing-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors">Marketing</a>
+          <a href="/ia-administratif-rh" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors rounded-b-lg">Admin / RH</a>
+        </div>
+      </div>
+
+      <a href="/a-propos-consultant-ia" class="hover:text-orange-400 transition-colors font-medium" role="menuitem">À propos</a>
+    </div>
+
+    <!-- CTA desktop -->
+    <div class="hidden md:block">
+      <Button href="/contact-diagnostic-ia" variant="primary">Diagnostic gratuit</Button>
+    </div>
+
+    <!-- Burger mobile -->
+    <button
+      id="burger-btn"
+      class="md:hidden flex flex-col gap-1.5 p-2 min-h-[44px] min-w-[44px] items-center justify-center"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="w-6 h-0.5 bg-white transition-all duration-200" id="burger-1"></span>
+      <span class="w-6 h-0.5 bg-white transition-all duration-200" id="burger-2"></span>
+      <span class="w-6 h-0.5 bg-white transition-all duration-200" id="burger-3"></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-navy-800 px-6 pb-6"
+    role="menu"
+    aria-label="Menu mobile"
+  >
+    <div class="flex flex-col gap-4 pt-4">
+      <a href="/methode-integration-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700" role="menuitem">Méthode</a>
+      <div>
+        <p class="py-2 font-medium text-gray-300 text-sm uppercase tracking-wide">IA par métier</p>
+        <div class="flex flex-col gap-2 pl-4">
+          <a href="/ia-direction-pme" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Direction</a>
+          <a href="/ia-commercial-entreprise" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Commercial</a>
+          <a href="/ia-marketing-pme" class="py-2 hover:text-orange-400 transition-colors" role="menuitem">Marketing</a>
+          <a href="/ia-administratif-rh" class="py-2 hover:text-orange-400 transition-colors border-b border-navy-700 pb-4" role="menuitem">Admin / RH</a>
+        </div>
+      </div>
+      <a href="/a-propos-consultant-ia" class="py-2 hover:text-orange-400 transition-colors font-medium border-b border-navy-700" role="menuitem">À propos</a>
+      <Button href="/contact-diagnostic-ia" variant="primary" class="mt-2 w-full text-center">Diagnostic gratuit</Button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  const b1 = document.getElementById('burger-1');
+  const b2 = document.getElementById('burger-2');
+  const b3 = document.getElementById('burger-3');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+    if (!isOpen) {
+      b1?.classList.add('rotate-45', 'translate-y-2');
+      b2?.classList.add('opacity-0');
+      b3?.classList.add('-rotate-45', '-translate-y-2');
+    } else {
+      b1?.classList.remove('rotate-45', 'translate-y-2');
+      b2?.classList.remove('opacity-0');
+      b3?.classList.remove('-rotate-45', '-translate-y-2');
+    }
+  });
+</script>
