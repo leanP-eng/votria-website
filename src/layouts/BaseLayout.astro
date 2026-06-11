@@ -1,0 +1,113 @@
+---
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = 'https://votria-pro.fr/images/og-default.jpg',
+} = Astro.props;
+
+const canonicalURL = canonical ?? `https://votria-pro.fr${Astro.url.pathname}`;
+const gaId = import.meta.env.GA4_ID ?? '';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Preload Inter 400 woff2 -->
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VotrIA" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- GA4 ID pour CookieBanner -->
+    {gaId && <meta name="ga4-id" content={gaId} />}
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "VotrIA",
+      "description": "Intégration IA métier pour TPE/PME",
+      "url": "https://votria-pro.fr",
+      "email": "contact@votria-pro.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toulouse",
+        "addressRegion": "Occitanie",
+        "addressCountry": "FR"
+      },
+      "areaServed": "Occitanie",
+      "serviceType": "Conseil et intégration IA en entreprise"
+    })} />
+
+    <!-- GA4 Consent Mode v2 — défaut refusé, sera activé après consentement explicite -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: unknown[]) {
+        (window.dataLayer as unknown[]).push(args);
+      }
+      (window as Record<string, unknown>).gtag = gtag;
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        functionality_storage: 'denied',
+        personalization_storage: 'denied',
+        security_storage: 'granted',
+        wait_for_update: 500,
+      });
+    </script>
+
+    <slot name="head" />
+  </head>
+
+  <body class="bg-white text-navy-900 flex flex-col min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-orange-500 focus:text-navy-900 focus:px-4 focus:py-2 focus:rounded-lg font-bold">
+      Aller au contenu principal
+    </a>
+
+    <NavBar />
+
+    <main id="main-content" class="flex-1" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer />
+    <CookieBanner />
+  </body>
+</html>
