@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import Section from '../components/Section.astro';
+---
+
+<BaseLayout
+  title="Intégration IA métier pour TPE/PME | VotrIA"
+  description="Accompagnement IA pour dirigeants de TPE/PME : audit, intégration métier, automatisation no-code et adoption opérationnelle. Basé en Occitanie."
+>
+  <!-- Section 1 — Hero -->
+  <Section variant="navy">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+        L'IA qui travaille dans vos métiers, pas à côté
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed mb-8 text-white/90">
+        Nous aidons les entreprises à former leurs équipes, intégrer l'IA dans leurs processus,
+        automatiser les tâches répétitives et sécuriser leurs usages pour passer de
+        l'expérimentation à l'adoption réelle.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <Button href="/contact-diagnostic-ia" variant="primary">
+          Réserver un diagnostic gratuit
+        </Button>
+        <Button href="/methode-integration-ia" variant="secondary">
+          Découvrir la méthode
+        </Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Section 2 — Ce que vous gagnez -->
+  <Section variant="white">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-10 text-center">
+      Ce que vous gagnez concrètement
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card
+        title="Moins de tâches répétitives"
+        description="L'IA prend en charge le volume pour que vos équipes se concentrent sur ce qui crée vraiment de la valeur."
+      />
+      <Card
+        title="Des équipes qui utilisent vraiment l'IA"
+        description="Formation opérationnelle sur vos vrais cas d'usage, pas juste une initiation théorique."
+      />
+      <Card
+        title="Une conformité RGPD maîtrisée"
+        description="Cadre légal clair, choix des bons outils, zéro risque réglementaire."
+      />
+    </div>
+  </Section>
+
+  <!-- Section 3 — Notre méthode -->
+  <Section variant="light">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-10 text-center">
+      Notre méthode en 3 étapes
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <div>
+        <p class="text-4xl font-extrabold text-orange-500 mb-3">01</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-2">Audit</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Nous analysons vos processus, identifions les irritants et priorisons les cas d'usage IA
+          à fort impact pour votre activité.
+        </p>
+      </div>
+      <div>
+        <p class="text-4xl font-extrabold text-orange-500 mb-3">02</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Nous construisons un premier flux opérationnel sur votre vrai contexte, testé avec vos
+          équipes pour valider l'utilité avant d'aller plus loin.
+        </p>
+      </div>
+      <div>
+        <p class="text-4xl font-extrabold text-orange-500 mb-3">03</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Intégration dans vos outils existants, formation des utilisateurs et suivi de l'adoption
+          pour garantir un usage durable.
+        </p>
+      </div>
+    </div>
+    <div class="text-center">
+      <Button href="/methode-integration-ia" variant="primary">
+        Voir la méthode complète →
+      </Button>
+    </div>
+  </Section>
+
+  <!-- Section 4 — Pour quel type d'équipe -->
+  <Section variant="white">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-10 text-center">
+      Pour quel type d'équipe ?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card
+        title="Direction"
+        description="Synthétiser l'information, préparer les décisions, prioriser votre agenda."
+      >
+        <Button href="/ia-direction-pme" variant="outline">
+          Voir les usages pour la direction
+        </Button>
+      </Card>
+      <Card
+        title="Commercial"
+        description="Préparer vos RDV, automatiser les relances, qualifier vos leads."
+      >
+        <Button href="/ia-commercial-entreprise" variant="outline">
+          Voir les usages pour le commercial
+        </Button>
+      </Card>
+      <Card
+        title="Marketing"
+        description="Produire plus de contenus, maintenir la cohérence de marque."
+      >
+        <Button href="/ia-marketing-pme" variant="outline">
+          Voir les usages pour le marketing
+        </Button>
+      </Card>
+      <Card
+        title="Admin / RH"
+        description="Traiter les documents, automatiser les tâches répétitives, sécuriser les données."
+      >
+        <Button href="/ia-administratif-rh" variant="outline">
+          Voir les usages pour l'admin et les RH
+        </Button>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Section 5 — Pourquoi VotrIA -->
+  <Section variant="light">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-navy-900 mb-10 text-center">
+      Pourquoi VotrIA ?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">
+          Approche métier, pas catalogue d'outils
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Nous partons de vos processus réels, pas des fonctionnalités d'un outil. Chaque
+          recommandation est ancrée dans votre contexte terrain.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">
+          RGPD intégré dès le début
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Conformité et sécurité des données ne sont pas des options. Nous sécurisons chaque usage
+          IA avant de le déployer, quelle que soit la solution retenue.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">
+          Adoption réelle, pas juste une formation
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Notre objectif n'est pas de former, c'est que l'IA soit utilisée. Nous restons présents
+          jusqu'à ce que l'usage soit ancré dans les habitudes.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Section 6 — CTA final -->
+  <Section variant="cta">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-extrabold mb-6">
+        Prêt à démarrer ?
+      </h2>
+      <p class="text-lg leading-relaxed mb-8 text-white/90">
+        30 minutes pour comprendre votre contexte, identifier vos priorités IA et définir les
+        premières actions concrètes. Pas un rendez-vous commercial.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/contact-diagnostic-ia" variant="primary">
+          Réserver un diagnostic gratuit
+        </Button>
+        <Button href="mailto:contact@votria-pro.fr" variant="secondary">
+          Nous écrire
+        </Button>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
