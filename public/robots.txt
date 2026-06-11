@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://votria-pro.fr/sitemap-index.xml
