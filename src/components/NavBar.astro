@@ -14,18 +14,29 @@ import Button from './Button.astro';
       <a href="/methode-integration-ia" class="hover:text-orange-400 transition-colors font-medium" role="menuitem">Méthode</a>
 
       <!-- Dropdown IA par métier -->
-      <div class="relative group">
-        <button class="flex items-center gap-1 hover:text-orange-400 transition-colors font-medium" aria-haspopup="true" aria-expanded="false">
+      <div class="relative" id="metier-dropdown-wrapper">
+        <button
+          id="metier-btn"
+          class="flex items-center gap-1 hover:text-orange-400 transition-colors font-medium"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="metier-menu"
+        >
           IA par métier
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="w-4 h-4 transition-transform duration-200" id="metier-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div class="absolute top-full left-0 mt-2 w-52 bg-white text-navy-900 rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="/ia-direction-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors rounded-t-lg">Direction</a>
-          <a href="/ia-commercial-entreprise" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors">Commercial</a>
-          <a href="/ia-marketing-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors">Marketing</a>
-          <a href="/ia-administratif-rh" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-500 transition-colors rounded-b-lg">Admin / RH</a>
+        <div
+          id="metier-menu"
+          class="hidden absolute top-full left-0 mt-2 w-52 bg-white text-navy-900 rounded-lg shadow-xl border border-gray-100 z-50"
+          role="menu"
+          aria-label="IA par métier"
+        >
+          <a href="/ia-direction-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-600 transition-colors rounded-t-lg" role="menuitem">Direction</a>
+          <a href="/ia-commercial-entreprise" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-600 transition-colors" role="menuitem">Commercial</a>
+          <a href="/ia-marketing-pme" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-600 transition-colors" role="menuitem">Marketing</a>
+          <a href="/ia-administratif-rh" class="block px-4 py-3 hover:bg-navy-50 hover:text-orange-600 transition-colors rounded-b-lg" role="menuitem">Admin / RH</a>
         </div>
       </div>
 
@@ -95,6 +106,38 @@ import Button from './Button.astro';
       b1?.classList.remove('rotate-45', 'translate-y-2');
       b2?.classList.remove('opacity-0');
       b3?.classList.remove('-rotate-45', '-translate-y-2');
+    }
+  });
+
+  // Dropdown IA par métier
+  const metierBtn = document.getElementById('metier-btn');
+  const metierMenu = document.getElementById('metier-menu');
+  const metierChevron = document.getElementById('metier-chevron');
+
+  metierBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = !metierMenu?.classList.contains('hidden');
+    metierMenu?.classList.toggle('hidden');
+    metierBtn.setAttribute('aria-expanded', String(!isOpen));
+    metierChevron?.classList.toggle('rotate-180', !isOpen);
+  });
+
+  // Fermer si clic en dehors
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('metier-dropdown-wrapper')?.contains(e.target as Node)) {
+      metierMenu?.classList.add('hidden');
+      metierBtn?.setAttribute('aria-expanded', 'false');
+      metierChevron?.classList.remove('rotate-180');
+    }
+  });
+
+  // Fermer avec Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      metierMenu?.classList.add('hidden');
+      metierBtn?.setAttribute('aria-expanded', 'false');
+      metierChevron?.classList.remove('rotate-180');
+      metierBtn?.focus();
     }
   });
 </script>

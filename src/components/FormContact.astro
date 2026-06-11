@@ -140,6 +140,10 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
   </div>
 </form>
 
+{/* L'URL webhook est visible dans le source HTML côté client.
+    C'est inévitable pour un site 100% statique sans Netlify Function.
+    Si cette URL ne doit pas être publique, migrer vers une Netlify Function proxy.
+    Pour l'instant, le webhook n8n peut être sécurisé avec une clé API dans n8n lui-même. */}
 <script define:vars={{ n8nUrl }}>
   const form = document.getElementById('contact-form');
   const errorDiv = document.getElementById('form-error');

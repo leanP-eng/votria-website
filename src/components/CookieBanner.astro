@@ -43,6 +43,7 @@
   }
 
   function loadGA4(gaId: string) {
+    if (!gaId) return; // ← guard: ne pas injecter GA4 si l'ID est absent
     window.dataLayer = window.dataLayer || [];
     function gtag(...args: unknown[]) { window.dataLayer.push(args); }
     (window as Record<string, unknown>).gtag = gtag;
@@ -77,7 +78,7 @@
   // Consentement déjà donné
   const stored = localStorage.getItem('votria_ga_consent');
   if (stored === 'granted') {
-    loadGA4(GA_ID);
+    if (GA_ID) loadGA4(GA_ID); // ← guard ajouté
     hideBanner();
   } else if (stored === 'denied') {
     hideBanner();
