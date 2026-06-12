@@ -7,13 +7,13 @@ import Card from '../components/Card.astro';
 
 <BaseLayout
   title="IA pour dirigeants de PME | VotrIA"
-  description="Pilotez votre PME avec l'IA : visibilité client, décisions data-driven, reporting automatisé. Découvrez comment VotrIA transforme votre gestion."
+  description="Découvrez comment l'IA aide les dirigeants de PME à synthétiser l'information, préparer leurs décisions et gagner du temps sur les tâches chronophages."
 >
   <!-- Hero -->
   <Section variant="navy">
     <div class="py-12 text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">L'IA pour piloter votre PME</h1>
-      <p class="text-xl text-gray-300 max-w-2xl">Visibilité client, décisions data-driven, croissance maîtrisée</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">L'IA pour piloter votre PME : décider, synthétiser, gagner du temps</h1>
+      <p class="text-xl text-gray-300 max-w-2xl">L'IA ne remplace pas votre jugement. Elle vous libère du temps pour l'exercer là où ça compte vraiment.</p>
     </div>
   </Section>
 
@@ -51,27 +51,70 @@ import Card from '../components/Card.astro';
     </div>
   </Section>
 
-  <!-- ROI -->
+  <!-- 4 Usages prioritaires -->
   <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">4 usages prioritaires pour les dirigeants</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Transformez 30 pages en 5 points clés en 2 minutes"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Synthétiser l'information rapidement</h3>
+        <p class="text-gray-600 leading-relaxed">Rapports, comptes-rendus de réunion, articles de veille, retours fournisseurs — l'IA extrait l'essentiel pour que vous décidiez sans tout lire.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Arrivez en réunion avec un cadre clair, pas des intuitions"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Préparer vos décisions et arbitrages</h3>
+        <p class="text-gray-600 leading-relaxed">Structurer un arbitrage, comparer des options, préparer un CODIR. L'IA vous aide à organiser l'information avant d'entrer dans la salle.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Savoir sur quoi concentrer l'énergie cette semaine"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Mieux prioriser votre agenda et vos équipes</h3>
+        <p class="text-gray-600 leading-relaxed">Classer les sujets urgents/importants, identifier les quick wins opérationnels, éviter que le quotidien écrase les priorités stratégiques.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Gagner 1h par jour sur les tâches de communication"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Rédiger et communiquer plus vite</h3>
+        <p class="text-gray-600 leading-relaxed">Mails stratégiques, briefs équipe, discours, comptes-rendus de décision — l'IA rédige le premier jet, vous validez et personnalisez.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Gains concrets -->
+  <Section variant="white">
     <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <p class="text-3xl font-bold text-orange-500 mb-2">↑</p>
-        <h3 class="font-bold text-navy-900 mb-2">Meilleure visibilité client</h3>
-        <p class="text-gray-600 text-sm">Vue consolidée de vos clients et de leur rentabilité — sans extraction manuelle.</p>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Temps récupéré chaque semaine</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Typiquement 3 à 5h/semaine sur la lecture, la synthèse et la rédaction. Selon votre volume d'information et vos outils actuels.</p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <p class="text-3xl font-bold text-orange-500 mb-2">10-15%</p>
-        <h3 class="font-bold text-navy-900 mb-2">Temps de reporting réduit</h3>
-        <p class="text-gray-600 text-sm">Rapports générés automatiquement à la fréquence que vous choisissez.</p>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Qualité de décision améliorée</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Décisions mieux étayées, arbitrages plus rapides. Moins d'informations manquantes au moment où ça compte.</p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <p class="text-3xl font-bold text-orange-500 mb-2">↑</p>
-        <h3 class="font-bold text-navy-900 mb-2">Décisions plus rapides</h3>
-        <p class="text-gray-600 text-sm">Moins de temps à chercher l'information, plus de temps à agir dessus.</p>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Moins de réunions de recalage</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Quand l'information circule mieux, les équipes s'alignent plus vite. Peut atteindre une réunion de moins par semaine selon le contexte.</p>
       </div>
     </div>
     <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le contexte et les outils existants.</p>
+  </Section>
+
+  <!-- RGPD -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-6 text-navy-900">Points de vigilance RGPD</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Quelles données ne pas exposer à un LLM public</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Données financières confidentielles, données concurrentielles sensibles, données personnelles de salariés — à anonymiser systématiquement avant tout usage dans un outil IA public.
+        </p>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Bonnes pratiques pour rester en conformité</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Travailler sur des extraits anonymisés, définir un cadre interne (quels outils, quelles données, qui y accède), et vérifier la localisation des serveurs des outils utilisés.
+        </p>
+      </div>
+    </div>
   </Section>
 
   <!-- Process -->

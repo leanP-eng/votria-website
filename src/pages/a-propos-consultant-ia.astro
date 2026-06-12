@@ -5,14 +5,14 @@ import Button from '../components/Button.astro';
 ---
 
 <BaseLayout
-  title="À propos — VotrIA | Consultant IA pour PME en Occitanie"
-  description="20+ ans de terrain en BTP, industrie et négoce. Consultant IA pour PME en Occitanie : automatisation, formation, intégration RGPD-conforme."
+  title="À propos — VotrIA"
+  description="Consultant IA spécialisé PME/TPE. 20+ ans d'expérience opérationnelle terrain : DAF BTP, gérant SARL, commercial. Approche pragmatique, étapes validées."
 >
   <!-- Hero -->
   <Section variant="navy">
     <div class="py-12 text-white">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">À propos — VotrIA</h1>
-      <p class="text-xl text-gray-300 max-w-2xl">Une approche terrain, construite avec des dirigeants de PME réelles</p>
+      <p class="text-xl text-gray-300 max-w-2xl">L'IA pratique pour TPE/PME, par un consultant terrain</p>
     </div>
   </Section>
 
@@ -20,16 +20,19 @@ import Button from '../components/Button.astro';
   <Section variant="white">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="max-w-xl">
-        <h2 class="text-3xl font-bold mb-6 text-navy-900">Qui est derrière VotrIA</h2>
-        <div class="space-y-4 text-gray-700 leading-relaxed">
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">Un parcours terrain avant tout</h2>
+        <div class="space-y-5 text-gray-700 leading-relaxed">
           <p>
-            J'ai passé plus de 20 ans dans des postes de terrain : DAF d'un groupe du gros œuvre BTP, gérant de structure, chef des ventes pour un industriel de la menuiserie, chef de marché régional dans un négoce de matériaux.
+            J'ai d'abord travaillé comme contrôleur de gestion dans le BTP, puis j'ai grandi au sein du même groupe en tant que DAF — <strong class="text-navy-900">850 personnes réparties sur 6 agences, générant plus de 280M€ de CA</strong>.
           </p>
           <p>
-            Je connais la réalité des petites structures — les marges serrées, les équipes réduites, les outils qui doublonnent et le temps perdu sur des tâches sans valeur ajoutée. C'est en cherchant à résoudre ces problèmes que j'ai découvert l'IA. Pas comme une curiosité technologique : comme un levier opérationnel concret.
+            Ensuite, j'ai géré ma propre SARL : <strong class="text-navy-900">18 salariés, 9M€ de CA</strong>. C'est là que j'ai vraiment compris les vrais défis du patron — les marges serrées, les décisions sans filet, la charge invisible.
           </p>
           <p>
-            Aujourd'hui j'accompagne des dirigeants de TPE et PME à passer de l'expérimentation à l'usage réel — avec une méthode en 3 étapes, des résultats mesurables et un cadre conforme au RGPD.
+            J'ai aussi piloté les équipes commerciales : <strong class="text-navy-900">chef des ventes menuiserie avec une équipe de 8 et un secteur de 32M€</strong>, puis <strong class="text-navy-900">chef de marché régional dans le négoce de matériaux — 5 agences, 12 personnes, 8M€ de CA</strong>.
+          </p>
+          <p>
+            Ces expériences — finance d'une grande structure, gestion de PME, terrain commercial — m'ont montré un besoin réel : les TPE/PME ont des processus qui pourraient être simplifiés ou automatisés. VotrIA en est né.
           </p>
         </div>
         <div class="mt-6 bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-4">
@@ -43,14 +46,14 @@ import Button from '../components/Button.astro';
           <h3 class="font-bold text-orange-400 mb-4 uppercase text-sm tracking-wide">Secteurs maîtrisés</h3>
           <ul class="space-y-2 text-gray-300">
             <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>BTP — gros œuvre, menuiserie, second œuvre</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Industrie — production, logistique, supply chain</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Négoce et distribution — commerce B2B, appro</li>
+            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Négoce et distribution — commerce B2B, approvisionnement</li>
+            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Commerce — retail, relation client, marketing</li>
             <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Services — RH, administration, commercial</li>
-            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Commerce — retail, marketing, relation client</li>
+            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>Industrie — production, logistique, supply chain</li>
           </ul>
         </div>
         <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-bold text-navy-900 mb-4 uppercase text-sm tracking-wide">Zone d'intervention</h3>
+          <h3 class="font-bold text-navy-900 mb-3 uppercase text-sm tracking-wide">Zone d'intervention</h3>
           <p class="text-gray-700 text-sm leading-relaxed">
             TPE et PME de 1 à 50 personnes en <strong>Occitanie</strong> — Toulouse, Montpellier et région.
             Interventions en présentiel ou distanciel selon la mission.
@@ -60,106 +63,139 @@ import Button from '../components/Button.astro';
     </div>
   </Section>
 
-  <!-- Pourquoi VotrIA -->
+  <!-- Approche -->
   <Section variant="light">
     <div class="max-w-3xl">
-      <h2 class="text-3xl font-bold mb-6 text-navy-900">Pourquoi VotrIA</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        La plupart des dirigeants de PME ne savent pas par où commencer avec l'IA. Trop d'outils, trop de promesses,
-        pas assez de cas d'usage concrets adaptés à leur contexte.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        VotrIA est né de ce constat : il manque un interlocuteur qui connaît vraiment les contraintes opérationnelles
-        des petites structures — pas un éditeur logiciel qui pousse un produit, pas un cabinet conseil qui facture à la journée sans s'impliquer dans les résultats.
-      </p>
-      <p class="text-gray-700 leading-relaxed">
-        Mon engagement : repartir avec quelque chose qui fonctionne dans votre environnement, utilisé par vos équipes,
-        documenté pour que vous soyez autonomes. Pas une démo. Pas un rapport. Un outil en production.
-      </p>
-    </div>
-  </Section>
-
-  <!-- Approche & Valeurs -->
-  <Section variant="white">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-2xl font-bold mb-6 text-navy-900">Mon approche</h2>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4">
-            <span class="text-orange-500 font-bold text-lg mt-0.5">→</span>
-            <div>
-              <p class="font-semibold text-navy-900">Terrain d'abord</p>
-              <p class="text-gray-600 text-sm mt-1">Je commence par comprendre votre réalité opérationnelle avant de proposer quoi que ce soit.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="text-orange-500 font-bold text-lg mt-0.5">→</span>
-            <div>
-              <p class="font-semibold text-navy-900">Progressivité</p>
-              <p class="text-gray-600 text-sm mt-1">On commence petit, on valide, on étend. Pas de grand projet qui met tout en péril.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="text-orange-500 font-bold text-lg mt-0.5">→</span>
-            <div>
-              <p class="font-semibold text-navy-900">Transfert de compétences</p>
-              <p class="text-gray-600 text-sm mt-1">La mission réussit quand vous n'avez plus besoin de moi. Formation et documentation incluses.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="text-orange-500 font-bold text-lg mt-0.5">→</span>
-            <div>
-              <p class="font-semibold text-navy-900">RGPD systématique</p>
-              <p class="text-gray-600 text-sm mt-1">Les données de vos clients et collaborateurs sont protégées dès la conception, pas en patch.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-2xl font-bold mb-6 text-navy-900">Stack technique</h2>
-        <p class="text-gray-600 text-sm mb-4">Les outils que j'utilise et que je vous transmets :</p>
-        <div class="space-y-3">
-          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-            <p class="font-semibold text-navy-900 text-sm">Automatisation</p>
-            <p class="text-gray-600 text-sm mt-1">n8n, Make (ex-Integromat), Zapier — selon vos contraintes hébergement et budget</p>
+      <h2 class="text-3xl font-bold mb-8 text-navy-900">Mon approche</h2>
+      <div class="space-y-6 text-gray-700">
+        <div class="flex items-start gap-4">
+          <span class="text-orange-500 font-bold text-xl mt-0.5 flex-shrink-0">→</span>
+          <div>
+            <p class="font-semibold text-navy-900 mb-1">Pragmatique — pas de "miracle IA"</p>
+            <p class="leading-relaxed">L'IA est un outil, pas une baguette magique. Je vous dis clairement ce qui est faisable dans votre contexte, ce que ça coûte en réalité, et ce qui ne vaut pas le coup d'investir.</p>
           </div>
-          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-            <p class="font-semibold text-navy-900 text-sm">Données & organisation</p>
-            <p class="text-gray-600 text-sm mt-1">Airtable, Google Sheets, Notion — pour structurer sans complexifier</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-orange-500 font-bold text-xl mt-0.5 flex-shrink-0">→</span>
+          <div>
+            <p class="font-semibold text-navy-900 mb-1">Terrain — je comprends vos contraintes réelles</p>
+            <p class="leading-relaxed">J'ai géré des équipes, des marges, des délais. Je ne découvre pas en mission ce que "chiffre d'affaires sous pression" veut dire. Cette expérience change la qualité des recommandations.</p>
           </div>
-          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-            <p class="font-semibold text-navy-900 text-sm">IA & LLM</p>
-            <p class="text-gray-600 text-sm mt-1">Claude API (Anthropic), GPT-4, Mistral — choix selon le cas d'usage et les exigences RGPD</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-orange-500 font-bold text-xl mt-0.5 flex-shrink-0">→</span>
+          <div>
+            <p class="font-semibold text-navy-900 mb-1">Étapes validées — Audit → Prototype → Déploiement</p>
+            <p class="leading-relaxed">Chaque phase produit un livrable concret. Vous décidez de la suite à chaque étape. Pas d'engagement aveugle sur 6 mois.</p>
           </div>
-          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-            <p class="font-semibold text-navy-900 text-sm">Environnement de travail</p>
-            <p class="text-gray-600 text-sm mt-1">Google Workspace, Microsoft 365 — intégration dans ce que vous utilisez déjà</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-orange-500 font-bold text-xl mt-0.5 flex-shrink-0">→</span>
+          <div>
+            <p class="font-semibold text-navy-900 mb-1">Risque minimal — on teste avant de déployer</p>
+            <p class="leading-relaxed">Le prototype est testé dans votre environnement réel avant tout déploiement. Si ça ne convainc pas, on s'arrête. Aucun investissement perdu sur une mauvaise direction.</p>
           </div>
         </div>
       </div>
     </div>
   </Section>
 
-  <!-- Valeurs -->
+  <!-- Secteurs ciblés -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Secteurs ciblés</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <h3 class="font-bold text-orange-400 text-lg mb-3">BTP</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Prioritaire. Suivi chantier, devis, gestion des sous-traitants, reporting marges. Je connais ce secteur de l'intérieur.</p>
+      </div>
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <h3 class="font-bold text-orange-400 text-lg mb-3">Commercial</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Pipeline, relances, préparation RDV, propositions. Réduire l'administratif pour libérer du temps de vente.</p>
+      </div>
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <h3 class="font-bold text-orange-400 text-lg mb-3">Marketing</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Contenu, veille, déclinaison multi-format. Produire plus avec les mêmes ressources, sans sacrifier la cohérence de marque.</p>
+      </div>
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <h3 class="font-bold text-orange-400 text-lg mb-3">Admin / RH</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Documents, tâches répétitives, échéances réglementaires. Avec un cadre RGPD rigoureux — les données RH sont sensibles.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Expertise -->
   <Section variant="light">
+    <h2 class="text-3xl font-bold mb-8 text-navy-900">Stack technique</h2>
+    <p class="text-gray-600 mb-8 max-w-2xl">Les outils que j'utilise, que je maîtrise, et que je transmets à vos équipes :</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
+      <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-start gap-4">
+        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <span class="text-orange-600 font-bold text-sm">n8n</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900 text-sm">n8n</p>
+          <p class="text-gray-500 text-xs mt-1">Automation no-code, workflows, intégrations</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-start gap-4">
+        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <span class="text-orange-600 font-bold text-xs">Air</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900 text-sm">Airtable</p>
+          <p class="text-gray-500 text-xs mt-1">Bases de données, suivi, tableaux de bord</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-start gap-4">
+        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <span class="text-orange-600 font-bold text-xs">API</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900 text-sm">Claude API</p>
+          <p class="text-gray-500 text-xs mt-1">LLM Anthropic, génération de texte, analyse</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-start gap-4">
+        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <span class="text-orange-600 font-bold text-xs">GWS</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900 text-sm">Google Workspace</p>
+          <p class="text-gray-500 text-xs mt-1">Sheets, Docs, Gmail, Calendar — intégrations IA</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-gray-200 flex items-start gap-4">
+        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+          <span class="text-orange-600 font-bold text-xs">Net</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900 text-sm">Netlify</p>
+          <p class="text-gray-500 text-xs mt-1">Déploiement, hébergement sites statiques</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Valeurs -->
+  <Section variant="white">
     <h2 class="text-3xl font-bold mb-10 text-navy-900">Mes valeurs</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <h3 class="font-bold text-navy-900 mb-3">Honnêteté sur les limites</h3>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Transparence</h3>
         <p class="text-gray-600 text-sm leading-relaxed">
-          L'IA ne résout pas tout. Je vous dis clairement ce qui est faisable dans votre contexte, ce qui ne l'est pas, et pourquoi.
+          Pas de promesses gonflées. Je vous dis ce que l'IA peut faire dans votre contexte, ce qu'elle ne peut pas faire, et ce qui n'est pas rentable à court terme.
         </p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <h3 class="font-bold text-navy-900 mb-3">Résultats, pas rapports</h3>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Résultats</h3>
         <p class="text-gray-600 text-sm leading-relaxed">
-          Je suis évalué sur ce qui fonctionne en production, pas sur la qualité d'un slide deck. Les livrables sont opérationnels.
+          Je suis évalué sur ce qui fonctionne en production, pas sur la qualité d'un slide deck. Les livrables sont opérationnels et mesurables.
         </p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <h3 class="font-bold text-navy-900 mb-3">Respect des équipes</h3>
+      <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Accessibilité</h3>
         <p class="text-gray-600 text-sm leading-relaxed">
-          L'IA vient en support de vos collaborateurs, pas pour les remplacer. L'adoption passe par leur adhésion, pas par l'imposition.
+          L'IA n'est pas réservée aux grands groupes. Mon approche est conçue pour les contraintes réelles des PME : budget limité, équipes réduites, délais courts.
         </p>
       </div>
     </div>
