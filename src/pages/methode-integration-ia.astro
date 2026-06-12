@@ -5,47 +5,220 @@ import Button from '../components/Button.astro';
 ---
 
 <BaseLayout
-  title="Méthode d'intégration IA en entreprise | VotrIA"
-  description="Audit, prototype, déploiement : une méthode en 3 étapes pour intégrer l'IA dans vos processus, former vos équipes et mesurer des résultats réels."
+  title="Notre méthode en 3 étapes | VotrIA"
+  description="De zéro à IA opérationnelle en 4-6 semaines. Audit, prototype, déploiement : une méthode terrain conçue pour les PME qui veulent des résultats concrets."
 >
+  <!-- Hero -->
   <Section variant="navy">
-    <div class="text-white py-8">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Notre méthode pour intégrer l'IA dans vos métiers</h1>
-      <p class="text-lg text-gray-300 max-w-3xl">
-        Pas de formation générique. Un parcours structuré en 3 étapes, adapté à vos processus, vos équipes et vos contraintes.
+    <div class="py-12 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Notre méthode en 3 étapes</h1>
+      <p class="text-xl text-gray-300 max-w-2xl">De zéro à IA opérationnelle en 4-6 semaines</p>
+    </div>
+  </Section>
+
+  <!-- Intro -->
+  <Section variant="light">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6 text-navy-900">Pas de promesse abstraite. Un chemin concret.</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        La plupart des projets IA échouent parce qu'ils commencent trop grand, trop vite, sans ancrage dans la réalité opérationnelle.
+        Notre méthode fait le contraire : on part de ce qui coûte vraiment du temps dans votre entreprise, on construit un premier résultat en 2 semaines, et on déploie uniquement ce qui fonctionne.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Chaque étape est courte, vérifiable et réversible. Vous gardez le contrôle à chaque phase.
       </p>
     </div>
   </Section>
 
+  <!-- Étape 01 : Audit -->
   <Section variant="white">
-    <div class="max-w-3xl mx-auto space-y-16">
-
-      <div class="border-l-4 border-orange-500 pl-8">
-        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 01</p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-4">Audit IA</h2>
-        <p class="text-gray-600 mb-4">Analyser vos processus, identifier les usages à fort impact, évaluer les points de vigilance RGPD.</p>
-        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Cartographie des opportunités + feuille de route</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex-shrink-0 w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-2xl">01</div>
+          <div>
+            <p class="text-sm font-bold text-orange-600 uppercase tracking-wide">Semaines 1–2</p>
+            <h2 class="text-3xl font-bold text-navy-900">Audit</h2>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          On cartographie ensemble vos processus, vos outils et vos douleurs réelles.
+          Objectif : identifier les 2 ou 3 points de friction qui coûtent le plus de temps ou d'énergie.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Entretien de cadrage (1h) avec les personnes concernées</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Observation des tâches manuelles et des outils utilisés</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Priorisation des cas d'usage : impact × faisabilité</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Livrable : carte des opportunités IA + recommandations</span>
+          </li>
+        </ul>
       </div>
-
-      <div class="border-l-4 border-orange-500 pl-8">
-        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 02</p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-4">Prototype</h2>
-        <p class="text-gray-600 mb-4">Concevoir la solution adaptée à votre contexte, intégrer les outils no-code, tester avant de déployer.</p>
-        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Prototype opérationnel + documentation</p>
-      </div>
-
-      <div class="border-l-4 border-orange-500 pl-8">
-        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 03</p>
-        <h2 class="text-2xl font-bold text-navy-900 mb-4">Déploiement et adoption</h2>
-        <p class="text-gray-600 mb-4">Former vos équipes sur vos vrais cas d'usage, accompagner l'adoption terrain, mesurer les résultats.</p>
-        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Équipes formées + usages actifs + rapport ROI</p>
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <p class="text-sm font-bold text-orange-400 uppercase tracking-wide mb-3">Ce que vous obtenez</p>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Une vision claire de ce qui peut être automatisé dans votre contexte spécifique —
+          pas une liste générique, une analyse de votre réalité opérationnelle.
+        </p>
+        <p class="text-sm text-gray-400">
+          Durée : 2 séances de 1-2h + analyse. Aucune installation requise à ce stade.
+        </p>
       </div>
     </div>
   </Section>
 
+  <!-- Étape 02 : Prototype -->
+  <Section variant="light">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="lg:order-2">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex-shrink-0 w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-2xl">02</div>
+          <div>
+            <p class="text-sm font-bold text-orange-600 uppercase tracking-wide">Semaines 2–4</p>
+            <h2 class="text-3xl font-bold text-navy-900">Prototype</h2>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          On construit une première version fonctionnelle du cas d'usage prioritaire.
+          Pas une maquette, pas une démo : quelque chose qui tourne dans votre vrai environnement.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Construction du prototype sur vos outils existants (n8n, Airtable, Google Workspace…)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Tests en conditions réelles avec vos données</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Itérations rapides selon vos retours (1 à 2 cycles)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Validation : est-ce que ça résout le problème ?</span>
+          </li>
+        </ul>
+      </div>
+      <div class="lg:order-1 bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Ce que vous obtenez</p>
+        <p class="text-navy-900 leading-relaxed mb-4">
+          Un outil qui fonctionne, testé par vos équipes, avec des ajustements faits en temps réel.
+          Vous décidez à la fin si vous voulez déployer — ou pas.
+        </p>
+        <p class="text-sm text-gray-500">
+          Durée : 2-3 semaines de développement + 2-3 sessions de feedback.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Étape 03 : Déploiement -->
+  <Section variant="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex-shrink-0 w-16 h-16 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-2xl">03</div>
+          <div>
+            <p class="text-sm font-bold text-orange-600 uppercase tracking-wide">Semaines 4–6</p>
+            <h2 class="text-3xl font-bold text-navy-900">Déploiement</h2>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          On met en production, on forme vos équipes, et on documente pour que vous soyez autonomes.
+          L'objectif n'est pas que vous dépendiez de nous — c'est que vous maîtrisiez vos outils.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Mise en production sur votre environnement réel</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Formation des utilisateurs (1-2h selon complexité)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Documentation simple : comment ça marche, comment modifier</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-500 font-bold mt-1">→</span>
+            <span>Suivi post-déploiement (2 semaines)</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-navy-900 rounded-xl p-6 text-white">
+        <p class="text-sm font-bold text-orange-400 uppercase tracking-wide mb-3">Ce que vous obtenez</p>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Une solution qui tourne en autonomie. Vos équipes savent l'utiliser, la modifier,
+          et comprendre ce qui se passe quand quelque chose ne fonctionne pas.
+        </p>
+        <p class="text-sm text-gray-400">
+          Durée : 1-2 semaines. Suivi inclus pendant 2 semaines après mise en production.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Avantages de cette approche -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Pourquoi cette approche fonctionne</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Résultats visibles en 2 semaines</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Pas de projet qui dure 6 mois avant de voir quelque chose. Le prototype est là en 2-3 semaines — vous pouvez évaluer concrètement.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Adapté à votre réalité</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          On part de vos outils existants, pas d'une stack idéale. Pas besoin de tout reconstruire — on intègre dans ce que vous utilisez déjà.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Vous restez aux commandes</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Chaque étape est une décision que vous prenez. Si le prototype ne convainc pas, on s'arrête là. Aucun engagement aveugle.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Autonomie en sortie</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          L'objectif est que vous ne dépendiez pas de nous. Formation, documentation, transmission — inclus dans chaque mission.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">RGPD intégré dès le départ</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          On identifie les données sensibles avant de construire. Aucun flux ne contourne les règles de confidentialité.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 class="font-bold text-navy-900 mb-3">Terrain avant la théorie</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          On ne vend pas de l'IA générique. On construit ce qui résout un vrai problème opérationnel dans votre secteur.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
   <Section variant="cta">
     <div class="text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">Commençons par votre diagnostic</h2>
+      <h2 class="text-3xl font-bold mb-4">Commençons par l'audit</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour identifier ce qui mérite d'être automatisé dans votre contexte.</p>
       <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
     </div>
   </Section>

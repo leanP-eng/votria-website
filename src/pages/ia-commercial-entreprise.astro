@@ -2,33 +2,111 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
-import UsageCard from '../components/UsageCard.astro';
+import Card from '../components/Card.astro';
 ---
 
 <BaseLayout
   title="IA pour équipes commerciales | VotrIA"
-  description="Découvrez comment l'IA aide vos commerciaux à mieux préparer leurs RDV, automatiser les relances et améliorer leur taux de transformation."
+  description="Boostez vos ventes avec l'IA : lead scoring automatique, relances intelligentes, cycle de vente raccourci. Solutions IA pour commerciaux en PME."
 >
+  <!-- Hero -->
   <Section variant="navy">
-    <div class="text-white py-8">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour équipes commerciales : mieux préparer, relancer et répondre</h1>
-      <p class="text-lg text-gray-300 max-w-3xl">Un assistant qui gère les tâches à faible valeur pour que vos commerciaux se concentrent sur la relation et le closing.</p>
+    <div class="py-12 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">L'IA pour booster vos ventes</h1>
+      <p class="text-xl text-gray-300 max-w-2xl">Leads oubliés ? Prospects relancés automatiquement</p>
     </div>
   </Section>
 
+  <!-- Problème -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce qui freine vos commerciaux</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card title="Prospects oubliés = prospects perdus" description="Sans système de relance automatique, les leads tièdes disparaissent dans les oubliettes. Le suivi manuel ne tient pas à l'échelle." />
+      <Card title="Suivi manuel chronophage" description="Vos commerciaux passent des heures à mettre à jour le CRM, envoyer des relances et rédiger des comptes-rendus au lieu de vendre." />
+      <Card title="Cycles de vente trop longs" description="Faute de priorisation claire, les efforts se dispersent. Les prospects chauds ne sont pas traités en priorité." />
+    </div>
+  </Section>
+
+  <!-- Solution -->
   <Section variant="white">
-    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
-    <div class="space-y-4 max-w-3xl">
-      <UsageCard title="Préparer chaque rendez-vous en profondeur" hook="Arrivez à chaque RDV avec le bon contexte, pas des généralités" description="Contexte prospect, anticipation objections, angle personnalisé." />
-      <UsageCard title="Rédiger propositions et réponses plus vite" hook="Une proposition commerciale en 20 minutes au lieu de 2h" description="Adapter le pitch, reformuler une offre, répondre à un AO." />
-      <UsageCard title="Automatiser vos relances sans perdre en qualité" hook="Ne laissez plus un prospect tomber dans l'oubli" description="Séquences personnalisées, relances post-RDV, follow-up." />
-      <UsageCard title="Qualifier et prioriser vos leads entrants" hook="Concentrez votre énergie sur les prospects qui ont vraiment l'intention d'acheter" description="Trier et scorer les leads, identifier les signaux d'achat." />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">La solution VotrIA</h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Lead scoring automatique, relances intelligentes, priorisation des prospects chauds.
+          Vos commerciaux se concentrent sur les conversations qui comptent — l'IA gère le reste.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          On s'intègre à votre CRM ou vos outils existants (tableur, email, agenda) sans tout reconstruire.
+          Résultat : plus de prospects suivis, moins de temps administratif.
+        </p>
+      </div>
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Exemple concret</p>
+        <p class="text-navy-900 font-medium leading-relaxed">
+          « Un commercial gère 50% plus de prospects en même temps, grâce aux relances automatisées
+          et à un tableau de bord qui lui dit chaque matin sur quoi concentrer son énergie. »
+        </p>
+      </div>
     </div>
   </Section>
 
+  <!-- ROI -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">5-10%</p>
+        <h3 class="font-bold text-navy-900 mb-2">Cycle de vente réduit</h3>
+        <p class="text-gray-600 text-sm">Selon votre contexte et votre secteur. Les relances automatiques accélèrent les décisions.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">0</p>
+        <h3 class="font-bold text-navy-900 mb-2">Prospect oublié</h3>
+        <p class="text-gray-600 text-sm">Chaque lead reçoit une relance au bon moment, automatiquement. Fini les oublis.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">3-6h</p>
+        <h3 class="font-bold text-navy-900 mb-2">Gagnées par mois</h3>
+        <p class="text-gray-600 text-sm">Temps de suivi manuel éliminé, réalloué à la relation client et au closing.</p>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le volume de prospects et les outils existants.</p>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Comment on procède</h2>
+    <div class="max-w-3xl space-y-8">
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Audit — Analyser votre pipeline actuel</h3>
+          <p class="text-gray-600">Comprendre vos volumes, votre cycle de vente, vos outils et les goulots d'étranglement réels.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype — Automation des règles de relance</h3>
+          <p class="text-gray-600">Mettre en place les premières automatisations, les tester sur un échantillon de prospects réels.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement — Lead scoring en production</h3>
+          <p class="text-gray-600">Déploiement sur tout le pipeline, formation de l'équipe commerciale, ajustements en continu.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
   <Section variant="cta">
     <div class="text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">Analyser mon cycle de vente</h2>
+      <h2 class="text-3xl font-bold mb-4">Analysons votre cycle de vente</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour identifier où l'IA peut accélérer vos résultats commerciaux.</p>
       <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
     </div>
   </Section>

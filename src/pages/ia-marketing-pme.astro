@@ -2,33 +2,111 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
-import UsageCard from '../components/UsageCard.astro';
+import Card from '../components/Card.astro';
 ---
 
 <BaseLayout
   title="IA pour le marketing en PME | VotrIA"
-  description="Découvrez comment l'IA aide vos équipes marketing à produire plus de contenus, maintenir la cohérence de marque et accélérer vos workflows éditoriaux."
+  description="Multipliez votre production de contenu, segmentez mieux votre audience et clarifiez votre ROI marketing grâce à l'IA. Pour PME en Occitanie."
 >
+  <!-- Hero -->
   <Section variant="navy">
-    <div class="text-white py-8">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour le marketing : produire, structurer et réutiliser vos contenus</h1>
-      <p class="text-lg text-gray-300 max-w-3xl">Produire plus, rester cohérent, sans multiplier les ressources. L'IA s'intègre à votre workflow sans remplacer votre créativité.</p>
+    <div class="py-12 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">L'IA pour votre stratégie marketing</h1>
+      <p class="text-xl text-gray-300 max-w-2xl">Contenu produit 3x plus vite, audience bien ciblée</p>
     </div>
   </Section>
 
+  <!-- Problème -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce qui ralentit votre marketing</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card title="Contenu créé manuellement — trop lent" description="Rédiger, relire, publier, adapter pour chaque canal. Le marketing de contenu est chronophage et difficile à tenir dans la durée." />
+      <Card title="Audience mal segmentée" description="Sans analyse fine de vos contacts, les messages sont trop génériques. L'engagement reste faible malgré les efforts déployés." />
+      <Card title="ROI marketing flou" description="Difficile de savoir ce qui fonctionne vraiment. Les indicateurs sont là, mais leur interprétation prend du temps." />
+    </div>
+  </Section>
+
+  <!-- Solution -->
   <Section variant="white">
-    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
-    <div class="space-y-4 max-w-3xl">
-      <UsageCard title="Trouver des idées et structurer votre ligne éditoriale" hook="Ne plus rester face à la page blanche" description="Angles, calendrier éditorial, sujets à fort potentiel SEO." />
-      <UsageCard title="Rédiger et réécrire plus vite" hook="Produire 3x plus de contenus sans recruter" description="Articles, posts LinkedIn, newsletters, fiches produit." />
-      <UsageCard title="Décliner un contenu sur tous vos formats" hook="Un article devient 5 formats en 20 minutes" description="Long → résumé · post LinkedIn · newsletter · FAQ · script." />
-      <UsageCard title="Transformer votre veille en contenu utile" hook="La veille en insights actionnables sans y passer la journée" description="Synthétiser sources, analyser tendances, extraire angles." />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">La solution VotrIA</h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Génération de contenu par IA, segmentation audience intelligente, analytics enrichies.
+          L'IA ne remplace pas votre créativité — elle supprime les tâches répétitives qui vous empêchent d'exercer.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          On construit des templates adaptés à votre ton de marque, vos canaux et vos objectifs.
+          Votre équipe garde la main sur la stratégie et la validation finale.
+        </p>
+      </div>
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Exemple concret</p>
+        <p class="text-navy-900 font-medium leading-relaxed">
+          « Un responsable marketing produit 20 posts LinkedIn par mois au lieu de 5 —
+          sans augmenter son temps de travail. L'IA rédige les drafts, lui valide et ajuste. »
+        </p>
+      </div>
     </div>
   </Section>
 
+  <!-- ROI -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">2-3x</p>
+        <h3 class="font-bold text-navy-900 mb-2">Plus de contenu produit</h3>
+        <p class="text-gray-600 text-sm">Articles, posts, newsletters : produits en une fraction du temps habituel.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">↑</p>
+        <h3 class="font-bold text-navy-900 mb-2">Meilleur ciblage audience</h3>
+        <p class="text-gray-600 text-sm">Messages adaptés à chaque segment. Plus de pertinence, moins de désabonnements.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-3xl font-bold text-orange-500 mb-2">10-20%</p>
+        <h3 class="font-bold text-navy-900 mb-2">Engagement amélioré</h3>
+        <p class="text-gray-600 text-sm">Selon votre secteur et votre audience actuelle. Résultats progressifs.</p>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le secteur, l'audience et les outils utilisés.</p>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Comment on procède</h2>
+    <div class="max-w-3xl space-y-8">
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Audit — Contenu et audience actuels</h3>
+          <p class="text-gray-600">Analyser ce que vous produisez, comment, et ce qui résonne vraiment auprès de votre audience.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype — Templates IA contenu</h3>
+          <p class="text-gray-600">Créer des templates sur-mesure pour votre ton de marque, tester sur vos vrais canaux.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement — Production éditoriale quotidienne</h3>
+          <p class="text-gray-600">Intégration dans votre routine de production, formation de l'équipe, tableau de bord de suivi.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
   <Section variant="cta">
     <div class="text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">Cartographier ma production actuelle</h2>
+      <h2 class="text-3xl font-bold mb-4">Cartographions votre production actuelle</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour identifier où l'IA peut multiplier votre impact marketing.</p>
       <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
     </div>
   </Section>
