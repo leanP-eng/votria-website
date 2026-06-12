@@ -15,10 +15,10 @@ const {
   title,
   description,
   canonical,
-  ogImage = 'https://votria-pro.fr/images/og-default.jpg',
+  ogImage = 'https://votria.pro/images/og-default.jpg',
 } = Astro.props;
 
-const canonicalURL = canonical ?? `https://votria-pro.fr${Astro.url.pathname}`;
+const canonicalURL = canonical ?? `https://votria.pro${Astro.url.pathname}`;
 const gaId = import.meta.env.GA4_ID ?? '';
 ---
 
@@ -64,8 +64,8 @@ const gaId = import.meta.env.GA4_ID ?? '';
       "@type": "ProfessionalService",
       "name": "VotrIA",
       "description": "Intégration IA métier pour TPE/PME",
-      "url": "https://votria-pro.fr",
-      "email": "contact@votria-pro.fr",
+      "url": "https://votria.pro",
+      "email": "contact@votria.pro",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Toulouse",
