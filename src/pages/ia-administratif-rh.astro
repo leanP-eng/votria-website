@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="IA pour l'administratif et les RH | VotrIA"
+  description="Découvrez comment l'IA aide les fonctions support à traiter les documents, automatiser les tâches répétitives et sécuriser les données RH."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour l'administratif et les RH : réduire les tâches répétitives</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">L'IA s'occupe du volume pour que vous vous consacriez à ce qui demande vraiment votre expertise.</p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
+    <div class="space-y-4 max-w-3xl">
+      <UsageCard title="Synthétiser et traiter vos documents plus vite" hook="Traitez 10 documents en le temps qu'il en faut pour 2" description="Contrats, PV, rapports, dossiers fournisseurs." />
+      <UsageCard title="Rédiger vos supports internes sans partir de zéro" hook="Une fiche de poste en 15 minutes, pas en 2 heures" description="Fiches de poste, notes internes, courriers, procédures." />
+      <UsageCard title="Automatiser les réponses aux demandes fréquentes" hook="Ne plus répondre 10 fois à la même question" description="FAQ interne, réponses types, premier niveau traitement RH." />
+      <UsageCard title="Ne plus rater une échéance réglementaire" hook="Zéro oubli sur les échéances qui engagent la responsabilité" description="Rappels automatiques, suivi délais réglementaires." />
+    </div>
+
+    <div class="mt-10 bg-red-50 border-l-4 border-red-500 rounded-r-xl p-6 max-w-3xl">
+      <h3 class="font-bold text-red-800 mb-2">⚠ Point de vigilance RGPD — données RH</h3>
+      <p class="text-red-700 text-sm">Les données nominatives RH (paie, santé, disciplinaire) ne doivent jamais être transmises à un LLM public. Un cadre d'utilisation interne (quels outils · quelles données · qui y accède) est indispensable avant tout déploiement.</p>
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Identifier mes tâches les plus chronophages</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>

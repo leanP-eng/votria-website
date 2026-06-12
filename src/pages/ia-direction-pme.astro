@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="IA pour dirigeants de PME | VotrIA"
+  description="Découvrez comment l'IA aide les dirigeants de PME à synthétiser l'information, préparer leurs décisions et gagner du temps sur les tâches chronophages."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour dirigeants de PME : décider, synthétiser, gagner du temps</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">L'IA ne remplace pas votre jugement. Elle vous libère du temps pour l'exercer là où ça compte vraiment.</p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
+    <div class="space-y-4 max-w-3xl">
+      <UsageCard title="Synthétiser l'information rapidement" hook="Transformez 30 pages en 5 points clés en 2 minutes" description="Rapports, CR de réunion, articles de veille." />
+      <UsageCard title="Préparer vos décisions et arbitrages" hook="Arrivez en réunion avec un cadre clair, pas des intuitions" description="Arbitrages, comparaisons d'options, préparation CODIR." />
+      <UsageCard title="Mieux prioriser votre agenda et vos équipes" hook="Savoir sur quoi concentrer l'énergie cette semaine" description="Classer urgents/importants, identifier les quick wins." />
+      <UsageCard title="Rédiger et communiquer plus vite" hook="Gagner 1h par jour sur les tâches de communication" description="Mails stratégiques, briefs équipe, discours, CR de décision." />
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Identifier mes gains rapides</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>

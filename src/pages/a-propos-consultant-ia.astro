@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Consultant IA entreprise Toulouse | VotrIA"
+  description="Découvrez l'approche VotrIA : intégration IA métier, conformité RGPD et adoption opérationnelle pour les TPE et PME d'Occitanie."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Une approche terrain pour intégrer l'IA dans les PME</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">Pas de discours théorique. Une méthode construite sur le terrain, avec des dirigeants et des équipes réelles.</p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold mb-6 text-navy-900">Qui sommes-nous</h2>
+      <div class="prose prose-slate text-gray-700 space-y-4">
+        <p>
+          J'aide les dirigeants de TPE et PME à passer de l'expérimentation IA à l'usage réel — avec une méthode concrète, des résultats mesurables et un cadre conforme au RGPD.
+        </p>
+        <p>
+          J'ai passé plus d'une vingtaine d'années dans des postes de terrain : DAF d'un groupe du gros œuvre du BTP, gérant, chef des ventes pour un industriel de la menuiserie, chef de marché régional dans un négoce de matériaux. Je connais la réalité des petites structures — les marges serrées, les équipes réduites, les outils qui doublonnent et le temps perdu sur des tâches qui ne rapportent rien. C'est en cherchant à résoudre ces problèmes que j'ai découvert l'IA. Pas comme une curiosité technologique — comme un levier opérationnel concret.
+        </p>
+        <p>
+          La plupart des dirigeants ne savent pas par où commencer avec l'IA, trop souvent cannibalisés par des tâches répétitives et sans réelle valeur, et surtout par l'absence de cas d'usage métier clairement identifiés. Mon rôle est de transformer cette incertitude en premières actions concrètes, adaptées à votre contexte, vos équipes et vos priorités.
+        </p>
+        <p>
+          J'interviens auprès de TPE et PME de 1 à 50 personnes en Occitanie, dans tous les secteurs — commerce, services, RH, administration, BTP, industrie.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="light">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+      <div>
+        <h2 class="text-xl font-bold mb-4 text-navy-900">Ce qui nous distingue</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Expertise métier, pas catalogue d'outils</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> RGPD intégré à chaque intervention</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Accompagnement jusqu'à l'adoption réelle</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> TPE et PME de 1 à 50 personnes</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold mb-4 text-navy-900">Nos principes</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Simplicité : pas de sur-ingénierie</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Progressivité : par étapes validées</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Transfert : vos équipes deviennent autonomes</li>
+          <li class="flex gap-2"><span class="text-orange-500 font-bold">→</span> Clarté : on vous dit ce qui fonctionne</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Parlons de votre projet</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>

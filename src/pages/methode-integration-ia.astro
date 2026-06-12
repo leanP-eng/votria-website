@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout
+  title="Méthode d'intégration IA en entreprise | VotrIA"
+  description="Audit, prototype, déploiement : une méthode en 3 étapes pour intégrer l'IA dans vos processus, former vos équipes et mesurer des résultats réels."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Notre méthode pour intégrer l'IA dans vos métiers</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">
+        Pas de formation générique. Un parcours structuré en 3 étapes, adapté à vos processus, vos équipes et vos contraintes.
+      </p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <div class="max-w-3xl mx-auto space-y-16">
+
+      <div class="border-l-4 border-orange-500 pl-8">
+        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 01</p>
+        <h2 class="text-2xl font-bold text-navy-900 mb-4">Audit IA</h2>
+        <p class="text-gray-600 mb-4">Analyser vos processus, identifier les usages à fort impact, évaluer les points de vigilance RGPD.</p>
+        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Cartographie des opportunités + feuille de route</p>
+      </div>
+
+      <div class="border-l-4 border-orange-500 pl-8">
+        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 02</p>
+        <h2 class="text-2xl font-bold text-navy-900 mb-4">Prototype</h2>
+        <p class="text-gray-600 mb-4">Concevoir la solution adaptée à votre contexte, intégrer les outils no-code, tester avant de déployer.</p>
+        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Prototype opérationnel + documentation</p>
+      </div>
+
+      <div class="border-l-4 border-orange-500 pl-8">
+        <p class="text-orange-500 font-bold text-sm uppercase tracking-wide mb-2">Étape 03</p>
+        <h2 class="text-2xl font-bold text-navy-900 mb-4">Déploiement et adoption</h2>
+        <p class="text-gray-600 mb-4">Former vos équipes sur vos vrais cas d'usage, accompagner l'adoption terrain, mesurer les résultats.</p>
+        <p class="text-sm font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg inline-block">Livrable : Équipes formées + usages actifs + rapport ROI</p>
+      </div>
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Commençons par votre diagnostic</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>

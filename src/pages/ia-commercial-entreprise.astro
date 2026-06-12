@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="IA pour équipes commerciales | VotrIA"
+  description="Découvrez comment l'IA aide vos commerciaux à mieux préparer leurs RDV, automatiser les relances et améliorer leur taux de transformation."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour équipes commerciales : mieux préparer, relancer et répondre</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">Un assistant qui gère les tâches à faible valeur pour que vos commerciaux se concentrent sur la relation et le closing.</p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
+    <div class="space-y-4 max-w-3xl">
+      <UsageCard title="Préparer chaque rendez-vous en profondeur" hook="Arrivez à chaque RDV avec le bon contexte, pas des généralités" description="Contexte prospect, anticipation objections, angle personnalisé." />
+      <UsageCard title="Rédiger propositions et réponses plus vite" hook="Une proposition commerciale en 20 minutes au lieu de 2h" description="Adapter le pitch, reformuler une offre, répondre à un AO." />
+      <UsageCard title="Automatiser vos relances sans perdre en qualité" hook="Ne laissez plus un prospect tomber dans l'oubli" description="Séquences personnalisées, relances post-RDV, follow-up." />
+      <UsageCard title="Qualifier et prioriser vos leads entrants" hook="Concentrez votre énergie sur les prospects qui ont vraiment l'intention d'acheter" description="Trier et scorer les leads, identifier les signaux d'achat." />
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Analyser mon cycle de vente</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import FormContact from '../components/FormContact.astro';
+---
+
+<BaseLayout
+  title="Diagnostic IA gratuit pour TPE/PME | VotrIA"
+  description="Réservez votre diagnostic IA gratuit : 30 minutes pour identifier vos priorités, vos cas d'usage et vos premières actions concrètes."
+>
+  <Section variant="navy">
+    <div class="text-center text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Parlons de vos usages IA</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        30 minutes pour comprendre votre contexte, identifier vos priorités et définir les premières actions concrètes.
+        Pas un rendez-vous commercial.
+      </p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Ce que comprend le diagnostic -->
+      <div>
+        <h2 class="text-2xl font-bold mb-8 text-navy-900">Ce que comprend le diagnostic gratuit</h2>
+
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center">
+              <span class="text-orange-500 font-bold">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-navy-900 mb-1">30 minutes pour comprendre votre contexte</h3>
+              <p class="text-gray-600 text-sm">Vos équipes, vos processus, vos priorités actuelles.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center">
+              <span class="text-orange-500 font-bold">2</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-navy-900 mb-1">Identification de vos 2-3 priorités IA</h3>
+              <p class="text-gray-600 text-sm">Les usages à fort impact, adaptés à votre secteur et vos contraintes.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center">
+              <span class="text-orange-500 font-bold">3</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-navy-900 mb-1">Recommandation d'une première étape concrète</h3>
+              <p class="text-gray-600 text-sm">Une action que vous pouvez lancer dans les 15 jours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 space-y-4">
+          <h2 class="text-2xl font-bold text-navy-900">Ce que vous pouvez attendre</h2>
+          <div class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <p class="text-gray-700">Réponse sous 24h ouvrées</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <p class="text-gray-700">Échange sans engagement ni pitch commercial</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <p class="text-gray-700">Confidentialité garantie</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6 text-navy-900">Décrivez votre besoin</h2>
+        <FormContact />
+      </div>
+    </div>
+  </Section>
+
+  <!-- Mention RGPD -->
+  <Section variant="light">
+    <div class="max-w-2xl mx-auto text-center text-sm text-gray-500">
+      <p>
+        <strong>Données personnelles</strong> — Responsable de traitement : Lean Perform.
+        Finalité : traitement de votre demande de diagnostic IA. Durée : 12 mois.
+        Droits : <a href="mailto:contact@votria.pro" class="underline hover:text-navy-900">contact@votria.pro</a>.
+        <a href="/politique-confidentialite" class="underline hover:text-navy-900">Politique de confidentialité</a>.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>

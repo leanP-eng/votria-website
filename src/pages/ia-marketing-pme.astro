@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="IA pour le marketing en PME | VotrIA"
+  description="Découvrez comment l'IA aide vos équipes marketing à produire plus de contenus, maintenir la cohérence de marque et accélérer vos workflows éditoriaux."
+>
+  <Section variant="navy">
+    <div class="text-white py-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">IA pour le marketing : produire, structurer et réutiliser vos contenus</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">Produire plus, rester cohérent, sans multiplier les ressources. L'IA s'intègre à votre workflow sans remplacer votre créativité.</p>
+    </div>
+  </Section>
+
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Vos 4 usages prioritaires</h2>
+    <div class="space-y-4 max-w-3xl">
+      <UsageCard title="Trouver des idées et structurer votre ligne éditoriale" hook="Ne plus rester face à la page blanche" description="Angles, calendrier éditorial, sujets à fort potentiel SEO." />
+      <UsageCard title="Rédiger et réécrire plus vite" hook="Produire 3x plus de contenus sans recruter" description="Articles, posts LinkedIn, newsletters, fiches produit." />
+      <UsageCard title="Décliner un contenu sur tous vos formats" hook="Un article devient 5 formats en 20 minutes" description="Long → résumé · post LinkedIn · newsletter · FAQ · script." />
+      <UsageCard title="Transformer votre veille en contenu utile" hook="La veille en insights actionnables sans y passer la journée" description="Synthétiser sources, analyser tendances, extraire angles." />
+    </div>
+  </Section>
+
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Cartographier ma production actuelle</h2>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver un diagnostic gratuit</Button>
+    </div>
+  </Section>
+</BaseLayout>
