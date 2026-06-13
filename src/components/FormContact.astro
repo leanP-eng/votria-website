@@ -219,7 +219,15 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
     if (!EMAIL_REGEX.test(email)) return showError('Veuillez saisir une adresse email valide.');
     if (!rgpd) return showError('Vous devez accepter la politique de confidentialité pour continuer.');
 
-    const payload = { prenom, nom, entreprise, secteur, effectif, sujets, email, message, rgpd: true };
+    const payload = {
+      prenom, nom, entreprise, secteur, effectif, sujets, email, message,
+      rgpd: true,
+      _meta: {
+        submittedAt: new Date().toISOString(),
+        origin: window.location.origin,
+        page: window.location.pathname,
+      },
+    };
 
     const submitBtn = form.querySelector('button[type="submit"]');
     if (submitBtn) {
