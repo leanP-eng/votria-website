@@ -9,6 +9,12 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
   novalidate
   aria-label="Formulaire de diagnostic gratuit"
 >
+  <!-- Honeypot anti-bot : invisible, ne pas remplir. -->
+  <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+    <label for="website">Ne pas remplir ce champ</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
   <!-- Prénom + Nom -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
     <div>
@@ -186,6 +192,14 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
     hideError();
 
     const fd = new FormData(e.target);
+
+    // Honeypot : si rempli, c'est un bot. Faux succès, aucun envoi.
+    const honeypot = String(fd.get('website') ?? '').trim();
+    if (honeypot !== '') {
+      form.style.display = 'none';
+      successDiv?.classList.remove('hidden');
+      return;
+    }
 
     const prenom = sanitize(fd.get('prenom') ?? '');
     const nom = sanitize(fd.get('nom') ?? '');
