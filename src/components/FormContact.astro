@@ -45,19 +45,21 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
   <!-- Secteur + Effectif -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
     <div>
-      <label for="secteur" class="block text-sm font-medium text-navy-900 mb-1">Secteur d'activité <span class="text-red-600" aria-hidden="true">*</span></label>
+      <label for="secteur" class="block text-sm font-medium text-navy-900 mb-1">Votre métier <span class="text-red-600" aria-hidden="true">*</span></label>
       <select id="secteur" name="secteur" required
         class="w-full px-4 py-3 border border-gray-300 rounded-lg text-navy-900 bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent min-h-[44px]"
         aria-required="true"
       >
-        <option value="">Sélectionnez votre secteur</option>
-        <option value="btp">BTP</option>
-        <option value="industrie">Industrie</option>
-        <option value="negoce">Négoce / Distribution</option>
-        <option value="commerce">Commerce</option>
-        <option value="services">Services</option>
-        <option value="rh">RH / Recrutement</option>
-        <option value="autre">Autre</option>
+        <option value="">Sélectionnez votre métier</option>
+        <option value="peinture">Peinture</option>
+        <option value="platrerie">Plâtrerie / cloisons</option>
+        <option value="electricite">Électricité</option>
+        <option value="plomberie">Plomberie / chauffage</option>
+        <option value="menuiserie">Menuiserie</option>
+        <option value="carrelage">Carrelage / revêtements</option>
+        <option value="maconnerie">Maçonnerie / gros œuvre</option>
+        <option value="tce">Tous corps d'état</option>
+        <option value="autre">Autre métier du bâtiment</option>
       </select>
     </div>
     <div>
@@ -166,7 +168,7 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
   const errorDiv = document.getElementById('form-error');
   const successDiv = document.getElementById('success-message');
 
-  const ALLOWED_SECTEURS = ['btp', 'industrie', 'negoce', 'commerce', 'services', 'rh', 'autre'];
+  const ALLOWED_SECTEURS = ['peinture','platrerie','electricite','plomberie','menuiserie','carrelage','maconnerie','tce','autre'];
   const ALLOWED_EFFECTIFS = ['1-5', '6-20', '21-50', '+50'];
   const ALLOWED_SUJETS = ['formation', 'automatisation', 'integration', 'rgpd', 'autre'];
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -213,7 +215,7 @@ const n8nUrl = import.meta.env.N8N_WEBHOOK_URL ?? 'https://placeholder.n8n.cloud
 
     if (!prenom || !nom) return showError('Veuillez saisir votre prénom et votre nom.');
     if (!entreprise) return showError('Veuillez indiquer votre entreprise.');
-    if (!ALLOWED_SECTEURS.includes(secteur)) return showError("Veuillez sélectionner votre secteur d'activité.");
+    if (!ALLOWED_SECTEURS.includes(secteur)) return showError("Veuillez sélectionner votre métier.");
     if (!ALLOWED_EFFECTIFS.includes(effectif)) return showError("Veuillez sélectionner l'effectif de votre entreprise.");
     if (sujets.length === 0) return showError('Veuillez sélectionner au moins un sujet principal.');
     if (!EMAIL_REGEX.test(email)) return showError('Veuillez saisir une adresse email valide.');
