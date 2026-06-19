@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+---
+
+<BaseLayout
+  title="Devis, relances & trésorerie BTP | VotrIA"
+  description="Automatisation des devis en attente, relances factures et suivi impayés pour artisans et TPE du BTP. Récupérez votre cash sans courir après vos clients."
+>
+  <!-- Hero -->
+  <Section variant="navy">
+    <div class="py-12 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Votre carnet de commandes est plein. Mais le cash ne rentre pas ?</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mb-8">Devis sans réponse, factures en retard, impayés qui s'accumulent — je mets en place le suivi automatique qui récupère votre argent. Pendant que vous êtes sur les chantiers.</p>
+      <div class="flex gap-4 flex-wrap">
+        <Button href="/contact-diagnostic-ia" variant="primary">Diagnostic gratuit</Button>
+        <Button href="/methode-integration-ia" variant="secondary">Voir la méthode</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Problème -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce qui plombe votre trésorerie</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card
+        title="Devis envoyés, silence radio"
+        description="Sur 10 devis envoyés, combien ont eu une relance manuelle ? Sans suivi automatique, la moitié reste sans réponse faute de temps pour relancer."
+      />
+      <Card
+        title="Factures payées… quand ça arrange le client"
+        description="L'échéance est passée, vous n'avez pas vu. Ou vous avez vu mais pas eu le temps de relancer. Le retard s'installe, l'impayé grossit."
+      />
+      <Card
+        title="La trésorerie pilotée à l'aveugle"
+        description="Sans tableau de bord en temps réel, vous découvrez les problèmes de cash quand c'est déjà critique. Pas en amont."
+      />
+    </div>
+  </Section>
+
+  <!-- Solution -->
+  <Section variant="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">La solution VotrIA</h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Je mets en place le suivi automatique de vos devis et factures. Relances programmées, alertes impayés, tableau de bord trésorerie. Vous êtes notifié au bon moment — pas quand c'est trop tard.
+        </p>
+      </div>
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Cas concret</p>
+        <p class="text-navy-900 font-medium leading-relaxed">
+          Un électricien envoie 40 devis par mois. Avant : 8 relances manuelles maximum, le reste tombé dans l'oubli. Après : 100% des devis relancés automatiquement à J+7 et J+15. Résultat : +30% de devis signés le premier mois.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 4 usages prioritaires -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que je mets en place concrètement</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Zéro devis oublié"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Suivi des devis en attente</h3>
+        <p class="text-gray-600 leading-relaxed">Chaque devis émis déclenche un suivi automatique. Relance à J+7, J+15, J+30. Vous voyez en temps réel quels devis sont en attente de réponse.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"La relance qui arrive au bon moment, pas à la dernière minute"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Relances factures et échéances</h3>
+        <p class="text-gray-600 leading-relaxed">Rappel automatique avant l'échéance, puis à J+3, J+10, J+30 en cas de retard. Le ton s'adapte selon le délai — professionnel d'abord, ferme ensuite.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Plus jamais une échéance qui passe sans que vous le sachiez"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Détection précoce des impayés</h3>
+        <p class="text-gray-600 leading-relaxed">Dès qu'une facture dépasse son délai, vous êtes alerté. Relance graduée automatique, avec escalade si nécessaire. Vous intervenez seulement quand l'humain est vraiment nécessaire.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <p class="text-orange-600 italic text-sm mb-3">"Votre cash, visible en 30 secondes"</p>
+        <h3 class="text-xl font-bold text-navy-900 mb-3">Tableau de bord trésorerie chantier</h3>
+        <p class="text-gray-600 leading-relaxed">Montants en attente, délais moyens de paiement, chantiers à risque. Un seul tableau de bord pour piloter sans être comptable.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Gains concrets -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Taux de signature devis amélioré</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Des études terrain montrent +20 à 40% de devis signés quand le suivi est systématique. La relance au bon moment fait la différence.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Cash rentré plus vite</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Les délais de paiement moyens baissent de 15 à 30 jours quand les relances sont automatiques et systématiques. Moins de relances oubliées = moins d'attente.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Zéro impayé oublié</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Aucune facture ne passe entre les mailles. Chaque retard est détecté, chaque relance est envoyée. Vous savez exactement où vous en êtes.</p>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le volume de devis et les pratiques existantes.</p>
+  </Section>
+
+  <!-- RGPD -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-6 text-navy-900">Points de vigilance RGPD</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Données clients BTP : les règles à respecter</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Nom, email, téléphone de vos clients pro = données personnelles au sens du RGPD. On travaille sur des extraits anonymisés, jamais le fichier complet dans un outil IA public.
+        </p>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Vos données restent chez vous</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Les automatisations s'appuient sur vos outils existants (tableur, email). Aucune donnée client n'est stockée sur un serveur tiers sans votre accord explicite.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Comment on procède</h2>
+    <div class="max-w-3xl space-y-8">
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Audit — Cartographier vos devis et factures en cours</h3>
+          <p class="text-gray-600">On liste vos devis ouverts, vos délais moyens, vos clients à risque. On part de ce que vous avez déjà.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype — Suivi automatique sur vos vrais chantiers</h3>
+          <p class="text-gray-600">On branche les alertes et relances sur vos outils réels. Vous testez sur un mois avec un sous-ensemble de clients.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement — Trésorerie pilotée en autonomie</h3>
+          <p class="text-gray-600">Tout est automatisé, vous recevez les alertes, vous validez les relances importantes. On reste disponibles pendant la prise en main.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Punchline narrative (légitimité) -->
+  <Section variant="navy">
+    <div class="py-6 text-center">
+      <p class="text-2xl md:text-3xl font-bold leading-relaxed">
+        <span class="text-white">Vous ne payez pas une automatisation de relances.</span>
+        <br />
+        <span class="text-orange-400">Vous récupérez les 15 000 € de devis qui dormaient dans votre boîte mail.</span>
+      </p>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Identifions vos devis qui dorment</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour voir ce qui peut être automatisé dans votre suivi commercial et trésorerie.</p>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver mon diagnostic</Button>
+      <div class="mt-6">
+        <span class="inline-block bg-orange-50 text-orange-600 text-sm font-semibold px-4 py-2 rounded-full">
+          Artisan / TPE du bâtiment
+        </span>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

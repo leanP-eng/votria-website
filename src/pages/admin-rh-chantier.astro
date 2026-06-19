@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="Administratif & RH chantier | VotrIA"
+  description="Automatisation des pointages, documents chantier, PPSPS, déclarations — pour artisans et PME du bâtiment. Moins de papier, plus de chantier."
+>
+  <!-- Hero -->
+  <Section variant="navy">
+    <div class="py-12 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">20h par semaine de paperasse chantier. Et si ça tombait à 4h ?</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mb-8">Pointages, PPSPS, DICT, déclarations, courriers — la paperasse du BTP est chronophage et répétitive. Je l'automatise pour que vous passiez votre temps sur les chantiers, pas sur les formulaires.</p>
+      <div class="flex gap-4 flex-wrap">
+        <Button href="/contact-diagnostic-ia" variant="primary">Diagnostic gratuit</Button>
+        <Button href="/methode-integration-ia" variant="secondary">Voir la méthode</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Problème -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce qui plombe votre productivité hors chantier</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card
+        title="Pointages : la galère quotidienne"
+        description="Chaque soir ou chaque semaine, les heures de chaque ouvrier sur chaque chantier. En manuel, ça prend 2h. Avec des erreurs. Et des oublis."
+      />
+      <Card
+        title="Documents chantier : toujours à refaire"
+        description="PPSPS, DICT, plan de prévention, DOE — chaque nouveau chantier implique des documents similaires à reprendre depuis zéro ou depuis un mauvais template."
+      />
+      <Card
+        title="Déclarations et courriers : la dernière minute"
+        description="Déclarations de sous-traitance, courriers de mise en demeure, contrats — on s'en occupe quand c'est urgent, pas quand ce serait optimal."
+      />
+    </div>
+  </Section>
+
+  <!-- Solution -->
+  <Section variant="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">La solution VotrIA</h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Je mets en place l'automatisation des tâches administratives répétitives du BTP : pointages automatiques, génération de documents à partir de templates, classement et alertes sur les échéances réglementaires. Votre temps se libère.
+        </p>
+      </div>
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Cas concret</p>
+        <p class="text-navy-900 font-medium leading-relaxed">
+          Une entreprise de second œuvre passait 20h/semaine sur des tâches administratives répétitives : copier-coller de données entre tableurs, remplissage de formulaires identiques, envoi de courriers standards. Après automatisation : 4h/semaine. Les 16h récupérées vont sur le chantier.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 4 usages concrets -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que je mets en place concrètement</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <UsageCard
+        title="Automatisation des pointages chantier"
+        hook="Vos pointages remplis en 5 minutes, pas en 2 heures"
+        description="Les ouvriers saisissent leurs heures via une interface simple (formulaire, SMS, ou appli légère). Les données sont consolidées automatiquement par chantier et par salarié."
+      />
+      <UsageCard
+        title="Génération de documents chantier"
+        hook="PPSPS, DICT, DOE — générés en quelques clics"
+        description="À partir de vos données chantier (adresse, nature des travaux, intervenants), les documents réglementaires sont générés automatiquement depuis vos templates. Vous relisez et signez."
+      />
+      <UsageCard
+        title="Alertes et suivi des échéances"
+        hook="Zéro oubli sur les délais réglementaires"
+        description="Déclarations de sous-traitants, renouvellements d'assurance, dates de fin de garantie — chaque échéance est trackée. Vous recevez l'alerte au bon moment, pas après."
+      />
+      <UsageCard
+        title="Classement et archivage automatiques"
+        hook="Un dossier chantier complet, sans la chasse aux documents"
+        description="Devis, contrats, PV de réception, photos, correspondances — chaque document est classé automatiquement dans le bon dossier chantier. Retrouvez tout en 10 secondes."
+      />
+    </div>
+  </Section>
+
+  <!-- Gains concrets -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Temps administratif divisé par 3 à 5</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Des entreprises BTP qui ont automatisé leurs tâches répétitives récupèrent en moyenne 10 à 15h/semaine sur l'administratif. À réinvestir sur le chantier ou dans le commercial.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Zéro erreur de saisie</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Les données saisies une seule fois alimentent automatiquement tous les documents. Fini les erreurs de copier-coller entre le pointage et la paie, ou entre le devis et le bon de commande.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Conformité réglementaire assurée</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Aucune déclaration oubliée, aucune échéance manquée. Le système vous alerte avant — pas après que l'inspection du travail vous contacte.</p>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le volume de documents et les pratiques existantes.</p>
+  </Section>
+
+  <!-- RGPD -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-6 text-navy-900">Points de vigilance RGPD</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Données RH chantier : les plus sensibles du RGPD</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Heures travaillées, salaires, absences, accidents — ce sont des données personnelles sensibles. Aucune donnée nominative RH n'est transmise à un outil IA public. On travaille sur des données anonymisées.
+        </p>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Sous-traitants et intervenants extérieurs</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Les données des sous-traitants (SIRET, assurances, qualifications) sont vérifiées via des sources publiques. Aucune donnée confidentielle n'est stockée sur un serveur tiers sans accord.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Comment on procède</h2>
+    <div class="max-w-3xl space-y-8">
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Audit — Lister vos tâches admin les plus chronophages</h3>
+          <p class="text-gray-600">On chronométre les tâches répétitives, on identifie les formulaires remplis plusieurs fois et les documents recréés à l'identique.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype — Automatisation des 3 tâches à plus fort impact</h3>
+          <p class="text-gray-600">On automatise en priorité ce qui prend le plus de temps. Vous testez pendant un mois sur vos vrais chantiers.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement — Toute l'admin en autonomie</h3>
+          <p class="text-gray-600">Pointages, documents, alertes — tout est en place. Vos équipes sont formées, vous gagnez vos heures dès le premier mois.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Punchline narrative -->
+  <section class="bg-navy-800 py-12 px-6 md:px-12 lg:px-20">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-2xl md:text-3xl font-bold leading-relaxed">
+        <span class="text-white">Vous ne payez pas un logiciel administratif.</span>
+        <br />
+        <span class="text-orange-400">Vous récupérez les 16 heures par semaine que vous passiez à remplir des formulaires.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Identifions vos 3 tâches admin les plus chronophages</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour cartographier ce qui peut être automatisé dans votre contexte BTP.</p>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver mon diagnostic</Button>
+      <div class="mt-6">
+        <span class="inline-block bg-orange-50 text-orange-600 text-sm font-semibold px-4 py-2 rounded-full">
+          Artisan &amp; PME bâtiment
+        </span>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

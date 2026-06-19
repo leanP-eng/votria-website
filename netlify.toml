@@ -2,6 +2,26 @@
   command = "npm run build"
   publish = "dist"
 
+[[redirects]]
+  from = "/ia-marketing-pme"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/ia-direction-pme"
+  to = "/devis-relances-tresorerie"
+  status = 301
+
+[[redirects]]
+  from = "/ia-commercial-entreprise"
+  to = "/commerce-relation-client"
+  status = 301
+
+[[redirects]]
+  from = "/ia-administratif-rh"
+  to = "/admin-rh-chantier"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
