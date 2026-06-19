@@ -5,8 +5,8 @@ import Button from '../components/Button.astro';
 ---
 
 <BaseLayout
-  title="Méthode d'intégration IA en entreprise | VotrIA"
-  description="Audit, prototype, déploiement : une méthode en 3 étapes pour intégrer l'IA dans vos processus, former vos équipes et mesurer des résultats réels."
+  title="Méthode d'intégration IA BTP | VotrIA"
+  description="Audit, prototype, déploiement : 3 étapes pour automatiser vos devis, chantiers et admin en BTP. L'IA propose, vous validez — pour les artisans et PME du bâtiment."
 >
   <!-- Hero -->
   <Section variant="navy">
@@ -21,8 +21,7 @@ import Button from '../components/Button.astro';
     <div class="max-w-3xl">
       <h2 class="text-3xl font-bold mb-6 text-navy-900">Pourquoi la méthode compte autant que les outils</h2>
       <p class="text-gray-700 leading-relaxed text-lg">
-        L'IA ne s'adopte pas par décret. Elle s'intègre par étapes, avec les bonnes personnes, sur les bons cas d'usage.
-        Pas un gadget : un gain de temps réel.
+        Dans le BTP, l'IA ne s'impose pas à une équipe de chantier. Elle s'intègre par étapes, sur des cas concrets : devis, pointages, relances. Pas un gadget — un gain de temps mesurable, avec vous à la validation de chaque étape.
       </p>
     </div>
   </Section>
@@ -46,7 +45,7 @@ import Button from '../components/Button.astro';
       </div>
       <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
         <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-2">Livrables</p>
-        <p class="text-navy-900 font-medium">Cartographie des opportunités IA + feuille de route priorisée</p>
+        <p class="text-navy-900 font-medium">Cartographie des opportunités (devis, chantier, admin) + feuille de route priorisée</p>
       </div>
     </div>
   </Section>
@@ -70,7 +69,7 @@ import Button from '../components/Button.astro';
       </div>
       <div class="lg:order-1 bg-navy-900 rounded-xl p-6 text-white">
         <p class="text-sm font-bold text-orange-400 uppercase tracking-wide mb-2">Livrables</p>
-        <p class="text-gray-300 font-medium">Prototype opérationnel + documentation utilisateur</p>
+        <p class="text-gray-300 font-medium">Prototype opérationnel sur vos vrais chantiers + documentation utilisateur</p>
       </div>
     </div>
   </Section>
@@ -94,7 +93,7 @@ import Button from '../components/Button.astro';
       </div>
       <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
         <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-2">Livrables</p>
-        <p class="text-navy-900 font-medium">Équipes formées + usages actifs + rapport ROI</p>
+        <p class="text-navy-900 font-medium">Équipes formées + usages actifs + rapport ROI chantier</p>
       </div>
     </div>
   </Section>
@@ -118,28 +117,38 @@ import Button from '../components/Button.astro';
     </div>
   </Section>
 
+  <!-- L'IA propose, vous validez -->
+  <Section variant="navy">
+    <div class="text-center max-w-3xl mx-auto text-white">
+      <h2 class="text-3xl font-bold mb-6">L'IA propose. Vous validez. Toujours.</h2>
+      <p class="text-gray-300 leading-relaxed text-lg">
+        Chaque automatisation que je mets en place fonctionne sous votre contrôle. L'agent vocal vous transmet le résumé — vous décidez de rappeler. Le suivi des devis vous alerte — vous choisissez de relancer. Aucune action automatique sans votre accord explicite. C'est la garantie que je donne à chaque patron BTP méfiant des gadgets.
+      </p>
+    </div>
+  </Section>
+
   <!-- Pour quel type d'équipe -->
   <Section variant="white">
     <h2 class="text-3xl font-bold mb-10 text-navy-900">Pour quel type d'équipe ?</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a href="/ia-direction-pme" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
-        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Direction</h3>
-        <p class="text-gray-400 text-sm">Synthèse, décisions, pilotage. Gagner du temps là où le dirigeant est le plus sollicité.</p>
+      <a href="/devis-relances-tresorerie" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
+        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Devis & trésorerie</h3>
+        <p class="text-gray-400 text-sm">Relances automatiques, suivi impayés, cash qui rentre.</p>
         <p class="text-orange-500 text-sm mt-3 font-medium">Voir les usages →</p>
       </a>
-      <a href="/ia-commercial-entreprise" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
-        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Commercial</h3>
-        <p class="text-gray-400 text-sm">Préparation RDV, relances automatisées, qualification des leads entrants.</p>
+      <a href="/commerce-relation-client" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
+        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Commerce BTP</h3>
+        <p class="text-gray-400 text-sm">Captation des appels, devis entrants, relances commerciales.</p>
         <p class="text-orange-500 text-sm mt-3 font-medium">Voir les usages →</p>
       </a>
-      <a href="/ia-marketing-pme" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
-        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Marketing</h3>
-        <p class="text-gray-400 text-sm">Contenu, veille, déclinaison multi-format. Produire plus sans multiplier les ressources.</p>
+      <a href="/chantier-marges" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
+        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Chantier & marges</h3>
+        <p class="text-gray-400 text-sm">Alertes dérapage, marges en temps réel, sous-traitants.</p>
         <p class="text-orange-500 text-sm mt-3 font-medium">Voir les usages →</p>
       </a>
-      <a href="/ia-administratif-rh" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
-        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Admin / RH</h3>
-        <p class="text-gray-400 text-sm">Documents, tâches répétitives, échéances. La conformité RGPD au cœur.</p>
+      <a href="/admin-rh-chantier" class="block bg-navy-900 rounded-xl p-6 text-white hover:bg-navy-800 transition-colors group">
+        <h3 class="font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors">Admin & RH chantier</h3>
+        <p class="text-gray-400 text-sm">Pointages, documents, déclarations — automatisés.</p>
         <p class="text-orange-500 text-sm mt-3 font-medium">Voir les usages →</p>
       </a>
     </div>
