@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import UsageCard from '../components/UsageCard.astro';
+---
+
+<BaseLayout
+  title="Commerce & relation client BTP | VotrIA"
+  description="Captation d'appels, suivi des devis entrants, relances commerciales — pour artisans et PME du bâtiment. Ne ratez plus un chantier faute de décrocher."
+>
+  <!-- Hero -->
+  <Section variant="navy">
+    <div class="py-12 text-white">
+      <p class="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-4">Artisan &amp; PME bâtiment</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Vous étiez en chantier. Le client a appelé. Il ne rappellera pas.</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mb-8">Dans le BTP, chaque appel manqué est un chantier parti chez le concurrent. Je mets en place la captation des demandes, le suivi des devis entrants et les relances commerciales — pour qu'aucune opportunité ne tombe à l'eau.</p>
+      <div class="flex flex-wrap gap-4">
+        <Button href="/contact-diagnostic-ia" variant="primary">Diagnostic gratuit</Button>
+        <Button href="/methode-integration-ia" variant="secondary">Voir la méthode</Button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Problème -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous perdez quand vous ne décrochez pas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card
+        title="L'appel manqué = le chantier perdu"
+        description="Un client qui cherche un artisan appelle 3 numéros. Il prend le premier qui répond. Si ce n'est pas vous, c'est votre concurrent."
+      />
+      <Card
+        title="Les demandes entrent, mais sans suivi organisé"
+        description="Formulaires, emails, DM Instagram, recommandations — les demandes arrivent de partout. Sans système de centralisation, la moitié se perd."
+      />
+      <Card
+        title="La relance commerciale : toujours remise à demain"
+        description="Un devis envoyé sans relance a 50% de chances de finir dans l'oubli. Mais relancer manuellement 20 prospects en même temps que le chantier tourne, c'est mission impossible."
+      />
+    </div>
+  </Section>
+
+  <!-- Solution -->
+  <Section variant="white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-navy-900">La solution VotrIA</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Un agent vocal décroche à votre place, qualifie la demande et propose un RDV de devis — pendant que vous êtes sur l'échelle. Les demandes web sont centralisées et relancées automatiquement. Vous ne passez plus à côté d'une opportunité.
+        </p>
+      </div>
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6">
+        <p class="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Cas concret</p>
+        <p class="text-navy-900 font-medium leading-relaxed">
+          Un peintre en haut de son échelle. Téléphone qui sonne. Mains dans la peinture. Il ne décroche pas. Le client voulait un devis — il a rappelé le peintre suivant sur Google. Avec l'agent vocal, le client obtient une réponse immédiate. Le RDV de devis est calé. Le chantier ne part plus chez le concurrent.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 4 Usages -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que je mets en place concrètement</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+      <UsageCard
+        title="Agent vocal — captation des appels entrants"
+        hook="Vous ne pouviez pas décrocher. L'agent vocal, si."
+        description="Un agent vocal décroche, accueille le client, qualifie sa demande (type de travaux, délai, localisation) et propose un RDV de devis. Vous recevez un résumé par SMS ou email."
+      />
+      <UsageCard
+        title="Centralisation des demandes (web, email, réseaux)"
+        hook="Toutes vos demandes, dans un seul endroit"
+        description="Formulaire web, email de contact, Google Business — toutes les demandes entrantes sont centralisées, triées et traitées selon leur urgence."
+      />
+      <UsageCard
+        title="Relances commerciales automatiques"
+        hook="La relance qui arrive au bon moment"
+        description="Chaque devis déclenche un suivi automatique : relance à J+7, J+15, J+30. Le message s'adapte selon le profil client. Vous intervenez seulement sur les dossiers chauds."
+      />
+      <UsageCard
+        title="Suivi des affaires et pipeline BTP"
+        hook="Savoir où en sont vos affaires en 30 secondes"
+        description="Tableau de bord des demandes en cours, devis envoyés, relances effectuées, chantiers signés. Vous pilotez votre activité commerciale sans passer des heures à mettre à jour des tableurs."
+      />
+    </div>
+  </Section>
+
+  <!-- Gains concrets -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Ce que vous pouvez attendre</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Aucun appel perdu</h3>
+        <p class="text-green-800 text-sm leading-relaxed">L'agent vocal tourne 24h/24, 7j/7. Même en chantier, le weekend, ou pendant les vacances — les demandes sont captées et traitées.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Taux de devis signés amélioré</h3>
+        <p class="text-green-800 text-sm leading-relaxed">La relance systématique à J+7 et J+15 augmente le taux de signature. Sur les artisans qui l'ont mis en place, on observe +20 à 35% de devis transformés.</p>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-900 mb-3">Plus de temps pour vendre, moins pour relancer</h3>
+        <p class="text-green-800 text-sm leading-relaxed">Les relances manuelles représentent en moyenne 4h/semaine pour un artisan avec 15+ devis en cours. L'automatisation récupère ces heures.</p>
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 mt-4">* Résultats variables selon le volume de demandes et le secteur d'activité.</p>
+  </Section>
+
+  <!-- RGPD -->
+  <Section variant="light">
+    <h2 class="text-3xl font-bold mb-6 text-navy-900">Points de vigilance RGPD</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">Données prospects : vos clients potentiels aussi sont protégés</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Nom, téléphone, email d'un prospect = données personnelles au sens du RGPD. On travaille sur des résumés, jamais sur des fichiers complets dans un outil IA public.
+        </p>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-900 mb-3">L'agent vocal et les données audio</h3>
+        <p class="text-red-800 text-sm leading-relaxed">
+          Les conversations téléphoniques sont traitées localement, sans stockage permanent. Le client est informé en début d'appel. Aucune donnée audio n'est transmise à des tiers.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Process -->
+  <Section variant="white">
+    <h2 class="text-3xl font-bold mb-10 text-navy-900">Comment on procède</h2>
+    <div class="max-w-3xl space-y-8">
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Audit — Cartographier vos canaux d'entrée</h3>
+          <p class="text-gray-600">On identifie par où arrivent vos demandes (téléphone, web, réseaux, bouche à oreille) et où elles se perdent.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Prototype — Agent vocal + centralisation sur 1 mois</h3>
+          <p class="text-gray-600">On déploie l'agent vocal et la centralisation. Vous testez sur vos vraies demandes pendant 30 jours.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-start">
+        <div class="flex-shrink-0 w-12 h-12 bg-navy-900 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-navy-900 mb-2">Déploiement — Votre machine commerciale autonome</h3>
+          <p class="text-gray-600">Relances configurées, tableau de bord actif, formation faite. Votre activité commerciale tourne en autonomie.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Punchline narrative -->
+  <section class="bg-navy-800 py-16 px-6 md:px-12 lg:px-20">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-3xl md:text-4xl font-bold text-white mb-3">Vous ne payez pas un agent vocal.</p>
+      <p class="text-3xl md:text-4xl font-bold text-orange-400">Vous récupérez les chantiers que vous ratiez en peignant.</p>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <Section variant="cta">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Voyons combien d'appels vous perdez par mois</h2>
+      <p class="text-gray-300 mb-8 max-w-xl mx-auto">30 minutes pour estimer ce que vous perdez — et ce qu'on peut mettre en place rapidement.</p>
+      <Button href="/contact-diagnostic-ia" variant="primary">Réserver mon diagnostic</Button>
+    </div>
+  </Section>
+</BaseLayout>
