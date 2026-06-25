@@ -1,61 +1,37 @@
-# Netlify Configuration for Votria.pro
-
 [build]
   publish = "."
-  command = "echo 'Site built'"
 
 [[redirects]]
   from = "/offres"
   to = "/offres.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/methode"
   to = "/methode.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/a-propos"
   to = "/a-propos.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/mentions-legales"
   to = "/mentions-legales.html"
   status = 200
-  force = false
 
 [[redirects]]
   from = "/confidentialite"
   to = "/confidentialite.html"
   status = 200
-  force = false
 
-# Catch-all for 404
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[context.production]
-  command = "echo 'Production build'"
-
-[context.deploy-preview]
-  command = "echo 'Deploy preview'"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1; mode=block"
