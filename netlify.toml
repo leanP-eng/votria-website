@@ -1,41 +1,70 @@
+# Netlify Configuration for Votria.pro
+
 [build]
-  command = "npm run build"
-  publish = "dist"
+  publish = "."
+  command = "echo 'Site built'"
 
 [[redirects]]
-  from = "/ia-marketing-pme"
-  to = "/"
-  status = 301
+  from = "/offres"
+  to = "/offres.html"
+  status = 200
+  force = false
 
 [[redirects]]
-  from = "/ia-direction-pme"
-  to = "/devis-relances-tresorerie"
-  status = 301
+  from = "/methode"
+  to = "/methode.html"
+  status = 200
+  force = false
 
 [[redirects]]
-  from = "/ia-commercial-entreprise"
-  to = "/commerce-relation-client"
-  status = 301
+  from = "/a-propos"
+  to = "/a-propos.html"
+  status = 200
+  force = false
 
 [[redirects]]
-  from = "/ia-administratif-rh"
-  to = "/admin-rh-chantier"
-  status = 301
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+  force = false
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://lean-parform.app.n8n.cloud https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
-    X-Permitted-Cross-Domain-Policies = "none"
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 200
+  force = false
 
-[build.environment]
-  NODE_VERSION = "20"
+[[redirects]]
+  from = "/confidentialite"
+  to = "/confidentialite.html"
+  status = 200
+  force = false
 
-[context.production.environment]
-  NODE_ENV = "production"
+# Catch-all for 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "echo 'Production build'"
+
+[context.deploy-preview]
+  command = "echo 'Deploy preview'"
+
+[headers]
+  [[headers.values]]
+    key = "Cache-Control"
+    value = "public, max-age=3600"
+
+[[headers.values]]
+  key = "X-Content-Type-Options"
+  value = "nosniff"
+
+[[headers.values]]
+  key = "X-Frame-Options"
+  value = "SAMEORIGIN"
+
+[[headers.values]]
+  key = "X-XSS-Protection"
+  value = "1; mode=block"

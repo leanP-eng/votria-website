@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Votria accompagne les PME et artisans d'Occitanie de la formation IA jusqu'au déploiement. Audit, automatisation, RGPD. Diagnostic gratuit.">
+<title>Votria.pro — L'IA utile pour les PME et artisans d'Occitanie</title>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px; --gap: clamp(1.5rem, 5vw, 3rem);
+}
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+}
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+section + section { border-top: 1px solid var(--border); }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
+}
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-cta:active { transform: translateY(0); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+/* Mobile menu */
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== HERO ===== */
+.hero { padding-block: clamp(3rem, 10vw, 6rem); }
+.hero-label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); background: var(--primary-hi); padding: 0.3rem 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 14ch; margin-bottom: 1.25rem; }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 42ch; margin-bottom: 2rem; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary); color: #fff; font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); min-height: 48px; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.4rem; border: 1.5px solid var(--border); color: var(--text); font-weight: 500; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: border-color var(--t), background var(--t); min-height: 48px; }
+.btn-ghost:hover { border-color: var(--primary); background: var(--primary-hi); }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2.5rem; }
+.trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--muted); }
+.trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+
+/* ===== PROBLÈME ===== */
+.section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
+.problems-grid { display: grid; gap: 1rem; }
+@media (min-width: 600px) { .problems-grid { grid-template-columns: repeat(3, 1fr); } }
+.problem-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+.problem-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.problem-card h3 { font-family: 'Satoshi', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+.problem-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+/* ===== OFFRES ===== */
+.offres-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .offres-grid { grid-template-columns: 1fr 1fr; } }
+.offre-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(1.25rem, 4vw, 2rem); display: flex; flex-direction: column; gap: 1rem; transition: box-shadow var(--t); }
+.offre-card:hover { box-shadow: var(--shadow-md); }
+.offre-card.featured { border-color: var(--primary); background: var(--surface-2); }
+.offre-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: var(--primary-hi); color: var(--primary); width: fit-content; }
+.offre-card.featured .offre-badge { background: var(--primary); color: #fff; }
+.offre-card h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 700; color: var(--text); }
+.offre-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.offre-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.offre-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+.offre-list li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 0.05em; }
+.offre-price { font-size: 0.85rem; color: var(--muted); padding-top: 0.5rem; border-top: 1px solid var(--border); }
+.offre-price strong { font-size: 1.1rem; color: var(--text); }
+.offre-cta { margin-top: auto; }
+
+/* ===== MÉTHODE ===== */
+.methode-steps { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+@media (min-width: 600px) { .methode-steps { grid-template-columns: repeat(4,1fr); } }
+.step { background: var(--surface); padding: 1.5rem 1.25rem; }
+.step-num { font-family: 'Boska', Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--primary-hi); line-height: 1; margin-bottom: 0.75rem; }
+[data-theme="dark"] .step-num { color: var(--primary); opacity: 0.3; }
+.step h3 { font-family: 'Satoshi', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+.step p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+/* ===== SECTEURS ===== */
+.tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.tab-btn { font-size: 0.85rem; font-weight: 500; padding: 0.5rem 0.9rem; border-radius: var(--radius-sm); border: 1.5px solid var(--border); color: var(--muted); background: var(--surface); cursor: pointer; transition: all var(--t); min-height: 44px; }
+.tab-btn.active, .tab-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-hi); }
+.tab-panel { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+.tab-panel.active { display: block; }
+.tab-panel h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.tab-panel .panel-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+.panel-usages { display: flex; flex-direction: column; gap: 0.4rem; }
+.panel-usages li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.panel-usages li::before { content: "→"; color: var(--primary); flex-shrink: 0; }
+
+/* ===== CHIFFRES ===== */
+.stats-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+@media (min-width: 600px) { .stats-grid { grid-template-columns: repeat(3,1fr); } }
+.stat { background: var(--surface); padding: 1.75rem 1.5rem; text-align: center; }
+.stat-num { font-family: 'Boska', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
+.stat-label { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+
+/* ===== CTA FINAL ===== */
+.cta-block { background: var(--primary); border-radius: var(--radius-xl); padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem); text-align: center; }
+.cta-block h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); color: #fff; margin-bottom: 0.75rem; }
+.cta-block p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 40ch; margin: 0 auto 2rem; line-height: 1.7; }
+.btn-white { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: var(--primary); font-weight: 700; font-size: 1rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); transition: transform var(--t), box-shadow var(--t); min-height: 52px; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px oklch(0 0 0 / 0.15); }
+.reassurance { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; margin-top: 1.5rem; }
+.reassurance span { font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.4rem; }
+.reassurance span::before { content: "✓"; color: #fff; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Votria.pro accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      Votria
+    </a>
+    <div class="nav-links" role="list">
+      <a href="#offres" role="listitem">Offres</a>
+      <a href="#methode" role="listitem">Méthode</a>
+      <a href="#secteurs" role="listitem">Secteurs</a>
+      <a href="#contact" role="listitem">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta">Diagnostic gratuit</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="#offres">Offres</a>
+    <a href="#methode">Méthode</a>
+    <a href="#secteurs">Secteurs</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero-label">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="6" cy="6" r="6"/></svg>
+      Consultant & Agence IA · Occitanie
+    </div>
+    <h1 id="hero-h1">L'IA utile pour les PME et artisans</h1>
+    <p class="hero-sub">Vous voulez gagner du temps grâce à l'IA mais ne savez pas par où commencer ? Votria vous accompagne de la compréhension jusqu'au déploiement concret.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Diagnostic gratuit — 30 min
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#offres" class="btn-ghost">Découvrir les offres</a>
+    </div>
+    <div class="hero-trust" aria-label="Réassurances">
+      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>Réponse sous 24h</div>
+      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>Sans engagement</div>
+      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>Vous repartez avec une piste concrète</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLÈME -->
+<section aria-labelledby="pb-title">
+  <div class="container">
+    <p class="section-label">Vous reconnaissez-vous ?</p>
+    <h2 class="section-title" id="pb-title">Trois situations courantes</h2>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon" aria-hidden="true"></div>
+        <h3>Trop de temps sur l'administratif</h3>
+        <p>Devis, relances, emails, comptes-rendus… Ces tâches vous volent du temps sur votre vrai métier.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon" aria-hidden="true"></div>
+        <h3>L'IA partout, mais concrètement ?</h3>
+        <p>Les outils existent. Sans accompagnement, difficile de savoir lesquels sont vraiment utiles pour vous.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon" aria-hidden="true"></div>
+        <h3>Quelqu'un de local, qui comprend votre métier</h3>
+        <p>Pas un grand cabinet parisien. Un accompagnateur qui connaît le terrain et intervient chez vous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres" aria-labelledby="offres-title">
+  <div class="container">
+    <p class="section-label">Deux offres</p>
+    <h2 class="section-title" id="offres-title">Quel que soit votre niveau de départ</h2>
+    <p class="section-sub">Commencez là où vous en êtes. Les deux offres font partie d'un même parcours.</p>
+    <div class="offres-grid">
+      <div class="offre-card">
+        <div class="offre-badge">Cap IA</div>
+        <h3>Comprendre &amp; choisir</h3>
+        <p class="offre-desc">Vous débutez avec l'IA. On identifie les bons usages pour votre activité et on vous forme sur vos exemples concrets.</p>
+        <ul class="offre-list" aria-label="Inclus dans Cap IA">
+          <li>Audit de vos processus</li>
+          <li>Identification des 2-3 usages prioritaires</li>
+          <li>Formation sur mesure</li>
+          <li>Feuille de route priorisée</li>
+        </ul>
+        <div class="offre-price"><strong>À partir de 1 200 € HT</strong> · Éligible OPCO/CPF</div>
+        <div class="offre-cta"><a href="#contact" class="btn-ghost" style="width:100%;justify-content:center;">En savoir plus</a></div>
+      </div>
+      <div class="offre-card featured">
+        <div class="offre-badge">Deploy IA</div>
+        <h3>Automatiser &amp; piloter</h3>
+        <p class="offre-desc">Vous savez ce que vous voulez automatiser. On construit la solution, on la déploie et on assure le suivi mensuel.</p>
+        <ul class="offre-list" aria-label="Inclus dans Deploy IA">
+          <li>Audit technique et fonctionnel</li>
+          <li>Déploiement dans votre environnement réel</li>
+          <li>Formation de vos équipes</li>
+          <li>Suivi mensuel inclus</li>
+        </ul>
+        <div class="offre-price"><strong>À partir de 2 800 € HT</strong> · Suivi : 290 €/mois</div>
+        <div class="offre-cta"><a href="#contact" class="btn-primary" style="width:100%;justify-content:center;">Demander un devis</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTHODE -->
+<section id="methode" aria-labelledby="meth-title">
+  <div class="container">
+    <p class="section-label">Notre méthode</p>
+    <h2 class="section-title" id="meth-title">4 étapes, pas de surprise</h2>
+    <div class="methode-steps" role="list">
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">01</div>
+        <h3>Comprendre</h3>
+        <p>On part de votre quotidien réel — pas d'un catalogue d'outils.</p>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3>Identifier</h3>
+        <p>Les 2-3 tâches où l'IA a le plus d'impact immédiat.</p>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3>Déployer</h3>
+        <p>Solution construite sur vos données, testée, mise en production.</p>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">04</div>
+        <h3>Piloter</h3>
+        <p>Suivi mensuel, ajustements, évolutions. Vous n'êtes pas seul.</p>
+      </div>
+    </div>
+    <div style="margin-top:1.25rem;text-align:right">
+      <a href="#contact" style="font-size:0.9rem;color:var(--primary);font-weight:600;display:inline-flex;align-items:center;gap:0.35rem;">Voir la méthode complète <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS -->
+<section id="secteurs" aria-labelledby="sec-title">
+  <div class="container">
+    <p class="section-label">Secteurs</p>
+    <h2 class="section-title" id="sec-title">Des solutions adaptées à votre activité</h2>
+    <div class="tabs" role="tablist" aria-label="Secteurs d'activité">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-artisans" id="tab-artisans">Artisans</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-pme" id="tab-pme">PME</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-btp" id="tab-btp">BTP</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rh" id="tab-rh">RH</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-web" id="tab-web">Web & SEO</button>
+    </div>
+    <div id="panel-artisans" class="tab-panel active" role="tabpanel" aria-labelledby="tab-artisans">
+      <h3>Artisans &amp; TPE</h3>
+      <p class="panel-desc">Récupérez du temps sur l'administratif pour vous concentrer sur votre cœur de métier.</p>
+      <ul class="panel-usages">
+        <li>Devis automatisés depuis une description vocale</li>
+        <li>Relances clients et factures automatiques</li>
+        <li>Tri et réponse aux emails courants</li>
+        <li>Comptes-rendus d'intervention en 2 minutes</li>
+      </ul>
+    </div>
+    <div id="panel-pme" class="tab-panel" role="tabpanel" aria-labelledby="tab-pme">
+      <h3>PME de services</h3>
+      <p class="panel-desc">Libérez vos équipes des tâches répétitives à faible valeur ajoutée.</p>
+      <ul class="panel-usages">
+        <li>Qualification automatique des leads entrants</li>
+        <li>Génération de propositions commerciales</li>
+        <li>Reporting hebdomadaire automatisé</li>
+        <li>Production de contenus et newsletter</li>
+      </ul>
+    </div>
+    <div id="panel-btp" class="tab-panel" role="tabpanel" aria-labelledby="tab-btp">
+      <h3>BTP</h3>
+      <p class="panel-desc">Automatisez la charge documentaire pour rester sur le chantier.</p>
+      <ul class="panel-usages">
+        <li>Documents chantier réglementaires (PPSPS, DICT)</li>
+        <li>Situations de travaux et factures</li>
+        <li>Comptes-rendus depuis notes vocales</li>
+        <li>Suivi des documents sous-traitants</li>
+      </ul>
+    </div>
+    <div id="panel-rh" class="tab-panel" role="tabpanel" aria-labelledby="tab-rh">
+      <h3>RH &amp; Conformité RGPD</h3>
+      <p class="panel-desc">Fluidifiez vos processus RH sans exposer vos données personnelles.</p>
+      <ul class="panel-usages">
+        <li>Onboarding automatisé dès l'arrivée</li>
+        <li>Fiches de poste et offres d'emploi conformes</li>
+        <li>Synthèses d'entretiens et bilans</li>
+        <li>Mise en conformité RGPD native</li>
+      </ul>
+    </div>
+    <div id="panel-web" class="tab-panel" role="tabpanel" aria-labelledby="tab-web">
+      <h3>Web, SEO &amp; Contenu</h3>
+      <p class="panel-desc">Produisez plus de contenu, visible sur Google et dans les IA.</p>
+      <ul class="panel-usages">
+        <li>Stratégie de contenu SEO sur 6-12 mois</li>
+        <li>Production semi-automatisée d'articles et posts</li>
+        <li>Optimisation GEO (référencement dans ChatGPT, Perplexity)</li>
+        <li>Déclinaison multicanal depuis un seul contenu</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section aria-label="Chiffres clés">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">72%</div>
+        <div class="stat-label">des TPE/PME n'ont pas encore franchi le cap de l'IA en 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5–10h</div>
+        <div class="stat-label">gagnées par semaine en moyenne chez nos clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">départements couverts · 09 · 31 · 32 · 81 · 82 · 47</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Pas sûr de savoir par où commencer ?</h2>
+      <p>C'est exactement pour ça que le diagnostic existe. 30 minutes pour voir concrètement ce que l'IA peut faire pour vous.</p>
+      <a href="mailto:contact@votria.pro" class="btn-white">
+        Réserver mon diagnostic gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="reassurance">
+        <span>30 min, sans engagement</span>
+        <span>Réponse sous 24h</span>
+        <span>Au moins une piste concrète</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Votria.pro
+        <span>Consultant &amp; Agence IA · Toulouse · Occitanie</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="#offres">Offres</a>
+        <a href="#methode">Méthode</a>
+        <a href="#secteurs">Secteurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </nav>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    });
+  }
+})();
+
+// Burger menu
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
+})();
+
+// Tabs secteurs
+(function(){
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      if(panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

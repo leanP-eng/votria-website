@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="À propos de Votria : 30 ans d'expérience, consultant IA indépendant basé à Toulouse, intervenant sur 6 départements d'Occitanie.">
+<title>À propos — Votria.pro</title>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px;
+}
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+}
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+section + section { border-top: 1px solid var(--border); }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
+}
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== HERO ===== */
+.hero { padding-block: clamp(3rem, 10vw, 6rem); }
+.hero-label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); background: var(--primary-hi); padding: 0.3rem 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 14ch; margin-bottom: 1.25rem; }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 52ch; margin-bottom: 2rem; line-height: 1.7; }
+
+/* ===== SECTIONS ===== */
+.section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
+
+/* ===== FONDATEUR ===== */
+.founder-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); border-left: 4px solid var(--primary); }
+.founder-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; }
+.founder-card p { color: var(--muted); line-height: 1.8; margin-bottom: 1.25rem; }
+.founder-card ul { list-style: none; padding: 0; }
+.founder-card li { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; color: var(--muted); line-height: 1.6; }
+.founder-card li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+
+/* ===== VALEURS ===== */
+.values-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+.value-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; transition: all var(--t); }
+.value-card:hover { box-shadow: var(--shadow-md); border-color: var(--primary); }
+.value-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.value-card p { color: var(--muted); line-height: 1.7; }
+
+/* ===== EXPERTISE ===== */
+.expertise-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .expertise-grid { grid-template-columns: repeat(2, 1fr); } }
+.expertise-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; border-top: 3px solid var(--primary); }
+.expertise-item h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.expertise-item p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+/* ===== CERTIFICATIONS ===== */
+.cert-list { list-style: none; padding: 0; }
+.cert-list li { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; color: var(--text); }
+.cert-list li::before { content: "→"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+
+/* ===== PARTENAIRES ===== */
+.partners-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+.partner-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
+.partner-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.partner-card p { color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
+
+/* ===== ZONE ===== */
+.zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }
+.zone-badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; }
+.zone-badge .code { font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+.zone-badge .name { color: var(--muted); font-size: 0.9rem; }
+
+/* ===== CTA FINAL ===== */
+.cta-block { background: var(--primary); border-radius: var(--radius-xl); padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem); text-align: center; }
+.cta-block h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); color: #fff; margin-bottom: 0.75rem; }
+.cta-block p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 40ch; margin: 0 auto 2rem; line-height: 1.7; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: var(--primary); font-weight: 700; font-size: 1rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); text-decoration: none; transition: transform var(--t), box-shadow var(--t); min-height: 52px; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px oklch(0 0 0 / 0.15); }
+.reassurance { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; margin-top: 1.5rem; }
+.reassurance span { font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.4rem; }
+.reassurance span::before { content: "✓"; color: #fff; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      Votria
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
+      <a href="/offres" role="listitem">Offres</a>
+      <a href="/methode" role="listitem">Méthode</a>
+      <a href="/#secteurs" role="listitem">Secteurs</a>
+      <a href="/contact" role="listitem">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/contact" class="nav-cta">Diagnostic gratuit</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/methode">Méthode</a>
+    <a href="/#secteurs">Secteurs</a>
+    <a href="/contact">Contact</a>
+    <a href="/contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero-label">À propos de Votria</div>
+    <h1 id="hero-h1">Une expertise terrain au service des PME</h1>
+    <p class="hero-sub">Votria existe parce que les PME ont autant à gagner avec l'IA que les grandes entreprises. Elles n'ont juste pas les mêmes ressources, ni les mêmes besoins.</p>
+  </div>
+</section>
+
+<!-- FONDATEUR -->
+<section aria-labelledby="founder-title">
+  <div class="container">
+    <p class="section-label">Le fondateur</p>
+    <h2 class="section-title" id="founder-title">30 ans d'expérience terrain</h2>
+    <div class="founder-card">
+      <h3>Jean-François Martin</h3>
+      <p>Le fondateur de Votria cumule plus de 30 ans d'expérience dans des environnements très différents : éducation, administration, commerce, accompagnement technico-commercial, management d'équipes, et plus récemment conseil en transformation numérique et conformité RGPD.</p>
+      
+      <p>Cette diversité est le socle de la méthode Votria. Accompagner une PME dans sa transition IA, ça demande de comprendre comment une organisation fonctionne vraiment, quels sont ses points de friction concrets, et comment faire adopter un changement par des équipes qui ont leurs habitudes.</p>
+      
+      <p style="margin-bottom: 2rem;">L'IA est arrivée comme une évidence dans ce parcours : c'est la première technologie qui permet à une entreprise de deux personnes de bénéficier des mêmes leviers de productivité qu'une structure de cent.</p>
+      
+      <p style="margin-bottom: 2rem; font-weight: 700; color: var(--text);">Aujourd'hui, l'activité Votria se structure autour de cinq piliers d'expertise complémentaires :</p>
+      
+      <ul>
+        <li>Intégration IA métier — déploiement d'automatisations et d'agents IA dans les processus réels</li>
+        <li>Formation IA professionnelle — formation pratique sur mesure, orientée usages métier</li>
+        <li>Conformité RGPD — intégration des exigences RGPD dès la conception</li>
+        <li>Automatisation no-code — connexion des outils existants sans développement technique</li>
+        <li>Stratégie SEO & contenu IA — optimisation web et visibilité dans les réponses d'assistants IA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section aria-labelledby="values-title">
+  <div class="container">
+    <p class="section-label">Ce qui guide notre travail</p>
+    <h2 class="section-title" id="values-title">Les valeurs Votria</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>La proximité avant tout</h3>
+        <p>Votria est une structure locale, basée à Toulouse, intervenant sur 6 départements. On connaît les contraintes des PME d'Occitanie parce qu'on travaille avec elles au quotidien.</p>
+      </div>
+      <div class="value-card">
+        <h3>La clarté plutôt que l'impressionnisme</h3>
+        <p>L'IA est souvent survendue avec du jargon. Chez Votria, chaque recommandation est formulée en termes de résultat concret : combien de temps gagné, sur quelle tâche, avec quel outil, à quel coût.</p>
+      </div>
+      <div class="value-card">
+        <h3>L'honnêteté sur les limites de l'IA</h3>
+        <p>L'IA n'est pas une solution miracle. Elle amplifie ce qui fonctionne déjà. Votria dit clairement quand l'IA n'est pas la bonne réponse à un problème.</p>
+      </div>
+      <div class="value-card">
+        <h3>La continuité après la livraison</h3>
+        <p>Trop de projets IA sont abandonnés après le déploiement. Chez Votria, le suivi fait partie intégrante de l'offre. Une solution sans maintenance se dégrade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section aria-labelledby="expertise-title">
+  <div class="container">
+    <p class="section-label">Domaines de spécialité</p>
+    <h2 class="section-title" id="expertise-title">5 piliers d'expertise</h2>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <h4>IA générative</h4>
+        <p>LLMs, agents IA, prompting avancé, intégration dans les processus métier. Utilisation quotidienne de Claude, GPT-4, Gemini.</p>
+      </div>
+      <div class="expertise-item">
+        <h4>Automatisation no-code</h4>
+        <p>Connexion d'outils, workflows automatisés, sans développement technique. Make, n8n, Zapier maîtrisés.</p>
+      </div>
+      <div class="expertise-item">
+        <h4>Formation professionnelle</h4>
+        <p>Formation sur mesure, orientée usages métier, adaptée au niveau de départ. Certification RS 6977 en cours d'obtention.</p>
+      </div>
+      <div class="expertise-item">
+        <h4>Conformité RGPD</h4>
+        <p>Audit RGPD, cartographie des données, mise en conformité des processus IA. Intégration dès la conception, pas en correctif.</p>
+      </div>
+      <div class="expertise-item">
+        <h4>SEO & stratégie contenu</h4>
+        <p>Référencement naturel, GEO (optimisation pour assistants IA), stratégie éditoriale. Visibilité sur les réponses des assistants.</p>
+      </div>
+      <div class="expertise-item">
+        <h4>30 ans de terrain</h4>
+        <p>BTP, administration, commerce, management. Une profondeur professionnelle qui manque à beaucoup de consultants IA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section aria-labelledby="cert-title">
+  <div class="container">
+    <h2 class="section-title" id="cert-title">Certifications</h2>
+    <ul class="cert-list">
+      <li><strong>RS 6977</strong> — Certification formateur (référentiel national reconnaissance compétences formateur)</li>
+      <li><strong>RS 6776</strong> — Certification expert IA obtenue (conception et gestion des stratégies IA)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ZONE GÉOGRAPHIQUE -->
+<section aria-labelledby="zone-title">
+  <div class="container">
+    <h2 class="section-title" id="zone-title">Zone d'intervention</h2>
+    <p class="section-sub">Basé à Toulouse (31), Votria intervient en présentiel et à distance sur 6 départements d'Occitanie.</p>
+    <div class="zone-grid">
+      <div class="zone-badge">
+        <div class="code">09</div>
+        <div class="name">Ariège</div>
+      </div>
+      <div class="zone-badge">
+        <div class="code">31</div>
+        <div class="name">Haute-Garonne</div>
+      </div>
+      <div class="zone-badge">
+        <div class="code">32</div>
+        <div class="name">Gers</div>
+      </div>
+      <div class="zone-badge">
+        <div class="code">81</div>
+        <div class="name">Tarn</div>
+      </div>
+      <div class="zone-badge">
+        <div class="code">82</div>
+        <div class="name">Tarn-et-Garonne</div>
+      </div>
+      <div class="zone-badge">
+        <div class="code">47</div>
+        <div class="name">Lot-et-Garonne</div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; color: var(--muted);">Les missions entièrement à distance sont possibles sur l'ensemble du territoire français, sans perte de qualité d'accompagnement.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Une question ? Un projet ?</h2>
+      <p>Votria est une structure à taille humaine. Quand vous contactez Votria, vous parlez directement au fondateur — pas à un commercial qui transfère votre dossier.</p>
+      <a href="/contact" class="btn-primary">
+        Réserver mon diagnostic gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="reassurance">
+        <span>Vous parlez directement au fondateur</span>
+        <span>Pas d'intermédiaire commercial</span>
+        <span>30 min, sans engagement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Votria.pro
+        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="/">Accueil</a>
+        <a href="/offres">Offres</a>
+        <a href="/methode">Méthode</a>
+        <a href="/#secteurs">Secteurs</a>
+        <a href="/a-propos">À propos</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </nav>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    });
+  }
+})();
+
+// Burger menu
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvrez les offres IA de Votria : Cap IA (formation) et Deploy IA (automatisation). Solutions adaptées aux PME d'Occitanie.">
+<title>Offres — Votria.pro</title>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px; --gap: clamp(1.5rem, 5vw, 3rem);
+}
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+}
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+section + section { border-top: 1px solid var(--border); }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
+}
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-cta:active { transform: translateY(0); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+/* Mobile menu */
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== HERO ===== */
+.hero { padding-block: clamp(3rem, 10vw, 6rem); }
+.hero-label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); background: var(--primary-hi); padding: 0.3rem 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 14ch; margin-bottom: 1.25rem; }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 42ch; margin-bottom: 2rem; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary); color: #fff; font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); min-height: 48px; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.4rem; border: 1.5px solid var(--border); color: var(--text); font-weight: 500; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: border-color var(--t), background var(--t); min-height: 48px; }
+.btn-ghost:hover { border-color: var(--primary); background: var(--primary-hi); }
+
+/* ===== SECTIONS ===== */
+.section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
+
+/* ===== OFFRES GRID ===== */
+.offres-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .offres-grid { grid-template-columns: 1fr 1fr; } }
+.offre-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(1.25rem, 4vw, 2rem); display: flex; flex-direction: column; gap: 1rem; transition: box-shadow var(--t); }
+.offre-card:hover { box-shadow: var(--shadow-md); }
+.offre-card.featured { border-color: var(--primary); background: var(--surface-2); }
+.offre-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: var(--primary-hi); color: var(--primary); width: fit-content; }
+.offre-card.featured .offre-badge { background: var(--primary); color: #fff; }
+.offre-card h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 700; color: var(--text); }
+.offre-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+.offre-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.offre-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+.offre-list li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 0.05em; }
+.offre-price { font-size: 0.85rem; color: var(--muted); padding-top: 0.5rem; border-top: 1px solid var(--border); }
+.offre-price strong { font-size: 1.1rem; color: var(--text); }
+.offre-cta { margin-top: auto; }
+
+/* ===== TABLEAU COMPARATIF ===== */
+.comparison-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; }
+.comparison-table th { background: var(--primary-hi); color: var(--primary); font-weight: 700; border-bottom: 2px solid var(--border); font-size: 0.9rem; }
+.comparison-table td { border-bottom: 1px solid var(--border); }
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table td:first-child { font-weight: 600; color: var(--text); }
+.comparison-table td { color: var(--muted); font-size: 0.9rem; }
+.check { color: var(--primary); font-weight: 700; }
+
+/* ===== FAQ ===== */
+.faq-items { display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; cursor: pointer; transition: all var(--t); }
+.faq-item:hover { border-color: var(--primary); background: var(--surface-2); }
+.faq-item h3 { font-size: 1rem; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; }
+.faq-item h3::after { content: "+"; font-size: 1.5rem; color: var(--primary); transition: transform var(--t); }
+.faq-item.open h3::after { transform: rotate(45deg); }
+.faq-item p { display: none; color: var(--muted); line-height: 1.7; font-size: 0.95rem; }
+.faq-item.open p { display: block; }
+
+/* ===== CTA FINAL ===== */
+.cta-block { background: var(--primary); border-radius: var(--radius-xl); padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem); text-align: center; }
+.cta-block h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); color: #fff; margin-bottom: 0.75rem; }
+.cta-block p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 40ch; margin: 0 auto 2rem; line-height: 1.7; }
+.btn-white { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: var(--primary); font-weight: 700; font-size: 1rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); transition: transform var(--t), box-shadow var(--t); min-height: 52px; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px oklch(0 0 0 / 0.15); }
+.reassurance { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; margin-top: 1.5rem; }
+.reassurance span { font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.4rem; }
+.reassurance span::before { content: "✓"; color: #fff; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      Votria
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
+      <a href="/offres" role="listitem">Offres</a>
+      <a href="/#methode" role="listitem">Méthode</a>
+      <a href="/#secteurs" role="listitem">Secteurs</a>
+      <a href="/#contact" role="listitem">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta">Diagnostic gratuit</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/#methode">Méthode</a>
+    <a href="/#secteurs">Secteurs</a>
+    <a href="/#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero-label">Nos offres IA</div>
+    <h1 id="hero-h1">Deux parcours complémentaires</h1>
+    <p class="hero-sub">Cap IA pour comprendre. Deploy IA pour automatiser. Choisissez le chemin qui correspond à votre situation.</p>
+  </div>
+</section>
+
+<!-- OFFRES DÉTAIL -->
+<section aria-labelledby="offres-title">
+  <div class="container">
+    <h2 class="section-title" id="offres-title">Découvrez nos offres</h2>
+    <div class="offres-grid">
+      <div class="offre-card">
+        <div class="offre-badge">Cap IA</div>
+        <h3>Je veux comprendre l'IA</h3>
+        <p class="offre-desc">Pour les entreprises qui débutent avec l'IA. Pas besoin d'expertise technique. On vous accompagne de la compréhension à l'action.</p>
+        <ul class="offre-list">
+          <li>Audit 1h30 sur votre activité</li>
+          <li>Formation pratique sur mesure</li>
+          <li>Feuille de route personnalisée</li>
+          <li>Support 30 jours par messagerie</li>
+          <li>Pas de jargon, juste du concret</li>
+        </ul>
+        <div class="offre-price">À partir de <strong>490€ HT</strong><br/><span style="font-size: 0.8rem;">(demi-journée) ou 890€ (journée complète)</span></div>
+        <a href="#contact" class="btn-primary offre-cta">Réserver mon audit Cap IA</a>
+      </div>
+
+      <div class="offre-card featured">
+        <div class="offre-badge">Deploy IA</div>
+        <h3>Je veux automatiser maintenant</h3>
+        <p class="offre-desc">Pour les PME prêtes à déployer concrètement. On construit la solution, on la teste, on la met en production.</p>
+        <ul class="offre-list">
+          <li>Audit complet de déploiement</li>
+          <li>Construction de la solution adaptée</li>
+          <li>Mise en production et tests</li>
+          <li>Prise en main par vos équipes</li>
+          <li>Suivi mensuel pendant 3+ mois</li>
+        </ul>
+        <div class="offre-price"><strong>À partir de 1500€ HT</strong> <span style="color: var(--muted);">+ 250€ HT/mois</span><br/><span style="font-size: 0.8rem;">Pour une automatisation simple. Budget sur devis selon l'ampleur du travail. Coût Cap IA déduit si déjà réalisé.</span></div>
+        <a href="#contact" class="btn-primary offre-cta">Demander un devis Deploy IA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS NATUREL -->
+<section aria-labelledby="parcours-title">
+  <div class="container">
+    <h2 class="section-title" id="parcours-title">Le parcours naturel</h2>
+    <p class="section-sub">Cap IA et Deploy IA sont liés. Vous commencez par Cap IA, vous comprenez précisément ce dont vous avez besoin. Puis vous passez à Deploy IA, et on ne repart pas de zéro — on connaît déjà votre activité.</p>
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <div style="background: var(--primary-hi); color: var(--primary); padding: 1rem 1.5rem; border-radius: var(--radius-md); font-weight: 700;">Cap IA</div>
+        <div style="color: var(--muted); font-weight: 700;">→</div>
+        <div style="background: var(--primary-hi); color: var(--primary); padding: 1rem 1.5rem; border-radius: var(--radius-md); font-weight: 700;">Deploy IA</div>
+      </div>
+      <p style="margin-top: 1.5rem; color: var(--muted);">Continuité garantie. Les 490€ de Cap IA sont déduits du devis Deploy IA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TABLEAU COMPARATIF -->
+<section aria-labelledby="compare-title">
+  <div class="container">
+    <h2 class="section-title" id="compare-title">Tableau comparatif</h2>
+    <div style="overflow-x: auto;">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cap IA</th>
+            <th>Deploy IA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Audit initial</td>
+            <td class="check">Inclus</td>
+            <td class="check">Inclus</td>
+          </tr>
+          <tr>
+            <td>Formation/formation équipes</td>
+            <td class="check">Oui</td>
+            <td class="check">Oui</td>
+          </tr>
+          <tr>
+            <td>Construction de solution</td>
+            <td>Non</td>
+            <td class="check">Inclus</td>
+          </tr>
+          <tr>
+            <td>Mise en production</td>
+            <td>Non</td>
+            <td class="check">Inclus</td>
+          </tr>
+          <tr>
+            <td>Suivi mensuel</td>
+            <td>30 jours seulement</td>
+            <td class="check">3+ mois</td>
+          </tr>
+          <tr>
+            <td>Durée</td>
+            <td>1-2 semaines</td>
+            <td>2-8 semaines</td>
+          </tr>
+          <tr>
+            <td>Budget</td>
+            <td>490-890€</td>
+            <td>1500€ + 250€/mois</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq-offres" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 class="section-title" id="faq-title">Questions fréquentes sur les offres</h2>
+    <div class="faq-items">
+      <div class="faq-item">
+        <h3>Est-ce que je dois commencer par Cap IA ?</h3>
+        <p>Non obligatoirement. Si vous savez déjà ce que vous voulez automatiser, vous pouvez directement passer à Deploy IA. Cap IA c'est pour les entreprises qui débutent et qui ont besoin de comprendre les possibilités avant de se lancer.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Peut-on combiner Cap IA et Deploy IA ?</h3>
+        <p>Oui, c'est même recommandé. Vous faites Cap IA (1-2 semaines), vous identifiez les usages prioritaires, puis vous basculez à Deploy IA. Le coût de Cap IA est déduit du devis Deploy IA.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quels outils utilisez-vous pour Deploy IA ?</h3>
+        <p>On utilise les meilleurs outils selon votre besoin : Make, n8n, Zapier, Claude, GPT-4, Gemini. Ce n'est jamais un choix commercial — toujours un choix technique basé sur votre situation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Est-ce que ma situation est finançable (OPCO, CPF) ?</h3>
+        <p>Cap IA peut être pris en charge par votre OPCO ou d'autres organismes selon votre secteur et les règles de prise en charge. Pour cela, nous travaillons avec un organisme certifié QUALIOPI aux références irréprochables. Le terrain, c'est nous. La prise en charge, c'est eux. Zéro frais cachés, zéro administratif compliqué — on gère tout.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Combien de temps avant d'avoir des résultats ?</h3>
+        <p>Cap IA : plan d'action clair dès la fin de la journée. Deploy IA : les premières automations tournent en 2-6 semaines selon le périmètre, avec des résultats visibles dès le premier mois.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quel est le suivi après le déploiement ?</h3>
+        <p>Deploy IA inclut un suivi mensuel de 3+ mois minimum : point de 30-45 min, ajustements si besoin, optimisations. Vous n'êtes jamais seul face à la solution. Après ces 3 mois, on réévalue ensemble ce dont vous avez besoin.</p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Pas sûr de quelle offre choisir ?</h2>
+      <p>C'est exactement pour ça que le diagnostic existe. 30 minutes pour voir concrètement ce que chaque offre peut faire pour vous.</p>
+      <a href="mailto:contact@votria.pro" class="btn-white">
+        Réserver mon diagnostic gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="reassurance">
+        <span>30 min, sans engagement</span>
+        <span>Réponse sous 24h</span>
+        <span>Au moins une piste concrète</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Votria.pro
+        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="/">Accueil</a>
+        <a href="/offres">Offres</a>
+        <a href="/#methode">Méthode</a>
+        <a href="/#secteurs">Secteurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </nav>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    });
+  }
+})();
+
+// Burger menu
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
+})();
+
+// FAQ toggle
+(function(){
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

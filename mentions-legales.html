@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mentions légales — Votria.pro">
+<title>Mentions légales — Votria.pro</title>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px;
+}
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+}
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
+}
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== LEGAL CONTENT ===== */
+.legal-section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+.legal-section h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.legal-disclaimer { font-size: 0.9rem; color: var(--muted); font-style: italic; text-align: center; margin-bottom: 3rem; }
+.legal-section h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem; }
+.legal-section p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+.legal-section strong { color: var(--text); font-weight: 700; }
+.legal-section ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+.legal-section li { padding-left: 20px; margin-bottom: 0.75rem; position: relative; color: var(--muted); line-height: 1.7; }
+.legal-section li::before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      Votria
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
+      <a href="/offres" role="listitem">Offres</a>
+      <a href="/methode" role="listitem">Méthode</a>
+      <a href="/#secteurs" role="listitem">Secteurs</a>
+      <a href="/contact" role="listitem">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/contact" class="nav-cta">Diagnostic gratuit</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/methode">Méthode</a>
+    <a href="/#secteurs">Secteurs</a>
+    <a href="/contact">Contact</a>
+    <a href="/contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- LEGAL CONTENT -->
+<section class="legal-section">
+  <div class="container">
+    <h1>Mentions légales</h1>
+    <p class="legal-disclaimer">Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique (LCEN).</p>
+
+    <h2>1. Éditeur du site</h2>
+    <p>
+      <strong>Responsable :</strong> Jean-François Martin<br/>
+      <strong>Forme juridique :</strong> Entrepreneur individuel<br/>
+      <strong>Nom commercial :</strong> Votria.pro<br/>
+      <strong>SIRET :</strong> 49898266000059<br/>
+      <strong>APE :</strong> 6202A — Conseil en systèmes et logiciels informatiques<br/>
+      <strong>Adresse :</strong> rue George Sand, 32600 L'Isle-Jourdain, France<br/>
+      <strong>Email :</strong> contact@votria.pro<br/>
+      <strong>Directeur de la publication :</strong> Jean-François Martin
+    </p>
+
+    <h2>2. Hébergeur du site</h2>
+    <p>
+      <strong>Netlify Inc.</strong><br/>
+      2325 3rd Street, Suite 215<br/>
+      San Francisco, CA 94107<br/>
+      États-Unis<br/>
+      <br/>
+      Site web : <a href="https://www.netlify.com" target="_blank">www.netlify.com</a>
+    </p>
+
+    <h2>3. Propriété intellectuelle</h2>
+    <p>
+      L'ensemble du contenu de ce site (textes, images, visuels, logos, structure, mise en page) est la propriété exclusive de Jean-François Martin / Votria.pro, sauf mention contraire expresse.
+    </p>
+    <p>
+      Toute reproduction, représentation, modification, publication ou transmission de tout ou partie du contenu du site, par quelque moyen que ce soit, est interdite sans l'autorisation préalable et écrite de l'éditeur, sous peine de poursuites judiciaires.
+    </p>
+
+    <h2>4. Responsabilité</h2>
+    <p>
+      Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour. Cependant, il peut contenir des inexactitudes, des omissions ou des lacunes. Si vous constatez une lacune, erreur ou dysfonctionnement, merci de le signaler par email à contact@votria.pro.
+    </p>
+    <p>
+      Votria.pro ne pourra être tenu responsable des dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site, résultant d'une utilisation d'un matériel non conforme aux spécifications indiquées, ou de l'apparition d'un bug ou d'une incompatibilité.
+    </p>
+
+    <h2>5. Liens hypertextes</h2>
+    <p>
+      Le site peut contenir des liens hypertextes vers d'autres sites. Ces liens sont proposés à titre informatif. Votria.pro n'exerce aucun contrôle sur ces sites tiers et décline toute responsabilité quant à leur contenu.
+    </p>
+
+    <h2>6. Droit applicable et juridiction compétente</h2>
+    <p>
+      Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront compétents, sous réserve d'une attribution de compétence spécifique découlant d'un texte de loi ou réglementaire particulier.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>
+      Pour toute question relative aux présentes mentions légales :<br/>
+      <strong>Email :</strong> contact@votria.pro<br/>
+      <strong>Adresse :</strong> rue George Sand, 32600 L'Isle-Jourdain, France
+    </p>
+
+    <p style="margin-top: 3rem; color: var(--faint); font-size: 0.9rem;">
+      <em>Dernière mise à jour : Décembre 2026</em>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Votria.pro
+        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="/">Accueil</a>
+        <a href="/offres">Offres</a>
+        <a href="/methode">Méthode</a>
+        <a href="/#secteurs">Secteurs</a>
+        <a href="/a-propos">À propos</a>
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/confidentialite">Confidentialité</a>
+      </nav>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    });
+  }
+})();
+
+// Burger menu
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
+})();
+</script>
+
+</body>
+</html>

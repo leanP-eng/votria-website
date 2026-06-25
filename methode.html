@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvrez la méthode Votria : 4 étapes simples de l'audit au pilotage. Consultant et agence IA pour PME d'Occitanie.">
+<title>Notre méthode — Votria.pro</title>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px;
+}
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+}
+
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+section + section { border-top: 1px solid var(--border); }
+
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
+}
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+/* Mobile menu */
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== HERO ===== */
+.hero { padding-block: clamp(3rem, 10vw, 6rem); }
+.hero-label { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary); background: var(--primary-hi); padding: 0.3rem 0.75rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 14ch; margin-bottom: 1.25rem; }
+.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 52ch; margin-bottom: 2rem; line-height: 1.7; }
+
+/* ===== SECTIONS ===== */
+.section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
+
+/* ===== 4 ÉTAPES ===== */
+.steps-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 640px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .steps-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; } }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; transition: all var(--t); }
+.step:hover { box-shadow: var(--shadow-md); border-color: var(--primary); }
+.step-num { font-family: 'Boska', Georgia, serif; font-size: 2.25rem; font-weight: 700; color: var(--primary); opacity: 0.8; margin-bottom: 0.75rem; line-height: 1; }
+.step h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.step p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+.step-content { font-size: 0.9rem; color: var(--muted); }
+.step-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-top: 1rem; margin-bottom: 0.5rem; }
+.step-content ul { list-style: none; padding: 0; margin-bottom: 0.75rem; }
+.step-content li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.5; }
+.step-content li::before { content: "→"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+
+/* ===== CONCEPT HYBRIDE ===== */
+.hybrid-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); }
+.hybrid-boxes { display: grid; gap: 1.5rem; margin: 2rem 0; }
+@media (min-width: 640px) { .hybrid-boxes { grid-template-columns: 1fr 1fr; } }
+.hybrid-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; border-left: 4px solid var(--primary); }
+.hybrid-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.hybrid-box p { color: var(--muted); line-height: 1.6; }
+
+/* ===== CE QUE VOTRIA N'EST PAS ===== */
+.not-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .not-grid { grid-template-columns: repeat(2, 1fr); } }
+.not-card { background: #fff3cd; border: 1px solid #ffc107; border-radius: var(--radius-lg); padding: 1.5rem; border-left: 4px solid #ffc107; }
+[data-theme="dark"] .not-card { background: #3a3200; border-color: #6b5d00; }
+.not-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+.not-card p { color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
+
+/* ===== ENGAGEMENTS ===== */
+.commitments-grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .commitments-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .commitments-grid { grid-template-columns: repeat(3, 1fr); } }
+.commitment { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; border-top: 3px solid var(--primary); }
+.commitment h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.commitment p { color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
+
+/* ===== PARCOURS TIMELINE ===== */
+.timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+.timeline-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; border-left: 4px solid var(--primary); display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
+.timeline-marker { font-size: 1.5rem; }
+.timeline-item h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.timeline-item p { color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
+
+/* ===== CTA FINAL ===== */
+.cta-block { background: var(--primary); border-radius: var(--radius-xl); padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 3rem); text-align: center; }
+.cta-block h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); color: #fff; margin-bottom: 0.75rem; }
+.cta-block p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 40ch; margin: 0 auto 2rem; line-height: 1.7; }
+.btn-white { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: var(--primary); font-weight: 700; font-size: 1rem; padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); transition: transform var(--t), box-shadow var(--t); min-height: 52px; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px oklch(0 0 0 / 0.15); }
+.reassurance { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; margin-top: 1.5rem; }
+.reassurance span { font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.4rem; }
+.reassurance span::before { content: "✓"; color: #fff; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      Votria
+    </a>
+    <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
+      <a href="/offres" role="listitem">Offres</a>
+      <a href="/methode" role="listitem">Méthode</a>
+      <a href="/#secteurs" role="listitem">Secteurs</a>
+      <a href="#contact" role="listitem">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="nav-cta">Diagnostic gratuit</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/methode">Méthode</a>
+    <a href="/#secteurs">Secteurs</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero-label">Comment on travaille</div>
+    <h1 id="hero-h1">Une méthode claire, sans jargon</h1>
+    <p class="hero-sub">Beaucoup d'entreprises se lancent dans l'IA sans méthode. Elles testent des outils, abandonnent après quelques semaines. Ce n'est pas un problème d'outil. C'est un problème de méthode.</p>
+  </div>
+</section>
+
+<!-- 4 ÉTAPES -->
+<section aria-labelledby="steps-title">
+  <div class="container">
+    <p class="section-label">Le processus</p>
+    <h2 class="section-title" id="steps-title">4 étapes complémentaires</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Comprendre votre activité</h3>
+        <p>On part de votre réalité : ce qui prend du temps, ce qui génère des erreurs, ce qui pourrait être mieux structuré.</p>
+        <div class="step-content">
+          <h4>Ce que vous faites</h4>
+          <p>Un échange 1h-1h30, en présentiel ou à distance. Juste votre disponibilité — rien à préparer.</p>
+          <h4>Ce qu'on produit</h4>
+          <p>Cartographie de vos processus + première identification des zones où l'IA peut intervenir avec un impact mesurable.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Identifier les bons usages</h3>
+        <p>On ne cherche pas à tout automatiser. On cherche les 2-3 tâches où l'IA peut vous faire gagner du temps immédiatement.</p>
+        <div class="step-content">
+          <h4>Les 3 critères</h4>
+          <ul>
+            <li>Tâche répétitive et qui prend du temps régulièrement</li>
+            <li>L'IA peut la réaliser avec un niveau de qualité acceptable</li>
+            <li>Le gain est mesurable (heures, coût, réduction d'erreurs)</li>
+          </ul>
+          <h4>Ce que vous vivez</h4>
+          <p>On vous présente 2-3 recommandations, argumentées et hiérarchisées. Vous décidez ensemble ce qu'on priorise.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Déployer la solution</h3>
+        <p>On construit la solution IA adaptée : automatisation, agent IA, connexion entre outils, formation des équipes.</p>
+        <div class="step-content">
+          <h4>Chaque solution est</h4>
+          <ul>
+            <li>Construite sur vos données réelles, pas des démos</li>
+            <li>Testée avant mise en production</li>
+            <li>Validée avec vous avant le déploiement final</li>
+            <li>Documentée simplement pour vos équipes</li>
+          </ul>
+          <h4>La durée</h4>
+          <p>2 à 8 semaines selon le périmètre. Vous êtes impliqué, pas exclu.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Piloter dans la durée</h3>
+        <p>L'IA n'est pas un projet qu'on livre et qu'on oublie. On fait le point chaque mois.</p>
+        <div class="step-content">
+          <h4>Ce que vous vivez</h4>
+          <p>Point mensuel de 30-45 min. Support réactif entre les points. Vous n'êtes jamais seul.</p>
+          <h4>Ce que ça vous apporte</h4>
+          <ul>
+            <li>Solution qui s'améliore au fil des retours terrain</li>
+            <li>Montée en compétences de vos équipes</li>
+            <li>Partenaire qui anticipe, pas seulement qui réagit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT HYBRIDE -->
+<section aria-labelledby="hybrid-title">
+  <div class="container">
+    <p class="section-label">Pourquoi</p>
+    <h2 class="section-title" id="hybrid-title">Consultant ou agence IA — les deux</h2>
+    <div class="hybrid-section">
+      <p style="color: var(--muted); line-height: 1.7;">La plupart des prestataires font l'un ou l'autre : soit ils forment, soit ils déploient. Votria fait les deux, parce que les PME n'ont pas toutes le même niveau de départ.</p>
+      <div class="hybrid-boxes">
+        <div class="hybrid-box">
+          <h3>Si vous débutez avec l'IA</h3>
+          <p>Vous avez besoin d'un consultant qui prend le temps de comprendre votre métier, qui vous explique sans jargon. C'est le rôle de Votria en mode Cap IA.</p>
+        </div>
+        <div class="hybrid-box">
+          <h3>Si vous êtes prêt à automatiser</h3>
+          <p>Vous avez besoin d'une agence qui construit, connecte et fait tourner la solution. C'est le rôle de Votria en mode Deploy IA.</p>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; color: var(--muted); line-height: 1.7;">Les deux modes sont liés. Un client qui commence par Cap IA connaît précisément ses besoins. Quand il passe à Deploy IA, on ne repart pas de zéro — on connaît déjà son activité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE VOTRIA N'EST PAS -->
+<section aria-labelledby="not-title">
+  <div class="container">
+    <h2 class="section-title" id="not-title">Ce que Votria n'est pas</h2>
+    <div class="not-grid">
+      <div class="not-card">
+        <h3>Pas un revendeur de licences</h3>
+        <p>On ne touche pas de commission. Les solutions sont choisies uniquement en fonction de votre besoin, pas d'un partenariat commercial.</p>
+      </div>
+      <div class="not-card">
+        <h3>Pas une agence qui disparaît</h3>
+        <p>Le suivi mensuel fait partie intégrante de chaque mission. Une solution sans maintenance se dégrade. On reste présent après le déploiement.</p>
+      </div>
+      <div class="not-card">
+        <h3>Pas un consultant qui vend des slides</h3>
+        <p>Les recommandations sont toujours accompagnées d'une mise en pratique. On livre une solution qui tourne, pas un rapport de 40 pages.</p>
+      </div>
+      <div class="not-card">
+        <h3>Pas une solution générique</h3>
+        <p>Chaque mission commence par un audit. Chaque solution est construite sur vos processus, vos outils, vos données. Pas de template.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section aria-labelledby="commit-title">
+  <div class="container">
+    <h2 class="section-title" id="commit-title">Les engagements Votria</h2>
+    <div class="commitments-grid">
+      <div class="commitment">
+        <h3>Proximité</h3>
+        <p>On intervient en présentiel sur 6 départements. Quand c'est utile d'être sur place, on est sur place.</p>
+      </div>
+      <div class="commitment">
+        <h3>Clarté</h3>
+        <p>On traduit les concepts techniques en bénéfices concrets. Vous n'avez pas besoin de comprendre comment ça marche, juste ce que ça fait pour vous.</p>
+      </div>
+      <div class="commitment">
+        <h3>Résultats mesurables</h3>
+        <p>Chaque mission commence avec des indicateurs de succès : heures gagnées, volume traité, taux d'erreur réduit. On mesure ce qu'on a promis.</p>
+      </div>
+      <div class="commitment">
+        <h3>Conformité RGPD intégrée</h3>
+        <p>L'IA traite souvent des données sensibles. On intègre les exigences RGPD dès la conception, pas en correctif après coup.</p>
+      </div>
+      <div class="commitment">
+        <h3>Indépendance des outils</h3>
+        <p>On recommande les outils qui correspondent à votre besoin. Si un outil gratuit fait le travail, on vous le dit.</p>
+      </div>
+      <div class="commitment">
+        <h3>Continuité après mission</h3>
+        <p>La relation ne s'arrête pas à la livraison. Support, ajustements, évolutions — vous bénéficiez d'un interlocuteur stable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS TIMELINE -->
+<section aria-labelledby="journey-title">
+  <div class="container">
+    <h2 class="section-title" id="journey-title">Le parcours type d'un client Votria</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">📞</div>
+        <div>
+          <h3>Semaine 1 — Diagnostic gratuit (30 min)</h3>
+          <p>Premier échange pour identifier votre situation et l'offre qui correspond. Gratuit, sans engagement.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">🔍</div>
+        <div>
+          <h3>Semaine 1-2 — Audit</h3>
+          <p>Cartographie de vos processus, identification des 2-3 usages IA prioritaires. Point de départ de toute mission.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">📚</div>
+        <div>
+          <h3>Semaine 2-3 — Formation ou cadrage</h3>
+          <p>Cap IA : formation pratique sur mesure + feuille de route. Deploy IA : cadrage technique et fonctionnel de la solution.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">⚙️</div>
+        <div>
+          <h3>Semaine 3 à 8 — Déploiement (Deploy IA uniquement)</h3>
+          <p>Construction, tests, mise en production, prise en main par vos équipes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">📊</div>
+        <div>
+          <h3>Mois suivants — Suivi mensuel</h3>
+          <p>Point mensuel, ajustements, optimisations. La solution évolue avec votre activité.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Prêt à découvrir ce que l'IA peut faire pour vous ?</h2>
+      <p>La méthode Votria commence toujours de la même façon : un diagnostic gratuit de 30 minutes. En un seul échange, on identifie ensemble ce qui prend le plus de temps dans votre activité, les usages IA prioritaires, et l'offre qui correspond à votre situation.</p>
+      <a href="mailto:contact@votria.pro" class="btn-white">
+        Réserver mon diagnostic gratuit
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="reassurance">
+        <span>30 min, sans engagement</span>
+        <span>Pas de présentation commerciale</span>
+        <span>Vous repartez avec au moins une piste</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Votria.pro
+        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens footer">
+        <a href="/">Accueil</a>
+        <a href="/offres">Offres</a>
+        <a href="/methode">Méthode</a>
+        <a href="/#secteurs">Secteurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </nav>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    });
+  }
+})();
+
+// Burger menu
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
+})();
+</script>
+
+</body>
+</html>
