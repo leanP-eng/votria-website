@@ -186,6 +186,7 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
       <a href="/" role="listitem">Accueil</a>
       <a href="/offres" role="listitem">Offres</a>
       <a href="/methode" role="listitem">Méthode</a>
+      <a href="/a-propos" role="listitem">À propos</a>
       <a href="/#secteurs" role="listitem">Secteurs</a>
       <a href="/contact" role="listitem">Contact</a>
     </div>
@@ -203,6 +204,7 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
     <a href="/">Accueil</a>
     <a href="/offres">Offres</a>
     <a href="/methode">Méthode</a>
+    <a href="/a-propos">À propos</a>
     <a href="/#secteurs">Secteurs</a>
     <a href="/contact">Contact</a>
     <a href="/contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
@@ -226,27 +228,13 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
     <h2 class="section-title" id="form-title">Remplissez ce formulaire</h2>
     
     <!-- MESSAGE "JE NE SAIS PAS" -->
-    <div class="not-sure-message" id="notSureMessage" style="display: none; background: var(--primary-hi); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; margin-bottom: 2rem;">
-      <h3 style="color: var(--primary); margin-bottom: 0.75rem; font-size: 1.1rem;">Nous vous proposons de prendre le temps</h3>
-      <p style="color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7;">Avant de nous contacter, découvrez nos deux offres en détail. Ces documents expliquent clairement la différence entre Cap IA et Deploy IA, avec tarifs, contenus et timeline.</p>
-      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-        <a href="/documents/votria-cap-ia.pdf" download class="btn-download" style="display: inline-block; background: var(--primary); color: white; padding: 0.85rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; text-decoration: none; transition: background var(--t); white-space: nowrap;">
-          Télécharger Cap IA
-        </a>
-        <a href="/documents/votria-deploy-ia.pdf" download class="btn-download" style="display: inline-block; background: var(--primary); color: white; padding: 0.85rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; text-decoration: none; transition: background var(--t); white-space: nowrap;">
-          Télécharger Deploy IA
-        </a>
-      </div>
-      <p style="color: var(--muted); margin-top: 1.5rem; font-size: 0.9rem;">Vous avez des questions après ? <a href="mailto:contact@votria.pro" style="color: var(--primary); font-weight: 600;">Écrivez-nous</a></p>
-    </div>
-
     <div class="form-section" id="formSection">
       <form id="contactForm" class="form-grid">
         <div class="form-group full">
           <label>Votre situation *</label>
           <div class="form-radios">
             <label class="radio-label">
-              <input type="radio" name="situation" value="cap" required />
+              <input type="radio" name="situation" value="cap" checked required />
               Je veux comprendre (Cap IA)
             </label>
             <label class="radio-label">
@@ -254,13 +242,13 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
               Je veux automatiser (Deploy IA)
             </label>
             <label class="radio-label">
-              <input type="radio" name="situation" value="notsure" />
-              Je ne sais pas encore
+              <input type="radio" name="situation" value="documentation" />
+              Je souhaite recevoir une documentation
             </label>
           </div>
         </div>
 
-        <div id="formFields" style="display: none; grid-column: 1 / -1;">
+        <div id="formFields" style="display: grid; grid-column: 1 / -1;">
           <div class="form-group">
             <label for="firstName">Prénom *</label>
             <input type="text" id="firstName" name="firstName" />
@@ -507,36 +495,36 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   const formFields = document.getElementById('formFields');
-  const notSureMessage = document.getElementById('notSureMessage');
   const situationRadios = document.querySelectorAll('input[name="situation"]');
-  const n8nWebhook = 'https://lean-parform.app.n8n.cloud/webhook-test/votria-contact-form';
+  const n8nWebhook = 'https://lean-parform.app.n8n.cloud/webhook/votria-contact-form';
   
   if(!form) return;
   
   // Show/hide form fields based on selection
   situationRadios.forEach(radio => {
     radio.addEventListener('change', () => {
-      if(radio.value === 'notsure') {
-        formFields.style.display = 'none';
-        notSureMessage.style.display = 'block';
-        // Remove required from all inputs
-        form.querySelectorAll('input[required], select[required], textarea[required]').forEach(el => {
-          el.removeAttribute('required');
-        });
-      } else {
-        formFields.style.display = 'grid';
-        notSureMessage.style.display = 'none';
-        // Add required to cap/deploy paths - avec vérification
-        const elementsToRequire = ['firstName', 'lastName', 'email', 'company', 'sector', 'employees', 'department'];
-        elementsToRequire.forEach(id => {
-          const el = document.getElementById(id);
-          if(el) el.setAttribute('required', 'required');
-        });
-        const consentEl = document.querySelector('input[name="consent"]');
-        if(consentEl) consentEl.setAttribute('required', 'required');
-      }
+      // Toutes les situations affichent le formulaire complet.
+      // Rien n'est envoyé sans que la fiche contact soit remplie.
+      formFields.style.display = 'grid';
+      const elementsToRequire = ['firstName', 'lastName', 'email', 'company', 'sector', 'employees', 'department'];
+      elementsToRequire.forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.setAttribute('required', 'required');
+      });
+      const consentEl = document.querySelector('input[name="consent"]');
+      if(consentEl) consentEl.setAttribute('required', 'required');
     });
   });
+
+  // Initialisation : le formulaire est visible et requis dès le chargement
+  (function initRequired(){
+    ['firstName','lastName','email','company','sector','employees','department'].forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.setAttribute('required', 'required');
+    });
+    const consentEl = document.querySelector('input[name="consent"]');
+    if(consentEl) consentEl.setAttribute('required', 'required');
+  })();
   
   // Form submission
   form.addEventListener('submit', async (e) => {
