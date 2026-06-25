@@ -1,0 +1,37 @@
+# Configuration Votria.pro — site statique HTML pur
+# Pas de build : les fichiers HTML sont publiés tels quels depuis la racine.
+
+[build]
+  publish = "."
+  command = "echo 'Site statique - aucun build necessaire'"
+
+# URLs propres : /contact au lieu de /contact.html
+[[redirects]]
+  from = "/offres"
+  to = "/offres.html"
+  status = 200
+
+[[redirects]]
+  from = "/methode"
+  to = "/methode.html"
+  status = 200
+
+[[redirects]]
+  from = "/a-propos"
+  to = "/a-propos.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 200
+
+[[redirects]]
+  from = "/confidentialite"
+  to = "/confidentialite.html"
+  status = 200
