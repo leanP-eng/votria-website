@@ -1,14 +1,6 @@
-# Netlify Redirects - Clean URLs without .html extension
-
 /offres              /offres.html              200
 /methode             /methode.html             200
 /a-propos            /a-propos.html            200
 /contact             /contact.html             200
 /mentions-legales    /mentions-legales.html    200
 /confidentialite     /confidentialite.html     200
-
-# API webhook - allow external access
-/webhook-test/*      https://lean-parform.app.n8n.cloud/webhook-test/:splat  200
-
-# Catch-all for 404 - serve index.html
-/*                   /index.html               200
