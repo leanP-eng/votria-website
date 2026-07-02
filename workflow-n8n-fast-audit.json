@@ -1,0 +1,106 @@
+{
+  "name": "VotrIA — Fast Audit",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fast-audit",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "name": "Webhook Fast Audit",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 400],
+      "webhookId": "fa570001-fast-4000-8000-audit00000001"
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $input.first().json;\n\n// Colonnes Google Sheet : date, type, qualification, score, prenom, entreprise, email, tel, secteur, effectif, urgence, douleurs, changement, timing\nreturn [{\n  json: {\n    date:          d.date || new Date().toISOString(),\n    type:          d.type || '',\n    qualification: d.qualification || '',\n    score:         d.score !== undefined ? String(d.score) : '',\n    prenom:        d.prenom || '',\n    entreprise:    d.entreprise || '',\n    email:         d.email || '',\n    tel:           d.tel || '',\n    secteur:       d.secteur || '',\n    effectif:      d.effectif || '',\n    urgence:       d.urgence || '',\n    douleurs:      d.douleurs || '',\n    changement:    d.changement || '',\n    timing:        d.timing || ''\n  }\n}];"
+      },
+      "name": "Mapper 14 colonnes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 400]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1UNTOfd4EmgXiT3zT9mQp-c5tqZEKsDRLfbx-ZMA2zO8",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "VotrIA — Fast Audit",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "name": "Google Sheets — Fast Audit",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [680, 400],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "2",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({success: true, message: 'Audit enregistré.'}) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "name": "Réponse OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 400]
+    }
+  ],
+  "connections": {
+    "Webhook Fast Audit": {
+      "main": [[{"node": "Mapper 14 colonnes", "type": "main", "index": 0}]]
+    },
+    "Mapper 14 colonnes": {
+      "main": [[{"node": "Google Sheets — Fast Audit", "type": "main", "index": 0}]]
+    },
+    "Google Sheets — Fast Audit": {
+      "main": [[{"node": "Réponse OK", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "versionId": "fa570001-fast-4372-a567-audit0000001",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": ""
+  },
+  "id": "votria-fast-audit",
+  "tags": []
+}
