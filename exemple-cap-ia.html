@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Exemple fictif de synthèse Cap IA : priorités, gain potentiel, risques et feuille de route.">
+<title>Exemple de livrable Cap IA | VotrIA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--surface:#fff;--text:#24221d;--muted:#55524c;--primary:#01696f;--primary-hi:#cedcd8;--border:rgba(40,37,29,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px}
+main{max-width:920px;margin:auto;padding:32px 20px 64px}
+h1,h2,h3{font-family:Manrope,system-ui,sans-serif;line-height:1.2}
+h1{font-size:clamp(2rem,5vw,3.2rem);max-width:18ch;margin-bottom:16px}
+h2{font-size:1.45rem;margin:36px 0 14px}
+h3{font-size:1rem;margin-bottom:6px}
+p{margin-bottom:12px}
+a{color:var(--primary);font-weight:700}
+.notice{background:var(--primary-hi);border-left:4px solid var(--primary);padding:16px;border-radius:8px;margin:24px 0}
+.grid{display:grid;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px}
+.metric{font-family:Manrope;font-size:1.4rem;font-weight:800;color:var(--primary)}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--border)}
+th,td{padding:12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--primary-hi);color:var(--primary)}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;background:var(--primary-hi);color:var(--primary);font-size:.78rem;font-weight:800}
+ul{padding-left:20px}
+li{margin-bottom:7px}
+.footer-note{margin-top:38px;padding-top:20px;border-top:1px solid var(--border);font-size:.88rem;color:var(--muted)}
+.back{display:inline-block;margin-bottom:24px}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="/">← Retour à l’accueil</a>
+<p class="badge">CAS DE RÉFÉRENCE</p>
+<h1>Exemple de synthèse Cap IA</h1>
+<p><strong>Entreprise du BTP — 8 salariés</strong><br>Ce document présente le format d’un livrable Cap IA.</p>
+
+<div class="notice"><strong>Objectif de la mission :</strong> identifier la première tâche à simplifier sans ajouter un nouvel outil complexe, puis décider s’il faut tester ou abandonner l’idée.</div>
+
+<h2>1. Situation de départ</h2>
+<div class="grid">
+  <div class="card"><div class="metric">9 h / sem.</div><p>Temps estimé consacré aux devis, relances et comptes rendus.</p></div>
+  <div class="card"><div class="metric">3 outils</div><p>Messagerie, tableur et logiciel de facturation non reliés.</p></div>
+  <div class="card"><div class="metric">2 personnes</div><p>Dirigeant et assistante concernés par le processus.</p></div>
+</div>
+
+<h2>2. Tâches examinées</h2>
+<table>
+<thead><tr><th>Tâche</th><th>Gain potentiel</th><th>Effort</th><th>Risque</th><th>Priorité</th></tr></thead>
+<tbody>
+<tr><td>Préparer une première version de devis</td><td>Élevé</td><td>Moyen</td><td>Moyen</td><td><strong>1</strong></td></tr>
+<tr><td>Relancer les devis sans réponse</td><td>Moyen</td><td>Faible</td><td>Faible</td><td><strong>2</strong></td></tr>
+<tr><td>Rédiger les comptes rendus chantier</td><td>Moyen</td><td>Faible</td><td>Moyen</td><td><strong>3</strong></td></tr>
+<tr><td>Automatiser toute la facturation</td><td>Élevé</td><td>Élevé</td><td>Élevé</td><td>Écartée à ce stade</td></tr>
+</tbody>
+</table>
+
+<h2>3. Priorité recommandée</h2>
+<div class="card">
+<h3>Assistant de préparation des devis avec validation humaine</h3>
+<p><strong>Pourquoi :</strong> volume régulier, structure documentaire répétitive, gain potentiel important et contrôle humain possible avant envoi.</p>
+<p><strong>Ce que la solution ne fait pas :</strong> elle ne calcule pas seule les prix, ne valide pas les marges et n’envoie rien automatiquement au client.</p>
+</div>
+
+<h2>4. Test proposé</h2>
+<ul>
+<li>Utiliser 10 anciens devis anonymisés pour construire une trame.</li>
+<li>Tester la préparation sur 5 demandes réelles.</li>
+<li>Mesurer le temps avant/après et le nombre de corrections.</li>
+<li>Valider les règles de confidentialité et de conservation.</li>
+<li>Décider après deux semaines : déployer, corriger ou abandonner.</li>
+</ul>
+
+<h2>5. Feuille de route 30 jours</h2>
+<table>
+<thead><tr><th>Période</th><th>Action</th><th>Décision attendue</th></tr></thead>
+<tbody>
+<tr><td>Jours 1–5</td><td>Collecte et anonymisation des exemples</td><td>Données suffisantes ou non</td></tr>
+<tr><td>Jours 6–12</td><td>Construction de la trame et règles de validation</td><td>Prototype testable</td></tr>
+<tr><td>Jours 13–20</td><td>Test sur cinq demandes</td><td>Mesure du gain et des erreurs</td></tr>
+<tr><td>Jours 21–30</td><td>Ajustement et décision</td><td>Déployer, modifier ou arrêter</td></tr>
+</tbody>
+</table>
+
+<h2>6. Indicateurs de réussite</h2>
+<ul>
+<li>Temps moyen de préparation d’un devis.</li>
+<li>Nombre de corrections avant validation.</li>
+<li>Taux d’utilisation par les personnes concernées.</li>
+<li>Absence d’envoi automatique sans validation.</li>
+<li>Coût mensuel total de la solution.</li>
+</ul>
+
+<h2>7. Conclusion proposée au dirigeant</h2>
+<div class="notice">La priorité est suffisamment simple et mesurable pour justifier un test limité. Aucun déploiement complet n’est recommandé avant d’avoir mesuré le temps gagné sur cinq cas réels.</div>
+
+<p class="footer-note">Ce document présente un modèle de restitution Cap IA. Les résultats, durées et hypothèses sont illustratifs et seront adaptés aux données réelles de chaque entreprise lors d’une mission.</p>
+</main>
+</body>
+</html>

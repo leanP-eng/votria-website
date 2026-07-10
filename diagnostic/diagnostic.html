@@ -147,6 +147,7 @@ const PDF_URL = 'https://votria.pro/guide-ia-tpe.pdf'; // → remplacer par l'UR
 // current: 0=gate, 1-5=steps, 6=result, -1=redirect curieux
 let current = 0;
 const FORM_STEPS = 5;
+let startTime = null;
 let data = {
   urgence:'',
   prenom:'', entreprise:'', email:'', tel:'',
@@ -259,7 +260,7 @@ function stepContact(){
     <div class="field"><label>Prénom</label><input type="text" id="prenom" value="${esc(data.prenom)}" placeholder="Jean"></div>
     <div class="field"><label>Entreprise</label><input type="text" id="entreprise" value="${esc(data.entreprise)}" placeholder="Nom de votre entreprise"></div>
     <div class="field"><label>Email professionnel</label><input type="email" id="email" value="${esc(data.email)}" placeholder="vous@entreprise.fr"></div>
-    <div class="field"><label>Téléphone <span style="color:var(--muted);font-weight:400">(optionnel)</span></label><input type="tel" id="tel" value="${esc(data.tel)}" placeholder="06 ..."></div>
+    <div class="field"><label>Téléphone</label><input type="tel" id="tel" value="${esc(data.tel)}" placeholder="06 ..."></div>
     <div class="nav-row"><button class="btn primary" onclick="next()" id="nextBtn">Suivant</button></div>`;
 }
 
@@ -344,6 +345,27 @@ function stepTiming(){
 
 /* ===================== RESULT ===================== */
 function stepResult(){
+  // Si suspect → résultat dégradé, aucune donnée exploitable
+  if(lastAnalyse && lastAnalyse.qualif === 'suspect'){
+    return `
+      <div style="text-align:center;padding-top:30px;">
+        <div style="font-size:48px;margin-bottom:16px;">📊</div>
+        <h2>Merci ${data.prenom}</h2>
+        <p class="sub" style="max-width:380px;margin:8px auto 24px;">
+          Nous avons bien reçu vos réponses. Notre équipe analyse votre situation
+          et revient vers vous sous 48h si votre profil correspond à nos accompagnements.
+        </p>
+        <p style="font-size:13px;color:var(--muted);margin-top:20px;">
+          En attendant, découvrez ce que l'IA peut faire pour les TPE/PME :<br>
+          <a href="/guide-ia-tpe.pdf" target="_blank" style="color:var(--accent-dark);">Télécharger le guide gratuit</a>
+        </p>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <button class="btn" onclick="reset()" style="max-width:200px">Recommencer</button>
+      </div>`;
+  }
+
+  // Résultat complet pour les prospects qualifiés
   const nbDouleurs = data.douleurs.length;
   const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(d=>d.label);
 
@@ -458,7 +480,7 @@ function prev(){
 
 function validate(){
   switch(current){
-    case 1: return !!(data.prenom && data.entreprise && data.email && data.email.includes('@'));
+    case 1: return !!(data.prenom && data.entreprise && data.email && data.email.includes('@') && data.tel && data.tel.length >= 10);
     case 2: return !!(data.secteur && data.effectif);
     case 3: return data.douleurs.length > 0;
     case 4: return !!(data.changement && data.changement.trim().length > 0);
@@ -467,8 +489,11 @@ function validate(){
   return true;
 }
 
+let lastAnalyse = null;
+
 function submit(){
   if(!validate()) return;
+  lastAnalyse = analyzeQuality();
   current = 6;
   sendFull();
   render();
@@ -477,6 +502,7 @@ function submit(){
 
 function reset(){
   data = {urgence:'',prenom:'',entreprise:'',email:'',tel:'',secteur:'',effectif:'',douleurs:[],changement:'',timing:'',leadSent:false};
+  startTime = null;
   current = 0;
   render();
 }
@@ -499,6 +525,7 @@ function bindStep(){
           current = -1; render(); return;
         }
         data.urgence = val;
+        startTime = Date.now();
         current = 1;
         render();
         window.scrollTo({top:0,behavior:'smooth'});
@@ -546,21 +573,93 @@ async function sendLead(){
   }catch(e){ console.error('Lead gate error:', e); }
 }
 
+/* ===================== ANALYSE QUALITÉ ===================== */
+function analyzeQuality(){
+  const flags = [];
+  let malus = 0;
+
+  // 1. Téléphone suspect
+  const tel = (data.tel||'').replace(/[\s.\-]/g, '');
+  if(tel.length < 10) { flags.push('tel_trop_court'); malus += 2; }
+  else {
+    // Même chiffre répété : 0000000000
+    if(/^(.)\1{7,}$/.test(tel)) { flags.push('tel_fake_repetition'); malus += 3; }
+    // Motif court répété : 0606060606, 0101010101, 1234123412
+    else if(/^(.{2,4})\1{2,}/.test(tel)) { flags.push('tel_fake_motif'); malus += 3; }
+    // Séquence : 0123456789
+    else if(/0123456789|9876543210/.test(tel)) { flags.push('tel_fake_sequence'); malus += 3; }
+    // Format invalide
+    if(!/^(0[1-9]|(\+33))/.test(tel)) { flags.push('tel_format_invalide'); malus += 2; }
+  }
+
+  // 2. Vitesse de remplissage
+  const duree = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+  if(duree < 30) { flags.push('remplissage_<30s'); malus += 3; }
+  else if(duree < 45) { flags.push('remplissage_<45s'); malus += 1; }
+
+  // 3. Réponse "changement" vague ou générique
+  const changement = (data.changement||'').trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // retire les accents pour matcher
+  const motsCounts = changement.split(/\s+/).filter(m=>m.length>0).length;
+  const reponsesGeneriques = [
+    'gagner du temps', 'aller plus vite', 'etre plus efficace',
+    'etre plus rapide', 'gagner de l\'argent', 'moins de stress',
+    'mieux gerer', 'automatiser', 'simplifier', 'optimiser', 'ameliorer',
+    'gagner en efficacite', 'perdre moins de temps', 'plus de clients',
+    'plus de temps', 'moins de travail', 'travailler moins',
+    'plus de ca', 'tout automatiser', 'deleger', 'faire moins'
+  ];
+  const estGenerique = reponsesGeneriques.some(r => changement.includes(r));
+  if(motsCounts <= 3) { flags.push('reponse_trop_courte'); malus += 2; }
+  if(estGenerique) { flags.push('reponse_generique'); malus += 2; }
+
+  // 4. Email suspect
+  const emailParts = (data.email||'').split('@');
+  const emailPrefix = (emailParts[0]||'').toLowerCase();
+  const emailDomain = (emailParts[1]||'').toLowerCase();
+  // Domaines jetables
+  const jetables = ['yopmail','guerrillamail','tempmail','throwaway','mailinator',
+    'trashmail','fakeinbox','sharklasers','guerrillamailblock','grr.la','dispostable'];
+  if(jetables.some(j => emailDomain.includes(j))) { flags.push('email_jetable'); malus += 3; }
+  // Préfixes génériques sur fournisseurs gratuits
+  const freeProviders = ['gmail.com','hotmail.com','hotmail.fr','outlook.com','outlook.fr',
+    'yahoo.com','yahoo.fr','live.com','live.fr','orange.fr','free.fr','laposte.net'];
+  const fakePrefixes = ['contact','test','info','admin','hello','abc','aaa','zzz',
+    'azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user'];
+  if(freeProviders.includes(emailDomain) && fakePrefixes.includes(emailPrefix)) {
+    flags.push('email_prefix_fake'); malus += 3;
+  }
+
+  // Score positif (intentions)
+  let bonus = 0;
+  bonus += data.urgence==='critique' ? 3 : data.urgence==='important' ? 2 : 1;
+  bonus += data.timing==='immediat' ? 3 : data.timing==='3mois' ? 2 : 0;
+  bonus += motsCounts > 8 ? 2 : motsCounts > 5 ? 1 : 0;
+  bonus += duree >= 90 ? 2 : duree >= 60 ? 1 : 0;
+
+  const scoreFinal = Math.max(0, bonus - malus);
+  let qualif;
+  if(malus >= 3) qualif = 'suspect';
+  else if(scoreFinal >= 6) qualif = 'chaud';
+  else if(scoreFinal >= 3) qualif = 'tiede';
+  else qualif = 'froid';
+
+  return { score: scoreFinal, qualif, flags, malus, duree };
+}
+
 async function sendFull(){
   const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(d=>d.label);
-  // Qualification automatique
-  const score = (data.urgence==='critique'?3:data.urgence==='important'?2:1)
-    + (data.timing==='immediat'?3:data.timing==='3mois'?2:0)
-    + (data.changement.trim().length > 20 ? 1 : 0);
-  const qualif = score >= 5 ? 'chaud' : score >= 3 ? 'tiède' : 'froid';
+  const analyse = analyzeQuality();
 
   try{
     await fetch(WEBHOOK_URL, {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
         type:'audit_complet',
-        qualification: qualif,
-        score: score,
+        qualification: analyse.qualif,
+        score: analyse.score,
+        alertes: analyse.flags.join(', ') || 'aucune',
+        duree_secondes: analyse.duree,
         prenom: data.prenom, entreprise: data.entreprise,
         email: data.email, tel: data.tel,
         secteur: data.secteur, effectif: data.effectif,

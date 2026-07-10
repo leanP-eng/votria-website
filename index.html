@@ -3,35 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Votria accompagne les PME et artisans d'Occitanie de la formation IA jusqu'au déploiement. Audit, automatisation, RGPD. Diagnostic gratuit.">
-<title>Votria.pro — L'IA utile pour les PME et artisans d'Occitanie</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WDMPM0P81V');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WDMPM0P81V');
-</script>
-<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<meta name="description" content="VotrIA aide les TPE/PME à identifier les bons usages IA, tester ce qui vaut le coup, déployer ce qui mérite de l'être et sécuriser les usages sensibles. Diagnostic express en 2 min.">
+<title>VotrIA — L’IA utile pour les PME et artisans d’Occitanie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+body { min-height: 100dvh; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.68; }
 img { display: block; max-width: 100%; height: auto; }
 ul { list-style: none; }
 button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
-h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.18; letter-spacing: -0.02em; font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 p, li { text-wrap: pretty; }
 :focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
@@ -40,7 +26,7 @@ p, li { text-wrap: pretty; }
 :root {
   --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
   --border: oklch(0.2 0.01 80 / 0.10);
-  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --text: #24221d; --muted: #55524c; --faint: #74716a;
   --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
   --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
   --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
@@ -51,7 +37,7 @@ p, li { text-wrap: pretty; }
 [data-theme="dark"] {
   --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
   --border: oklch(1 0 0 / 0.08);
-  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --text: #f0efec; --muted: #c0bdb7; --faint: #99958e;
   --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
   --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
 }
@@ -62,16 +48,17 @@ section { padding-block: clamp(2.5rem, 8vw, 5rem); }
 section + section { border-top: 1px solid var(--border); }
 
 /* ===== NAV ===== */
-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
-.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
 .nav-links { display: none; }
 @media (min-width: 768px) {
   .nav-links { display: flex; align-items: center; gap: 1.75rem; }
   .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
   .nav-links a:hover { color: var(--text); }
 }
-.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta { display: none; align-items: center; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+@media (min-width: 768px) { .nav-cta { display: inline-flex; } }
 .nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
 .nav-cta:active { transform: translateY(0); }
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
@@ -103,22 +90,90 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .hero-trust { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2.5rem; }
 .trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--muted); }
 .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.hero-legit { font-size: 0.92rem; color: var(--text); margin: -0.75rem 0 1.75rem; font-weight: 500; }
+.hero-legit a { color: var(--primary); font-weight: 600; white-space: nowrap; }
+.hero-risk { margin-top: 2.5rem; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); display: inline-block; }
+.risk-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 0.75rem; }
+.risk-items { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+.risk-item { display: flex; align-items: center; gap: 0.45rem; font-size: 0.88rem; color: var(--text); }
+.cas-concret { display: grid; gap: 1.5rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 850px) { .cas-concret { grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; } }
+.cas-avant-apres { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.cas-table { width: 100%; border-collapse: collapse; }
+.cas-table th, .cas-table td { padding: 0.85rem 1rem; text-align: center; font-size: 0.9rem; }
+.cas-table thead th { background: var(--primary-hi); color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 2px solid var(--border); }
+.cas-table td { border-bottom: 1px solid var(--border); color: var(--text); }
+.cas-table tbody tr:last-child td { border-bottom: none; }
+.cas-table .highlight { color: var(--primary); font-weight: 700; font-size: 1.05rem; }
+.cas-gain { background: var(--primary); color: #fff; padding: 1.5rem; border-radius: var(--radius-lg); margin-top: 1rem; text-align: center; }
+.cas-gain .big { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 0.35rem; }
+.cas-gain .small { font-size: 0.9rem; color: rgba(255,255,255,0.88); }
+.cas-details h3 { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 0.75rem; }
+.cas-details ul { list-style: none; margin-bottom: 1.5rem; }
+.cas-details li { font-size: 0.92rem; color: var(--text); padding: 0.35rem 0 0.35rem 1.4rem; position: relative; }
+.cas-details li::before { content: ""; position: absolute; left: 0; top: 0.7rem; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
+.cas-objectif { background: var(--surface); border-left: 3px solid var(--primary); border-radius: var(--radius-sm); padding: 1rem 1.25rem; font-size: 0.95rem; color: var(--text); line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
+
+
+/* ===== POURQUOI VOTRIA — VERSION COURTE ===== */
+.why-mini {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 4vw, 2rem);
+}
+.why-mini h2 {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  color: var(--text);
+  margin-bottom: 0.65rem;
+  max-width: 28ch;
+}
+.why-mini p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 58ch;
+}
+@media (min-width: 760px) {
+  .why-mini {
+    grid-template-columns: 1fr auto;
+  }
+}
 
 /* ===== PROBLÈME ===== */
 .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; }
 .section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
 .section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
-.problems-grid { display: grid; gap: 1rem; }
-@media (min-width: 600px) { .problems-grid { grid-template-columns: repeat(3, 1fr); } }
+.problems-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .problems-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .problems-grid { grid-template-columns: repeat(3, 1fr); } }
 .problem-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; }
 .problem-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-.problem-card h3 { font-family: 'Satoshi', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+.problem-card h3 { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
 .problem-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+.adoption { background: var(--primary); border-radius: var(--radius-xl); padding: clamp(1.75rem, 5vw, 3rem); color: #fff; }
+.adoption h2 { color: #fff; font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 1rem; line-height: 1.3; }
+.adoption > p { color: rgba(255,255,255,0.88); line-height: 1.7; max-width: 60ch; margin-bottom: 2rem; font-size: 1.02rem; }
+.adoption-stats { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .adoption-stats { grid-template-columns: repeat(3, 1fr); } }
+.adoption-stat { border-top: 2px solid rgba(255,255,255,0.25); padding-top: 1rem; }
+.adoption-stat .num { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 700; color: #fff; line-height: 1; margin-bottom: 0.5rem; }
+.adoption-stat .lbl { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
 
 /* ===== OFFRES ===== */
 .offres-grid { display: grid; gap: 1rem; }
 @media (min-width: 640px) { .offres-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .offres-grid { grid-template-columns: repeat(3, 1fr); } }
 .offre-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(1.25rem, 4vw, 2rem); display: flex; flex-direction: column; gap: 1rem; transition: box-shadow var(--t); }
+.offre-option { padding: 1rem 0; border-top: 1px solid var(--border); }
+.offre-option:first-of-type { border-top: none; padding-top: 0; }
+.offre-option h4 { font-family: 'Manrope', system-ui, sans-serif; font-size: 1rem; line-height: 1.3; color: var(--text); margin-bottom: 0.35rem; }
+.offre-option p { font-size: 0.88rem; line-height: 1.55; color: var(--muted); margin-bottom: 0.45rem; }
+.offre-option .option-price { font-size: 0.9rem; color: var(--text); font-weight: 700; }
 .offre-card:hover { box-shadow: var(--shadow-md); }
 .offre-card.featured { border-color: var(--primary); background: var(--surface-2); }
 .offre-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); background: var(--primary-hi); color: var(--primary); width: fit-content; }
@@ -132,13 +187,131 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .offre-price strong { font-size: 1.1rem; color: var(--text); }
 .offre-cta { margin-top: auto; }
 
+
+/* ===== REPÈRES CONCRETS ===== */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 760px) {
+  .evidence-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.evidence-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+}
+.evidence-card h3 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.55rem;
+}
+.evidence-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.evidence-card a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mission-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.mission-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+.mission-table th,
+.mission-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  vertical-align: top;
+}
+.mission-table th {
+  background: var(--primary-hi);
+  color: var(--primary);
+  font-weight: 800;
+}
+.mission-table tr:last-child td {
+  border-bottom: none;
+}
+.follow-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 760px) {
+  .follow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.follow-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+.follow-card h3 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+.follow-card .price {
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+.follow-card ul {
+  display: grid;
+  gap: 0.45rem;
+}
+.follow-card li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.follow-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+.provisional-note {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--primary);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 /* ===== MÉTHODE ===== */
 .methode-steps { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-@media (min-width: 600px) { .methode-steps { grid-template-columns: repeat(4,1fr); } }
+@media (min-width: 600px) { .methode-steps { grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 900px) { .methode-steps { grid-template-columns: repeat(3,1fr); } }
 .step { background: var(--surface); padding: 1.5rem 1.25rem; }
-.step-num { font-family: 'Boska', Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--primary-hi); line-height: 1; margin-bottom: 0.75rem; }
+.step-num { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary-hi); line-height: 1; margin-bottom: 0.75rem; }
 [data-theme="dark"] .step-num { color: var(--primary); opacity: 0.3; }
-.step h3 { font-family: 'Satoshi', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+.step h3 { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
 .step p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
 
 /* ===== SECTEURS ===== */
@@ -157,7 +330,7 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .stats-grid { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 @media (min-width: 600px) { .stats-grid { grid-template-columns: repeat(3,1fr); } }
 .stat { background: var(--surface); padding: 1.75rem 1.5rem; text-align: center; }
-.stat-num { font-family: 'Boska', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
+.stat-num { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
 .stat-label { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
 
 /* ===== CTA FINAL ===== */
@@ -174,50 +347,111 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
 .footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
 @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
-.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
-.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-brand { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
 .footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
 .footer-links a:hover { color: var(--text); }
 .footer-zone { font-size: 0.8rem; color: var(--faint); }
+
+/* ===== LISIBILITÉ MOBILE ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .hero-sub,
+  .hero-legit,
+  .hero-micro,
+  .risk-item,
+  .section-sub,
+  .problem-card p,
+  .adoption > p,
+  .adoption-stat .lbl,
+  .offre-desc,
+  .offre-list li,
+  .offre-price,
+  .step p,
+  .tab-panel .panel-desc,
+  .panel-usages li,
+  .stat-label,
+  .reassurance span,
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    color: var(--text) !important;
+    opacity: 0.88;
+    font-weight: 500;
+  }
+
+  .hero-sub,
+  .section-sub,
+  .problem-card p,
+  .offre-desc,
+  .step p,
+  .tab-panel .panel-desc,
+  .stat-label {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-legit,
+  .hero-micro,
+  .risk-item,
+  .offre-list li,
+  .offre-price,
+  .panel-usages li,
+  .reassurance span {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    font-size: 0.9rem;
+  }
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav aria-label="Navigation principale">
+<nav class="site-nav" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+    <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <rect width="28" height="28" rx="7" fill="#01696f"/>
         <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
       </svg>
-      Votria
+      VotrIA
     </a>
     <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
       <a href="/offres" role="listitem">Offres</a>
-      <a href="/methode" role="listitem">Méthode</a>
+      <a href="/cas-usage" role="listitem">Cas d’usage</a>
       <a href="/a-propos" role="listitem">À propos</a>
-      <a href="#secteurs" role="listitem">Secteurs</a>
       <a href="/contact" role="listitem">Contact</a>
     </div>
     <div class="nav-right">
+      <a href="/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
       <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a href="/diagnostic/" class="nav-cta">Diagnostic gratuit</a>
       <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
     <a href="/offres">Offres</a>
-    <a href="/methode">Méthode</a>
+    <a href="/cas-usage">Cas d’usage</a>
     <a href="/a-propos">À propos</a>
-    <a href="#secteurs">Secteurs</a>
     <a href="/contact">Contact</a>
-    <a href="/diagnostic/" class="mob-cta">Diagnostic gratuit — 2 min</a>
+    <a href="/diagnostic/" class="mob-cta">Identifier mes priorités — 2 min</a>
   </div>
 </nav>
 
@@ -228,116 +462,362 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   <div class="container">
     <div class="hero-label">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><circle cx="6" cy="6" r="6"/></svg>
-      Consultant & Agence IA · Occitanie
+      Conseil &amp; intégration IA · TPE/PME · Occitanie
     </div>
-    <h1 id="hero-h1">L'IA utile pour les PME et artisans</h1>
-    <p class="hero-sub">Vous voulez gagner du temps grâce à l'IA mais ne savez pas par où commencer ? Votria vous accompagne de la compréhension jusqu'au déploiement concret.</p>
+
+    <h1 id="hero-h1">Réduisez les tâches qui vous prennent du temps. Sans transformer votre entreprise en projet informatique.</h1>
+
+    <p class="hero-sub">VotrIA vous aide à identifier les usages IA réellement utiles, à estimer leur intérêt, à les tester sur vos situations réelles et à déployer uniquement ce qui mérite de l'être.</p>
+
     <div class="hero-actions">
       <a href="/diagnostic/" class="btn-primary">
-        Diagnostic gratuit — 2 min
+        Identifier mes priorités IA — 2 min
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="/offres" class="btn-ghost">Découvrir les offres</a>
+      <a href="/contact" class="btn-ghost">Réserver un échange — 30 min</a>
     </div>
-    <div class="hero-trust" aria-label="Réassurances">
-      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>2 minutes</div>
-      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>Sans engagement</div>
-      <div class="trust-item"><div class="trust-dot" aria-hidden="true"></div>Résultat immédiat</div>
+
+    <p class="hero-micro" style="font-size:0.9rem; color:var(--muted); line-height:1.6; margin-top:0.85rem; max-width:52ch;"><strong>Questionnaire d'orientation gratuit.</strong> Vous obtenez une première piste et le niveau d'accompagnement à envisager, sans engagement.</p>
+
+    <div style="margin-top:1.5rem; padding:1rem 1.25rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); max-width:58ch;">
+      <p style="font-weight:700; color:var(--text); margin-bottom:0.35rem;">Un regard de dirigeant avant un regard de technicien</p>
+      <p style="font-size:0.95rem; line-height:1.6; color:var(--muted); margin-bottom:0.9rem;">20 ans d'expérience en contrôle de gestion, direction financière et gestion d'entreprise. Chaque projet est évalué selon quatre critères : utilité métier, gain attendu, simplicité et adoption.</p>
+      <a href="/a-propos" class="btn-ghost" style="padding:0.6rem 1rem; min-height:42px;">En savoir plus</a>
+    </div>
+
+    <div class="hero-risk" aria-label="Démarche progressive">
+      <div class="risk-title">Une démarche progressive</div>
+      <div class="risk-items">
+        <div class="risk-item"><div class="trust-dot" aria-hidden="true"></div>Aucun outil imposé</div>
+        <div class="risk-item"><div class="trust-dot" aria-hidden="true"></div>Si un outil simple suffit, on vous le dit</div>
+        <div class="risk-item"><div class="trust-dot" aria-hidden="true"></div>Test sur vos cas avant tout déploiement</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PROBLÈME -->
-<section aria-labelledby="pb-title">
+<!-- CAS CONCRET -->
+<section aria-labelledby="cas-title">
   <div class="container">
-    <p class="section-label">Vous reconnaissez-vous ?</p>
-    <h2 class="section-title" id="pb-title">Trois situations courantes</h2>
-    <div class="problems-grid">
-      <div class="problem-card">
-        <div class="problem-icon" aria-hidden="true"></div>
-        <h3>Trop de temps sur l'administratif</h3>
-        <p>Devis, relances, emails, comptes-rendus… Ces tâches vous volent du temps sur votre vrai métier.</p>
+    <p class="section-label">Exemple issu d’un benchmark externe</p>
+    <h2 class="section-title" id="cas-title">Jusqu’à 7 heures récupérées chaque semaine sur les tâches administratives.</h2>
+    <p class="section-sub">Exemple présenté dans le benchmark IA des PME françaises publié par Nvestia : une organisation consacrant 12 heures par semaine à des tâches administratives peut ramener cette charge à 5 heures après simplification.</p>
+    <div class="cas-concret">
+      <div>
+        <div class="cas-avant-apres">
+          <table class="cas-table">
+            <thead>
+              <tr>
+                <th>Situation initiale</th>
+                <th>Après simplification</th>
+                <th>Gain potentiel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>12 h / semaine</td>
+                <td>5 h / semaine</td>
+                <td class="highlight">7 h / semaine</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cas-gain">
+          <div class="big">7 heures rendues à l'activité</div>
+          <div class="small">pour le suivi client, le terrain ou le développement de l'entreprise</div>
+        </div>
+        <p style="font-size:0.82rem; line-height:1.5; margin-top:0.75rem; color:var(--muted);">
+          Source externe :
+          <a href="https://nvestia.fr/benchmark-ia-pme-france"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="color:var(--primary); font-weight:600; text-decoration:underline; text-underline-offset:2px;">
+            Baromètre IA des PME françaises 2026 — Nvestia
+          </a>.
+          Ces résultats constituent un repère de benchmark et non une garantie de résultat pour chaque entreprise.
+        </p>
       </div>
-      <div class="problem-card">
-        <div class="problem-icon" aria-hidden="true"></div>
-        <h3>L'IA partout, mais concrètement ?</h3>
-        <p>Les outils existent. Sans accompagnement, difficile de savoir lesquels sont vraiment utiles pour vous.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon" aria-hidden="true"></div>
-        <h3>Quelqu'un de local, qui comprend votre métier</h3>
-        <p>Pas un grand cabinet parisien. Un accompagnateur qui connaît le terrain et intervient chez vous.</p>
+      <div class="cas-details">
+        <h3>Exemples de simplifications</h3>
+        <ul>
+          <li>Préparation assistée des réponses email</li>
+          <li>Modèles de devis et documents réutilisables</li>
+          <li>Comptes rendus préparés plus rapidement</li>
+          <li>Classement documentaire plus simple</li>
+          <li>Rappels et suivi des tâches centralisés</li>
+        </ul>
+        <div class="cas-objectif"><strong>Cap IA</strong> sert à identifier et chiffrer ce type de priorité. Lorsque l'intérêt est confirmé, <strong>Deploy IA</strong> permet de construire, tester et mettre en place la solution.</div>
+        <a href="/diagnostic/" class="btn-primary">
+          Identifier mes tâches à simplifier
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- DOULEURS MÉTIER -->
+<section aria-labelledby="pb-title">
+  <div class="container">
+    <p class="section-label">Vos priorités</p>
+    <h2 class="section-title" id="pb-title">Trois endroits où une petite entreprise perd vite du temps.</h2>
+    <p class="section-sub">L’objectif n’est pas d’automatiser partout. Il est d’identifier la première tâche qui mérite réellement d’être simplifiée.</p>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <h3>Développer l’activité</h3>
+        <p>Devis en attente, relances oubliées et demandes clients mal suivies ralentissent le chiffre d’affaires.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Réduire l’administratif</h3>
+        <p>Mails, comptes rendus, factures et documents répétitifs consomment des heures chaque semaine.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Mieux organiser l’entreprise</h3>
+        <p>Informations dispersées, procédures difficiles à retrouver et tâches mal suivies compliquent le quotidien.</p>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;">
+      <a href="/diagnostic/" class="btn-ghost">
+        Repérer ma première priorité
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ADOPTION / ACCOMPAGNEMENT AU CHANGEMENT -->
+<section aria-labelledby="adoption-title">
+  <div class="container">
+    <div class="adoption">
+      <h2 id="adoption-title">Un bon outil ne suffit pas. Il doit aussi être compris et utilisé.</h2>
+      <p>Que vous travailliez seul ou avec une équipe, une solution n'apporte de résultat que si elle s'intègre simplement au quotidien. VotrIA accompagne la prise en main, documente les usages et définit les règles nécessaires.</p>
+
+      <div class="adoption-stats">
+        <div class="adoption-stat">
+          <div class="num">Simple</div>
+          <div class="lbl">La solution doit s'intégrer aux habitudes et aux outils déjà utilisés dans l'entreprise.</div>
+        </div>
+
+        <div class="adoption-stat">
+          <div class="num">Documenté</div>
+          <div class="lbl">Les étapes, les responsabilités et les règles d'utilisation doivent être claires.</div>
+        </div>
+
+        <div class="adoption-stat">
+          <div class="num">Transmis</div>
+          <div class="lbl">Le dirigeant et les utilisateurs doivent pouvoir prendre en main la solution sans dépendance inutile.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- OFFRES -->
 <section id="offres" aria-labelledby="offres-title">
   <div class="container">
-    <p class="section-label">Deux offres</p>
-    <h2 class="section-title" id="offres-title">Quel que soit votre niveau de départ</h2>
-    <p class="section-sub">Commencez là où vous en êtes. Les deux offres font partie d'un même parcours.</p>
+    <p class="section-label">Les offres</p>
+    <h2 class="section-title" id="offres-title">Trois façons d’avancer, selon votre situation.</h2>
+    <p class="section-sub">Décider quoi faire, mettre en œuvre une priorité validée ou encadrer des usages déjà présents dans l’entreprise.</p>
+
     <div class="offres-grid">
       <div class="offre-card">
-        <div class="offre-badge">Cap IA</div>
-        <h3>Comprendre &amp; choisir</h3>
-        <p class="offre-desc">Vous débutez avec l'IA. On identifie les bons usages pour votre activité et on vous forme sur vos exemples concrets.</p>
-        <ul class="offre-list" aria-label="Inclus dans Cap IA">
-          <li>Audit de vos processus</li>
-          <li>Identification des 2-3 usages prioritaires</li>
-          <li>Formation sur mesure</li>
-          <li>Feuille de route priorisée</li>
-        </ul>
-        <div class="offre-price"><strong>À partir de 1 200 € HT</strong> · Éligible OPCO/CPF</div>
-        <div class="offre-cta"><a href="/contact" class="btn-ghost" style="width:100%;justify-content:center;">En savoir plus</a></div>
+        <div class="offre-badge">Décider</div>
+        <h3>Identifier la bonne priorité</h3>
+        <p class="offre-desc">Deux niveaux de diagnostic, selon que vous avez besoin d’une première orientation ou d’un test approfondi.</p>
+
+        <div class="offre-option">
+          <h4>Cap IA</h4>
+          <p>Diagnostic ciblé, une à deux priorités et compte rendu court.</p>
+          <div class="option-price">490 € HT</div>
+        </div>
+
+        <div class="offre-option">
+          <h4>Cap IA+</h4>
+          <p>Diagnostic approfondi, atelier, test sur cas réel et feuille de route 30/60/90 jours.</p>
+          <div class="option-price">1 200 € HT</div>
+        </div>
+
+        <div class="offre-price">Montant déduit d’un projet Deploy IA engagé sous 60 jours.</div>
+        <div class="offre-cta">
+          <a href="/offres" class="btn-ghost" style="width:100%;justify-content:center;">Comparer Cap IA et Cap IA+</a>
+        </div>
       </div>
+
       <div class="offre-card featured">
-        <div class="offre-badge">Deploy IA</div>
-        <h3>Automatiser &amp; piloter</h3>
-        <p class="offre-desc">Vous savez ce que vous voulez automatiser. On construit la solution, on la déploie et on assure le suivi mensuel.</p>
+        <div class="offre-badge">Déployer</div>
+        <h3>Mettre en œuvre la priorité validée</h3>
+        <p class="offre-desc">La solution est construite, testée et intégrée à votre fonctionnement, avec transmission aux utilisateurs.</p>
         <ul class="offre-list" aria-label="Inclus dans Deploy IA">
-          <li>Audit technique et fonctionnel</li>
-          <li>Déploiement dans votre environnement réel</li>
-          <li>Formation de vos équipes</li>
-          <li>Suivi mensuel inclus</li>
+          <li>Construction ou intégration de la solution</li>
+          <li>Tests sur vos situations réelles</li>
+          <li>Mise en production et documentation</li>
+          <li>Formation et suivi selon le niveau retenu</li>
         </ul>
-        <div class="offre-price"><strong>À partir de 2 800 € HT</strong> · Suivi : 290 €/mois</div>
-        <div class="offre-cta"><a href="/contact" class="btn-primary" style="width:100%;justify-content:center;">Demander un devis</a></div>
+        <div class="offre-price">
+          <strong>À partir de 2 800 € HT</strong><br>
+          <span style="font-size:0.8rem;">Suivi mensuel optionnel selon le niveau : 290 à 680 € HT/mois.</span>
+        </div>
+        <div class="offre-cta">
+          <a href="/offres" class="btn-primary" style="width:100%;justify-content:center;">Voir les niveaux Deploy IA</a>
+        </div>
       </div>
+
+      <div class="offre-card">
+        <div class="offre-badge">Sécuriser</div>
+        <h3>Encadrer les usages IA et les données</h3>
+        <p class="offre-desc">Pour les entreprises où l’IA est déjà utilisée et qui doivent clarifier les règles, les responsabilités et les risques.</p>
+        <ul class="offre-list" aria-label="Inclus dans l'audit de conformité">
+          <li>Cartographie des usages et des données</li>
+          <li>Repérage des risques prioritaires</li>
+          <li>Charte IA interne et registre</li>
+          <li>Plan d’action 30/60/90 jours</li>
+        </ul>
+        <div class="offre-price"><strong>À partir de 3 000 € HT</strong> · selon le périmètre</div>
+        <div class="offre-cta">
+          <a href="/conformite-ia-rgpd/" class="btn-ghost" style="width:100%;justify-content:center;">Voir l’audit de conformité</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:1.75rem;">
+      <a href="/diagnostic/" class="btn-primary">Identifier le bon point de départ</a>
     </div>
   </div>
 </section>
 
+
+<!-- REPÈRES CONCRETS -->
+<section aria-labelledby="proof-title">
+  <div class="container">
+    <p class="section-label">Des repères vérifiables</p>
+    <h2 class="section-title" id="proof-title">Ce que vous pouvez examiner avant de vous engager.</h2>
+    <p class="section-sub">Examinez concrètement le format du livrable, le temps à prévoir et les modalités d’accompagnement avant de vous engager.</p>
+
+    <div class="evidence-grid" style="grid-template-columns:1fr; max-width:720px;">
+      <article class="evidence-card">
+        <h3>Exemple de livrable Cap IA</h3>
+        <p>Consultez un exemple de synthèse Cap IA : contexte, tâches examinées, grille gain/effort/risque, priorité recommandée et plan d’action.</p>
+        <p style="margin-top:0.7rem;">
+          <a href="/exemple-cap-ia.html">Voir l’exemple de livrable</a>
+        </p>
+      </article>
+    </div>
+
+    <h3 style="font-family:'Manrope',system-ui,sans-serif; font-size:1.25rem; margin-top:2rem;">Temps à prévoir et délai de restitution</h3>
+    <div class="mission-table-wrap">
+      <table class="mission-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Temps demandé au dirigeant</th>
+            <th>Délai indicatif</th>
+            <th>Ce qui est remis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cap IA</strong></td>
+            <td>Environ 1 h 15 : entretien de cadrage et validation des informations.</td>
+            <td>5 jours ouvrés après l’entretien.</td>
+            <td>Une à deux priorités évaluées et une synthèse décisionnelle.</td>
+          </tr>
+          <tr>
+            <td><strong>Cap IA+</strong></td>
+            <td>Environ 3 heures : préparation, atelier et restitution.</td>
+            <td>7 jours ouvrés après l’atelier.</td>
+            <td>Test sur cas réel, règles d’usage et feuille de route 30/60/90 jours.</td>
+          </tr>
+          <tr>
+            <td><strong>Deploy IA</strong></td>
+            <td>2 à 4 heures réparties sur le projet pour les validations et les tests.</td>
+            <td>3 à 6 semaines selon le périmètre.</td>
+            <td>Solution configurée, tests, documentation et transmission aux utilisateurs.</td>
+          </tr>
+          <tr>
+            <td><strong>Conformité IA</strong></td>
+            <td>2 à 4 heures d’entretiens et de collecte documentaire.</td>
+            <td>10 jours ouvrés pour un périmètre standard.</td>
+            <td>Cartographie, charte interne, registre et plan d’action.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Manrope',system-ui,sans-serif; font-size:1.25rem; margin-top:2rem;">Nature exacte du suivi mensuel optionnel</h3>
+    <div class="follow-grid">
+      <article class="follow-card">
+        <h3>Essentiel</h3>
+        <div class="price">290 € HT / mois</div>
+        <ul>
+          <li>Contrôle mensuel de bon fonctionnement</li>
+          <li>Point de pilotage de 45 minutes</li>
+          <li>Support par email sous 2 jours ouvrés</li>
+          <li>Note mensuelle d’incidents et d’actions</li>
+        </ul>
+      </article>
+
+      <article class="follow-card">
+        <h3>Pilotage</h3>
+        <div class="price">480 € HT / mois</div>
+        <ul>
+          <li>Tout le niveau Essentiel</li>
+          <li>Suivi des indicateurs de résultat</li>
+          <li>Jusqu’à 2 heures d’ajustements mineurs</li>
+          <li>Recommandations d’optimisation</li>
+        </ul>
+      </article>
+
+      <article class="follow-card">
+        <h3>Continuité</h3>
+        <div class="price">680 € HT / mois</div>
+        <ul>
+          <li>Tout le niveau Pilotage</li>
+          <li>Support prioritaire sous 1 jour ouvré</li>
+          <li>Jusqu’à 4 heures d’ajustements mineurs</li>
+          <li>Revue trimestrielle d’évolution</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="provisional-note"><strong>Cadre provisoire à valider contractuellement.</strong> Les ajustements mineurs concernent le paramétrage, les modèles, les règles et les corrections courantes. Toute nouvelle fonctionnalité ou évolution importante fait l’objet d’un devis séparé. Le suivi mensuel est facultatif sauf mention contraire dans la proposition commerciale.</p>
+  </div>
+</section>
+
+
 <!-- MÉTHODE -->
 <section id="methode" aria-labelledby="meth-title">
   <div class="container">
-    <p class="section-label">Notre méthode</p>
-    <h2 class="section-title" id="meth-title">4 étapes, pas de surprise</h2>
+    <p class="section-label">La méthode</p>
+    <h2 class="section-title" id="meth-title">Une progression simple, du besoin réel à la solution adoptée.</h2>
+    <p class="section-sub">Chaque étape réduit le risque : on commence par comprendre, on vérifie sur le terrain, puis on déploie uniquement ce qui fonctionne.</p>
+
     <div class="methode-steps" role="list">
       <div class="step" role="listitem">
         <div class="step-num" aria-hidden="true">01</div>
-        <h3>Comprendre</h3>
-        <p>On part de votre quotidien réel — pas d'un catalogue d'outils.</p>
+        <h3>Cadrer</h3>
+        <p>Identifier les pertes de temps, sélectionner une priorité et estimer le gain potentiel.</p>
       </div>
+
       <div class="step" role="listitem">
         <div class="step-num" aria-hidden="true">02</div>
-        <h3>Identifier</h3>
-        <p>Les 2-3 tâches où l'IA a le plus d'impact immédiat.</p>
+        <h3>Tester</h3>
+        <p>Vérifier l’usage sur une situation réelle avant tout investissement plus important.</p>
       </div>
+
       <div class="step" role="listitem">
         <div class="step-num" aria-hidden="true">03</div>
-        <h3>Déployer</h3>
-        <p>Solution construite sur vos données, testée, mise en production.</p>
-      </div>
-      <div class="step" role="listitem">
-        <div class="step-num" aria-hidden="true">04</div>
-        <h3>Piloter</h3>
-        <p>Suivi mensuel, ajustements, évolutions. Vous n'êtes pas seul.</p>
+        <h3>Déployer et transmettre</h3>
+        <p>Mettre en place, documenter, former les utilisateurs et encadrer les usages sensibles.</p>
       </div>
     </div>
-    <div style="margin-top:1.25rem;text-align:right">
-      <a href="/contact" style="font-size:0.9rem;color:var(--primary);font-weight:600;display:inline-flex;align-items:center;gap:0.35rem;">Voir la méthode complète <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
+    <div style="margin-top:1.25rem; text-align:right;">
+      <a href="/methode" style="font-size:0.9rem;color:var(--primary);font-weight:600;display:inline-flex;align-items:center;gap:0.35rem;">
+        Voir la méthode complète
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -346,82 +826,88 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 <section id="secteurs" aria-labelledby="sec-title">
   <div class="container">
     <p class="section-label">Secteurs</p>
-    <h2 class="section-title" id="sec-title">Des solutions adaptées à votre activité</h2>
+    <h2 class="section-title" id="sec-title">Des usages adaptés à votre réalité métier.</h2>
+    <p class="section-sub">Les outils changent selon le contexte, mais la logique reste la même : partir d’une tâche concrète, vérifier l’intérêt, puis tester avant de déployer.</p>
+
     <div class="tabs" role="tablist" aria-label="Secteurs d'activité">
-      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-artisans" id="tab-artisans">Artisans</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-pme" id="tab-pme">PME</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-btp" id="tab-btp">BTP</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rh" id="tab-rh">RH</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-web" id="tab-web">Web & SEO</button>
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-btp" id="tab-btp">BTP &amp; artisans</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-pme" id="tab-pme">PME de services</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-cabinets" id="tab-cabinets">Cabinets réglementés</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-support" id="tab-support">Fonctions support</button>
     </div>
-    <div id="panel-artisans" class="tab-panel active" role="tabpanel" aria-labelledby="tab-artisans">
-      <h3>Artisans &amp; TPE</h3>
-      <p class="panel-desc">Récupérez du temps sur l'administratif pour vous concentrer sur votre cœur de métier.</p>
+
+    <div id="panel-btp" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btp">
+      <h3>BTP &amp; artisans</h3>
+      <p class="panel-desc">Réduire la charge administrative sans compliquer le travail sur le terrain.</p>
       <ul class="panel-usages">
-        <li>Devis automatisés depuis une description vocale</li>
-        <li>Relances clients et factures automatiques</li>
-        <li>Tri et réponse aux emails courants</li>
-        <li>Comptes-rendus d'intervention en 2 minutes</li>
+        <li>Préparer les devis et relances plus rapidement</li>
+        <li>Structurer les comptes rendus et documents chantier</li>
+        <li>Améliorer le suivi client et la facturation</li>
       </ul>
     </div>
+
     <div id="panel-pme" class="tab-panel" role="tabpanel" aria-labelledby="tab-pme">
       <h3>PME de services</h3>
-      <p class="panel-desc">Libérez vos équipes des tâches répétitives à faible valeur ajoutée.</p>
+      <p class="panel-desc">Fluidifier la relation client et réduire les tâches répétitives des équipes.</p>
       <ul class="panel-usages">
-        <li>Qualification automatique des leads entrants</li>
-        <li>Génération de propositions commerciales</li>
-        <li>Reporting hebdomadaire automatisé</li>
-        <li>Production de contenus et newsletter</li>
+        <li>Qualifier les demandes et préparer les réponses clients</li>
+        <li>Accélérer le reporting et les synthèses</li>
+        <li>Centraliser les relances et le suivi des actions</li>
       </ul>
     </div>
-    <div id="panel-btp" class="tab-panel" role="tabpanel" aria-labelledby="tab-btp">
-      <h3>BTP</h3>
-      <p class="panel-desc">Automatisez la charge documentaire pour rester sur le chantier.</p>
+
+    <div id="panel-cabinets" class="tab-panel" role="tabpanel" aria-labelledby="tab-cabinets">
+      <h3>Cabinets et professions réglementées</h3>
+      <p class="panel-desc">Gagner du temps sur la rédaction et le classement, avec validation humaine et confidentialité.</p>
       <ul class="panel-usages">
-        <li>Documents chantier réglementaires (PPSPS, DICT)</li>
-        <li>Situations de travaux et factures</li>
-        <li>Comptes-rendus depuis notes vocales</li>
-        <li>Suivi des documents sous-traitants</li>
+        <li>Préparer des synthèses et des trames de rédaction</li>
+        <li>Classer les documents et suivre les dossiers</li>
+        <li>Encadrer les données sensibles et les validations</li>
       </ul>
     </div>
-    <div id="panel-rh" class="tab-panel" role="tabpanel" aria-labelledby="tab-rh">
-      <h3>RH &amp; Conformité RGPD</h3>
-      <p class="panel-desc">Fluidifiez vos processus RH sans exposer vos données personnelles.</p>
+
+    <div id="panel-support" class="tab-panel" role="tabpanel" aria-labelledby="tab-support">
+      <h3>Fonctions support</h3>
+      <p class="panel-desc">Structurer l’administratif, la trésorerie et les procédures internes.</p>
       <ul class="panel-usages">
-        <li>Onboarding automatisé dès l'arrivée</li>
-        <li>Fiches de poste et offres d'emploi conformes</li>
-        <li>Synthèses d'entretiens et bilans</li>
-        <li>Mise en conformité RGPD native</li>
+        <li>Préparer les suivis administratifs et financiers</li>
+        <li>Formaliser les procédures et modes opératoires</li>
+        <li>Organiser la documentation interne et les tâches RH simples</li>
       </ul>
     </div>
-    <div id="panel-web" class="tab-panel" role="tabpanel" aria-labelledby="tab-web">
-      <h3>Web, SEO &amp; Contenu</h3>
-      <p class="panel-desc">Produisez plus de contenu, visible sur Google et dans les IA.</p>
-      <ul class="panel-usages">
-        <li>Stratégie de contenu SEO sur 6-12 mois</li>
-        <li>Production semi-automatisée d'articles et posts</li>
-        <li>Optimisation GEO (référencement dans ChatGPT, Perplexity)</li>
-        <li>Déclinaison multicanal depuis un seul contenu</li>
-      </ul>
+
+    <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.5rem;">
+      <a href="/cas-usage" class="btn-ghost">Voir les cas d’usage</a>
+      <a href="/diagnostic/" class="btn-primary">
+        Identifier un usage dans mon activité
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section aria-label="Chiffres clés">
+
+
+<!-- ENGAGEMENTS -->
+<section aria-labelledby="engagements-title">
   <div class="container">
+    <p class="section-label">Nos engagements</p>
+    <h2 class="section-title" id="engagements-title">Avancer sans ajouter de complexité inutile.</h2>
+
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-num">72%</div>
-        <div class="stat-label">des TPE/PME n'ont pas encore franchi le cap de l'IA en 2026</div>
+        <div class="stat-num" style="font-size:1.45rem;">Aucun outil imposé</div>
+        <div class="stat-label">La solution est choisie selon votre besoin, vos outils existants et votre niveau d’autonomie.</div>
       </div>
+
       <div class="stat">
-        <div class="stat-num">5–10h</div>
-        <div class="stat-label">gagnées par semaine en moyenne chez nos clients</div>
+        <div class="stat-num" style="font-size:1.45rem;">Test avant déploiement</div>
+        <div class="stat-label">L’usage est vérifié sur une situation réelle avant tout investissement plus important.</div>
       </div>
+
       <div class="stat">
-        <div class="stat-num">6</div>
-        <div class="stat-label">départements couverts · 09 · 31 · 32 · 81 · 82 · 47</div>
+        <div class="stat-num" style="font-size:1.45rem;">Méthode documentée</div>
+        <div class="stat-label">Les étapes, les règles et les responsabilités sont formalisées pour garder la maîtrise.</div>
       </div>
     </div>
   </div>
@@ -431,16 +917,24 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 <section id="contact" aria-labelledby="cta-title">
   <div class="container">
     <div class="cta-block">
-      <h2 id="cta-title">Pas sûr de savoir par où commencer ?</h2>
-      <p>C'est exactement pour ça que le diagnostic existe. 2 minutes pour voir concrètement ce que l'IA peut faire pour vous.</p>
-      <a href="/diagnostic/" class="btn-white">
-        Faire le diagnostic gratuit
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <h2 id="cta-title">Identifiez la première tâche à simplifier.</h2>
+      <p>Répondez à quelques questions sur votre activité et vos tâches répétitives. Vous obtenez une première orientation vers l’usage et le niveau d’accompagnement à envisager.</p>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem;">
+        <a href="/diagnostic/" class="btn-white">
+          Identifier mes priorités — 2 min
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="/contact" class="btn-ghost" style="border-color:rgba(255,255,255,0.45); color:#fff; background:transparent;">
+          Réserver un échange — 30 min
+        </a>
+      </div>
+
       <div class="reassurance">
-        <span>2 minutes, sans engagement</span>
-        <span>Résultat immédiat</span>
-        <span>Au moins une piste concrète</span>
+        <span>Questionnaire gratuit</span>
+        <span>Sans engagement</span>
+        <span>Aucun outil imposé</span>
       </div>
     </div>
   </div>
@@ -453,18 +947,21 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        Votria.pro
-        <span>Consultant &amp; Agence IA · Toulouse · Occitanie</span>
+        VotrIA
+        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
       </div>
-      <nav class="footer-links" aria-label="Liens footer">
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
         <a href="/offres">Offres</a>
         <a href="/methode">Méthode</a>
-        <a href="#secteurs">Secteurs</a>
+        <a href="/cas-usage">Cas d’usage</a>
+        <a href="/conformite-ia-rgpd">Conformité IA</a>
         <a href="/a-propos">À propos</a>
+        <a href="/contact">Contact</a>
         <a href="/mentions-legales">Mentions légales</a>
         <a href="/confidentialite">Confidentialité</a>
       </nav>
-      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
     </div>
   </div>
 </footer>
@@ -531,5 +1028,6 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 })();
 </script>
 
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>

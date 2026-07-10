@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cas d’illustration VotrIA : exemple de restitution Cap IA pour une entreprise du BTP de 8 salariés.">
+<title>Démonstrateur Cap IA BTP — VotrIA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: none; text-size-adjust: none; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #24221d;
+  background: #f7f6f2;
+  line-height: 1.68;
+  font-size: 1.04rem;
+}
+h1,h2,h3 {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-soft: #f1f0eb;
+  --text: #24221d;
+  --muted: #55524c;
+  --primary: #01696f;
+  --primary-dark: #0c4e54;
+  --primary-soft: #dce9e6;
+  --border: rgba(36,34,29,.12);
+  --good: #0f766e;
+  --warn: #9a6700;
+  --risk: #a33a32;
+  --radius: 16px;
+  --shadow: 0 8px 30px rgba(36,34,29,.08);
+  --max: 1050px;
+}
+
+.container {
+  width: min(var(--max), calc(100% - 2rem));
+  margin-inline: auto;
+}
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(247,246,242,.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.logo {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 800;
+}
+.nav a:last-child {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: .92rem;
+}
+.hero {
+  padding: clamp(3rem, 8vw, 6rem) 0;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: #fff1cf;
+  border: 1px solid rgba(154,103,0,.18);
+  color: #795100;
+  padding: .4rem .75rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 6vw, 4.2rem);
+  max-width: 17ch;
+  margin-bottom: 1.2rem;
+}
+.hero p {
+  max-width: 65ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+.disclaimer {
+  margin-top: 1.5rem;
+  max-width: 780px;
+  background: var(--primary-soft);
+  border: 1px solid rgba(1,105,111,.16);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  font-size: .92rem;
+  color: var(--text);
+}
+section {
+  padding: clamp(2.5rem, 7vw, 4.5rem) 0;
+  border-top: 1px solid var(--border);
+}
+.section-label {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .78rem;
+  font-weight: 800;
+  margin-bottom: .65rem;
+}
+.section-title {
+  font-size: clamp(1.55rem, 4vw, 2.5rem);
+  margin-bottom: .9rem;
+  max-width: 25ch;
+}
+.section-intro {
+  color: var(--muted);
+  max-width: 68ch;
+  margin-bottom: 1.8rem;
+}
+.grid-3, .grid-2 {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 760px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  box-shadow: 0 1px 3px rgba(36,34,29,.04);
+}
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: .55rem;
+}
+.card p, .card li {
+  color: var(--muted);
+  font-size: .94rem;
+}
+.card ul {
+  display: grid;
+  gap: .45rem;
+  margin-top: .7rem;
+}
+.card li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+.metric {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: .25rem;
+}
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+th, td {
+  padding: .95rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+  font-size: .91rem;
+}
+th {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+tr:last-child td { border-bottom: none; }
+.tag {
+  display: inline-flex;
+  padding: .22rem .55rem;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.tag-priority { background: #dff3ef; color: #0f766e; }
+.tag-test { background: #fff1cf; color: #795100; }
+.tag-stop { background: #f7dfdc; color: #9a332c; }
+.workflow {
+  display: grid;
+  gap: .8rem;
+  counter-reset: step;
+}
+.workflow li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: .8rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.workflow li::before {
+  content: counter(step);
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+}
+.workflow strong {
+  display: block;
+  margin-bottom: .2rem;
+}
+.workflow span {
+  color: var(--muted);
+  font-size: .92rem;
+}
+.highlight {
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 5vw, 2.4rem);
+}
+.highlight h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: .75rem;
+}
+.highlight p {
+  color: rgba(255,255,255,.86);
+}
+.highlight ul {
+  display: grid;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+.highlight li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.highlight li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}
+.cta {
+  text-align: center;
+  padding: 4rem 0;
+}
+.cta h2 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  margin-bottom: .75rem;
+}
+.cta p {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .8rem 1.35rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+}
+.btn:hover { background: var(--primary-dark); }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: .85rem;
+}
+@media (max-width: 640px) {
+  body { font-size: 1.02rem; }
+  .hero p, .section-intro, .card p, .card li, .workflow span {
+    color: var(--text);
+    opacity: .9;
+    font-weight: 500;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="/">
+      <span class="logo-mark">V</span>
+      VotrIA
+    </a>
+    <a href="/offres">Retour aux offres</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Cas d’illustration</div>
+      <h1>Exemple de restitution Cap IA pour une entreprise du BTP.</h1>
+      <p>Ce cas montre comment VotrIA transforme des tâches dispersées en décisions concrètes : quoi tester, quoi reporter et quoi ne pas automatiser.</p>
+      <p style="margin-top:.75rem;font-size:.86rem;color:var(--muted);">Données et résultats indicatifs.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Entreprise représentée</p>
+      <h2 class="section-title">Une PME artisanale de 8 salariés.</h2>
+      <p class="section-intro">Le dirigeant gère les devis, les relances et une partie du suivi administratif. L’équipe utilise déjà la messagerie, un tableur et un logiciel de devis.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="metric">20</div>
+          <h3>demandes de devis par mois</h3>
+          <p>Les informations arrivent par téléphone, email et messages mobiles.</p>
+        </article>
+        <article class="card">
+          <div class="metric">15</div>
+          <h3>devis à relancer chaque mois</h3>
+          <p>Les relances sont irrégulières et dépendent de la disponibilité du dirigeant.</p>
+        </article>
+        <article class="card">
+          <div class="metric">4</div>
+          <h3>comptes rendus de chantier par semaine</h3>
+          <p>Les notes doivent être reformulées puis classées dans les bons dossiers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Analyse Cap IA</p>
+      <h2 class="section-title">Toutes les tâches ne méritent pas d’être automatisées.</h2>
+      <p class="section-intro">Chaque piste est comparée selon quatre critères : gain potentiel, effort de mise en œuvre, niveau de risque et facilité d’adoption.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tâche examinée</th>
+              <th>Gain potentiel</th>
+              <th>Effort</th>
+              <th>Risque</th>
+              <th>Décision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Préparer les relances de devis</strong><br>Détecter les devis sans réponse et préparer un message adapté.</td>
+              <td>Élevé</td>
+              <td>Faible</td>
+              <td>Faible</td>
+              <td><span class="tag tag-priority">Priorité</span></td>
+            </tr>
+            <tr>
+              <td><strong>Structurer les comptes rendus de chantier</strong><br>Transformer des notes en compte rendu relu par un responsable.</td>
+              <td>Moyen à élevé</td>
+              <td>Moyen</td>
+              <td>Moyen</td>
+              <td><span class="tag tag-test">Tester ensuite</span></td>
+            </tr>
+            <tr>
+              <td><strong>Fixer automatiquement les prix des devis</strong><br>Calculer un prix sans contrôle humain.</td>
+              <td>Potentiellement élevé</td>
+              <td>Élevé</td>
+              <td>Élevé</td>
+              <td><span class="tag tag-stop">Écarter</span></td>
+            </tr>
+            <tr>
+              <td><strong>Répondre automatiquement à tous les clients</strong><br>Envoyer des réponses sans validation.</td>
+              <td>Moyen</td>
+              <td>Moyen</td>
+              <td>Élevé</td>
+              <td><span class="tag tag-stop">Écarter</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Priorité recommandée</p>
+      <h2 class="section-title">Commencer par les relances de devis.</h2>
+      <p class="section-intro">Cette tâche combine un volume régulier, une faible complexité et un contrôle humain facile à conserver.</p>
+
+      <ol class="workflow">
+        <li>
+          <div>
+            <strong>Recenser les devis sans réponse</strong>
+            <span>Les devis restent dans le logiciel actuel. Aucun changement d’outil n’est imposé.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Identifier les dossiers à relancer</strong>
+            <span>Une règle simple sélectionne les devis selon leur âge et leur statut.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Préparer un message personnalisé</strong>
+            <span>L’IA propose un brouillon à partir d’un modèle validé par l’entreprise.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Faire valider avant envoi</strong>
+            <span>Le dirigeant ou l’assistante contrôle le ton, le contenu et le destinataire.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Mesurer le résultat</strong>
+            <span>Le temps passé, le nombre de relances et les réponses obtenues sont suivis pendant le test.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Hypothèse à vérifier</p>
+      <h2 class="section-title">Un gain potentiel, pas un résultat annoncé.</h2>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Situation de départ fictive</h3>
+          <ul>
+            <li>Environ 1 h 30 par semaine consacrée aux relances</li>
+            <li>Relances effectuées de manière irrégulière</li>
+            <li>Aucun indicateur de suivi commun</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Objectif du test</h3>
+          <ul>
+            <li>Ramener la préparation à environ 30 à 45 minutes</li>
+            <li>Effectuer toutes les relances prévues</li>
+            <li>Conserver une validation humaine avant chaque envoi</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        Le gain potentiel illustratif serait de 45 à 60 minutes par semaine. Il doit être mesuré sur les données réelles de l’entreprise avant toute décision de déploiement.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Plan de test</p>
+      <h2 class="section-title">Tester sur 10 devis pendant deux semaines.</h2>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Indicateurs de temps</h3>
+          <ul>
+            <li>Temps de préparation par relance</li>
+            <li>Temps total consacré chaque semaine</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Indicateurs de qualité</h3>
+          <ul>
+            <li>Erreurs ou informations manquantes</li>
+            <li>Messages corrigés avant envoi</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Indicateurs d’usage</h3>
+          <ul>
+            <li>Relances réellement envoyées</li>
+            <li>Facilité d’utilisation perçue</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="highlight">
+        <h2>Ce que contient la restitution fictive</h2>
+        <p>Le livrable ne se limite pas à une recommandation générale.</p>
+        <ul>
+          <li>Une synthèse de la situation et des tâches examinées</li>
+          <li>Une matrice gain / effort / risque / adoption</li>
+          <li>La priorité retenue et les pistes écartées</li>
+          <li>Un scénario de fonctionnement avec validation humaine</li>
+          <li>Un plan de test, des indicateurs et une décision attendue</li>
+          <li>Une recommandation : déployer, ajuster, reporter ou abandonner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Décision proposée</p>
+      <h2 class="section-title">Ne pas déployer immédiatement.</h2>
+      <p class="section-intro">La recommandation fictive est de réaliser un test limité. Le projet ne passe en Deploy IA que si le gain, la qualité et l’adoption sont confirmés.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Poursuivre</h3>
+          <p>Si le temps est réellement réduit et si les messages restent fiables.</p>
+        </article>
+        <article class="card">
+          <h3>Ajuster</h3>
+          <p>Si les brouillons sont utiles mais demandent encore trop de corrections.</p>
+        </article>
+        <article class="card">
+          <h3>Arrêter</h3>
+          <p>Si le processus est plus simple à gérer manuellement ou avec l’outil existant.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ce format correspond à ce que produit Cap IA.</h2>
+      <p>Une décision argumentée, des priorités limitées et une prochaine action concrète.</p>
+      <a class="btn" href="/diagnostic/">Identifier une première priorité — 2 min</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Cas d’illustration VotrIA · Données et résultats indicatifs.
+  </div>
+</footer>
+</body>
+</html>

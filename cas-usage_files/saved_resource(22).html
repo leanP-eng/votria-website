@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://web-sandbox.oaiusercontent.com/? -->
+<html lang="fr" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cas d’usage IA concrets pour TPE et PME : devis, réponses clients, comptes rendus, factures, procédures internes et usages sensibles.">
+<title>Cas d’usage — VotrIA</title>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="./js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WDMPM0P81V');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./css2" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1.03rem, 1rem + 0.2vw, 1.16rem);
+  line-height: 1.68;
+  color: #24221d;
+  background: #f7f6f2;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+p, li { text-wrap: pretty; }
+
+h1, h2, h3 {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid #01696f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2;
+  --surface: #f9f8f5;
+  --surface-2: #ffffff;
+  --border: rgba(36, 34, 29, 0.11);
+  --text: #24221d;
+  --muted: #55524c;
+  --faint: #74716a;
+  --primary: #01696f;
+  --primary-hover: #0c4e54;
+  --primary-hi: #dce9e6;
+  --warning-hi: #fff3d2;
+  --warning-text: #725000;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px rgba(36, 34, 29, 0.07);
+  --shadow-md: 0 4px 16px rgba(36, 34, 29, 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 1040px;
+}
+
+[data-theme="dark"] {
+  --bg: #171614;
+  --surface: #1c1b19;
+  --surface-2: #201f1d;
+  --border: rgba(255,255,255,0.09);
+  --text: #f0efec;
+  --muted: #c0bdb7;
+  --faint: #99958e;
+  --primary: #69b5bf;
+  --primary-hover: #87c5cc;
+  --primary-hi: #263a3b;
+  --warning-hi: #3a3200;
+  --warning-text: #f1d98d;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+}
+
+section {
+  padding-block: clamp(2.75rem, 8vw, 5rem);
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* ===== NAV ===== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+  gap: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.nav-links { display: none; }
+
+@media (min-width: 820px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.45rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color var(--t);
+  }
+
+  .nav-links a:hover { color: var(--text); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.nav-cta {
+  display: none;
+  align-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.52rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--t), transform var(--t);
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 560px) {
+  .nav-cta { display: inline-flex; }
+}
+
+.theme-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.theme-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.burger span {
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--t), opacity var(--t);
+}
+
+@media (min-width: 820px) {
+  .burger { display: none; }
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem clamp(1rem,5vw,2rem) 1.5rem;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  padding: 0.65rem 0;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu .mob-cta {
+  margin-top: 0.75rem;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 0.78rem;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding-block: clamp(3.5rem, 10vw, 6.5rem);
+}
+
+.hero-label,
+.section-label,
+.category-label {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--primary);
+}
+
+.hero-label {
+  background: var(--primary-hi);
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 800;
+  max-width: 17ch;
+  margin-bottom: 1.2rem;
+}
+
+.hero-sub {
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  margin-bottom: 1.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-primary,
+.btn-ghost,
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 48px;
+  padding: 0.8rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background var(--t), border-color var(--t), transform var(--t);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  background: var(--primary-hi);
+}
+
+/* ===== TITRES ===== */
+.section-label {
+  margin-bottom: 0.7rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.55rem);
+  font-weight: 800;
+  max-width: 27ch;
+  margin-bottom: 0.9rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 66ch;
+  margin-bottom: 2rem;
+}
+
+/* ===== CATÉGORIES ET CAS ===== */
+.category {
+  margin-top: 2.25rem;
+}
+
+.category:first-of-type {
+  margin-top: 0;
+}
+
+.category-head {
+  margin-bottom: 1rem;
+}
+
+.category-label {
+  margin-bottom: 0.45rem;
+}
+
+.category-head h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.category-head p {
+  color: var(--muted);
+  max-width: 62ch;
+  font-size: 0.94rem;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 4vw, 1.7rem);
+  transition: border-color var(--t), box-shadow var(--t);
+}
+
+.case-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.case-card h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.case-row {
+  display: grid;
+  grid-template-columns: 7.2rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.case-key {
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 0.1rem;
+}
+
+.case-row span:last-child {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.52;
+}
+
+.case-row.control span:last-child {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.case-start {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.case-start strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.88rem;
+  margin-bottom: 0.15rem;
+}
+
+.case-start span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.case-link {
+  margin-top: 0.3rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===== DÉMONSTRATEUR ===== */
+.demo-block {
+  display: grid;
+  gap: 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.4rem, 4vw, 2rem);
+}
+
+@media (min-width: 760px) {
+  .demo-block {
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+  }
+}
+
+.demo-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: var(--warning-hi);
+  color: var(--warning-text);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.7rem;
+}
+
+.demo-block h3 {
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  margin-bottom: 0.55rem;
+}
+
+.demo-block p {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.demo-action {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (min-width: 760px) {
+  .demo-action {
+    justify-content: flex-end;
+  }
+}
+
+/* ===== CRITÈRES ===== */
+.criteria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 700px) {
+  .criteria-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.criterion {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+}
+
+.criterion h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.criterion p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.criteria-note {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--primary-hi);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+/* ===== CTA ===== */
+.cta-block {
+  background: var(--primary);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 6vw, 3.5rem) clamp(1.4rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.cta-block h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.cta-block p {
+  color: rgba(255,255,255,0.84);
+  max-width: 54ch;
+  margin: 0 auto 1.6rem;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+}
+
+.cta-block .btn-ghost {
+  border-color: rgba(255,255,255,0.45);
+  color: #fff;
+}
+
+.reassurance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.4rem;
+  margin-top: 1.25rem;
+}
+
+.reassurance span {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.84rem;
+}
+
+.reassurance span::before {
+  content: "✓";
+  margin-right: 0.35rem;
+  font-weight: 800;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+@media (min-width: 680px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-brand {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
+}
+
+.footer-brand span {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer-links a:hover { color: var(--text); }
+
+.footer-zone {
+  color: var(--faint);
+  font-size: 0.8rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  .hero-sub,
+  .section-sub,
+  .category-head p,
+  .case-row span:last-child,
+  .case-start span,
+  .demo-block p,
+  .criterion p,
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    color: var(--text);
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  .case-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+</style>
+<style>html,body,#root{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0;padding:0}html,body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif!important}button,input,textarea,select{font-family:inherit}html{background-color:transparent}html.chatgptOled.dark,html.mobileSkybridge.dark{background-color:#000}@supports (font: -apple-system-body){html.mobileSkybridge{font:-apple-system-body}}html.desktopSkybridge.dark{background-color:#1e1e1e}html.transparentSkybridgeBackground,html.transparentSkybridgeBackground.dark{background-color:transparent}html.androidSkybridge,html.androidSkybridge body,html.androidSkybridge *{-webkit-tap-highlight-color:rgba(255,255,255,0)}html.androidSkybridge *::selection,html.androidSkybridge *::-moz-selection{background:#fff0;color:inherit}</style></head>
+
+<body>
+
+<nav class="site-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="https://web-sandbox.oaiusercontent.com/" class="nav-logo" aria-label="VotrIA — accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"></rect>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"></path>
+      </svg>
+      VotrIA
+    </a>
+
+    <div class="nav-links" role="list">
+      <a href="https://web-sandbox.oaiusercontent.com/" role="listitem">Accueil</a>
+      <a href="https://web-sandbox.oaiusercontent.com/offres" role="listitem">Offres</a>
+      <a href="https://web-sandbox.oaiusercontent.com/cas-usage" role="listitem">Cas d’usage</a>
+      <a href="https://web-sandbox.oaiusercontent.com/a-propos" role="listitem">À propos</a>
+      <a href="https://web-sandbox.oaiusercontent.com/contact" role="listitem">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle="" aria-label="Basculer vers le thème sombre"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+
+      <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
+
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="https://web-sandbox.oaiusercontent.com/">Accueil</a>
+    <a href="https://web-sandbox.oaiusercontent.com/offres">Offres</a>
+    <a href="https://web-sandbox.oaiusercontent.com/cas-usage">Cas d’usage</a>
+    <a href="https://web-sandbox.oaiusercontent.com/a-propos">À propos</a>
+    <a href="https://web-sandbox.oaiusercontent.com/contact">Contact</a>
+    <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="mob-cta">Identifier mon point de départ — 2 min</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-label">Cas d’usage</div>
+    <h1 id="hero-title">Partez du problème, pas de l’outil.</h1>
+    <p class="hero-sub">Les exemples ci-dessous montrent comment une situation métier peut être examinée sans supposer à l’avance que l’IA ou l’automatisation constitue la bonne réponse.</p>
+
+    <div class="hero-actions">
+      <a href="https://web-sandbox.oaiusercontent.com/?#situations" class="btn-primary">Voir les situations métier</a>
+      <a href="https://web-sandbox.oaiusercontent.com/demonstrateur-cap-ia-btp.html" class="btn-ghost">Voir le cas d’illustration BTP</a>
+    </div>
+  </div>
+</section>
+
+<section id="situations" aria-labelledby="cases-title">
+  <div class="container">
+    <p class="section-label">Six situations fréquentes</p>
+    <h2 class="section-title" id="cases-title">Dans quelle difficulté vous reconnaissez-vous ?</h2>
+    <p class="section-sub">Chaque cas présente une piste à examiner, un contrôle à conserver et le point de départ le plus cohérent.</p>
+
+    <div class="category">
+      <div class="category-head">
+        <p class="category-label">Développer l’activité</p>
+        <h3>Mieux suivre les opportunités et les demandes clients.</h3>
+        <p>L’objectif n’est pas d’automatiser la relation commerciale, mais de réduire les oublis et de préparer plus vite les réponses.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <h3>Relancer les devis</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Les devis sont envoyés, puis relancés tardivement ou de manière irrégulière.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Des opportunités ne sont pas suivies et certaines décisions clients restent sans réponse.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Un tableau de suivi, des alertes et des brouillons de relance adaptés au statut du devis.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Validation du message, du destinataire et du moment d’envoi.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Cap IA ou Cap IA+ si le processus doit être validé ; Deploy IA si la priorité est déjà claire.</span></div>
+          <a class="case-link" href="https://web-sandbox.oaiusercontent.com/demonstrateur-cap-ia-btp.html">Voir le cas d’illustration complet</a>
+        </article>
+
+        <article class="case-card">
+          <h3>Répondre plus vite aux demandes clients</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Les demandes arrivent par plusieurs canaux et s’accumulent avant traitement.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Les délais de réponse augmentent et certaines demandes sont oubliées.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Tri des demandes, modèles validés et préparation assistée des réponses courantes.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Relecture humaine avant envoi, notamment pour les prix, délais et engagements.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Cap IA+ pour tester le fonctionnement ; Deploy IA Essentiel ou Standard si le périmètre est défini.</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-head">
+        <p class="category-label">Réduire l’administratif</p>
+        <h3>Limiter les ressaisies et les tâches de suivi répétitives.</h3>
+        <p>Les usages sont retenus seulement lorsque les informations restent vérifiables et que la validation finale est claire.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <h3>Préparer les comptes rendus</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Les notes de réunion ou de chantier doivent être reformulées et classées manuellement.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Le compte rendu arrive tard, reste incomplet ou n’est pas produit.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Un modèle structuré et une assistance à la rédaction à partir de notes autorisées.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Validation du contenu par le responsable avant diffusion ou archivage.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Cap IA+ pour tester un cas réel ; Deploy IA Essentiel si le format est déjà stabilisé.</span></div>
+        </article>
+
+        <article class="case-card">
+          <h3>Suivre les factures et les retards</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Le suivi dépend de plusieurs fichiers ou de vérifications manuelles irrégulières.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Les relances sont tardives et la visibilité sur les échéances reste partielle.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Un tableau de suivi, des alertes et une préparation assistée des relances.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Vérification du montant, du statut de la facture et du destinataire avant action.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Cap IA si les données sont dispersées ; Deploy IA Standard si les outils doivent être connectés.</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-head">
+        <p class="category-label">Organiser et sécuriser</p>
+        <h3>Rendre l’information accessible sans exposer les données.</h3>
+        <p>Ces cas exigent une attention particulière aux droits d’accès, à la confidentialité et aux règles internes.</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <h3>Centraliser les procédures</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Les modes opératoires et informations internes sont répartis entre dossiers, mails et personnes clés.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Les recherches prennent du temps et la transmission dépend de quelques collaborateurs.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Une base documentaire structurée avec recherche assistée dans les contenus autorisés.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Droits d’accès, validation des sources et mise à jour par un responsable identifié.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Cap IA+ pour cadrer les contenus ; Deploy IA Standard ou Renforcé selon le nombre d’utilisateurs.</span></div>
+        </article>
+
+        <article class="case-card">
+          <h3>Encadrer les usages IA sensibles</h3>
+          <div class="case-row"><span class="case-key">Situation</span><span>Les salariés utilisent des outils d’IA sans règles communes ni inventaire des pratiques.</span></div>
+          <div class="case-row"><span class="case-key">Conséquence</span><span>Des données confidentielles peuvent être exposées et les contenus générés manquer de validation.</span></div>
+          <div class="case-row"><span class="case-key">Piste à examiner</span><span>Un inventaire simplifié des usages IA, une charte interne et des règles de validation.</span></div>
+          <div class="case-row control"><span class="case-key">Contrôle</span><span>Données autorisées, outils acceptés, validations obligatoires et responsabilités définies.</span></div>
+          <div class="case-start"><strong>Point de départ</strong><span>Mission Conformité IA, à partir de 3 000 € HT selon le périmètre.</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="demo-title">
+  <div class="container">
+    <p class="section-label">Voir la méthode appliquée</p>
+    <h2 class="section-title" id="demo-title">Un cas d’illustration développé.</h2>
+
+    <div class="demo-block">
+      <div>
+        <div class="demo-badge">Cas d’illustration</div>
+        <h3>Entreprise du BTP de 8 salariés</h3>
+        <p>Le démonstrateur montre comment les tâches sont comparées selon le gain potentiel, l’effort, le risque et le contrôle humain, puis comment une priorité limitée est retenue.</p>
+      </div>
+
+      <div class="demo-action">
+        <a href="https://web-sandbox.oaiusercontent.com/demonstrateur-cap-ia-btp.html" class="btn-primary">Ouvrir le cas complet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="criteria-title">
+  <div class="container">
+    <p class="section-label">Avant de recommander un projet</p>
+    <h2 class="section-title" id="criteria-title">Un bon cas d’usage doit rester contrôlable.</h2>
+    <p class="section-sub">VotrIA examine plusieurs conditions avant de proposer un test ou un déploiement.</p>
+
+    <div class="criteria-grid">
+      <article class="criterion">
+        <h3>Tâche récurrente</h3>
+        <p>Le besoin revient assez souvent pour justifier un changement de fonctionnement.</p>
+      </article>
+
+      <article class="criterion">
+        <h3>Volume suffisant</h3>
+        <p>Le nombre de dossiers ou d’actions permet d’envisager un gain mesurable.</p>
+      </article>
+
+      <article class="criterion">
+        <h3>Règles relativement stables</h3>
+        <p>Le traitement peut être décrit sans dépendre uniquement d’un jugement complexe.</p>
+      </article>
+
+      <article class="criterion">
+        <h3>Résultat vérifiable</h3>
+        <p>Une personne peut contrôler la qualité avant utilisation ou diffusion.</p>
+      </article>
+
+      <article class="criterion">
+        <h3>Gain mesurable</h3>
+        <p>Le temps, le volume, les erreurs ou les délais peuvent être comparés.</p>
+      </article>
+
+      <article class="criterion">
+        <h3>Risque acceptable</h3>
+        <p>Les données, les impacts et les responsabilités peuvent être suffisamment encadrés.</p>
+      </article>
+    </div>
+
+    <div class="criteria-note">Une tâche très sensible, trop variable ou difficile à contrôler peut être ajustée, reportée ou écartée. La recommandation n’aboutit pas automatiquement à un déploiement.</div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Votre situation n’apparaît pas dans ces exemples ?</h2>
+      <p>Le diagnostic permet d’obtenir une première orientation. Un échange peut ensuite confirmer la priorité et le format adaptés.</p>
+
+      <div class="cta-actions">
+        <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="btn-white">Identifier mon point de départ — 2 min</a>
+        <a href="https://web-sandbox.oaiusercontent.com/contact" class="btn-ghost">Réserver un échange — 30 min</a>
+      </div>
+
+      <div class="reassurance">
+        <span>Diagnostic gratuit</span>
+        <span>Sans engagement</span>
+        <span>Première orientation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        VotrIA
+        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
+      </div>
+
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="https://web-sandbox.oaiusercontent.com/">Accueil</a>
+        <a href="https://web-sandbox.oaiusercontent.com/offres">Offres</a>
+        <a href="https://web-sandbox.oaiusercontent.com/methode">Méthode</a>
+        <a href="https://web-sandbox.oaiusercontent.com/cas-usage">Cas d’usage</a>
+        <a href="https://web-sandbox.oaiusercontent.com/conformite-ia-rgpd">Conformité IA</a>
+        <a href="https://web-sandbox.oaiusercontent.com/a-propos">À propos</a>
+        <a href="https://web-sandbox.oaiusercontent.com/contact">Contact</a>
+        <a href="https://web-sandbox.oaiusercontent.com/mentions-legales">Mentions légales</a>
+        <a href="https://web-sandbox.oaiusercontent.com/confidentialite">Confidentialité</a>
+      </nav>
+
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme: dark)').matches;
+
+  function renderTheme() {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+    if (!btn) return;
+
+    btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+
+  renderTheme();
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      renderTheme();
+    });
+  }
+})();
+
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+
+    const spans = btn.querySelectorAll('span');
+
+    if (open) {
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+
+      const spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+
+</body></html>

@@ -1,13 +1,21 @@
-# Configuration Votria.pro — site statique HTML pur
-# Pas de build : les fichiers HTML sont publiés tels quels depuis la racine.
+# VotrIA — configuration Netlify du site statique.
 
 [build]
   publish = "."
-  command = "echo 'Site statique - aucun build necessaire'"
+  command = "echo 'Site statique VotrIA - aucun build nécessaire'"
 
-# URLs propres : /contact au lieu de /contact.html
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
 [[redirects]]
   from = "/offres"
+  to = "/offres.html"
+  status = 200
+
+[[redirects]]
+  from = "/offres/"
   to = "/offres.html"
   status = 200
 
@@ -17,12 +25,57 @@
   status = 200
 
 [[redirects]]
+  from = "/methode/"
+  to = "/methode.html"
+  status = 200
+
+[[redirects]]
+  from = "/cas-usage"
+  to = "/cas-usage.html"
+  status = 200
+
+[[redirects]]
+  from = "/cas-usage/"
+  to = "/cas-usage.html"
+  status = 200
+
+[[redirects]]
   from = "/a-propos"
   to = "/a-propos.html"
   status = 200
 
 [[redirects]]
+  from = "/a-propos/"
+  to = "/a-propos.html"
+  status = 200
+
+[[redirects]]
+  from = "/conformite-ia-rgpd"
+  to = "/conformite-ia-rgpd.html"
+  status = 200
+
+[[redirects]]
+  from = "/conformite-ia-rgpd/"
+  to = "/conformite-ia-rgpd.html"
+  status = 200
+
+[[redirects]]
+  from = "/diagnostic"
+  to = "/diagnostic.html"
+  status = 200
+
+[[redirects]]
+  from = "/diagnostic/"
+  to = "/diagnostic.html"
+  status = 200
+
+[[redirects]]
   from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact/"
   to = "/contact.html"
   status = 200
 
@@ -32,6 +85,53 @@
   status = 200
 
 [[redirects]]
+  from = "/mentions-legales/"
+  to = "/mentions-legales.html"
+  status = 200
+
+[[redirects]]
   from = "/confidentialite"
   to = "/confidentialite.html"
   status = 200
+
+[[redirects]]
+  from = "/confidentialite/"
+  to = "/confidentialite.html"
+  status = 200
+
+[[redirects]]
+  from = "/exemple-cap-ia"
+  to = "/exemple-cap-ia.html"
+  status = 200
+
+[[redirects]]
+  from = "/exemple-cap-ia/"
+  to = "/exemple-cap-ia.html"
+  status = 200
+
+[[redirects]]
+  from = "/demonstrateur-cap-ia-btp"
+  to = "/demonstrateur-cap-ia-btp.html"
+  status = 200
+
+[[redirects]]
+  from = "/demonstrateur-cap-ia-btp/"
+  to = "/demonstrateur-cap-ia-btp.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=31536000"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://lean-parform.app.n8n.cloud https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; upgrade-insecure-requests"
+
+[[headers]]
+  for = "/assets/*"
+
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://web-sandbox.oaiusercontent.com/? -->
+<html lang="fr" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvrez Jean-François HAYET, fondateur de VotrIA : 30 ans d’expérience professionnelle au service du cadrage, de la formation et de l’intégration IA pour les TPE et PME.">
+<title>À propos — VotrIA</title>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="./js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WDMPM0P81V');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./css2" rel="stylesheet">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(1.03rem, 1rem + 0.2vw, 1.16rem);
+  line-height: 1.68;
+  color: #24221d;
+  background: #f7f6f2;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+p, li { text-wrap: pretty; }
+
+h1, h2, h3 {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid #01696f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2;
+  --surface: #f9f8f5;
+  --surface-2: #ffffff;
+  --border: rgba(36, 34, 29, 0.11);
+  --text: #24221d;
+  --muted: #55524c;
+  --faint: #74716a;
+  --primary: #01696f;
+  --primary-hover: #0c4e54;
+  --primary-hi: #dce9e6;
+  --radius-sm: 6px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --shadow-md: 0 4px 16px rgba(36, 34, 29, 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 1040px;
+}
+
+[data-theme="dark"] {
+  --bg: #171614;
+  --surface: #1c1b19;
+  --surface-2: #201f1d;
+  --border: rgba(255,255,255,0.09);
+  --text: #f0efec;
+  --muted: #c0bdb7;
+  --faint: #99958e;
+  --primary: #69b5bf;
+  --primary-hover: #87c5cc;
+  --primary-hi: #263a3b;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+}
+
+section {
+  padding-block: clamp(2.75rem, 8vw, 5rem);
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* ===== NAV ===== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+  gap: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.nav-links { display: none; }
+
+@media (min-width: 820px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.45rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color var(--t);
+  }
+
+  .nav-links a:hover { color: var(--text); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.nav-cta {
+  display: none;
+  align-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.52rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--t), transform var(--t);
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+@media (min-width: 560px) {
+  .nav-cta { display: inline-flex; }
+}
+
+.theme-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.theme-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.burger span {
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--t), opacity var(--t);
+}
+
+@media (min-width: 820px) {
+  .burger { display: none; }
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem clamp(1rem,5vw,2rem) 1.5rem;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  padding: 0.65rem 0;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu .mob-cta {
+  margin-top: 0.75rem;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 0.78rem;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding-block: clamp(3.5rem, 10vw, 6.5rem);
+}
+
+.hero-label,
+.section-label {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--primary);
+}
+
+.hero-label {
+  background: var(--primary-hi);
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 800;
+  max-width: 18ch;
+  margin-bottom: 1.2rem;
+}
+
+.hero-sub {
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  margin-bottom: 1.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-primary,
+.btn-ghost,
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 48px;
+  padding: 0.8rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background var(--t), border-color var(--t), transform var(--t);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  background: var(--primary-hi);
+}
+
+/* ===== TITRES ===== */
+.section-label {
+  margin-bottom: 0.7rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.55rem);
+  font-weight: 800;
+  max-width: 28ch;
+  margin-bottom: 0.9rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 66ch;
+  margin-bottom: 2rem;
+}
+
+/* ===== FONDATEUR ===== */
+.founder-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .founder-layout {
+    grid-template-columns: 0.72fr 1.28fr;
+    align-items: stretch;
+  }
+}
+
+.identity-card,
+.story-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.35rem, 4vw, 2rem);
+}
+
+.identity-card {
+  border-top: 4px solid var(--primary);
+}
+
+.identity-card .name {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.identity-card .role {
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.identity-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.identity-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.identity-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.story-card p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.story-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== REGARD MÉTIER ===== */
+.business-box {
+  display: grid;
+  gap: 1rem;
+  background: var(--primary-hi);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.4rem, 4vw, 2rem);
+}
+
+@media (min-width: 760px) {
+  .business-box {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+}
+
+.business-box h3 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin-bottom: 0.55rem;
+}
+
+.business-box p {
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.business-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.business-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.business-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* ===== DOMAINES ===== */
+.expertise-grid,
+.commitments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .commitments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.expertise-card,
+.commitment-card,
+.cert-card,
+.zone-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem;
+}
+
+.expertise-card {
+  border-top: 3px solid var(--primary);
+}
+
+.expertise-card h3,
+.commitment-card h3,
+.cert-card h3,
+.zone-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-card p,
+.commitment-card p,
+.cert-card p,
+.zone-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.commitment-card ul {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.commitment-card li {
+  position: relative;
+  padding-left: 1.05rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.commitment-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* ===== CERTIFICATION & CADRE ===== */
+.framework-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .framework-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cert-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: var(--primary-hi);
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.framework-note {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  background: var(--primary-hi);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+/* ===== ZONE ===== */
+.zone-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.zone-list span {
+  display: inline-flex;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+/* ===== CTA ===== */
+.cta-block {
+  background: var(--primary);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 6vw, 3.5rem) clamp(1.4rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.cta-block h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.cta-block p {
+  color: rgba(255,255,255,0.84);
+  max-width: 54ch;
+  margin: 0 auto 1.6rem;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+}
+
+.cta-block .btn-ghost {
+  border-color: rgba(255,255,255,0.45);
+  color: #fff;
+}
+
+.reassurance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.4rem;
+  margin-top: 1.25rem;
+}
+
+.reassurance span {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.84rem;
+}
+
+.reassurance span::before {
+  content: "✓";
+  margin-right: 0.35rem;
+  font-weight: 800;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid var(--border);
+  padding-block: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+@media (min-width: 680px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-brand {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
+}
+
+.footer-brand span {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer-links a:hover { color: var(--text); }
+
+.footer-zone {
+  color: var(--faint);
+  font-size: 0.8rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.04rem;
+    line-height: 1.65;
+  }
+
+  .hero-sub,
+  .section-sub,
+  .story-card p,
+  .expertise-card p,
+  .commitment-card p,
+  .cert-card p,
+  .zone-card p,
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    color: var(--text);
+    opacity: 0.9;
+    font-weight: 500;
+  }
+}
+</style>
+<style>html,body,#root{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0;padding:0}html,body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif!important}button,input,textarea,select{font-family:inherit}html{background-color:transparent}html.chatgptOled.dark,html.mobileSkybridge.dark{background-color:#000}@supports (font: -apple-system-body){html.mobileSkybridge{font:-apple-system-body}}html.desktopSkybridge.dark{background-color:#1e1e1e}html.transparentSkybridgeBackground,html.transparentSkybridgeBackground.dark{background-color:transparent}html.androidSkybridge,html.androidSkybridge body,html.androidSkybridge *{-webkit-tap-highlight-color:rgba(255,255,255,0)}html.androidSkybridge *::selection,html.androidSkybridge *::-moz-selection{background:#fff0;color:inherit}</style></head>
+
+<body>
+
+<nav class="site-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="https://web-sandbox.oaiusercontent.com/" class="nav-logo" aria-label="VotrIA — accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"></rect>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"></path>
+      </svg>
+      VotrIA
+    </a>
+
+    <div class="nav-links" role="list">
+      <a href="https://web-sandbox.oaiusercontent.com/" role="listitem">Accueil</a>
+      <a href="https://web-sandbox.oaiusercontent.com/offres" role="listitem">Offres</a>
+      <a href="https://web-sandbox.oaiusercontent.com/cas-usage" role="listitem">Cas d’usage</a>
+      <a href="https://web-sandbox.oaiusercontent.com/a-propos" role="listitem">À propos</a>
+      <a href="https://web-sandbox.oaiusercontent.com/contact" role="listitem">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle="" aria-label="Basculer vers le thème sombre"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+
+      <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
+
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="https://web-sandbox.oaiusercontent.com/">Accueil</a>
+    <a href="https://web-sandbox.oaiusercontent.com/offres">Offres</a>
+    <a href="https://web-sandbox.oaiusercontent.com/cas-usage">Cas d’usage</a>
+    <a href="https://web-sandbox.oaiusercontent.com/a-propos">À propos</a>
+    <a href="https://web-sandbox.oaiusercontent.com/contact">Contact</a>
+    <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="mob-cta">Identifier mon point de départ — 2 min</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-label">À propos de VotrIA</div>
+    <h1 id="hero-title">30 ans d’expérience pour aborder l’IA comme un sujet d’entreprise.</h1>
+    <p class="hero-sub">VotrIA accompagne les TPE et PME qui veulent utiliser l’intelligence artificielle sans commencer par acheter un outil, lancer un projet disproportionné ou perdre le contrôle de leurs données.</p>
+
+    <div class="hero-actions">
+      <a href="https://web-sandbox.oaiusercontent.com/?#parcours" class="btn-primary">Découvrir le parcours</a>
+      <a href="https://web-sandbox.oaiusercontent.com/methode" class="btn-ghost">Voir la méthode VotrIA</a>
+    </div>
+  </div>
+</section>
+
+<section id="parcours" aria-labelledby="founder-title">
+  <div class="container">
+    <p class="section-label">Le fondateur</p>
+    <h2 class="section-title" id="founder-title">Jean-François HAYET</h2>
+    <p class="section-sub">Un parcours professionnel construit au contact des équipes, des contraintes de gestion et des réalités opérationnelles.</p>
+
+    <div class="founder-layout">
+      <article class="identity-card">
+        <div class="name">Jean-François HAYET</div>
+        <div class="role">Fondateur et consultant indépendant VotrIA</div>
+
+        <ul class="identity-list">
+          <li>30 ans d’expérience professionnelle</li>
+          <li>Approche orientée TPE et PME</li>
+          <li>Conseil, formation et intégration IA</li>
+          <li>Intervention en présentiel et à distance</li>
+        </ul>
+      </article>
+
+      <article class="story-card">
+        <p>Le parcours de Jean-François HAYET s’est construit dans des environnements variés, avec un même fil conducteur : comprendre comment une organisation fonctionne, repérer ce qui freine le travail et aider les équipes à adopter des pratiques plus efficaces.</p>
+
+        <p>Cette expérience permet d’aborder l’IA avec un regard de gestion et d’organisation. La première question n’est pas « quel outil utiliser ? », mais « quel problème mérite réellement d’être traité, avec quel niveau de risque et quelle implication des équipes ? »</p>
+
+        <p>VotrIA a été créé pour rendre cette démarche accessible aux petites et moyennes entreprises, avec des missions proportionnées à leurs moyens, à leur niveau de maturité et à leurs contraintes métier.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="business-title">
+  <div class="container">
+    <p class="section-label">Le regard métier</p>
+    <h2 class="section-title" id="business-title">L’IA vient après le fonctionnement réel de l’entreprise.</h2>
+
+    <div class="business-box">
+      <div>
+        <h3>Une décision d’entreprise avant une décision technique</h3>
+        <p>Une automatisation peut être techniquement possible sans être utile, rentable ou suffisamment sûre. VotrIA examine d’abord le contexte dans lequel elle devra fonctionner.</p>
+      </div>
+
+      <ul class="business-list">
+        <li>Le temps réellement consacré à la tâche</li>
+        <li>Les outils et données déjà disponibles</li>
+        <li>Les erreurs ou retards observés</li>
+        <li>Les personnes qui devront utiliser la solution</li>
+        <li>Les contrôles humains à maintenir</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="expertise-title">
+  <div class="container">
+    <p class="section-label">Ce que VotrIA apporte</p>
+    <h2 class="section-title" id="expertise-title">Trois domaines complémentaires.</h2>
+    <p class="section-sub">Chaque mission peut se limiter à un seul domaine ou les combiner selon le besoin.</p>
+
+    <div class="expertise-grid">
+      <article class="expertise-card">
+        <h3>Cadrage et décision</h3>
+        <p>Identifier les tâches pertinentes, comparer les priorités et décider s’il faut tester, déployer, reporter ou écarter une piste.</p>
+      </article>
+
+      <article class="expertise-card">
+        <h3>Formation et adoption</h3>
+        <p>Aider les dirigeants et les équipes à utiliser l’IA avec des méthodes simples, des règles claires et une validation humaine adaptée.</p>
+      </article>
+
+      <article class="expertise-card">
+        <h3>Intégration et automatisation</h3>
+        <p>Configurer des usages documentés, reliés lorsque nécessaire aux outils existants, sans complexité supérieure au besoin.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="commitments-title">
+  <div class="container">
+    <p class="section-label">Les engagements concrets</p>
+    <h2 class="section-title" id="commitments-title">Une intervention indépendante et transmissible.</h2>
+
+    <div class="commitments-grid">
+      <article class="commitment-card">
+        <h3>Décisions proportionnées</h3>
+        <ul>
+          <li>Aucun outil imposé</li>
+          <li>Possibilité de recommander de ne pas déployer</li>
+          <li>Test limité avant généralisation lorsque nécessaire</li>
+        </ul>
+      </article>
+
+      <article class="commitment-card">
+        <h3>Contrôle conservé par l’entreprise</h3>
+        <ul>
+          <li>Validation humaine définie dès le cadrage</li>
+          <li>Documentation remise aux utilisateurs</li>
+          <li>Suivi disponible, mais jamais rendu obligatoire</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="framework-title">
+  <div class="container">
+    <p class="section-label">Compétence et cadre d’intervention</p>
+    <h2 class="section-title" id="framework-title">Une pratique responsable de l’IA générative.</h2>
+
+    <div class="framework-grid">
+      <article class="cert-card">
+        <div class="cert-badge">Certification obtenue</div>
+        <h3>RS6776</h3>
+        <p>Création de contenus rédactionnels et visuels par l’usage responsable de l’intelligence artificielle générative.</p>
+      </article>
+
+      <article class="cert-card">
+        <div class="cert-badge">Formation professionnelle</div>
+        <h3>Un cadre adapté au projet</h3>
+        <p>Les actions nécessitant un cadre de financement peuvent être réalisées avec un organisme de formation partenaire, sous réserve d’éligibilité et de validation du dossier.</p>
+      </article>
+    </div>
+
+    <div class="framework-note">Les questions liées aux données, à la confidentialité et aux règles d’usage sont intégrées au cadrage. L’accompagnement VotrIA ne remplace pas, lorsqu’ils sont nécessaires, les avis d’un DPO, d’un avocat ou d’un autre professionnel compétent.</div>
+  </div>
+</section>
+
+<section aria-labelledby="zone-title">
+  <div class="container">
+    <p class="section-label">Zone d’intervention</p>
+    <h2 class="section-title" id="zone-title">Proche lorsque le terrain l’exige, à distance lorsque cela suffit.</h2>
+
+    <div class="zone-card">
+      <h3>Présentiel en Occitanie et dans le Lot-et-Garonne</h3>
+      <p>Interventions possibles selon le besoin et le lieu de la mission.</p>
+
+      <div class="zone-list" aria-label="Départements d’intervention">
+        <span>09 · Ariège</span>
+        <span>31 · Haute-Garonne</span>
+        <span>32 · Gers</span>
+        <span>47 · Lot-et-Garonne</span>
+        <span>81 · Tarn</span>
+        <span>82 · Tarn-et-Garonne</span>
+      </div>
+
+      <p style="margin-top:1rem;">Les missions à distance peuvent être réalisées partout en France lorsque le format et les échanges ne nécessitent pas de présence sur site.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Échangez directement avec le fondateur.</h2>
+      <p>Le diagnostic de deux minutes donne une première orientation. Un échange de 30 minutes permet ensuite de vérifier si VotrIA correspond à votre situation.</p>
+
+      <div class="cta-actions">
+        <a href="https://web-sandbox.oaiusercontent.com/diagnostic/" class="btn-white">Identifier mon point de départ — 2 min</a>
+        <a href="https://web-sandbox.oaiusercontent.com/contact" class="btn-ghost">Réserver un échange — 30 min</a>
+      </div>
+
+      <div class="reassurance">
+        <span>Contact direct</span>
+        <span>Sans intermédiaire commercial</span>
+        <span>Sans engagement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        VotrIA
+        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
+      </div>
+
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="https://web-sandbox.oaiusercontent.com/">Accueil</a>
+        <a href="https://web-sandbox.oaiusercontent.com/offres">Offres</a>
+        <a href="https://web-sandbox.oaiusercontent.com/methode">Méthode</a>
+        <a href="https://web-sandbox.oaiusercontent.com/cas-usage">Cas d’usage</a>
+        <a href="https://web-sandbox.oaiusercontent.com/conformite-ia-rgpd">Conformité IA</a>
+        <a href="https://web-sandbox.oaiusercontent.com/a-propos">À propos</a>
+        <a href="https://web-sandbox.oaiusercontent.com/contact">Contact</a>
+        <a href="https://web-sandbox.oaiusercontent.com/mentions-legales">Mentions légales</a>
+        <a href="https://web-sandbox.oaiusercontent.com/confidentialite">Confidentialité</a>
+      </nav>
+
+      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme: dark)').matches;
+
+  function renderTheme() {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+
+    if (!btn) return;
+
+    btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+    btn.innerHTML = dark
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+
+  renderTheme();
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      renderTheme();
+    });
+  }
+})();
+
+(function(){
+  const btn = document.getElementById('burger-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+
+    const spans = btn.querySelectorAll('span');
+
+    if (open) {
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+
+      const spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+
+</body></html>

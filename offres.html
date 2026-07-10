@@ -3,27 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Découvrez les offres IA de Votria : Cap IA (formation) et Deploy IA (automatisation). Solutions adaptées aux PME d'Occitanie.">
-<title>Offres — Votria.pro</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WDMPM0P81V');
-</script>
-<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<meta name="description" content="Les offres IA de VotrIA : Cap IA et Cap IA+ pour décider, Deploy IA pour mettre en œuvre, Conformité RGPD / IA Act pour sécuriser. À partir de 490 € HT.">
+<title>Offres — VotrIA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+body { min-height: 100dvh; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.68; }
 img { display: block; max-width: 100%; height: auto; }
 ul { list-style: none; }
 button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
-h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.18; letter-spacing: -0.02em; font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 p, li { text-wrap: pretty; }
 :focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
@@ -32,7 +26,7 @@ p, li { text-wrap: pretty; }
 :root {
   --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
   --border: oklch(0.2 0.01 80 / 0.10);
-  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --text: #24221d; --muted: #55524c; --faint: #74716a;
   --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
   --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
   --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
@@ -43,7 +37,7 @@ p, li { text-wrap: pretty; }
 [data-theme="dark"] {
   --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
   --border: oklch(1 0 0 / 0.08);
-  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --text: #f0efec; --muted: #c0bdb7; --faint: #99958e;
   --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
   --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
 }
@@ -54,9 +48,9 @@ section { padding-block: clamp(2.5rem, 8vw, 5rem); }
 section + section { border-top: 1px solid var(--border); }
 
 /* ===== NAV ===== */
-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
-.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
 .nav-links { display: none; }
 @media (min-width: 768px) {
   .nav-links { display: flex; align-items: center; gap: 1.75rem; }
@@ -98,6 +92,83 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .section-title { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; color: var(--text); margin-bottom: 1rem; max-width: 22ch; }
 .section-sub { font-size: 1rem; color: var(--muted); max-width: 50ch; margin-bottom: 2.5rem; line-height: 1.7; }
 
+
+/* ===== ORIENTATION OFFRES ===== */
+.orientation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 760px) {
+  .orientation-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.orientation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+.orientation-card.featured {
+  border-color: var(--primary);
+  background: var(--surface-2);
+}
+.orientation-kicker {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary-hi);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.orientation-card h3 {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+.orientation-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.orientation-card ul {
+  display: grid;
+  gap: 0.45rem;
+}
+.orientation-card li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.orientation-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+.orientation-card .btn-primary,
+.orientation-card .btn-ghost {
+  margin-top: auto;
+  justify-content: center;
+}
+.hero-proof {
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 /* ===== OFFRES GRID ===== */
 .offres-grid { display: grid; gap: 1rem; }
 @media (min-width: 640px) { .offres-grid { grid-template-columns: 1fr 1fr; } }
@@ -113,7 +184,123 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .offre-list li::before { content: "✓"; color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 0.05em; }
 .offre-price { font-size: 0.85rem; color: var(--muted); padding-top: 0.5rem; border-top: 1px solid var(--border); }
 .offre-price strong { font-size: 1.1rem; color: var(--text); }
+.not-included { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.not-included h4 { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 0.6rem; }
+.not-included ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+.not-included li { font-size: 0.88rem; color: var(--faint); position: relative; padding-left: 1.1rem; }
+.not-included li::before { content: "\00d7"; position: absolute; left: 0; color: var(--muted); font-weight: 700; }
 .offre-cta { margin-top: auto; }
+
+
+/* ===== DEPLOY IA ===== */
+.deploy-levels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 760px) {
+  .deploy-levels {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.deploy-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+.deploy-card.featured {
+  border-color: var(--primary);
+  background: var(--surface-2);
+}
+.deploy-card h3 {
+  font-size: 1.25rem;
+  color: var(--text);
+}
+.deploy-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.deploy-card ul {
+  display: grid;
+  gap: 0.45rem;
+}
+.deploy-card li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.deploy-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+.deploy-price {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.deploy-price strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+.use-case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+@media (min-width: 640px) {
+  .use-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.use-case-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+}
+.use-case-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.use-case-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.deploy-note {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--primary-hi);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.deploy-note h3 {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.deploy-note p {
+  color: var(--text);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
 
 /* ===== TABLEAU COMPARATIF ===== */
 .comparison-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
@@ -124,6 +311,191 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 .comparison-table td:first-child { font-weight: 600; color: var(--text); }
 .comparison-table td { color: var(--muted); font-size: 0.9rem; }
 .check { color: var(--primary); font-weight: 700; }
+
+
+
+/* ===== DÉMONSTRATEUR VOTRIA ===== */
+.proof-block {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.35rem, 4vw, 2rem);
+  box-shadow: var(--shadow-sm);
+}
+.proof-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.proof-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: .28rem .65rem;
+  border-radius: 999px;
+  background: #fff1cf;
+  color: #795100;
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .65rem;
+}
+.proof-head h3 {
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  max-width: 28ch;
+}
+.proof-head p {
+  margin-top: .5rem;
+  color: var(--muted);
+  max-width: 58ch;
+  font-size: .94rem;
+}
+.proof-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 660px;
+}
+.proof-table th,
+.proof-table td {
+  padding: .85rem .9rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: .86rem;
+  vertical-align: top;
+}
+.proof-table th {
+  background: var(--primary-hi);
+  color: var(--primary);
+  font-weight: 800;
+}
+.proof-table tr:last-child td {
+  border-bottom: none;
+}
+.proof-status {
+  font-weight: 800;
+  white-space: nowrap;
+}
+.proof-status.priority { color: #0f766e; }
+.proof-status.test { color: #8a6100; }
+.proof-status.stop { color: #9a332c; }
+.proof-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+/* ===== CONTENU DES MISSIONS ===== */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 760px) {
+  .mission-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.mission-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+.mission-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.65rem;
+  color: var(--text);
+}
+.mission-card p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+.mission-card ul {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+.mission-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.mission-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+.commercial-note {
+  margin-top: 1.25rem;
+  background: var(--primary-hi);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+.commercial-note strong {
+  color: var(--text);
+}
+.commercial-note p {
+  color: var(--text);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+/* ===== FAQ ACCESSIBLE ===== */
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+}
+.faq-list details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0 1.25rem;
+}
+.faq-list details[open] {
+  border-color: var(--primary);
+  background: var(--surface-2);
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2rem 1.15rem 0;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.98rem;
+  position: relative;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+.faq-list details[open] summary::after {
+  content: "−";
+}
+.faq-list details p {
+  padding: 0 0 1.2rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
 
 /* ===== FAQ ===== */
 .faq-items { display: flex; flex-direction: column; gap: 1rem; }
@@ -149,39 +521,98 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bott
 footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
 .footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
 @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
-.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
-.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-brand { font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
 .footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
 .footer-links a:hover { color: var(--text); }
 .footer-zone { font-size: 0.8rem; color: var(--faint); }
+
+/* ===== LISIBILITÉ MOBILE — CHARTE VOTRIA ===== */
+@media (max-width: 640px) {
+  body {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .hero-sub,
+  .hero-proof,
+  .section-sub,
+  .orientation-card p,
+  .orientation-card li,
+  .offre-desc,
+  .offre-list li,
+  .offre-price,
+  .comparison-table td,
+  .not-included li,
+  .faq-item p,
+  .reassurance span,
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    color: var(--text) !important;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+
+  .hero-sub,
+  .section-sub,
+  .orientation-card p,
+  .offre-desc,
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .orientation-card li,
+  .offre-list li,
+  .comparison-table td,
+  .not-included li,
+  .offre-price,
+  .hero-proof,
+  .reassurance span {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .footer-brand span,
+  .footer-links a,
+  .footer-zone {
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.85rem 0.9rem;
+  }
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav aria-label="Navigation principale">
+<nav class="site-nav" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
+    <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <rect width="28" height="28" rx="7" fill="#01696f"/>
         <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
       </svg>
-      Votria
+      VotrIA
     </a>
     <div class="nav-links" role="list">
       <a href="/" role="listitem">Accueil</a>
       <a href="/offres" role="listitem">Offres</a>
-      <a href="/methode" role="listitem">Méthode</a>
+      <a href="/cas-usage" role="listitem">Cas d’usage</a>
       <a href="/a-propos" role="listitem">À propos</a>
-      <a href="/#secteurs" role="listitem">Secteurs</a>
       <a href="/contact" role="listitem">Contact</a>
     </div>
     <div class="nav-right">
       <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a href="/contact" class="nav-cta">Diagnostic gratuit</a>
+      <a href="/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
       <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
         <span></span><span></span><span></span>
       </button>
@@ -190,11 +621,10 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="/">Accueil</a>
     <a href="/offres">Offres</a>
-    <a href="/methode">Méthode</a>
+    <a href="/cas-usage">Cas d’usage</a>
     <a href="/a-propos">À propos</a>
-    <a href="/#secteurs">Secteurs</a>
     <a href="/contact">Contact</a>
-    <a href="/contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
+    <a href="/diagnostic/" class="mob-cta">Identifier mon point de départ — 2 min</a>
   </div>
 </nav>
 
@@ -203,117 +633,310 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h1">
   <div class="container">
-    <div class="hero-label">Nos offres IA</div>
-    <h1 id="hero-h1">Deux parcours complémentaires</h1>
-    <p class="hero-sub">Cap IA pour comprendre. Deploy IA pour automatiser. Choisissez le chemin qui correspond à votre situation.</p>
+    <div class="hero-label">Offres VotrIA</div>
+    <h1 id="hero-h1">Choisissez le bon niveau d’accompagnement, sans financer un projet disproportionné.</h1>
+    <p class="hero-sub">Commencez par clarifier la priorité, déployez uniquement ce qui a été validé, puis encadrez les usages sensibles lorsque le contexte l’exige.</p>
+
+    <div class="hero-actions">
+      <a href="#choisir" class="btn-primary">
+        Trouver le bon point de départ
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a href="/demonstrateur-cap-ia-btp.html" class="btn-ghost">Voir le démonstrateur</a>
+    </div>
+
+    <p class="hero-proof">Prix affichés · Aucun outil imposé · Aucun déploiement sans utilité suffisamment claire</p>
   </div>
 </section>
 
-<!-- OFFRES DÉTAIL -->
-<section aria-labelledby="offres-title">
+<!-- QUELLE OFFRE CHOISIR -->
+<section id="choisir" aria-labelledby="choisir-title">
   <div class="container">
-    <h2 class="section-title" id="offres-title">Découvrez nos offres</h2>
-    <div class="offres-grid">
-      <div class="offre-card">
-        <div class="offre-badge">Cap IA</div>
-        <h3>Je veux comprendre l'IA</h3>
-        <p class="offre-desc">Pour les entreprises qui débutent avec l'IA. Pas besoin d'expertise technique. On vous accompagne de la compréhension à l'action.</p>
-        <ul class="offre-list">
-          <li>Audit 1h30 sur votre activité</li>
-          <li>Formation pratique sur mesure</li>
-          <li>Feuille de route personnalisée</li>
-          <li>Support 30 jours par messagerie</li>
-          <li>Pas de jargon, juste du concret</li>
-        </ul>
-        <div class="offre-price">À partir de <strong>490€ HT</strong><br/><span style="font-size: 0.8rem;">(demi-journée) ou 890€ (journée complète)</span></div>
-        <a href="/contact" class="btn-primary offre-cta">Réserver mon audit Cap IA</a>
-      </div>
+    <p class="section-label">Votre point de départ</p>
+    <h2 class="section-title" id="choisir-title">Quelle est votre situation aujourd’hui ?</h2>
 
-      <div class="offre-card featured">
-        <div class="offre-badge">Deploy IA</div>
-        <h3>Je veux automatiser maintenant</h3>
-        <p class="offre-desc">Pour les PME prêtes à déployer concrètement. On construit la solution, on la teste, on la met en production.</p>
-        <ul class="offre-list">
-          <li>Audit complet de déploiement</li>
-          <li>Construction de la solution adaptée</li>
-          <li>Mise en production et tests</li>
-          <li>Prise en main par vos équipes</li>
-          <li>Suivi mensuel pendant 3+ mois</li>
-        </ul>
-        <div class="offre-price"><strong>À partir de 1500€ HT</strong> <span style="color: var(--muted);">+ 250€ HT/mois</span><br/><span style="font-size: 0.8rem;">Pour une automatisation simple. Budget sur devis selon l'ampleur du travail. Coût Cap IA déduit si déjà réalisé.</span></div>
-        <a href="/contact" class="btn-primary offre-cta">Demander un devis Deploy IA</a>
-      </div>
+    <div class="orientation-grid">
+      <article class="orientation-card">
+        <div class="orientation-kicker">Décider</div>
+        <h3>Je cherche la bonne priorité</h3>
+        <p>Cap IA ou Cap IA+ permet d’examiner les tâches, les gains attendus et les risques avant d’investir.</p>
+        <a href="#cap-ia" class="btn-ghost">Comparer les deux formats</a>
+      </article>
+
+      <article class="orientation-card featured">
+        <div class="orientation-kicker">Déployer</div>
+        <h3>J’ai déjà une priorité claire</h3>
+        <p>Deploy IA construit, teste et documente la solution adaptée à votre fonctionnement.</p>
+        <a href="#deploy-ia" class="btn-primary">Voir Deploy IA</a>
+      </article>
+
+      <article class="orientation-card">
+        <div class="orientation-kicker">Sécuriser</div>
+        <h3>Les équipes utilisent déjà l’IA</h3>
+        <p>La mission Conformité clarifie les usages, les données et les règles internes.</p>
+        <a href="#conformite-ia" class="btn-ghost">Voir la conformité IA</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- PARCOURS NATUREL -->
-<section aria-labelledby="parcours-title">
+<!-- DÉMONSTRATEUR VOTRIA -->
+<section aria-labelledby="proof-title">
   <div class="container">
-    <h2 class="section-title" id="parcours-title">Le parcours naturel</h2>
-    <p class="section-sub">Cap IA et Deploy IA sont liés. Vous commencez par Cap IA, vous comprenez précisément ce dont vous avez besoin. Puis vous passez à Deploy IA, et on ne repart pas de zéro — on connaît déjà votre activité.</p>
-    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
-      <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <div style="background: var(--primary-hi); color: var(--primary); padding: 1rem 1.5rem; border-radius: var(--radius-md); font-weight: 700;">Cap IA</div>
-        <div style="color: var(--muted); font-weight: 700;">→</div>
-        <div style="background: var(--primary-hi); color: var(--primary); padding: 1rem 1.5rem; border-radius: var(--radius-md); font-weight: 700;">Deploy IA</div>
+    <p class="section-label">Voir la méthode en pratique</p>
+    <h2 class="section-title" id="proof-title">Un exemple concret du format Cap IA.</h2>
+    <p class="section-sub">Ce cas montre comment une situation métier peut être analysée, priorisée et transformée en plan d’action.</p>
+
+    <div class="proof-block">
+      <div class="proof-head">
+        <div>
+          <div class="proof-badge">Cas d’illustration</div>
+          <h3>Entreprise du BTP de 8 salariés</h3>
+          <p>Le dirigeant cherche à réduire le temps consacré aux devis, aux relances et aux comptes rendus, sans automatiser les décisions sensibles.</p>
+        </div>
+        <a href="/demonstrateur-cap-ia-btp.html" class="btn-primary">Voir le cas complet</a>
       </div>
-      <p style="margin-top: 1.5rem; color: var(--muted);">Continuité garantie. Les 490€ de Cap IA sont déduits du devis Deploy IA.</p>
+
+      <div style="overflow-x:auto;">
+        <table class="proof-table">
+          <thead>
+            <tr>
+              <th>Tâche examinée</th>
+              <th>Gain</th>
+              <th>Effort</th>
+              <th>Risque</th>
+              <th>Décision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Préparer les relances de devis</td>
+              <td>Élevé</td>
+              <td>Faible</td>
+              <td>Faible</td>
+              <td class="proof-status priority">Priorité</td>
+            </tr>
+            <tr>
+              <td>Structurer les comptes rendus</td>
+              <td>Moyen à élevé</td>
+              <td>Moyen</td>
+              <td>Moyen</td>
+              <td class="proof-status test">Tester ensuite</td>
+            </tr>
+            <tr>
+              <td>Fixer automatiquement les prix</td>
+              <td>Potentiellement élevé</td>
+              <td>Élevé</td>
+              <td>Élevé</td>
+              <td class="proof-status stop">Écarter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="proof-note">Données et résultats indicatifs.</p>
     </div>
   </div>
 </section>
 
-<!-- TABLEAU COMPARATIF -->
-<section aria-labelledby="compare-title">
+<!-- CAP IA vs CAP IA+ -->
+<section id="cap-ia" aria-labelledby="cap-title">
   <div class="container">
-    <h2 class="section-title" id="compare-title">Tableau comparatif</h2>
-    <div style="overflow-x: auto;">
+    <p class="section-label">Décider avant d’investir</p>
+    <h2 class="section-title" id="cap-title">Cap IA ou Cap IA+ : jusqu’où voulez-vous aller ?</h2>
+    <p class="section-sub">Cap IA identifie la priorité. Cap IA+ ajoute un test pratique avec l’équipe et une feuille de route.</p>
+
+    <div style="overflow-x:auto;">
       <table class="comparison-table">
         <thead>
           <tr>
-            <th></th>
+            <th>Ce que vous comparez</th>
             <th>Cap IA</th>
-            <th>Deploy IA</th>
+            <th>Cap IA+</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Audit initial</td>
-            <td class="check">Inclus</td>
-            <td class="check">Inclus</td>
+            <td>Situation</td>
+            <td>Vous cherchez un premier sujet utile.</td>
+            <td>Vous voulez tester un usage réel avec l’équipe.</td>
           </tr>
           <tr>
-            <td>Formation/formation équipes</td>
-            <td class="check">Oui</td>
-            <td class="check">Oui</td>
+            <td>Prix</td>
+            <td><strong>490 € HT</strong></td>
+            <td><strong>1 200 € HT</strong></td>
           </tr>
           <tr>
-            <td>Construction de solution</td>
+            <td>Temps demandé à l’entreprise</td>
+            <td>Environ 1 h 15</td>
+            <td>Environ 3 h</td>
+          </tr>
+          <tr>
+            <td>Livrable</td>
+            <td>1 à 2 priorités et prochaine action recommandée</td>
+            <td>2 à 3 priorités, test réel et feuille de route</td>
+          </tr>
+          <tr>
+            <td>Test sur un cas réel</td>
             <td>Non</td>
-            <td class="check">Inclus</td>
+            <td class="check">Oui</td>
           </tr>
           <tr>
-            <td>Mise en production</td>
-            <td>Non</td>
-            <td class="check">Inclus</td>
+            <td>Délai indicatif</td>
+            <td>5 jours ouvrés</td>
+            <td>7 jours ouvrés</td>
           </tr>
           <tr>
-            <td>Suivi mensuel</td>
-            <td>30 jours seulement</td>
-            <td class="check">3+ mois</td>
-          </tr>
-          <tr>
-            <td>Durée</td>
-            <td>1-2 semaines</td>
-            <td>2-8 semaines</td>
-          </tr>
-          <tr>
-            <td>Budget</td>
-            <td>490-890€</td>
-            <td>1500€ + 250€/mois</td>
+            <td>Déduction sur Deploy IA</td>
+            <td>490 € HT pendant 60 jours</td>
+            <td>1 200 € HT pendant 60 jours</td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="commercial-note">
+      <p><strong>Aucune obligation de poursuivre :</strong> la restitution peut recommander un outil standard, une simplification sans IA, un report ou l’arrêt du projet. Cap IA n’engage pas l’entreprise à commander Deploy IA.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;">
+      <a href="/diagnostic/" class="btn-primary">Identifier le bon format — 2 min</a>
+      <a href="/exemple-cap-ia.html" class="btn-ghost">Voir le livrable</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOY IA -->
+<section id="deploy-ia" aria-labelledby="deploy-title">
+  <div class="container">
+    <p class="section-label">Mettre en œuvre</p>
+    <h2 class="section-title" id="deploy-title">Deploy IA : construire une solution utile et testée.</h2>
+    <p class="section-sub">La mission part d’une priorité déjà validée. VotrIA configure ou automatise le processus, le teste sur des situations représentatives, documente son utilisation et prépare sa prise en main.</p>
+
+    <div class="deploy-levels">
+      <article class="deploy-card">
+        <div class="offre-badge">Essentiel</div>
+        <h3>Un processus simple</h3>
+        <p>Une tâche définie, peu d’utilisateurs et peu de connexions entre outils.</p>
+        <ul>
+          <li>Configuration ou automatisation</li>
+          <li>Tests représentatifs</li>
+          <li>Mode opératoire et transmission</li>
+        </ul>
+        <div class="deploy-price">
+          <strong>À partir de 2 800 € HT</strong>
+          Périmètre confirmé après examen des outils.
+        </div>
+      </article>
+
+      <article class="deploy-card featured">
+        <div class="offre-badge">Standard</div>
+        <h3>Un processus relié aux outils</h3>
+        <p>Une automatisation structurée, plusieurs utilisateurs ou des connexions à l’environnement existant.</p>
+        <ul>
+          <li>Connexions avec les outils retenus</li>
+          <li>Formation des utilisateurs</li>
+          <li>Ajustements après test</li>
+        </ul>
+        <div class="deploy-price">
+          <strong>À partir de 4 500 € HT</strong>
+          Niveau adapté à la majorité des projets métier.
+        </div>
+      </article>
+
+      <article class="deploy-card">
+        <div class="offre-badge">Renforcé</div>
+        <h3>Plusieurs usages ou équipes</h3>
+        <p>Un périmètre plus large, des règles avancées ou des exigences supérieures de continuité.</p>
+        <ul>
+          <li>Plusieurs processus ou profils</li>
+          <li>Documentation détaillée</li>
+          <li>Mise en service accompagnée</li>
+        </ul>
+        <div class="deploy-price">
+          <strong>À partir de 6 500 € HT</strong>
+          Chiffrage établi selon le périmètre réel.
+        </div>
+      </article>
+    </div>
+
+    <p style="margin-top:1.25rem;color:var(--muted);font-size:0.95rem;line-height:1.65;">
+      Exemples : devis et relances, documents administratifs, suivi des factures, procédures internes et base documentaire.
+    </p>
+
+    <div class="deploy-note">
+      <h3>Durée et accompagnement</h3>
+      <p>Un projet standard se déroule généralement sur 3 à 6 semaines et mobilise environ 2 à 4 heures côté entreprise, réparties sur le projet. Un suivi mensuel optionnel peut être ajouté à partir de 290 € HT.</p>
+    </div>
+
+    <p style="margin-top:1rem;color:var(--muted);font-size:0.88rem;line-height:1.6;">Les licences, l’hébergement, les extensions hors périmètre et le conseil juridique spécialisé sont chiffrés séparément lorsqu’ils sont nécessaires.</p>
+  </div>
+</section>
+
+<!-- CONFORMITÉ -->
+<section id="conformite-ia" aria-labelledby="conf-title">
+  <div class="container">
+    <p class="section-label">Sécuriser les usages</p>
+    <h2 class="section-title" id="conf-title">Conformité IA : poser des règles claires.</h2>
+    <p class="section-sub">Cette mission convient lorsque les équipes utilisent déjà l’IA, manipulent des données clients ou internes, ou lorsque la direction veut encadrer les pratiques.</p>
+
+    <div class="offres-grid">
+      <article class="offre-card">
+        <div class="offre-badge">Ce qui est examiné</div>
+        <ul class="offre-list">
+          <li>Usages, outils et données concernés</li>
+          <li>Pratiques à autoriser, encadrer ou interdire</li>
+          <li>Principaux risques opérationnels</li>
+        </ul>
+      </article>
+
+      <article class="offre-card">
+        <div class="offre-badge">Ce qui est livré</div>
+        <ul class="offre-list">
+          <li>Cartographie des usages</li>
+          <li>Charte interne et guide pratique</li>
+          <li>Plan d’action et sensibilisation</li>
+        </ul>
+      </article>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.5rem;">
+      <div class="offre-price" style="border-top:none;padding-top:0;">
+        <strong>À partir de 3 000 € HT</strong><br>
+        Environ 2 à 4 heures côté entreprise · restitution standard sous 10 jours ouvrés.
+      </div>
+      <a href="/conformite-ia-rgpd/" class="btn-primary">Voir le détail</a>
+    </div>
+
+    <p style="margin-top:1rem;color:var(--muted);font-size:0.88rem;line-height:1.6;">La mission fournit un cadre opérationnel. Elle ne remplace pas les interventions réservées à un DPO, un avocat ou un conseil juridique spécialisé.</p>
+  </div>
+</section>
+
+<!-- CONTENU CONCRET D'UNE MISSION -->
+<section aria-labelledby="mission-title">
+  <div class="container">
+    <p class="section-label">Une logique constante</p>
+    <h2 class="section-title" id="mission-title">Cadrer → Tester → Transmettre</h2>
+
+    <div class="mission-grid">
+      <article class="mission-card">
+        <h3>Cadrer</h3>
+        <p>Définir le problème, les utilisateurs, les données, les contraintes et les critères de réussite.</p>
+      </article>
+
+      <article class="mission-card">
+        <h3>Tester</h3>
+        <p>Confronter la solution à des cas représentatifs et décider de poursuivre, ajuster ou arrêter.</p>
+      </article>
+
+      <article class="mission-card">
+        <h3>Transmettre</h3>
+        <p>Remettre une synthèse ou une solution documentée, avec les règles d’utilisation et la prochaine action.</p>
+      </article>
+    </div>
+
+    <div class="commercial-note">
+      <p><strong>Déduction Cap IA :</strong> 490 € HT ou 1 200 € HT sont déduits si un projet Deploy IA est validé dans les 60 jours. Déduction non remboursable et non transférable.</p>
     </div>
   </div>
 </section>
@@ -321,39 +944,29 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 <!-- FAQ -->
 <section id="faq-offres" aria-labelledby="faq-title">
   <div class="container">
-    <h2 class="section-title" id="faq-title">Questions fréquentes sur les offres</h2>
-    <div class="faq-items">
-      <div class="faq-item">
-        <h3>Est-ce que je dois commencer par Cap IA ?</h3>
-        <p>Non obligatoirement. Si vous savez déjà ce que vous voulez automatiser, vous pouvez directement passer à Deploy IA. Cap IA c'est pour les entreprises qui débutent et qui ont besoin de comprendre les possibilités avant de se lancer.</p>
-      </div>
+    <p class="section-label">Questions avant de décider</p>
+    <h2 class="section-title" id="faq-title">Les réponses utiles avant de vous engager.</h2>
 
-      <div class="faq-item">
-        <h3>Peut-on combiner Cap IA et Deploy IA ?</h3>
-        <p>Oui, c'est même recommandé. Vous faites Cap IA (1-2 semaines), vous identifiez les usages prioritaires, puis vous basculez à Deploy IA. Le coût de Cap IA est déduit du devis Deploy IA.</p>
-      </div>
+    <div class="faq-list">
+      <details>
+        <summary>Dois-je obligatoirement commencer par Cap IA ?</summary>
+        <p>Non. Si la priorité et le périmètre sont déjà clairs, un cadrage court peut précéder directement Deploy IA.</p>
+      </details>
 
-      <div class="faq-item">
-        <h3>Quels outils utilisez-vous pour Deploy IA ?</h3>
-        <p>On utilise les meilleurs outils selon votre besoin : Make, n8n, Zapier, Claude, GPT-4, Gemini. Ce n'est jamais un choix commercial — toujours un choix technique basé sur votre situation.</p>
-      </div>
+      <details>
+        <summary>Le suivi mensuel après Deploy IA est-il obligatoire ?</summary>
+        <p>Non. Il est proposé seulement lorsqu’un contrôle régulier, des ajustements ou un accompagnement à l’usage sont utiles.</p>
+      </details>
 
-      <div class="faq-item">
-        <h3>Est-ce que ma situation est finançable (OPCO, CPF) ?</h3>
-        <p>Cap IA peut être pris en charge par votre OPCO ou d'autres organismes selon votre secteur et les règles de prise en charge. Pour cela, nous travaillons avec un organisme certifié QUALIOPI aux références irréprochables. Le terrain, c'est nous. La prise en charge, c'est eux. Zéro frais cachés, zéro administratif compliqué — on gère tout.</p>
-      </div>
+      <details>
+        <summary>Peut-on conserver nos outils actuels ?</summary>
+        <p>Oui. Ils sont privilégiés lorsqu’ils répondent correctement au besoin. Une nouvelle solution n’est proposée que si son intérêt est suffisamment clair.</p>
+      </details>
 
-      <div class="faq-item">
-        <h3>Combien de temps avant d'avoir des résultats ?</h3>
-        <p>Cap IA : plan d'action clair dès la fin de la journée. Deploy IA : les premières automations tournent en 2-6 semaines selon le périmètre, avec des résultats visibles dès le premier mois.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Quel est le suivi après le déploiement ?</h3>
-        <p>Deploy IA inclut un suivi mensuel de 3+ mois minimum : point de 30-45 min, ajustements si besoin, optimisations. Vous n'êtes jamais seul face à la solution. Après ces 3 mois, on réévalue ensemble ce dont vous avez besoin.</p>
-      </div>
-
-
+      <details>
+        <summary>Que se passe-t-il si aucun projet IA n’est pertinent ?</summary>
+        <p>La restitution peut recommander une simplification sans IA, un outil standard, un report ou l’abandon d’une piste trop coûteuse ou trop risquée.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -362,16 +975,23 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
 <section id="contact" aria-labelledby="cta-title">
   <div class="container">
     <div class="cta-block">
-      <h2 id="cta-title">Pas sûr de quelle offre choisir ?</h2>
-      <p>C'est exactement pour ça que le diagnostic existe. 30 minutes pour voir concrètement ce que chaque offre peut faire pour vous.</p>
-      <a href="mailto:contact@votria.pro" class="btn-white">
-        Réserver mon diagnostic gratuit
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <h2 id="cta-title">Commencez par la décision la moins risquée.</h2>
+      <p>Identifiez d’abord le problème à traiter et le niveau d’accompagnement adapté. Aucun déploiement n’est proposé avant que son utilité soit suffisamment claire.</p>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+        <a href="/diagnostic/" class="btn-white">
+          Identifier mon point de départ — 2 min
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/contact" class="btn-ghost" style="border-color:rgba(255,255,255,0.45);color:#fff;background:transparent;">
+          Réserver un échange — 30 min
+        </a>
+      </div>
+
       <div class="reassurance">
-        <span>30 min, sans engagement</span>
-        <span>Réponse sous 24h</span>
-        <span>Au moins une piste concrète</span>
+        <span>Diagnostic gratuit</span>
+        <span>Sans engagement</span>
+        <span>Aucun outil imposé</span>
       </div>
     </div>
   </div>
@@ -384,19 +1004,21 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        Votria.pro
-        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
+        VotrIA
+        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
       </div>
       <nav class="footer-links" aria-label="Liens footer">
         <a href="/">Accueil</a>
         <a href="/offres">Offres</a>
         <a href="/methode">Méthode</a>
-        <a href="/#secteurs">Secteurs</a>
+        <a href="/cas-usage">Cas d’usage</a>
+        <a href="/conformite-ia-rgpd">Conformité IA</a>
         <a href="/a-propos">À propos</a>
+        <a href="/contact">Contact</a>
         <a href="/mentions-legales">Mentions légales</a>
         <a href="/confidentialite">Confidentialité</a>
       </nav>
-      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
+      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
     </div>
   </div>
 </footer>
@@ -448,16 +1070,8 @@ footer { border-top: 1px solid var(--border); padding-block: 2rem; background: v
   }));
 })();
 
-// FAQ toggle
-(function(){
-  const items = document.querySelectorAll('.faq-item');
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('open');
-    });
-  });
-})();
 </script>
 
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>

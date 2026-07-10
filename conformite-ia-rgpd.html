@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cadrez les usages de l’intelligence artificielle dans votre entreprise : inventaire, risques, règles internes, culture IA, documents opérationnels et plan d’action.">
+<title>Cadrage des usages IA, RGPD et règlement IA — VotrIA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:72px}
+body{min-height:100dvh;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#24221d;background:#f7f6f2}
+a{color:inherit;text-decoration:none}ul{list-style:none}button{cursor:pointer;background:none;border:0;font:inherit;color:inherit}p,li{text-wrap:pretty}
+h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance}
+:focus-visible{outline:2px solid #01696f;outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+:root{
+--bg:#f7f6f2;--surface:#f9f8f5;--surface2:#fff;--border:rgba(36,34,29,.11);
+--text:#24221d;--muted:#55524c;--faint:#74716a;--primary:#01696f;--primary-hover:#0c4e54;
+--primary-hi:#dce9e6;--warning-hi:#fff3d2;--warning-text:#725000;
+--radius-sm:6px;--radius-lg:16px;--radius-xl:20px;--shadow:0 4px 16px rgba(36,34,29,.09);
+--t:180ms cubic-bezier(.16,1,.3,1);--max:1040px
+}
+[data-theme="dark"]{
+--bg:#171614;--surface:#1c1b19;--surface2:#201f1d;--border:rgba(255,255,255,.09);
+--text:#f0efec;--muted:#c0bdb7;--faint:#99958e;--primary:#69b5bf;--primary-hover:#87c5cc;
+--primary-hi:#263a3b;--warning-hi:#3a3200;--warning-text:#f1d98d
+}
+
+.container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,5vw,2rem)}
+section{padding-block:clamp(2.75rem,8vw,5rem)}
+section+section{border-top:1px solid var(--border)}
+
+.site-nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:60px;max-width:var(--max);margin:auto;padding-inline:clamp(1rem,5vw,2rem);gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:1.2rem;font-weight:800}
+.nav-links{display:none}.nav-right{display:flex;align-items:center;gap:.65rem}
+@media(min-width:820px){.nav-links{display:flex;gap:1.45rem}.nav-links a{font-size:.9rem;font-weight:600;color:var(--muted)}.nav-links a:hover{color:var(--text)}}
+.nav-cta{display:none;align-items:center;background:var(--primary);color:#fff;font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
+@media(min-width:560px){.nav-cta{display:inline-flex}}
+.theme-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--radius-sm);color:var(--muted)}
+.theme-btn:hover{background:var(--surface);color:var(--text)}
+.burger{display:flex;flex-direction:column;gap:5px;padding:6px}.burger span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform var(--t),opacity var(--t)}
+@media(min-width:820px){.burger{display:none}}
+.mobile-menu{display:none;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,5vw,2rem) 1.5rem}
+.mobile-menu.open{display:flex}.mobile-menu a{padding:.65rem 0;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
+.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:#fff;border:0;border-radius:var(--radius-sm);padding:.78rem}
+
+.hero{padding-block:clamp(3.5rem,10vw,6.5rem)}
+.hero-label,.section-label{display:inline-flex;width:fit-content;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--primary)}
+.hero-label{background:var(--primary-hi);padding:.32rem .75rem;border-radius:var(--radius-sm);margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800;max-width:18ch;margin-bottom:1.2rem}
+.hero-sub{color:var(--muted);max-width:66ch;font-size:clamp(1rem,2vw,1.18rem);margin-bottom:1.8rem}
+.hero-actions,.cta-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+.btn-primary,.btn-ghost,.btn-white{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.8rem 1.35rem;border-radius:var(--radius-sm);font-size:.95rem;font-weight:700;transition:background var(--t),border-color var(--t),transform var(--t)}
+.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid var(--border)}.btn-ghost:hover{border-color:var(--primary);background:var(--primary-hi)}
+
+.section-label{margin-bottom:.7rem}.section-title{font-size:clamp(1.6rem,4vw,2.55rem);font-weight:800;max-width:29ch;margin-bottom:.9rem}
+.section-sub{color:var(--muted);max-width:70ch;margin-bottom:2rem}
+
+.risk-grid,.analysis-grid,.deliverables-grid,.roles-grid,.steps-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:700px){.risk-grid{grid-template-columns:repeat(3,1fr)}.analysis-grid,.roles-grid{grid-template-columns:repeat(2,1fr)}.deliverables-grid{grid-template-columns:repeat(2,1fr)}.steps-grid{grid-template-columns:repeat(3,1fr)}}
+
+.risk-card,.analysis-card,.deliverable-card,.role-card,.step-card,.scope-card,.limits-card,.source-card{
+background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.3rem
+}
+.risk-card h3,.analysis-card h3,.deliverable-card h3,.role-card h3,.step-card h3,.scope-card h3,.limits-card h3,.source-card h3{font-size:1.03rem;margin-bottom:.45rem}
+.risk-card p,.analysis-card p,.deliverable-card p,.role-card p,.step-card p,.scope-card p,.limits-card p,.source-card p{color:var(--muted);font-size:.92rem}
+.analysis-card{border-top:3px solid var(--primary)}
+.analysis-list,.role-list,.limits-list,.source-list{display:grid;gap:.48rem;margin-top:.75rem}
+.analysis-list li,.role-list li,.limits-list li,.source-list li{position:relative;padding-left:1.05rem;color:var(--text);font-size:.9rem}
+.analysis-list li::before,.role-list li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:800}
+.limits-list li::before{content:"—";position:absolute;left:0;color:var(--primary);font-weight:800}
+.source-list li::before{content:"→";position:absolute;left:0;color:var(--primary);font-weight:800}
+.source-list a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+.context-note,.legal-note,.scope-note{margin-top:1.25rem;padding:1.05rem 1.2rem;background:var(--primary-hi);border:1px solid var(--border);border-radius:var(--radius-lg);color:var(--text);font-size:.92rem}
+.warning-note{margin-top:1.25rem;padding:1.05rem 1.2rem;background:var(--warning-hi);border:1px solid var(--border);border-radius:var(--radius-lg);color:var(--warning-text);font-size:.92rem;font-weight:600}
+
+.deliverable-card strong{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--primary-hi);color:var(--primary);font-family:'Manrope',sans-serif;font-size:.86rem;margin-bottom:.7rem}
+
+.step-card{position:relative;padding-top:3.1rem}
+.step-num{position:absolute;top:1.15rem;left:1.3rem;color:var(--primary);font-family:'Manrope',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.08em}
+
+.scope-wrap{overflow-x:auto}
+.scope-table{width:100%;min-width:780px;border-collapse:collapse;background:var(--surface);border:1px solid var(--border)}
+.scope-table th,.scope-table td{padding:1rem 1.05rem;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;font-size:.91rem}
+.scope-table th{background:var(--primary-hi);color:var(--primary);font-weight:800}
+.scope-table td:first-child{font-weight:800;color:var(--text)}.scope-table td{color:var(--muted)}.scope-table tr:last-child td{border-bottom:0}
+
+.price-card{margin-top:1.25rem;display:grid;gap:1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(1.3rem,4vw,1.8rem)}
+@media(min-width:760px){.price-card{grid-template-columns:.75fr 1.25fr;align-items:center}}
+.price-main{font-family:'Manrope',sans-serif;font-size:clamp(1.45rem,3vw,2rem);font-weight:800;color:var(--primary)}
+.price-detail{color:var(--muted);font-size:.93rem}
+
+.cta-block{background:var(--primary);border-radius:var(--radius-xl);padding:clamp(2rem,6vw,3.5rem) clamp(1.4rem,5vw,3rem);text-align:center}
+.cta-block h2{font-size:clamp(1.6rem,4vw,2.4rem);color:#fff;margin-bottom:.75rem}
+.cta-block p{color:rgba(255,255,255,.84);max-width:56ch;margin:0 auto 1.6rem}.cta-actions{justify-content:center}
+.btn-white{background:#fff;color:var(--primary)}.cta-block .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.reassurance{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem 1.4rem;margin-top:1.25rem}.reassurance span{color:rgba(255,255,255,.82);font-size:.84rem}.reassurance span::before{content:"✓";margin-right:.35rem;font-weight:800}
+
+footer{border-top:1px solid var(--border);padding-block:2rem}.footer-inner{display:flex;flex-direction:column;gap:1.2rem}
+@media(min-width:680px){.footer-inner{flex-direction:row;align-items:center;justify-content:space-between}}
+.footer-brand{font-family:'Manrope',sans-serif;font-weight:800}.footer-brand span{display:block;font-family:'Inter',sans-serif;color:var(--muted);font-size:.8rem;font-weight:500;margin-top:.2rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:.65rem 1rem}.footer-links a{color:var(--muted);font-size:.82rem}.footer-zone{color:var(--faint);font-size:.8rem}
+
+@media(max-width:640px){
+body{font-size:1.04rem;line-height:1.65}
+.hero-sub,.section-sub,.risk-card p,.analysis-card p,.deliverable-card p,.role-card p,.step-card p,.scope-card p,.limits-card p,.source-card p,.price-detail,.footer-brand span,.footer-links a,.footer-zone{color:var(--text);opacity:.9;font-weight:500}
+}
+</style>
+</head>
+
+<body>
+<nav class="site-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+      </svg>
+      VotrIA
+    </a>
+
+    <div class="nav-links" role="list">
+      <a href="/" role="listitem">Accueil</a>
+      <a href="/offres" role="listitem">Offres</a>
+      <a href="/cas-usage" role="listitem">Cas d’usage</a>
+      <a href="/a-propos" role="listitem">À propos</a>
+      <a href="/contact" role="listitem">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/cas-usage">Cas d’usage</a>
+    <a href="/a-propos">À propos</a>
+    <a href="/contact">Contact</a>
+    <a href="/diagnostic/" class="mob-cta">Identifier mon point de départ — 2 min</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-label">Usages IA, RGPD et règlement européen sur l’IA</div>
+    <h1 id="hero-title">Cadrez vos usages IA et préparez les actions de conformité.</h1>
+    <p class="hero-sub">VotrIA réalise un état des lieux opérationnel, repère les principaux risques, aide à définir les règles internes et prépare des documents exploitables par l’entreprise et ses conseils.</p>
+
+    <div class="hero-actions">
+      <a href="/diagnostic/" class="btn-primary">Évaluer mon besoin de cadrage — 2 min</a>
+      <a href="#mission" class="btn-ghost">Voir le contenu de la mission</a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="situations-title">
+  <div class="container">
+    <p class="section-label">Situations à vérifier</p>
+    <h2 class="section-title" id="situations-title">Les usages existent souvent avant les règles.</h2>
+    <p class="section-sub">La mission commence par des faits observables, sans supposer que chaque usage présente le même niveau de risque.</p>
+
+    <div class="risk-grid">
+      <article class="risk-card">
+        <h3>Outils non validés</h3>
+        <p>Des services d’IA sont utilisés sans décision interne ni responsable clairement identifié.</p>
+      </article>
+      <article class="risk-card">
+        <h3>Données copiées dans des services externes</h3>
+        <p>Des informations personnelles ou confidentielles peuvent être transmises sans vérification préalable.</p>
+      </article>
+      <article class="risk-card">
+        <h3>Résultats peu contrôlés</h3>
+        <p>Des textes, analyses ou réponses sont repris sans relecture adaptée au niveau de conséquence.</p>
+      </article>
+      <article class="risk-card">
+        <h3>Usages non inventoriés</h3>
+        <p>La direction ne dispose pas d’une vision claire des outils, équipes et finalités concernés.</p>
+      </article>
+      <article class="risk-card">
+        <h3>Règles différentes selon les équipes</h3>
+        <p>Chaque service applique ses propres pratiques, parfois sans cohérence avec les politiques existantes.</p>
+      </article>
+      <article class="risk-card">
+        <h3>Utilisateurs insuffisamment sensibilisés</h3>
+        <p>Les salariés ne connaissent pas toujours les limites, les contrôles attendus ou les données à exclure.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="mission" aria-labelledby="analysis-title">
+  <div class="container">
+    <p class="section-label">Ce que la mission analyse</p>
+    <h2 class="section-title" id="analysis-title">Deux cadres réglementaires, un examen adapté aux usages réels.</h2>
+    <p class="section-sub">Les obligations dépendent notamment du système utilisé, du rôle de l’entreprise, des données traitées, de la finalité et du niveau de risque. La mission ne présume pas que toutes les obligations s’appliquent de la même manière.</p>
+
+    <div class="analysis-grid">
+      <article class="analysis-card">
+        <h3>Données personnelles et RGPD</h3>
+        <ul class="analysis-list">
+          <li>Données personnelles éventuellement utilisées</li>
+          <li>Finalité et personnes concernées</li>
+          <li>Accès, partage et conservation</li>
+          <li>Information et droits des personnes</li>
+          <li>Éléments à vérifier dans la documentation RGPD existante</li>
+          <li>Besoin éventuel de consulter le DPO ou un conseil spécialisé</li>
+        </ul>
+      </article>
+
+      <article class="analysis-card">
+        <h3>Règlement européen sur l’IA</h3>
+        <ul class="analysis-list">
+          <li>Rôle de l’entreprise dans l’utilisation du système</li>
+          <li>Nature et contexte de l’usage</li>
+          <li>Usages sensibles ou à suspendre dans l’attente d’une analyse</li>
+          <li>Supervision humaine et traçabilité opérationnelle</li>
+          <li>Transparence envers les utilisateurs ou destinataires</li>
+          <li>Besoins de culture IA, de sensibilisation et de formation</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="context-note">Un document confidentiel n’est pas toujours une donnée personnelle, et une donnée personnelle n’est pas nécessairement confidentielle. Les deux dimensions sont examinées séparément.</div>
+  </div>
+</section>
+
+<section aria-labelledby="deliverables-title">
+  <div class="container">
+    <p class="section-label">Livrables</p>
+    <h2 class="section-title" id="deliverables-title">Une base opérationnelle, prête à être arbitrée et validée.</h2>
+    <p class="section-sub">Les documents sont adaptés au périmètre retenu. Certains constituent des projets à valider par l’entreprise ou un professionnel compétent.</p>
+
+    <div class="deliverables-grid">
+      <article class="deliverable-card"><strong>01</strong><h3>Inventaire opérationnel des usages IA</h3><p>Outils, équipes, finalités, données, fréquence, responsables et contrôles existants.</p></article>
+      <article class="deliverable-card"><strong>02</strong><h3>Cartographie des principaux risques</h3><p>Risques liés aux données, aux erreurs, à la confidentialité, à la supervision et à l’adoption.</p></article>
+      <article class="deliverable-card"><strong>03</strong><h3>Grille de décision sur les usages</h3><p>Usages autorisés, encadrés, à réexaminer ou à suspendre provisoirement.</p></article>
+      <article class="deliverable-card"><strong>04</strong><h3>Projet de charte interne</h3><p>Règles simples concernant les outils, les données, les validations et les responsabilités.</p></article>
+      <article class="deliverable-card"><strong>05</strong><h3>Guide pratique pour les utilisateurs</h3><p>Réflexes attendus avant, pendant et après l’utilisation d’un outil d’IA.</p></article>
+      <article class="deliverable-card"><strong>06</strong><h3>Besoins de culture IA</h3><p>Publics concernés, sujets prioritaires et niveau de sensibilisation recommandé.</p></article>
+      <article class="deliverable-card"><strong>07</strong><h3>Plan d’action priorisé</h3><p>Actions immédiates, décisions à prendre et améliorations à programmer.</p></article>
+      <article class="deliverable-card"><strong>08</strong><h3>Points nécessitant une validation spécialisée</h3><p>Questions à transmettre au DPO, au conseil juridique, au prestataire informatique ou à la direction.</p></article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="process-title">
+  <div class="container">
+    <p class="section-label">Déroulement</p>
+    <h2 class="section-title" id="process-title">Une collecte limitée aux informations nécessaires.</h2>
+
+    <div class="steps-grid">
+      <article class="step-card"><div class="step-num">ÉTAPE 01</div><h3>Cadrage</h3><p>Définition du périmètre, des services concernés, des interlocuteurs et des documents utiles.</p></article>
+      <article class="step-card"><div class="step-num">ÉTAPE 02</div><h3>Entretiens ciblés</h3><p>Échanges avec la direction et les responsables ou utilisateurs représentatifs du périmètre.</p></article>
+      <article class="step-card"><div class="step-num">ÉTAPE 03</div><h3>Inventaire</h3><p>Recensement des usages, outils, données, contrôles et règles déjà en place.</p></article>
+      <article class="step-card"><div class="step-num">ÉTAPE 04</div><h3>Analyse</h3><p>Classement des situations, repérage des écarts et préparation des recommandations.</p></article>
+      <article class="step-card"><div class="step-num">ÉTAPE 05</div><h3>Restitution</h3><p>Présentation des constats, arbitrages attendus et remise des projets de documents.</p></article>
+      <article class="step-card"><div class="step-num">ÉTAPE 06</div><h3>Ajustement</h3><p>Correction des livrables après retour de l’entreprise dans le périmètre prévu.</p></article>
+    </div>
+
+    <div class="warning-note">Le diagnostic initial ne doit contenir aucune donnée personnelle, confidentielle ou sensible. Les éléments nécessaires sont demandés uniquement après définition du cadre de mission.</div>
+  </div>
+</section>
+
+<section aria-labelledby="scope-title">
+  <div class="container">
+    <p class="section-label">Périmètre, mobilisation et délai</p>
+    <h2 class="section-title" id="scope-title">La charge dépend du nombre d’usages, de services et d’interlocuteurs.</h2>
+    <p class="section-sub">Les estimations suivantes sont indicatives. Elles sont confirmées après le cadrage initial.</p>
+
+    <div class="scope-wrap">
+      <table class="scope-table">
+        <thead>
+          <tr>
+            <th>Profil indicatif</th>
+            <th>Périmètre type</th>
+            <th>Mobilisation côté entreprise</th>
+            <th>Délai indicatif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TPE</td>
+            <td>Un usage limité, un service, 1 à 2 interlocuteurs</td>
+            <td>Environ 2 à 4 heures</td>
+            <td>Environ 10 jours ouvrés</td>
+          </tr>
+          <tr>
+            <td>PME de 10 à 19 salariés</td>
+            <td>Plusieurs usages ou interlocuteurs, périmètre encore concentré</td>
+            <td>Environ 4 à 8 heures</td>
+            <td>10 à 15 jours ouvrés</td>
+          </tr>
+          <tr>
+            <td>PME de 20 à 50 salariés</td>
+            <td>Plusieurs services, outils ou catégories d’utilisateurs</td>
+            <td>Environ 8 à 15 heures</td>
+            <td>Environ 2 à 4 semaines</td>
+          </tr>
+          <tr>
+            <td>Plusieurs sites ou périmètre complexe</td>
+            <td>Services multiples, outils nombreux ou usages sensibles</td>
+            <td>Estimation après cadrage</td>
+            <td>Planning spécifique</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-card">
+      <div class="price-main">À partir de 3 000 € HT</div>
+      <div class="price-detail">Ce tarif correspond à un périmètre limité. Une PME de 20 à 50 salariés, plusieurs services, plusieurs sites ou des usages sensibles font l’objet d’une proposition après cadrage.</div>
+    </div>
+
+    <div class="scope-note">La mobilisation comprend généralement les entretiens, la transmission des informations nécessaires, la restitution et la relecture des projets de documents.</div>
+  </div>
+</section>
+
+<section aria-labelledby="roles-title">
+  <div class="container">
+    <p class="section-label">Responsabilités partagées</p>
+    <h2 class="section-title" id="roles-title">VotrIA prépare le cadre ; l’entreprise prend les décisions.</h2>
+
+    <div class="roles-grid">
+      <article class="role-card">
+        <h3>VotrIA</h3>
+        <ul class="role-list">
+          <li>Structure l’inventaire et les entretiens</li>
+          <li>Repère les principaux risques opérationnels</li>
+          <li>Prépare les projets de règles et de documents</li>
+          <li>Signale les questions nécessitant une validation spécialisée</li>
+        </ul>
+      </article>
+
+      <article class="role-card">
+        <h3>L’entreprise</h3>
+        <ul class="role-list">
+          <li>Désigne les interlocuteurs et décide du périmètre</li>
+          <li>Confirme les outils autorisés ou interdits</li>
+          <li>Détermine les données utilisables et les validations obligatoires</li>
+          <li>Approuve, fait valider et diffuse les règles internes</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="legal-note">Le responsable de traitement, le DPO, le conseil juridique, le responsable informatique ou d’autres professionnels peuvent devoir être associés selon les usages et les risques identifiés.</div>
+  </div>
+</section>
+
+<section aria-labelledby="limits-title">
+  <div class="container">
+    <p class="section-label">Limites de la prestation</p>
+    <h2 class="section-title" id="limits-title">Un cadrage opérationnel, pas une garantie juridique.</h2>
+
+    <div class="limits-card">
+      <h3>La mission ne remplace pas :</h3>
+      <ul class="limits-list">
+        <li>un audit juridique exhaustif ou une consultation d’avocat ;</li>
+        <li>une mission de DPO externe ;</li>
+        <li>un audit de cybersécurité ou de sécurité informatique ;</li>
+        <li>une analyse d’impact complète lorsqu’elle est requise ;</li>
+        <li>une certification ou une garantie d’absence de risque ;</li>
+        <li>les décisions et validations qui relèvent de l’entreprise.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="sources-title">
+  <div class="container">
+    <p class="section-label">Repères officiels</p>
+    <h2 class="section-title" id="sources-title">Des sources à consulter selon votre situation.</h2>
+
+    <div class="source-card">
+      <ul class="source-list">
+        <li><a href="https://www.cnil.fr/fr/intelligence-artificielle/ia-professionnels-comment-se-mettre-en-conformite" target="_blank" rel="noopener noreferrer">CNIL — IA : professionnels, comment se mettre en conformité ?</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Commission européenne — cadre réglementaire européen sur l’IA</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers" target="_blank" rel="noopener noreferrer">Commission européenne — questions et réponses sur la culture IA</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-block">
+      <h2 id="cta-title">Votre entreprise utilise déjà des outils d’IA ?</h2>
+      <p>Le diagnostic permet d’obtenir une première orientation sans transmettre de données sensibles. Un échange confirme ensuite le périmètre utile.</p>
+
+      <div class="cta-actions">
+        <a href="/diagnostic/" class="btn-white">Évaluer mon besoin de cadrage — 2 min</a>
+        <a href="/contact" class="btn-ghost">Réserver un échange — 30 min</a>
+      </div>
+
+      <div class="reassurance">
+        <span>Première orientation</span>
+        <span>Sans données sensibles</span>
+        <span>Sans engagement</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        VotrIA
+        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
+      </div>
+
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="/">Accueil</a>
+        <a href="/offres">Offres</a>
+        <a href="/methode">Méthode</a>
+        <a href="/cas-usage">Cas d’usage</a>
+        <a href="/conformite-ia-rgpd">Conformité IA</a>
+        <a href="/a-propos">À propos</a>
+        <a href="/contact">Contact</a>
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/confidentialite">Confidentialité</a>
+      </nav>
+
+      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn=document.querySelector('[data-theme-toggle]');
+  const root=document.documentElement;
+  let dark=matchMedia('(prefers-color-scheme:dark)').matches;
+
+  function renderTheme(){
+    root.setAttribute('data-theme',dark?'dark':'light');
+    if(!btn)return;
+    btn.setAttribute('aria-label','Basculer vers le thème '+(dark?'clair':'sombre'));
+    btn.innerHTML=dark
+      ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+
+  renderTheme();
+  if(btn)btn.addEventListener('click',()=>{dark=!dark;renderTheme()});
+})();
+
+(function(){
+  const btn=document.getElementById('burger-btn');
+  const menu=document.getElementById('mobile-menu');
+  if(!btn||!menu)return;
+
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+    const spans=btn.querySelectorAll('span');
+
+    if(open){
+      spans[0].style.transform='translateY(7px) rotate(45deg)';
+      spans[1].style.opacity='0';
+      spans[2].style.transform='translateY(-7px) rotate(-45deg)';
+    }else{
+      spans[0].style.transform='';
+      spans[1].style.opacity='';
+      spans[2].style.transform='';
+    }
+  });
+
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    const spans=btn.querySelectorAll('span');
+    spans[0].style.transform='';
+    spans[1].style.opacity='';
+    spans[2].style.transform='';
+  }));
+})();
+</script>
+<script src="/assets/cookie-consent.js" defer></script>
+</body>
+</html>
