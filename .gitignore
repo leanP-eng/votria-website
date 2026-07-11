@@ -17,9 +17,22 @@ Thumbs.db
 
 # Backups
 *.bak
-*~
 
 # Node (optionnel si tu ajoutes des dépendances à l'avenir)
 node_modules/
 package-lock.json
 yarn.lock
+
+# ===== Fichiers de travail internes (ne pas déployer sur le site public) =====
+AUDIT_GLOBAL.md
+CLAUDE.md
+PLAN.md
+README_DEPLOIEMENT.md
+workflow-n8n-fast-audit.json
+
+# Dossiers de travail
+documents/
+.claude/
+
+# Archives / zips
+*.zip
