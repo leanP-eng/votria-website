@@ -15,8 +15,8 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: none; text-size-adjust: none; }
 body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #24221d;
-  background: #f7f6f2;
+  color: #F8FAFC;
+  background: #0F172A;
   line-height: 1.68;
   font-size: 1.04rem;
 }
@@ -25,25 +25,27 @@ h1,h2,h3 {
   line-height: 1.18;
   letter-spacing: -0.02em;
   text-wrap: balance;
+  color: #F8FAFC;
 }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
 :root {
-  --bg: #f7f6f2;
-  --surface: #ffffff;
-  --surface-soft: #f1f0eb;
-  --text: #24221d;
-  --muted: #55524c;
-  --primary: #01696f;
-  --primary-dark: #0c4e54;
-  --primary-soft: #dce9e6;
-  --border: rgba(36,34,29,.12);
-  --good: #0f766e;
-  --warn: #9a6700;
-  --risk: #a33a32;
+  --bg: #0F172A;
+  --surface: #162033;
+  --surface-soft: #1E293B;
+  --text: #F8FAFC;
+  --muted: #CBD5E1;
+  --primary: #F97316;
+  --primary-dark: #EA580C;
+  --primary-soft: rgba(249,115,22,.16);
+  --on-primary: #0F172A;
+  --border: rgba(248,250,252,.12);
+  --good: #4ADE80;
+  --warn: #FBBF24;
+  --risk: #F87171;
   --radius: 16px;
-  --shadow: 0 8px 30px rgba(36,34,29,.08);
+  --shadow: 0 8px 30px rgba(0,0,0,.28);
   --max: 1050px;
 }
 
@@ -79,7 +81,7 @@ header {
   display: grid;
   place-items: center;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   font-size: .8rem;
   font-weight: 800;
 }
@@ -95,9 +97,9 @@ header {
   display: inline-flex;
   align-items: center;
   gap: .45rem;
-  background: #fff1cf;
-  border: 1px solid rgba(154,103,0,.18);
-  color: #795100;
+  background: rgba(251,191,36,.16);
+  border: 1px solid rgba(251,191,36,.3);
+  color: #FBBF24;
   padding: .4rem .75rem;
   border-radius: 999px;
   font-size: .78rem;
@@ -226,9 +228,9 @@ tr:last-child td { border-bottom: none; }
   font-weight: 800;
   white-space: nowrap;
 }
-.tag-priority { background: #dff3ef; color: #0f766e; }
-.tag-test { background: #fff1cf; color: #795100; }
-.tag-stop { background: #f7dfdc; color: #9a332c; }
+.tag-priority { background: rgba(74,222,128,.16); color: #4ADE80; }
+.tag-test { background: rgba(251,191,36,.16); color: #FBBF24; }
+.tag-stop { background: rgba(248,113,113,.16); color: #F87171; }
 .workflow {
   display: grid;
   gap: .8rem;
@@ -253,7 +255,7 @@ tr:last-child td { border-bottom: none; }
   place-items: center;
   border-radius: 50%;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
 }
@@ -267,7 +269,7 @@ tr:last-child td { border-bottom: none; }
 }
 .highlight {
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   border-radius: var(--radius);
   padding: clamp(1.5rem, 5vw, 2.4rem);
 }
@@ -313,7 +315,7 @@ tr:last-child td { border-bottom: none; }
   padding: .8rem 1.35rem;
   border-radius: 8px;
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   font-weight: 800;
 }
 .btn:hover { background: var(--primary-dark); }
@@ -589,5 +591,6 @@ footer {
     Cas d’illustration VotrIA · Données et résultats indicatifs.
   </div>
 </footer>
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>

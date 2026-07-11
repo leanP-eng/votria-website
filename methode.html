@@ -13,21 +13,21 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:none;text-size-adjust:none}
-body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#24221d;background:#f7f6f2}
+body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#F8FAFC;background:#0F172A}
 a{color:inherit;text-decoration:none}ul{list-style:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance}
+h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance;color:#F8FAFC}
 p,li{text-wrap:pretty}
-:focus-visible{outline:2px solid #01696f;outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid #F97316;outline-offset:3px;border-radius:4px}
 
 :root{
---bg:#f7f6f2;--surface:#f9f8f5;--surface2:#fff;--border:rgba(36,34,29,.11);
---text:#24221d;--muted:#55524c;--faint:#74716a;--primary:#01696f;--primary-hover:#0c4e54;
---primary-hi:#dce9e6;--radius-sm:6px;--radius-lg:16px;--radius-xl:20px;
---shadow:0 4px 16px rgba(36,34,29,.09);--max:1040px;--t:180ms ease
+--bg:#0F172A;--surface:#162033;--surface2:#1E293B;--border:rgba(248,250,252,.12);
+--text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#EA580C;
+--primary-hi:rgba(249,115,22,.16);--on-primary:#0F172A;--radius-sm:6px;--radius-lg:16px;--radius-xl:20px;
+--shadow:0 8px 24px rgba(0,0,0,.28);--max:1040px;--t:180ms ease
 }
 [data-theme="dark"]{
---bg:#171614;--surface:#1c1b19;--surface2:#201f1d;--border:rgba(255,255,255,.09);
---text:#f0efec;--muted:#c0bdb7;--faint:#99958e;--primary:#69b5bf;--primary-hover:#87c5cc;--primary-hi:#263a3b
+--bg:#020617;--surface:#0B1220;--surface2:#111827;--border:rgba(248,250,252,.10);
+--text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#FB923C;--primary-hi:rgba(249,115,22,.18);--on-primary:#0F172A
 }
 
 .container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,5vw,2rem)}
@@ -39,7 +39,7 @@ section+section{border-top:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-weight:800;font-size:1.2rem}
 .nav-links{display:none}.nav-right{display:flex;align-items:center;gap:.65rem}
 @media(min-width:820px){.nav-links{display:flex;gap:1.45rem}.nav-links a{font-size:.9rem;font-weight:600;color:var(--muted)}.nav-links a:hover{color:var(--text)}}
-.nav-cta{display:none;background:var(--primary);color:#fff;font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
+.nav-cta{display:none;background:var(--primary);color:var(--on-primary);font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
 @media(min-width:560px){.nav-cta{display:inline-flex}}
 .theme-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--radius-sm);color:var(--muted)}
 .theme-btn:hover{background:var(--surface);color:var(--text)}
@@ -47,7 +47,7 @@ section+section{border-top:1px solid var(--border)}
 @media(min-width:820px){.burger{display:none}}
 .mobile-menu{display:none;flex-direction:column;background:var(--surface);padding:1rem clamp(1rem,5vw,2rem) 1.5rem;border-bottom:1px solid var(--border)}
 .mobile-menu.open{display:flex}.mobile-menu a{padding:.65rem 0;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
-.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:#fff;border:0;border-radius:var(--radius-sm)}
+.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:var(--on-primary);border:0;border-radius:var(--radius-sm)}
 
 .hero{padding-block:clamp(3.5rem,10vw,6.5rem)}
 .hero-label,.section-label{display:inline-flex;width:fit-content;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--primary)}
@@ -57,7 +57,7 @@ section+section{border-top:1px solid var(--border)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
 
 .btn-primary,.btn-ghost,.btn-white{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.8rem 1.35rem;border-radius:var(--radius-sm);font-size:.95rem;font-weight:700;transition:var(--t)}
-.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}.btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
 .btn-ghost{border:1.5px solid var(--border)}.btn-ghost:hover{border-color:var(--primary);background:var(--primary-hi)}
 
 .section-label{margin-bottom:.7rem}.section-title{font-size:clamp(1.6rem,4vw,2.55rem);font-weight:800;max-width:26ch;margin-bottom:.9rem}
@@ -113,7 +113,7 @@ body{font-size:1.04rem;line-height:1.65}
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <rect width="28" height="28" rx="7" fill="#F97316"/>
         <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
       </svg>
       VotrIA

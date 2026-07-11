@@ -5,15 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="description" content="Diagnostic gratuit en 2 minutes — identifiez le temps que vous perdez chaque semaine et ce que l'IA peut récupérer.">
 <title>VotrIA — Diagnostic rapide</title>
+<link rel="canonical" href="https://votria.pro/diagnostic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VotrIA">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://votria.pro/diagnostic/">
+<meta property="og:title" content="VotrIA — Diagnostic rapide">
+<meta property="og:description" content="Diagnostic gratuit en 2 minutes — identifiez le temps que vous perdez chaque semaine et ce que l'IA peut récupérer.">
+<meta property="og:image" content="https://votria.pro/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VotrIA — Diagnostic rapide">
+<meta name="twitter:description" content="Diagnostic gratuit en 2 minutes — identifiez le temps que vous perdez chaque semaine et ce que l'IA peut récupérer.">
+<meta name="twitter:image" content="https://votria.pro/assets/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fafaf9; --white:#ffffff; --text:#1a1a1a; --muted:#6b7280;
-    --accent:#b8922e; --accent-light:#f5ecd6; --accent-dark:#8a6e1f;
-    --good:#16a34a; --good-light:#dcfce7;
-    --border:#e5e5e4; --card:#ffffff;
-    --radius:14px; --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+    --bg:#0F172A; --white:#162033; --text:#F8FAFC; --muted:#CBD5E1;
+    --accent:#F97316; --accent-light:rgba(249,115,22,.16); --accent-dark:#EA580C;
+    --good:#4ADE80; --good-light:rgba(74,222,128,.16);
+    --border:rgba(248,250,252,.14); --card:#162033; --on-accent:#0F172A;
+    --radius:14px; --shadow:0 1px 3px rgba(0,0,0,.3),0 1px 2px rgba(0,0,0,.2);
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -46,6 +59,7 @@
   .step .sub{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:20px;}
 
   /* ---- INPUTS ---- */
+  .hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;}
   .field{margin-bottom:14px;}
   .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
   .field input,.field textarea,.field select{width:100%;border:1.5px solid var(--border);border-radius:10px;
@@ -64,7 +78,7 @@
   .chip.selected{background:var(--accent-light);border-color:var(--accent);color:var(--accent-dark);}
   .chip .check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border);display:flex;
     align-items:center;justify-content:center;font-size:11px;transition:.15s;flex-shrink:0;}
-  .chip.selected .check{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .chip.selected .check{background:var(--accent);border-color:var(--accent);color:var(--on-accent);}
 
   /* ---- URGENCE ---- */
   .urgence-options{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
@@ -77,7 +91,7 @@
   .nav-row{display:flex;gap:10px;margin-top:24px;}
   .btn{flex:1;padding:14px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;
     border:1.5px solid var(--border);background:var(--white);color:var(--text);transition:.15s;}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);}
   .btn.primary:hover{background:var(--accent-dark);}
   .btn:disabled{opacity:.4;cursor:not-allowed;}
 
@@ -94,12 +108,12 @@
   .cascade{width:100%;border-collapse:collapse;margin-top:10px;}
   .cascade tr{border-bottom:1px solid var(--border);}
   .cascade tr:last-child{border-bottom:2px solid var(--accent);}
-  .cascade.green tr:last-child{border-bottom:2px solid #16a34a;}
+  .cascade.green tr:last-child{border-bottom:2px solid #4ADE80;}
   .cascade td{padding:10px 0;vertical-align:baseline;}
   .cascade .c-period{font-size:13px;font-weight:700;color:var(--text);width:90px;}
   .cascade .c-value{font-size:22px;font-weight:800;width:70px;}
   .cascade .c-value.gold{color:var(--accent);}
-  .cascade .c-value.green{color:#16a34a;}
+  .cascade .c-value.green{color:#4ADE80;}
   .cascade .c-detail{font-size:13px;color:var(--muted);}
   .cascade tr:last-child .c-value{font-size:28px;}
   .cascade tr:last-child .c-detail b{color:var(--text);}
@@ -134,7 +148,7 @@
 <main id="main"></main>
 
 <footer>
-  <a href="https://votria.pro" target="_blank">votria.pro</a> — VotrIA, l'IA qui fait le travail pour vous.<br>
+  <a href="https://votria.pro" target="_blank" rel="noopener noreferrer">votria.pro</a> — VotrIA, l'IA qui fait le travail pour vous.<br>
   Vos données sont confidentielles et ne seront jamais partagées.
 </footer>
 
@@ -155,7 +169,8 @@ let data = {
   douleurs:[],
   changement:'',
   timing:'',
-  leadSent:false
+  leadSent:false,
+  hpFilled:false
 };
 
 /* ===================== DOULEURS ===================== */
@@ -240,7 +255,7 @@ function pageRedirect(){
         pour comprendre ce que l'IA peut réellement faire pour une TPE/PME
         — sans jargon, sans promesses creuses.
       </p>
-      <a href="${PDF_URL}" target="_blank" class="btn primary"
+      <a href="${PDF_URL}" target="_blank" rel="noopener noreferrer" class="btn primary"
         style="display:inline-block;text-decoration:none;padding:14px 28px;">
         Télécharger le guide gratuit
       </a>
@@ -257,10 +272,11 @@ function stepContact(){
     <div class="step-label">Étape 1/5</div>
     <h2>Commençons par vous</h2>
     <p class="sub">30 secondes — pour personnaliser votre diagnostic.</p>
-    <div class="field"><label>Prénom</label><input type="text" id="prenom" value="${esc(data.prenom)}" placeholder="Jean"></div>
-    <div class="field"><label>Entreprise</label><input type="text" id="entreprise" value="${esc(data.entreprise)}" placeholder="Nom de votre entreprise"></div>
-    <div class="field"><label>Email professionnel</label><input type="email" id="email" value="${esc(data.email)}" placeholder="vous@entreprise.fr"></div>
-    <div class="field"><label>Téléphone</label><input type="tel" id="tel" value="${esc(data.tel)}" placeholder="06 ..."></div>
+    <div class="field"><label>Prénom</label><input type="text" id="prenom" value="${esc(data.prenom)}" placeholder="Jean" maxlength="60" autocomplete="given-name"></div>
+    <div class="field"><label>Entreprise</label><input type="text" id="entreprise" value="${esc(data.entreprise)}" placeholder="Nom de votre entreprise" maxlength="120" autocomplete="organization"></div>
+    <div class="field"><label>Email professionnel</label><input type="email" id="email" value="${esc(data.email)}" placeholder="vous@entreprise.fr" maxlength="160" autocomplete="email"></div>
+    <div class="field"><label>Téléphone</label><input type="tel" id="tel" value="${esc(data.tel)}" placeholder="06 ..." maxlength="20" autocomplete="tel"></div>
+    <div class="hp-field" aria-hidden="true"><label for="site_web">Ne pas remplir</label><input type="text" id="site_web" tabindex="-1" autocomplete="off"></div>
     <div class="nav-row"><button class="btn primary" onclick="next()" id="nextBtn">Suivant</button></div>`;
 }
 
@@ -314,7 +330,7 @@ function stepChangement(){
     <h2>Si vous pouviez changer une seule chose, ce serait quoi ?</h2>
     <p class="sub">Pas besoin d'un roman — une phrase suffit.</p>
     <div class="field">
-      <textarea id="changement" placeholder="Ex : ne plus perdre 2 heures par jour sur les mails, avoir mes relances qui partent toutes seules...">${esc(data.changement)}</textarea>
+      <textarea id="changement" maxlength="800" placeholder="Ex : ne plus perdre 2 heures par jour sur les mails, avoir mes relances qui partent toutes seules...">${esc(data.changement)}</textarea>
     </div>
     <div class="nav-row">
       <button class="btn" onclick="prev()">Retour</button>
@@ -350,14 +366,14 @@ function stepResult(){
     return `
       <div style="text-align:center;padding-top:30px;">
         <div style="font-size:48px;margin-bottom:16px;">📊</div>
-        <h2>Merci ${data.prenom}</h2>
+        <h2>Merci ${esc(data.prenom)}</h2>
         <p class="sub" style="max-width:380px;margin:8px auto 24px;">
           Nous avons bien reçu vos réponses. Notre équipe analyse votre situation
           et revient vers vous sous 48h si votre profil correspond à nos accompagnements.
         </p>
         <p style="font-size:13px;color:var(--muted);margin-top:20px;">
           En attendant, découvrez ce que l'IA peut faire pour les TPE/PME :<br>
-          <a href="/guide-ia-tpe.pdf" target="_blank" style="color:var(--accent-dark);">Télécharger le guide gratuit</a>
+          <a href="/guide-ia-tpe.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--accent-dark);">Télécharger le guide gratuit</a>
         </p>
       </div>
       <div style="text-align:center;margin-top:24px;">
@@ -391,7 +407,7 @@ function stepResult(){
 
   return `
     <div class="step-label">Votre diagnostic</div>
-    <h2>${data.prenom}, voici ce qu'on voit</h2>
+    <h2>${esc(data.prenom)}, voici ce qu'on voit</h2>
     <p class="sub">Estimation basée sur des entreprises similaires dans votre secteur.</p>
 
     <div class="result-card">
@@ -416,8 +432,8 @@ function stepResult(){
       </table>
     </div>
 
-    <div class="result-card" style="border-color:#16a34a;background:#f0fdf4;">
-      <div class="rc-label" style="color:#16a34a;">Le gain — récupérable par l'IA</div>
+    <div class="result-card" style="border-color:#4ADE80;background:rgba(74,222,128,.12);">
+      <div class="rc-label" style="color:#4ADE80;">Le gain — récupérable par l'IA</div>
       <div class="rc-sub" style="margin-bottom:4px;"><span class="result-tag">⚡ ${pct}% automatisable</span></div>
       <table class="cascade green">
         <tr>
@@ -451,12 +467,12 @@ function stepResult(){
       <h3>On en parle ?</h3>
       <p>${joursAn} jours par an — c'est plus d'un mois de travail.
         Un appel de 20 minutes pour voir ce qui est réellement faisable chez vous, sans engagement.</p>
-      <button class="btn primary" style="width:100%" onclick="window.open('https://votria.pro#contact','_blank')">Prendre rendez-vous</button>
+      <button class="btn primary" style="width:100%" onclick="window.open('https://votria.pro#contact','_blank','noopener,noreferrer')">Prendre rendez-vous</button>
     </div>` : `
     <div class="cta-block" style="background:var(--white);border-color:var(--border);">
       <h3>Quand vous serez prêt</h3>
       <p>On a noté vos résultats. Quand le moment sera bon, un appel de 20 minutes suffit pour voir ce qui est faisable.</p>
-      <button class="btn" style="width:100%" onclick="window.open('https://votria.pro','_blank')">Découvrir VotrIA</button>
+      <button class="btn" style="width:100%" onclick="window.open('https://votria.pro','_blank','noopener,noreferrer')">Découvrir VotrIA</button>
     </div>`}
 
     <div style="text-align:center;margin-top:16px;">
@@ -480,7 +496,7 @@ function prev(){
 
 function validate(){
   switch(current){
-    case 1: return !!(data.prenom && data.entreprise && data.email && data.email.includes('@') && data.tel && data.tel.length >= 10);
+    case 1: return !!(data.prenom && data.entreprise && data.email && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email) && data.tel && data.tel.replace(/[\s.\-]/g,'').length >= 10);
     case 2: return !!(data.secteur && data.effectif);
     case 3: return data.douleurs.length > 0;
     case 4: return !!(data.changement && data.changement.trim().length > 0);
@@ -501,7 +517,7 @@ function submit(){
 }
 
 function reset(){
-  data = {urgence:'',prenom:'',entreprise:'',email:'',tel:'',secteur:'',effectif:'',douleurs:[],changement:'',timing:'',leadSent:false};
+  data = {urgence:'',prenom:'',entreprise:'',email:'',tel:'',secteur:'',effectif:'',douleurs:[],changement:'',timing:'',leadSent:false,hpFilled:false};
   startTime = null;
   current = 0;
   render();
@@ -514,6 +530,10 @@ function bindStep(){
     const el = document.getElementById(id);
     if(el) el.oninput = ()=>{ data[id] = el.value; };
   });
+
+  // Honeypot anti-bot : un humain ne le voit pas et ne le remplit jamais
+  const hp = document.getElementById('site_web');
+  if(hp) hp.oninput = ()=>{ if(hp.value) data.hpFilled = true; };
 
   // Gate
   const gate = document.getElementById('gateHost');
@@ -564,19 +584,52 @@ async function sendLead(){
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
         type:'lead',
-        prenom: data.prenom, entreprise: data.entreprise,
-        email: data.email, tel: data.tel,
-        urgence: data.urgence,
+        prenom: (data.prenom||'').slice(0,80), entreprise: (data.entreprise||'').slice(0,120),
+        email: (data.email||'').slice(0,160), tel: (data.tel||'').slice(0,20),
+        urgence: (data.urgence||'').slice(0,20),
         date: new Date().toISOString()
       })
     });
   }catch(e){ console.error('Lead gate error:', e); }
 }
 
+/* ===================== DÉTECTION PATTERNS (anti-contournement) ===================== */
+function isPatternJunk(str){
+  const s = (str||'').trim().toLowerCase();
+  if(s.length < 3) return true; // trop court pour être un vrai mot
+  // Répétition d'un motif court sur toute la chaîne : blabla, tototo, hahaha, xyxyxy
+  if(/^(.{1,3})\1{1,}$/.test(s)) return true;
+  // Même caractère répété : aaa, xxxx
+  if(/^(.)\1{2,}$/.test(s)) return true;
+  // Suite clavier azerty/qwerty
+  const runs = ['azertyuiop','qsdfghjklm','wxcvbn','qwertyuiop','asdfghjkl','zxcvbnm','123456','987654'];
+  if(runs.some(r => r.includes(s))) return true;
+  return false;
+}
+const OUTILS_CONNUS = ['excel','word','powerpoint','google','gmail','outlook','chatgpt',
+  'wordpress','facebook','instagram','tiktok','whatsapp','youtube','test','asdf','yahoo'];
+
+function hasPairSequence(tel){
+  // Détecte une progression arithmétique constante par paires : 06-07-08-09-10
+  if(tel.length < 6) return false;
+  const pairs = [];
+  for(let i=0;i<tel.length-1;i+=2) pairs.push(parseInt(tel.substr(i,2),10));
+  if(pairs.length < 3) return false;
+  const diff = pairs[1]-pairs[0];
+  if(diff === 0) return false;
+  for(let i=1;i<pairs.length-1;i++){
+    if(pairs[i+1]-pairs[i] !== diff) return false;
+  }
+  return Math.abs(diff) === 1;
+}
+
 /* ===================== ANALYSE QUALITÉ ===================== */
 function analyzeQuality(){
   const flags = [];
   let malus = 0;
+
+  // 0. Honeypot rempli = bot quasi-certain
+  if(data.hpFilled) { flags.push('honeypot_rempli'); malus += 5; }
 
   // 1. Téléphone suspect
   const tel = (data.tel||'').replace(/[\s.\-]/g, '');
@@ -586,8 +639,10 @@ function analyzeQuality(){
     if(/^(.)\1{7,}$/.test(tel)) { flags.push('tel_fake_repetition'); malus += 3; }
     // Motif court répété : 0606060606, 0101010101, 1234123412
     else if(/^(.{2,4})\1{2,}/.test(tel)) { flags.push('tel_fake_motif'); malus += 3; }
-    // Séquence : 0123456789
+    // Séquence chiffre à chiffre : 0123456789
     else if(/0123456789|9876543210/.test(tel)) { flags.push('tel_fake_sequence'); malus += 3; }
+    // Séquence par paires : 0607080910
+    else if(hasPairSequence(tel)) { flags.push('tel_fake_sequence_paires'); malus += 3; }
     // Format invalide
     if(!/^(0[1-9]|(\+33))/.test(tel)) { flags.push('tel_format_invalide'); malus += 2; }
   }
@@ -607,10 +662,17 @@ function analyzeQuality(){
     'mieux gerer', 'automatiser', 'simplifier', 'optimiser', 'ameliorer',
     'gagner en efficacite', 'perdre moins de temps', 'plus de clients',
     'plus de temps', 'moins de travail', 'travailler moins',
-    'plus de ca', 'tout automatiser', 'deleger', 'faire moins'
+    'plus de ca', 'tout automatiser', 'deleguer', 'faire moins'
   ];
-  const estGenerique = reponsesGeneriques.some(r => changement.includes(r));
-  if(motsCounts <= 3) { flags.push('reponse_trop_courte'); malus += 2; }
+  // Phrases très courtes et transactionnelles : uniquement si c'est TOUTE la réponse
+  // (pas en sous-chaîne, pour ne pas pénaliser une vraie réponse qui contiendrait ces mots)
+  const reponsesCourtesExactes = [
+    'je veux un prix', 'le prix', 'savoir le prix', 'combien ca coute',
+    'avoir un prix', 'connaitre le prix', 'un devis', 'avoir un devis', 'le tarif'
+  ];
+  const estGenerique = reponsesGeneriques.some(r => changement.includes(r))
+    || reponsesCourtesExactes.includes(changement);
+  if(motsCounts <= 4) { flags.push('reponse_trop_courte'); malus += 2; }
   if(estGenerique) { flags.push('reponse_generique'); malus += 2; }
 
   // 4. Email suspect
@@ -621,14 +683,29 @@ function analyzeQuality(){
   const jetables = ['yopmail','guerrillamail','tempmail','throwaway','mailinator',
     'trashmail','fakeinbox','sharklasers','guerrillamailblock','grr.la','dispostable'];
   if(jetables.some(j => emailDomain.includes(j))) { flags.push('email_jetable'); malus += 3; }
-  // Préfixes génériques sur fournisseurs gratuits
-  const freeProviders = ['gmail.com','hotmail.com','hotmail.fr','outlook.com','outlook.fr',
-    'yahoo.com','yahoo.fr','live.com','live.fr','orange.fr','free.fr','laposte.net'];
+  // Préfixe suspect : liste de mots-clés bidons OU pattern de répétition (marche sur TOUS les domaines)
   const fakePrefixes = ['contact','test','info','admin','hello','abc','aaa','zzz',
-    'azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user'];
-  if(freeProviders.includes(emailDomain) && fakePrefixes.includes(emailPrefix)) {
+    'azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user','blabla'];
+  if(fakePrefixes.includes(emailPrefix) || isPatternJunk(emailPrefix) || OUTILS_CONNUS.includes(emailPrefix)) {
     flags.push('email_prefix_fake'); malus += 3;
   }
+
+  // 5. Entreprise suspecte (nom d'outil/logiciel connu ou motif répété)
+  const entreprise = (data.entreprise||'').trim().toLowerCase();
+  if(OUTILS_CONNUS.includes(entreprise) || isPatternJunk(entreprise)) {
+    flags.push('entreprise_suspecte'); malus += 3;
+  }
+
+  // 6. Prénom suspect (motif répété, trop court/générique)
+  const prenom = (data.prenom||'').trim().toLowerCase();
+  if(isPatternJunk(prenom)) { flags.push('prenom_suspect'); malus += 1; }
+
+  // 7. Doublon dans la session (même email ou tel déjà envoyé via "Recommencer")
+  try{
+    const sentBefore = JSON.parse(localStorage.getItem('votria_sent_leads') || '[]');
+    const key = hashLead((data.email||'').toLowerCase() + '|' + tel);
+    if(sentBefore.includes(key)) { flags.push('doublon_session'); malus += 3; }
+  }catch(e){ /* localStorage indisponible, on ignore */ }
 
   // Score positif (intentions)
   let bonus = 0;
@@ -660,24 +737,40 @@ async function sendFull(){
         score: analyse.score,
         alertes: analyse.flags.join(', ') || 'aucune',
         duree_secondes: analyse.duree,
-        prenom: data.prenom, entreprise: data.entreprise,
-        email: data.email, tel: data.tel,
-        secteur: data.secteur, effectif: data.effectif,
-        urgence: data.urgence,
-        douleurs: labels.join(', '),
-        changement: data.changement,
-        timing: data.timing,
+        prenom: (data.prenom||'').slice(0,80), entreprise: (data.entreprise||'').slice(0,120),
+        email: (data.email||'').slice(0,160), tel: (data.tel||'').slice(0,20),
+        secteur: (data.secteur||'').slice(0,80), effectif: (data.effectif||'').slice(0,20),
+        urgence: (data.urgence||'').slice(0,20),
+        douleurs: labels.join(', ').slice(0,300),
+        changement: (data.changement||'').slice(0,800),
+        timing: (data.timing||'').slice(0,20),
         date: new Date().toISOString()
       })
     });
+    try{
+      const tel = (data.tel||'').replace(/[\s.\-]/g, '');
+      const key = hashLead((data.email||'').toLowerCase() + '|' + tel);
+      const sentBefore = JSON.parse(localStorage.getItem('votria_sent_leads') || '[]');
+      if(!sentBefore.includes(key)){
+        sentBefore.push(key);
+        localStorage.setItem('votria_sent_leads', JSON.stringify(sentBefore.slice(-20)));
+      }
+    }catch(e){ /* localStorage indisponible, on ignore */ }
   }catch(e){ console.error('Full audit error:', e); }
 }
 
 /* ===================== UTILS ===================== */
 function esc(s){ return (s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// Hash non réversible (djb2) pour dédup anonyme en localStorage — pas de donnée perso en clair
+function hashLead(str){
+  let h = 5381;
+  for(let i=0;i<str.length;i++){ h = ((h << 5) + h) + str.charCodeAt(i); h = h & h; }
+  return 'l' + (h >>> 0).toString(36);
+}
 
 /* ===================== INIT ===================== */
 render();
 </script>
+<script src="/assets/cookie-consent.js" defer></script>
 </body>
 </html>

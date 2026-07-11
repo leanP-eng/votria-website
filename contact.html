@@ -14,25 +14,25 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:72px}
-body{min-height:100dvh;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#24221d;background:#f7f6f2}
+body{min-height:100dvh;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#F8FAFC;background:#0F172A}
 a{color:inherit;text-decoration:none}ul{list-style:none}button,input,textarea,select{font:inherit}button{cursor:pointer;background:none;border:0;color:inherit}
-h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance}
+h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance;color:#F8FAFC}
 p,li{text-wrap:pretty}
-:focus-visible{outline:2px solid #01696f;outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid #F97316;outline-offset:3px;border-radius:4px}
 [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
 :root{
---bg:#f7f6f2;--surface:#f9f8f5;--surface2:#fff;--border:rgba(36,34,29,.12);
---text:#24221d;--muted:#55524c;--faint:#74716a;--primary:#01696f;--primary-hover:#0c4e54;
---primary-hi:#dce9e6;--danger:#a33b32;--danger-hi:#f8e6e3;--success:#17694c;--success-hi:#dfeee7;
+--bg:#0F172A;--surface:#162033;--surface2:#1E293B;--border:rgba(248,250,252,.12);
+--text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#EA580C;
+--primary-hi:rgba(249,115,22,.16);--on-primary:#0F172A;--danger:#F87171;--danger-hi:rgba(248,113,113,.15);--success:#4ADE80;--success-hi:rgba(74,222,128,.15);
 --radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:20px;
---shadow:0 4px 16px rgba(36,34,29,.09);--t:180ms cubic-bezier(.16,1,.3,1);--max:1040px
+--shadow:0 8px 24px rgba(0,0,0,.28);--t:180ms cubic-bezier(.16,1,.3,1);--max:1040px
 }
 [data-theme="dark"]{
---bg:#171614;--surface:#1c1b19;--surface2:#201f1d;--border:rgba(255,255,255,.1);
---text:#f0efec;--muted:#c0bdb7;--faint:#99958e;--primary:#69b5bf;--primary-hover:#87c5cc;
---primary-hi:#263a3b;--danger:#f0a299;--danger-hi:#3b2421;--success:#8dd8b8;--success-hi:#20372d
+--bg:#020617;--surface:#0B1220;--surface2:#111827;--border:rgba(248,250,252,.10);
+--text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#FB923C;
+--primary-hi:rgba(249,115,22,.18);--on-primary:#0F172A;--danger:#F87171;--danger-hi:rgba(248,113,113,.18);--success:#4ADE80;--success-hi:rgba(74,222,128,.18)
 }
 
 .container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,5vw,2rem)}
@@ -44,7 +44,7 @@ section+section{border-top:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:1.2rem;font-weight:800}
 .nav-links{display:none}.nav-right{display:flex;align-items:center;gap:.65rem}
 @media(min-width:820px){.nav-links{display:flex;gap:1.45rem}.nav-links a{font-size:.9rem;font-weight:600;color:var(--muted)}.nav-links a:hover{color:var(--text)}}
-.nav-cta{display:none;align-items:center;background:var(--primary);color:#fff;font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
+.nav-cta{display:none;align-items:center;background:var(--primary);color:var(--on-primary);font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
 @media(min-width:560px){.nav-cta{display:inline-flex}}
 .theme-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--radius-sm);color:var(--muted)}
 .theme-btn:hover{background:var(--surface);color:var(--text)}
@@ -52,7 +52,7 @@ section+section{border-top:1px solid var(--border)}
 @media(min-width:820px){.burger{display:none}}
 .mobile-menu{display:none;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,5vw,2rem) 1.5rem}
 .mobile-menu.open{display:flex}.mobile-menu a{padding:.65rem 0;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
-.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:#fff;border:0;border-radius:var(--radius-sm);padding:.78rem}
+.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:var(--on-primary);border:0;border-radius:var(--radius-sm);padding:.78rem}
 
 .hero{padding-block:clamp(3.5rem,10vw,6.4rem)}
 .hero-label,.section-label{display:inline-flex;width:fit-content;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--primary)}
@@ -81,7 +81,7 @@ width:100%;border:1.5px solid var(--border);border-radius:var(--radius-sm);backg
 color:var(--text);padding:.76rem .85rem;min-height:46px
 }
 .field textarea{resize:vertical;min-height:120px}
-.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--primary);box-shadow:0 0 0 3px rgba(1,105,111,.1)}
+.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--primary);box-shadow:0 0 0 3px rgba(249,115,22,.15)}
 .field-help{font-size:.78rem;color:var(--muted);line-height:1.5}
 .required-note{font-size:.78rem;color:var(--muted);margin-bottom:1rem}
 
@@ -97,7 +97,7 @@ color:var(--text);padding:.76rem .85rem;min-height:46px
 .radio-option:hover .radio-content{border-color:var(--primary);background:var(--primary-hi)}
 .radio-option input:focus-visible+.radio-content{outline:2px solid var(--primary);outline-offset:3px}
 .radio-option input:checked+.radio-content{border-color:var(--primary);background:var(--primary-hi)}
-.radio-option input:checked+.radio-content .radio-dot{border-color:var(--primary);background:var(--primary);color:#fff}
+.radio-option input:checked+.radio-content .radio-dot{border-color:var(--primary);background:var(--primary);color:var(--on-primary)}
 
 .privacy-note{margin-top:1rem;padding:.95rem 1rem;background:var(--primary-hi);border:1px solid var(--border);border-radius:var(--radius-lg);font-size:.79rem;line-height:1.58;color:var(--text)}
 .privacy-note a{color:var(--primary);font-weight:750;text-decoration:underline;text-underline-offset:2px}
@@ -106,7 +106,7 @@ color:var(--text);padding:.76rem .85rem;min-height:46px
 
 .submit-row{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:1.1rem}
 .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.8rem 1.25rem;border-radius:var(--radius-sm);font-size:.93rem;font-weight:750;transition:background var(--t),border-color var(--t),transform var(--t),opacity var(--t)}
-.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}.btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px)}
 .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .btn-secondary{border:1.5px solid var(--border);color:var(--text)}.btn-secondary:hover{border-color:var(--primary);background:var(--primary-hi)}
 .submit-row .btn-primary{flex:1 1 240px}
@@ -157,7 +157,7 @@ body{font-size:1.04rem;line-height:1.65}
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect width="28" height="28" rx="7" fill="#01696f"/>
+        <rect width="28" height="28" rx="7" fill="#F97316"/>
         <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
       </svg>
       VotrIA
@@ -621,6 +621,45 @@ body{font-size:1.04rem;line-height:1.65}
     return document.getElementById(id);
   }
 
+  /* ===== DÉTECTION PATTERNS (anti-contournement, même logique que diagnostic.html) ===== */
+  function isPatternJunk(str){
+    const s = (str||'').trim().toLowerCase();
+    if(s.length < 2) return true;
+    if(/^(.{1,3})\1{1,}$/.test(s)) return true; // blabla, tototo, hahaha
+    if(/^(.)\1{2,}$/.test(s)) return true; // aaa, xxxx
+    const runs = ['azertyuiop','qsdfghjklm','wxcvbn','qwertyuiop','asdfghjkl','zxcvbnm'];
+    if(runs.some(r => r.includes(s) && s.length>=3)) return true;
+    return false;
+  }
+  const OUTILS_CONNUS = ['excel','word','powerpoint','google','gmail','outlook','chatgpt',
+    'wordpress','facebook','instagram','tiktok','whatsapp','youtube','test','asdf','yahoo'];
+  const PREFIXES_SUSPECTS = ['contact','test','info','admin','hello','abc','aaa','zzz',
+    'azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user','blabla'];
+
+  function analyzeContactQuality(payload, durationMs){
+    const alertes = [];
+    const company = (payload.entreprise||'').trim().toLowerCase();
+    if(OUTILS_CONNUS.includes(company) || isPatternJunk(company)) alertes.push('entreprise_suspecte');
+
+    const firstName = (payload.prenom||'').trim().toLowerCase();
+    const lastName = (payload.nom||'').trim().toLowerCase();
+    if(isPatternJunk(firstName)) alertes.push('prenom_suspect');
+    if(isPatternJunk(lastName)) alertes.push('nom_suspect');
+
+    const emailPrefix = (payload.email_professionnel||'').split('@')[0].toLowerCase();
+    if(PREFIXES_SUSPECTS.includes(emailPrefix) || isPatternJunk(emailPrefix) || OUTILS_CONNUS.includes(emailPrefix)){
+      alertes.push('email_prefix_fake');
+    }
+
+    const message = (payload.message||'').trim();
+    const wordCount = message.split(/\s+/).filter(w=>w.length>0).length;
+    if(message.length > 0 && wordCount <= 3) alertes.push('message_tres_court');
+
+    if(durationMs < 5000) alertes.push('remplissage_tres_rapide');
+
+    return alertes.length ? alertes.join(', ') : 'aucune';
+  }
+
   function validate(){
     const firstName = field('firstName');
     const lastName = field('lastName');
@@ -693,6 +732,7 @@ body{font-size:1.04rem;line-height:1.65}
       message: field('message').value.trim().slice(0, 1200),
       statut: 'Nouveau'
     };
+    payload.alerte_qualite = analyzeContactQuality(payload, Date.now() - startedAt);
 
     sending = true;
     submitButton.disabled = true;

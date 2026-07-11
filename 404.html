@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page introuvable — VotrIA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0F172A;color:#F8FAFC;
+  text-align:center;padding:2rem;line-height:1.6}
+h1{font-family:'Manrope',system-ui,sans-serif;font-size:clamp(3rem,12vw,6rem);color:#F97316;letter-spacing:-.02em;margin-bottom:.5rem}
+h2{font-family:'Manrope',system-ui,sans-serif;font-size:clamp(1.3rem,4vw,1.8rem);margin-bottom:1rem}
+p{color:#CBD5E1;max-width:44ch;margin:0 auto 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.btn{display:inline-flex;align-items:center;padding:.85rem 1.6rem;border-radius:8px;font-weight:600;
+  font-size:.95rem;text-decoration:none;transition:transform .15s,background .15s}
+.btn-primary{background:#F97316;color:#0F172A}
+.btn-primary:hover{background:#EA580C;transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid rgba(248,250,252,.3);color:#F8FAFC}
+.btn-ghost:hover{border-color:#F97316;background:rgba(249,115,22,.12)}
+.logo{display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:1.25rem;margin-bottom:2.5rem}
+</style>
+</head>
+<body>
+  <div class="logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect width="28" height="28" rx="7" fill="#F97316"/>
+      <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
+    </svg>
+    VotrIA
+  </div>
+  <h1>404</h1>
+  <h2>Cette page n'existe pas</h2>
+  <p>Le lien est peut-être incorrect ou la page a été déplacée. Revenez à l'accueil ou lancez votre diagnostic gratuit.</p>
+  <div class="actions">
+    <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+    <a href="/diagnostic/" class="btn btn-ghost">Diagnostic — 2 min</a>
+  </div>
+</body>
+</html>
