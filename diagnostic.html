@@ -175,15 +175,25 @@ let data = {
 
 /* ===================== DOULEURS ===================== */
 const DOULEURS = [
-  {id:'devis',       label:'Devis, factures, relances',       icon:'📄', heures:3,   taux:.50},
+  {id:'devis',       label:'Devis, factures, relances',       labelBTP:'Devis chantier, situations, relances',              icon:'📄', heures:3,   taux:.50},
   {id:'compta',      label:'Comptabilité, justificatifs',     icon:'💰', heures:2,   taux:.40},
-  {id:'mails',       label:'Mails, appels, coordination',     icon:'📧', heures:4,   taux:.55},
-  {id:'litiges',     label:'Suivi client, litiges, SAV',      icon:'🤝', heures:2,   taux:.30},
+  {id:'mails',       label:'Mails, appels, coordination',     labelBTP:'Mails, appels, coordination chantier',              icon:'📧', heures:4,   taux:.55},
+  {id:'litiges',     label:'Suivi client, litiges, SAV',      labelBTP:'Suivi client, réserves, réception de chantier',     icon:'🤝', heures:2,   taux:.30},
   {id:'rh',          label:'RH, paie, planning équipe',       icon:'👥', heures:1.5, taux:.35},
   {id:'docs',        label:'Documents, conformité, RGPD',     icon:'📁', heures:1,   taux:.50},
   {id:'prospection', label:'Prospection commerciale',         icon:'🎯', heures:3,   taux:.25},
   {id:'orga',        label:'Organisation, reporting interne',  icon:'📊', heures:1.5, taux:.45},
 ];
+// Le libellé BTP ne s'affiche que si le secteur choisi à l'étape 2 est "BTP / Construction".
+// id / heures / taux restent identiques : le calcul et le scoring ne changent pas, seul le texte s'adapte.
+
+// Libellé d'une douleur, adapté au secteur choisi à l'étape 2 (BTP ou générique).
+// Utilisé à l'étape 3 (chips), à l'écran de résultat et dans les données envoyées à n8n,
+// pour que le même vocabulaire soit vu par le prospect ET reçu dans le Google Sheets.
+function douleurLabel(d){
+  const isBTP = data.secteur === 'BTP / Construction';
+  return (isBTP && d.labelBTP) ? d.labelBTP : d.label;
+}
 
 /* ===================== RENDER ===================== */
 function render(){
@@ -310,7 +320,7 @@ function stepDouleur(){
   const chips = DOULEURS.map(d=>{
     const sel = data.douleurs.includes(d.id) ? 'selected' : '';
     return `<div class="chip ${sel}" data-id="${d.id}">
-      <span class="check">${sel?'✓':''}</span>${d.icon} ${d.label}</div>`;
+      <span class="check">${sel?'✓':''}</span>${d.icon} ${douleurLabel(d)}</div>`;
   }).join('');
   return `
     <div class="step-label">Étape 3/5</div>
@@ -383,7 +393,7 @@ function stepResult(){
 
   // Résultat complet pour les prospects qualifiés
   const nbDouleurs = data.douleurs.length;
-  const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(d=>d.label);
+  const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(douleurLabel);
 
   let hTotal = 0, hRecup = 0;
   data.douleurs.forEach(id=>{
@@ -725,7 +735,7 @@ function analyzeQuality(){
 }
 
 async function sendFull(){
-  const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(d=>d.label);
+  const labels = DOULEURS.filter(d=>data.douleurs.includes(d.id)).map(douleurLabel);
   const analyse = analyzeQuality();
 
   try{
