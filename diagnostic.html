@@ -659,8 +659,9 @@ function analyzeQuality(){
 
   // 2. Vitesse de remplissage
   const duree = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
-  if(duree < 30) { flags.push('remplissage_<30s'); malus += 3; }
-  else if(duree < 45) { flags.push('remplissage_<45s'); malus += 1; }
+  if(duree < 20) { flags.push('remplissage_<20s'); malus += 2; } // très rapide = suspect
+  else if(duree < 30) { flags.push('remplissage_<30s'); malus += 1; } // rapide = léger malus
+  else if(duree < 45) { flags.push('remplissage_<45s'); malus += 0; } // normal
 
   // 3. Réponse "changement" vague ou générique
   const changement = (data.changement||'').trim().toLowerCase()
@@ -693,10 +694,16 @@ function analyzeQuality(){
   const jetables = ['yopmail','guerrillamail','tempmail','throwaway','mailinator',
     'trashmail','fakeinbox','sharklasers','guerrillamailblock','grr.la','dispostable'];
   if(jetables.some(j => emailDomain.includes(j))) { flags.push('email_jetable'); malus += 3; }
-  // Préfixe suspect : liste de mots-clés bidons OU pattern de répétition (marche sur TOUS les domaines)
-  const fakePrefixes = ['contact','test','info','admin','hello','abc','aaa','zzz',
-    'azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user','blabla'];
-  if(fakePrefixes.includes(emailPrefix) || isPatternJunk(emailPrefix) || OUTILS_CONNUS.includes(emailPrefix)) {
+  // Préfixe suspect : liste de mots-clés bidons OU pattern de répétition
+  // MAIS : les génériques (contact, info, admin) sont OK si le domaine est un vrai domaine d'entreprise
+  const fakeGeneriques = ['contact','test','info','admin','hello']; // génériques légitimes si domaine réel
+  const fakePrefixes = ['abc','aaa','zzz','azerty','qwerty','toto','titi','tata','bidon','fake','noname','nobody','user','blabla'];
+  
+  // Si préfixe générique : malus SEULEMENT si domaine looks fake (pas de point, trop court, etc)
+  const isDomainFake = !emailDomain.includes('.') || emailDomain.length < 5;
+  const isGenericButSuspicious = fakeGeneriques.includes(emailPrefix) && isDomainFake;
+  
+  if(fakePrefixes.includes(emailPrefix) || isPatternJunk(emailPrefix) || OUTILS_CONNUS.includes(emailPrefix) || isGenericButSuspicious) {
     flags.push('email_prefix_fake'); malus += 3;
   }
 
@@ -726,7 +733,14 @@ function analyzeQuality(){
 
   const scoreFinal = Math.max(0, bonus - malus);
   let qualif;
-  if(malus >= 3) qualif = 'suspect';
+  
+  // Logique : malus faibles (1-2) peuvent être compensés par bonus
+  // Seuls les malus SÉVÈRES (>= 5) = suspect même avec bonus
+  // S'il y a beaucoup de malus (>= 4) + peu de bonus : suspect
+  const hasServereMalus = malus >= 5;
+  const hasMultipleMalus = malus >= 4 && bonus <= 2;
+  
+  if(hasServereMalus || hasMultipleMalus) qualif = 'suspect';
   else if(scoreFinal >= 6) qualif = 'chaud';
   else if(scoreFinal >= 3) qualif = 'tiede';
   else qualif = 'froid';
