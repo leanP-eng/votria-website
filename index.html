@@ -129,7 +129,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="#cta" class="nav-cta">Réserver mon diagnostic</a>
+      <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="nav-cta">Réserver mon diagnostic</a>
       <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème" type="button"></button>
       <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false" type="button">
         <span></span><span></span><span></span>
@@ -142,7 +142,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
     <a href="/cas-usage">Cas d'usage</a>
     <a href="/a-propos">À propos</a>
     <a href="/contact">Contact</a>
-    <a href="#cta" class="nav-cta" style="margin-top: 0.75rem; display: block; text-align: center;">Réserver mon diagnostic</a>
+    <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="nav-cta" style="margin-top: 0.75rem; display: block; text-align: center;">Réserver mon diagnostic</a>
   </div>
 </nav>
 
@@ -153,11 +153,11 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
     <h1>Nous n'adaptons pas votre PME à l'IA. Nous configurons l'IA pour votre métier.</h1>
     <p class="hero-sub">Cliquez sur votre secteur pour ouvrir votre diagnostic et voir le rapport d'audit réel de votre profession, sans toucher à vos logiciels actuels.</p>
     <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all" type="button">🌐 Tous les secteurs</button>
-      <button class="filter-btn" data-filter="btp" type="button">👷‍♂️ BTP : Second Œuvre</button>
-      <button class="filter-btn" data-filter="logistique" type="button">🚛 Logistique & Transport</button>
-      <button class="filter-btn" data-filter="industrie" type="button">⚙️ Industrie & Production</button>
-      <button class="filter-btn" data-filter="services" type="button">💼 Services & Négoce</button>
+      <a href="/cas-usage" class="filter-btn active" onclick="gtag('event', 'filter_sector', {'sector': 'all'})">🌐 Tous les secteurs</a>
+      <a href="/secteurs/btp" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'btp'})">👷‍♂️ BTP : Second Œuvre</a>
+      <a href="/secteurs/logistique" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'logistique'})">🚛 Logistique & Transport</a>
+      <a href="/secteurs/industrie" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'industrie'})">⚙️ Industrie & Production</a>
+      <a href="/secteurs/services" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'services'})">💼 Services & Négoce</a>
     </div>
   </div>
 </section>
@@ -238,7 +238,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
     </div>
 
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://calendly.com/jeanfrancois-votria" class="btn-primary">RÉSERVER MON DIAGNOSTIC EN 2 MINUTES</a>
+      <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="btn-primary">RÉSERVER MON DIAGNOSTIC EN 2 MINUTES</a>
     </div>
   </div>
 </section>
@@ -336,12 +336,7 @@ gtag('config', 'G-WDMPM0P81V', {'page_path': window.location.pathname, 'page_tit
       spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
     }));
   }
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    gtag('event', 'filter_sector', {'sector': btn.getAttribute('data-filter')});
-  }));
+  // Boutons secteurs: la redirection se fait via href + onclick avec GA4
 })();
 </script>
 </body>

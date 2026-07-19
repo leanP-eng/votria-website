@@ -3,398 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Mentions légales du site VotrIA, édité par Jean-François Martin, entrepreneur individuel.">
-<title>Mentions légales — VotrIA</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-
+<meta name="description" content="Mentions légales — Votria.pro">
+<title>Mentions légales — Votria.pro</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WDMPM0P81V');
+</script>
+<link href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:72px}
-body{min-height:100dvh;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.03rem,1rem + .2vw,1.16rem);line-height:1.68;color:#F8FAFC;background:#0F172A}
-a{color:inherit;text-decoration:none}ul{list-style:none}button{cursor:pointer;background:none;border:0;font:inherit;color:inherit}
-h1,h2,h3{font-family:'Manrope',system-ui,sans-serif;line-height:1.18;letter-spacing:-.02em;text-wrap:balance;color:#F8FAFC}
-p,li{text-wrap:pretty}
-:focus-visible{outline:2px solid #F97316;outline-offset:3px;border-radius:4px}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { min-height: 100dvh; font-family: 'Satoshi', system-ui, sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #28251d; background: #f7f6f2; line-height: 1.75; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3 { text-wrap: balance; line-height: 1.2; font-family: 'Boska', Georgia, serif; }
+p, li { text-wrap: pretty; }
+:focus-visible { outline: 2px solid #01696f; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
 
-:root{
---bg:#0F172A;--surface:#162033;--surface2:#1E293B;--border:rgba(248,250,252,.12);
---text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#EA580C;
---primary-hi:rgba(249,115,22,.16);--on-primary:#0F172A;--radius-sm:6px;--radius-lg:16px;--radius-xl:20px;
---shadow:0 8px 24px rgba(0,0,0,.28);--t:180ms cubic-bezier(.16,1,.3,1);--max:1040px
+/* ===== TOKENS ===== */
+:root {
+  --bg: #f7f6f2; --surface: #f9f8f5; --surface-2: #ffffff;
+  --border: oklch(0.2 0.01 80 / 0.10);
+  --text: #28251d; --muted: #7a7974; --faint: #bab9b4;
+  --primary: #01696f; --primary-hover: #0c4e54; --primary-hi: #cedcd8;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+  --t: 180ms cubic-bezier(0.16,1,0.3,1);
+  --max: 960px;
 }
-[data-theme="dark"]{
---bg:#020617;--surface:#0B1220;--surface2:#111827;--border:rgba(248,250,252,.10);
---text:#F8FAFC;--muted:#CBD5E1;--faint:#94A3B8;--primary:#F97316;--primary-hover:#FB923C;--primary-hi:rgba(249,115,22,.18);--on-primary:#0F172A
+[data-theme="dark"] {
+  --bg: #171614; --surface: #1c1b19; --surface-2: #201f1d;
+  --border: oklch(1 0 0 / 0.08);
+  --text: #cdccca; --muted: #797876; --faint: #5a5957;
+  --primary: #4f98a3; --primary-hover: #227f8b; --primary-hi: #313b3b;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
 }
 
-.container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,5vw,2rem)}
+/* ===== LAYOUT ===== */
+.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+section { padding-block: clamp(2.5rem, 8vw, 5rem); }
 
-.site-nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:60px;max-width:var(--max);margin:auto;padding-inline:clamp(1rem,5vw,2rem);gap:1rem}
-.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:'Manrope',sans-serif;font-size:1.2rem;font-weight:800}
-.nav-links{display:none}.nav-right{display:flex;align-items:center;gap:.65rem}
-@media(min-width:820px){.nav-links{display:flex;gap:1.45rem}.nav-links a{font-size:.9rem;font-weight:600;color:var(--muted)}.nav-links a:hover{color:var(--text)}}
-.nav-cta{display:none;align-items:center;background:var(--primary);color:var(--on-primary);font-size:.875rem;font-weight:700;padding:.52rem 1rem;border-radius:var(--radius-sm)}
-@media(min-width:560px){.nav-cta{display:inline-flex}}
-.theme-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--radius-sm);color:var(--muted)}
-.theme-btn:hover{background:var(--surface);color:var(--text)}
-.burger{display:flex;flex-direction:column;gap:5px;padding:6px}.burger span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:transform var(--t),opacity var(--t)}
-@media(min-width:820px){.burger{display:none}}
-.mobile-menu{display:none;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:1rem clamp(1rem,5vw,2rem) 1.5rem}
-.mobile-menu.open{display:flex}.mobile-menu a{padding:.65rem 0;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
-.mobile-menu .mob-cta{margin-top:.75rem;text-align:center;background:var(--primary);color:var(--on-primary);border:0;border-radius:var(--radius-sm);padding:.78rem}
-
-.legal-hero{padding-block:clamp(3.5rem,10vw,6rem);border-bottom:1px solid var(--border)}
-.legal-label{display:inline-flex;width:fit-content;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--primary);background:var(--primary-hi);padding:.32rem .75rem;border-radius:var(--radius-sm);margin-bottom:1.15rem}
-.legal-hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;margin-bottom:1rem}
-.legal-hero p{color:var(--muted);max-width:70ch}
-
-.legal-main{padding-block:clamp(2.5rem,7vw,4.5rem)}
-.legal-layout{display:grid;grid-template-columns:1fr;gap:1.2rem}
-@media(min-width:850px){.legal-layout{grid-template-columns:.31fr .69fr;align-items:start}}
-.legal-summary{position:sticky;top:84px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:1.2rem}
-.legal-summary h2{font-size:1rem;margin-bottom:.7rem}
-.legal-summary nav{display:grid;gap:.45rem}
-.legal-summary a{font-size:.84rem;color:var(--muted);font-weight:600}
-.legal-summary a:hover{color:var(--primary)}
-.legal-summary .updated{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--faint)}
-
-.legal-content{display:grid;gap:1rem}
-.legal-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(1.25rem,4vw,1.8rem)}
-.legal-block h2{font-size:clamp(1.15rem,3vw,1.45rem);margin-bottom:.85rem}
-.legal-block h3{font-size:1rem;margin:1.1rem 0 .45rem}
-.legal-block p{color:var(--muted);margin-bottom:.8rem}
-.legal-block p:last-child{margin-bottom:0}
-.legal-block strong{color:var(--text)}
-.legal-list{display:grid;gap:.52rem}
-.legal-list li{position:relative;padding-left:1.05rem;color:var(--muted)}
-.legal-list li::before{content:"→";position:absolute;left:0;color:var(--primary);font-weight:800}
-.legal-block a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.identity-grid{display:grid;grid-template-columns:1fr;gap:.65rem}
-@media(min-width:640px){.identity-grid{grid-template-columns:repeat(2,1fr)}}
-.identity-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:.9rem 1rem}
-.identity-item span{display:block;font-size:.76rem;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
-.identity-item strong,.identity-item a{font-size:.91rem;color:var(--text);font-weight:700;text-decoration:none}
-
-.notice{padding:1rem 1.1rem;background:var(--primary-hi);border:1px solid var(--border);border-radius:var(--radius-lg);color:var(--text);font-size:.88rem}
-
-footer{border-top:1px solid var(--border);padding-block:2rem}.footer-inner{display:flex;flex-direction:column;gap:1.2rem}
-@media(min-width:680px){.footer-inner{flex-direction:row;align-items:center;justify-content:space-between}}
-.footer-brand{font-family:'Manrope',sans-serif;font-weight:800}.footer-brand span{display:block;font-family:'Inter',sans-serif;color:var(--muted);font-size:.8rem;font-weight:500;margin-top:.2rem}
-.footer-links{display:flex;flex-wrap:wrap;gap:.65rem 1rem}.footer-links a{color:var(--muted);font-size:.82rem}.footer-zone{color:var(--faint);font-size:.8rem}
-
-@media(max-width:849px){.legal-summary{position:static}}
-@media(max-width:640px){
-body{font-size:1.04rem;line-height:1.65}
-.legal-hero p,.legal-summary a,.legal-block p,.legal-list li,.footer-brand span,.footer-links a,.footer-zone{color:var(--text);opacity:.9;font-weight:500}
+/* ===== NAV ===== */
+nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Boska', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); }
+  .nav-links a:hover { color: var(--text); }
 }
+.nav-cta { font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: #fff; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); white-space: nowrap; }
+.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
+.theme-btn:hover { background: var(--surface); color: var(--text); }
+.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
+.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
+@media (min-width: 768px) { .burger { display: none; } }
+
+.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--text); }
+.mobile-menu .mob-cta { margin-top: 0.75rem; display: block; text-align: center; background: var(--primary); color: #fff; padding: 0.75rem; border-radius: var(--radius-sm); font-weight: 600; border-bottom: none !important; }
+
+/* ===== LEGAL CONTENT ===== */
+.legal-section { padding-block: clamp(2.5rem, 8vw, 5rem); }
+.legal-section h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.legal-disclaimer { font-size: 0.9rem; color: var(--muted); font-style: italic; text-align: center; margin-bottom: 3rem; }
+.legal-section h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem; }
+.legal-section p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+.legal-section strong { color: var(--text); font-weight: 700; }
+.legal-section ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+.legal-section li { padding-left: 20px; margin-bottom: 0.75rem; position: relative; color: var(--muted); line-height: 1.7; }
+.legal-section li::before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid var(--border); padding-block: 2rem; background: var(--bg); }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; }
+@media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+.footer-brand { font-family: 'Boska', Georgia, serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.footer-brand span { display: block; font-family: 'Satoshi', sans-serif; font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color var(--t); }
+.footer-links a:hover { color: var(--text); }
+.footer-zone { font-size: 0.8rem; color: var(--faint); }
 </style>
 </head>
-
 <body>
-<nav class="site-nav" aria-label="Navigation principale">
+
+<!-- NAV -->
+<nav aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="VotrIA — accueil">
+    <a href="/" class="nav-logo" aria-label="Votria.pro accueil">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect width="28" height="28" rx="7" fill="#F97316"/>
+        <rect width="28" height="28" rx="7" fill="#01696f"/>
         <path d="M7 9h6l3 7 3-7h2L16 20h-4L7 9z" fill="white"/>
       </svg>
-      VotrIA
+      Votria
     </a>
-
     <div class="nav-links" role="list">
       <a href="/" role="listitem">Accueil</a>
       <a href="/offres" role="listitem">Offres</a>
-      <a href="/cas-usage" role="listitem">Cas d’usage</a>
+      <a href="/methode" role="listitem">Méthode</a>
       <a href="/a-propos" role="listitem">À propos</a>
+      <a href="/#secteurs" role="listitem">Secteurs</a>
       <a href="/contact" role="listitem">Contact</a>
     </div>
-
     <div class="nav-right">
       <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a href="/diagnostic/" class="nav-cta">Diagnostic — 2 min</a>
+      <a href="/contact" class="nav-cta">Diagnostic gratuit</a>
       <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" id="burger-btn">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="/">Accueil</a>
     <a href="/offres">Offres</a>
-    <a href="/cas-usage">Cas d’usage</a>
+    <a href="/methode">Méthode</a>
     <a href="/a-propos">À propos</a>
+    <a href="/#secteurs">Secteurs</a>
     <a href="/contact">Contact</a>
-    <a href="/diagnostic/" class="mob-cta">Identifier mon point de départ — 2 min</a>
+    <a href="/contact" class="mob-cta">Diagnostic gratuit — 30 min</a>
   </div>
 </nav>
 
 <main>
-<section class="legal-hero">
+
+<!-- LEGAL CONTENT -->
+<section class="legal-section">
   <div class="container">
-    <div class="legal-label">Informations légales</div>
     <h1>Mentions légales</h1>
-    <p>Informations relatives à l’éditeur, à la publication, à l’hébergement et aux conditions d’utilisation du site votria.pro.</p>
+    <p class="legal-disclaimer">Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique (LCEN).</p>
+
+    <h2>1. Éditeur du site</h2>
+    <p>
+      <strong>Responsable :</strong> Jean-François Martin<br/>
+      <strong>Forme juridique :</strong> Entrepreneur individuel<br/>
+      <strong>Nom commercial :</strong> Votria.pro<br/>
+      <strong>SIRET :</strong> 49898266000059<br/>
+      <strong>APE :</strong> 6202A — Conseil en systèmes et logiciels informatiques<br/>
+      <strong>Adresse :</strong> rue George Sand, 32600 L'Isle-Jourdain, France<br/>
+      <strong>Email :</strong> contact@votria.pro<br/>
+      <strong>Directeur de la publication :</strong> Jean-François Martin
+    </p>
+
+    <h2>2. Hébergeur du site</h2>
+    <p>
+      <strong>Netlify Inc.</strong><br/>
+      2325 3rd Street, Suite 215<br/>
+      San Francisco, CA 94107<br/>
+      États-Unis<br/>
+      <br/>
+      Site web : <a href="https://www.netlify.com" target="_blank">www.netlify.com</a>
+    </p>
+
+    <h2>3. Propriété intellectuelle</h2>
+    <p>
+      L'ensemble du contenu de ce site (textes, images, visuels, logos, structure, mise en page) est la propriété exclusive de Jean-François Martin / Votria.pro, sauf mention contraire expresse.
+    </p>
+    <p>
+      Toute reproduction, représentation, modification, publication ou transmission de tout ou partie du contenu du site, par quelque moyen que ce soit, est interdite sans l'autorisation préalable et écrite de l'éditeur, sous peine de poursuites judiciaires.
+    </p>
+
+    <h2>4. Responsabilité</h2>
+    <p>
+      Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour. Cependant, il peut contenir des inexactitudes, des omissions ou des lacunes. Si vous constatez une lacune, erreur ou dysfonctionnement, merci de le signaler par email à contact@votria.pro.
+    </p>
+    <p>
+      Votria.pro ne pourra être tenu responsable des dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site, résultant d'une utilisation d'un matériel non conforme aux spécifications indiquées, ou de l'apparition d'un bug ou d'une incompatibilité.
+    </p>
+
+    <h2>5. Liens hypertextes</h2>
+    <p>
+      Le site peut contenir des liens hypertextes vers d'autres sites. Ces liens sont proposés à titre informatif. Votria.pro n'exerce aucun contrôle sur ces sites tiers et décline toute responsabilité quant à leur contenu.
+    </p>
+
+    <h2>6. Droit applicable et juridiction compétente</h2>
+    <p>
+      Les présentes mentions légales sont soumises au droit français. En cas de litige, les tribunaux français seront compétents, sous réserve d'une attribution de compétence spécifique découlant d'un texte de loi ou réglementaire particulier.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>
+      Pour toute question relative aux présentes mentions légales :<br/>
+      <strong>Email :</strong> contact@votria.pro<br/>
+      <strong>Adresse :</strong> rue George Sand, 32600 L'Isle-Jourdain, France
+    </p>
+
+    <p style="margin-top: 3rem; color: var(--faint); font-size: 0.9rem;">
+      <em>Dernière mise à jour : Décembre 2026</em>
+    </p>
   </div>
 </section>
 
-<section class="legal-main">
-  <div class="container">
-    <div class="legal-layout">
-      <aside class="legal-summary" aria-label="Sommaire des mentions légales">
-        <h2>Sommaire</h2>
-        <nav>
-          <a href="#editeur">1. Éditeur</a>
-          <a href="#publication">2. Publication</a>
-          <a href="#hebergement">3. Hébergement</a>
-          <a href="#domaine">4. Nom de domaine</a>
-          <a href="#propriete">5. Propriété intellectuelle</a>
-          <a href="#informations">6. Informations publiées</a>
-          <a href="#liens">7. Liens externes</a>
-          <a href="#donnees">8. Données et cookies</a>
-          <a href="#droit">9. Droit applicable</a>
-          <a href="#contact-legal">10. Contact</a>
-        </nav>
-        <div class="updated">Dernière mise à jour : 10 juillet 2026</div>
-      </aside>
-
-      <div class="legal-content">
-        <section class="legal-block" id="editeur">
-          <h2>1. Éditeur du site</h2>
-
-          <div class="identity-grid">
-            <div class="identity-item">
-              <span>Entrepreneur</span>
-              <strong>Jean-François Martin — Entrepreneur individuel (EI)</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>Nom commercial</span>
-              <strong>VotrIA</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>SIREN</span>
-              <strong>498 982 660</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>SIRET</span>
-              <strong>498 982 660 00059</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>Immatriculation</span>
-              <strong>Registre national des entreprises — 498 982 660</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>Code APE</span>
-              <strong>6202A — Conseil en systèmes et logiciels informatiques</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>Adresse professionnelle</span>
-              <strong>Rue George Sand, 32600 L’Isle-Jourdain, France</strong>
-            </div>
-
-            <div class="identity-item">
-              <span>Téléphone</span>
-              <a href="tel:+33686398397">06 86 39 83 97</a>
-            </div>
-
-            <div class="identity-item">
-              <span>Email</span>
-              <a href="mailto:contact@votria.pro">contact@votria.pro</a>
-            </div>
-
-            <div class="identity-item">
-              <span>Site</span>
-              <a href="https://votria.pro">votria.pro</a>
-            </div>
-          </div>
-
-          <p style="margin-top:1rem;">Les prestations présentées sur ce site sont destinées aux professionnels.</p>
-        </section>
-
-        <section class="legal-block" id="publication">
-          <h2>2. Direction de la publication</h2>
-          <p><strong>Directeur de la publication :</strong> Jean-François Martin, entrepreneur individuel.</p>
-          <p><strong>Responsable de la rédaction :</strong> Jean-François Martin.</p>
-        </section>
-
-        <section class="legal-block" id="hebergement">
-          <h2>3. Hébergement du site</h2>
-          <p>Le site est hébergé par :</p>
-          <p>
-            <strong>Netlify, Inc.</strong><br>
-            101 2nd Street<br>
-            San Francisco, CA 94105<br>
-            États-Unis
-          </p>
-          <p>
-            Email de support :
-            <a href="mailto:support@netlify.com">support@netlify.com</a><br>
-            Site :
-            <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
-          </p>
-        </section>
-
-        <section class="legal-block" id="domaine">
-          <h2>4. Enregistrement du nom de domaine</h2>
-          <p>Le nom de domaine <strong>votria.pro</strong> est enregistré auprès de :</p>
-          <p>
-            <strong>OVH SAS</strong><br>
-            SAS au capital de 50 000 000 €<br>
-            SIRET : 424 761 419 00045<br>
-            2 rue Kellermann<br>
-            59100 Roubaix, France
-          </p>
-          <p>
-            Site :
-            <a href="https://www.ovhcloud.com/fr/" target="_blank" rel="noopener noreferrer">www.ovhcloud.com</a>
-          </p>
-          <div class="notice">OVH intervient ici comme prestataire d’enregistrement du nom de domaine. L’hébergement du site est assuré par Netlify, Inc.</div>
-        </section>
-
-        <section class="legal-block" id="propriete">
-          <h2>5. Propriété intellectuelle</h2>
-          <p>Sauf mention contraire, les textes, éléments graphiques, signes distinctifs, structures de pages, contenus originaux et documents proposés sur le site sont la propriété de Jean-François Martin EI / VotrIA ou sont utilisés avec l’autorisation de leurs titulaires.</p>
-          <p>Toute reproduction, représentation, adaptation, extraction ou réutilisation substantielle, totale ou partielle, est interdite sans autorisation écrite préalable, sauf exception prévue par la loi.</p>
-          <p>Les marques, noms commerciaux, logos et contenus appartenant à des tiers restent la propriété de leurs titulaires respectifs.</p>
-        </section>
-
-        <section class="legal-block" id="informations">
-          <h2>6. Informations et responsabilité</h2>
-          <p>VotrIA s’efforce de publier des informations exactes et à jour. Toutefois, les contenus du site sont généraux et peuvent être modifiés sans préavis.</p>
-          <p>Ils ne constituent pas un conseil juridique, fiscal, comptable, financier, médical ou réglementaire personnalisé. Une analyse adaptée doit être réalisée avant toute décision fondée sur une situation particulière.</p>
-          <p>VotrIA ne garantit ni l’absence permanente d’erreur ou d’interruption, ni l’adéquation d’un contenu général à un besoin précis. La responsabilité de l’éditeur reste soumise aux règles impératives du droit applicable.</p>
-        </section>
-
-        <section class="legal-block" id="liens">
-          <h2>7. Liens hypertextes et services tiers</h2>
-          <p>Le site peut contenir des liens vers des sites ou services édités par des tiers. VotrIA ne contrôle pas leur disponibilité, leur contenu, leurs pratiques de sécurité ou leurs politiques de confidentialité.</p>
-          <p>L’ouverture d’un lien externe relève du choix de l’utilisateur. Les conditions propres au service tiers consulté s’appliquent alors.</p>
-        </section>
-
-        <section class="legal-block" id="donnees">
-          <h2>8. Données personnelles et cookies</h2>
-          <p>Les traitements de données personnelles, les finalités, les bases légales, les destinataires, les durées de conservation et les droits des personnes sont décrits dans la <a href="/confidentialite">politique de confidentialité</a>.</p>
-          <p>Les traceurs non strictement nécessaires ne doivent être activés qu’après recueil du choix de l’utilisateur, lorsqu’un tel consentement est requis.</p>
-        </section>
-
-        <section class="legal-block" id="droit">
-          <h2>9. Droit applicable</h2>
-          <p>Le site et les présentes mentions légales sont soumis au droit français.</p>
-          <p>En cas de différend, les parties recherchent d’abord une solution amiable. À défaut, la compétence juridictionnelle est déterminée conformément aux règles légales applicables et, lorsqu’une clause contractuelle valable le prévoit entre professionnels, aux conditions convenues entre les parties.</p>
-        </section>
-
-        <section class="legal-block" id="contact-legal">
-          <h2>10. Contact</h2>
-          <ul class="legal-list">
-            <li>Email : <a href="mailto:contact@votria.pro">contact@votria.pro</a></li>
-            <li>Téléphone : <a href="tel:+33686398397">06 86 39 83 97</a></li>
-            <li>Courrier : Jean-François Martin EI — VotrIA, rue George Sand, 32600 L’Isle-Jourdain, France</li>
-          </ul>
-        </section>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        VotrIA
-        <span>Conseil et intégration IA · Toulouse · Occitanie</span>
+        Votria.pro
+        <span>Consultant & Agence IA · Toulouse · Occitanie</span>
       </div>
-
-      <nav class="footer-links" aria-label="Liens du pied de page">
+      <nav class="footer-links" aria-label="Liens footer">
         <a href="/">Accueil</a>
         <a href="/offres">Offres</a>
         <a href="/methode">Méthode</a>
-        <a href="/cas-usage">Cas d’usage</a>
-        <a href="/conformite-ia-rgpd">Conformité IA</a>
+        <a href="/#secteurs">Secteurs</a>
         <a href="/a-propos">À propos</a>
-        <a href="/contact">Contact</a>
         <a href="/mentions-legales">Mentions légales</a>
         <a href="/confidentialite">Confidentialité</a>
       </nav>
-
-      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
+      <p class="footer-zone">09 · 31 · 32 · 81 · 82 · 47</p>
     </div>
   </div>
 </footer>
 
 <script>
+// Theme toggle
 (function(){
-  const themeButton = document.querySelector('[data-theme-toggle]');
+  const btn = document.querySelector('[data-theme-toggle]');
   const root = document.documentElement;
-  let dark = matchMedia('(prefers-color-scheme: dark)').matches;
-
-  function renderTheme(){
-    root.setAttribute('data-theme', dark ? 'dark' : 'light');
-    if(!themeButton) return;
-
-    themeButton.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
-    themeButton.innerHTML = dark
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if(btn) {
+    btn.innerHTML = dark
       ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-  }
-
-  renderTheme();
-  if(themeButton){
-    themeButton.addEventListener('click', function(){
+    btn.addEventListener('click', () => {
       dark = !dark;
-      renderTheme();
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.setAttribute('aria-label', 'Basculer vers le thème ' + (dark ? 'clair' : 'sombre'));
+      btn.innerHTML = dark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
     });
   }
 })();
 
+// Burger menu
 (function(){
-  const button = document.getElementById('burger-btn');
+  const btn = document.getElementById('burger-btn');
   const menu = document.getElementById('mobile-menu');
-  if(!button || !menu) return;
-
-  button.addEventListener('click', function(){
+  if(!btn || !menu) return;
+  btn.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
-    button.setAttribute('aria-expanded', String(open));
-    const spans = button.querySelectorAll('span');
-
+    btn.setAttribute('aria-expanded', open);
+    const spans = btn.querySelectorAll('span');
     if(open){
       spans[0].style.transform = 'translateY(7px) rotate(45deg)';
       spans[1].style.opacity = '0';
       spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-    }else{
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+    } else {
+      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
     }
   });
-
-  menu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){
-      menu.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
-      const spans = button.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
-    });
-  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+    const spans = btn.querySelectorAll('span');
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }));
 })();
 </script>
-<script src="/assets/cookie-consent.js" defer></script>
+
 </body>
 </html>
