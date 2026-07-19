@@ -2,9 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none';">
 <meta name="robots" content="noindex">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Page introuvable — VotrIA</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +44,14 @@ p{color:#CBD5E1;max-width:44ch;margin:0 auto 2rem}
   <p>Le lien est peut-être incorrect ou la page a été déplacée. Revenez à l'accueil ou lancez votre diagnostic gratuit.</p>
   <div class="actions">
     <a href="/" class="btn btn-primary">Retour à l'accueil</a>
-    <a href="/diagnostic/" class="btn btn-ghost">Diagnostic — 2 min</a>
+    <a href="https://calendly.com/jeanfrancois-votria" class="btn btn-ghost">Diagnostic — 2 min</a>
   </div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-WDMPM0P81V', {'page_path': window.location.pathname, 'page_title': document.title});
+</script>
 </body>
 </html>

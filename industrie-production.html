@@ -9,14 +9,14 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Nos 4 briques technologiques : FLUX (Intelligence Documentaire) | BRAIN (Centralisation Savoir) | VOICE (Interfaçage Vocal) | SHIELD (Gouvernance). Cap IA 490€ | Cap IA+ 1200€">
-<title>VotrIA — Nos Offres | 4 Briques Technologiques & Protocoles Diagnostic</title>
-<link rel="canonical" href="https://votria.pro/offres">
+<meta name="description" content="Mission n°102 - Industrie & Production : Bureau d'études, 10 ans d'archives. 20 min → 3 sec. Brique BRAIN RAG sécurisée.">
+<title>VotrIA — Industrie & Production | Mission n°102 Bureau d'Études</title>
+<link rel="canonical" href="https://votria.pro/secteurs/industrie">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VotrIA">
-<meta property="og:url" content="https://votria.pro/offres">
-<meta property="og:title" content="VotrIA — Nos Offres | FLUX, BRAIN, VOICE, SHIELD">
-<meta property="og:description" content="Diagnostic Cap IA 490€ | Cap IA+ 1200€ | Déploiement 2500-4000€">
+<meta property="og:url" content="https://votria.pro/secteurs/industrie">
+<meta property="og:title" content="VotrIA — Industrie & Production | Mission n°102">
+<meta property="og:description" content="Cas réel : Bureau d'études, 10 ans archives → 3 sec. Brique BRAIN RAG + Qdrant.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -67,19 +67,19 @@ section + section { border-top: 1px solid var(--border); }
 
 .hero { padding-block: clamp(3rem, 10vw, 6rem); }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 18ch; margin-bottom: 1rem; }
-.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 60ch; margin-bottom: 2rem; line-height: 1.7; }
+.hero-tag { display: inline-block; background: var(--primary-hi); color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); margin-bottom: 1rem; }
 
-.briques-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
-@media (min-width: 650px) { .briques-grid { grid-template-columns: repeat(2, 1fr); } }
-.brique-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 2rem; }
-.brique-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.brique-card h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 0.75rem; }
-.brique-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
-.brique-mission { background: var(--primary-hi); color: var(--primary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; }
+.case-study { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 2rem; margin: 2rem 0; }
+.case-study h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 1rem; }
+.case-detail { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+@media (min-width: 650px) { .case-detail { grid-template-columns: repeat(2, 1fr); } }
+.detail-box { background: var(--primary-hi); padding: 1rem; border-radius: var(--radius-sm); }
+.detail-box strong { color: var(--primary); display: block; font-size: 1.1rem; margin-bottom: 0.25rem; }
+.detail-box p { color: var(--muted); font-size: 0.9rem; }
 
-.security-note { background: var(--surface-2); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius-md); margin: 2rem 0; }
-.security-note h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
-.security-note p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+.quote-box { background: var(--surface-2); border-left: 4px solid var(--primary); padding: 1.75rem; border-radius: var(--radius-md); margin: 2rem 0; }
+.quote-box p { color: var(--text); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+.quote-box strong { color: var(--muted); display: block; font-style: normal; font-weight: 600; margin-top: 1rem; }
 
 .diagnostic-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); margin: 2rem 0; }
 .diagnostic-table th { background: var(--primary-hi); color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 1rem; text-align: left; border-bottom: 2px solid var(--border); }
@@ -88,9 +88,11 @@ section + section { border-top: 1px solid var(--border); }
 .diagnostic-table .label { color: var(--muted); font-weight: 500; font-size: 0.9rem; }
 .diagnostic-table .highlight { color: var(--primary); font-weight: 700; font-size: 1.15rem; }
 
-.guarantee-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 1.75rem; margin: 1.5rem 0; }
-.guarantee-box h4 { color: var(--primary); font-size: 1.05rem; margin-bottom: 0.75rem; }
-.guarantee-box p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+.steps-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
+@media (min-width: 650px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+.step-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 1.75rem; }
+.step-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 0.75rem; }
+.step-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
 
 .btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary); color: var(--on-primary); font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); min-height: 48px; }
 .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
@@ -140,63 +142,67 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
 
 <section class="hero">
   <div class="container">
-    <h1>Votre entreprise, augmentée et configurée pour votre métier.</h1>
-    <p class="hero-sub">Nous n'installons pas de logiciels génériques. Nous intégrons l'Intelligence Artificielle au cœur de vos flux de travail pour libérer le temps de vos équipes, sans toucher à votre informatique actuelle.</p>
+    <div class="hero-tag">⚙️ Industrie & Production</div>
+    <h1>Nous n'adaptons pas votre PME à l'IA. Nous configurons l'IA pour votre métier.</h1>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 style="margin-bottom: 1.5rem;">Notre Architecture Adaptative</h2>
-    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 1rem;">Votre métier a ses spécificités, mais votre informatique doit rester simple. Nous ne croyons pas aux packs rigides. Notre approche est pragmatique : un socle technique souverain et robuste, sur lequel nous configurons nos 4 briques éprouvées.</p>
-    
-    <div class="briques-grid">
-      <div class="brique-card">
-        <div class="brique-icon">📄</div>
-        <h3>La Brique FLUX</h3>
-        <p><strong>L'Intelligence Documentaire</strong></p>
-        <p>Notre moteur d'extraction (Factures, BL, Commandes). Il nettoie vos données et les dépose proprement dans votre outil de gestion actuel, sans perturber vos équipes.</p>
-        <div class="brique-mission">🔍 Missions n°84 (Génie Climatique) et n°112 (Logistique)</div>
-      </div>
+    <h2 style="margin-bottom: 1.5rem;">📚 Mission n°102 : Les 10 ans d'archives fragmentées d'un bureau d'études</h2>
+    <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Dans l'ingénierie et la bureautique d'études industrielles.</p>
 
-      <div class="brique-card">
-        <div class="brique-icon">🧠</div>
-        <h3>La Brique BRAIN</h3>
-        <p><strong>La Centralisation du Savoir</strong></p>
-        <p>Une base de connaissances sécurisée qui digère vos fichiers internes (chantiers, process, contrats). Vos équipes l'interrogent en français pour obtenir une réponse immédiate et sourcée.</p>
-        <div class="brique-mission">🔍 Mission n°102 (Bureau d'études industrielles)</div>
-      </div>
+    <div class="case-study">
+      <h3>La Réalité du Client</h3>
+      <p>À Montpellier, une PME industrielle de 24 salariés spécialisée dans l'ingénierie et le bureau d'études accumulait plus de 10 ans d'archives critiques. Des milliers de calculs de structures, de rapports d'audits techniques, de nomenclatures de pièces et de notices de maintenance étaient éparpillés, perdus entre un vieux serveur physique NAS local et un espace SharePoint mal indexé.</p>
+      <p style="margin-top: 1rem;">Chaque jour, les ingénieurs et chargés d'affaires s'épuisaient à perdre <strong>30 à 45 minutes</strong> pour retrouver le bon document, un paramètre précis ou l'historique d'une machine. Cette fragmentation documentaire tuait la productivité et broyait le moral des équipes.</p>
+    </div>
 
-      <div class="brique-card">
-        <div class="brique-icon">🎙️</div>
-        <h3>La Brique VOICE</h3>
-        <p><strong>L'Interfaçage Vocal</strong></p>
-        <p>Notre passerelle parole-texte adaptée à votre jargon métier. Elle transforme vos dictées de terrain en rapports structurés ou gère intelligemment votre standard 24h/24.</p>
-        <div class="brique-mission">🔍 Mission n°91 (Standard Téléphonique Syndic)</div>
-      </div>
+    <div class="case-study">
+      <h3>L'Obstacle Technique Surmonté</h3>
+      <p>Le risque majeur de l'IA dans le secteur industriel est l'<strong>hallucination</strong> : inventer une norme de sécurité ou une côte de tolérance serait catastrophique. Nous avons bridé la <strong>Brique BRAIN</strong> (RAG sécurisé basé sur Qdrant et Mistral Large) pour forcer le système à utiliser uniquement les documents internes du client, à l'exclusion totale de toute connaissance externe.</p>
+      <p style="margin-top: 1rem;">Si une information n'est pas présente dans l'archive, l'IA formule un message simple : <strong>« Je ne trouve pas »</strong>. Mieux encore : pour sécuriser chaque décision, l'IA accompagne toutes ses réponses d'un <strong>lien hypertexte menant à la page exacte du PDF d'origine</strong>, permettant à l'ingénieur de valider la source en un clic avant de signer un livrable.</p>
+      <p style="margin-top: 1rem;">Un cloisonnement strict des accès interdit en outre aux employés d'interroger les dossiers RH ou financiers de la direction.</p>
+    </div>
 
-      <div class="brique-card">
-        <div class="brique-icon">🛡️</div>
-        <h3>La Brique SHIELD</h3>
-        <p><strong>La Gouvernance Totale</strong></p>
-        <p>Le garde-fou de votre réseau. Il bloque l'usage clandestin des outils grand public (Shadow AI), anonymise les données sensibles et garantit votre conformité RGPD et IA Act 2026.</p>
-        <div class="brique-mission">🛡️ Sécurité garantie sur tous déploiements</div>
+    <div class="case-study">
+      <h3>Le Bilan Froid</h3>
+      <p style="margin-bottom: 1.5rem;">L'accès à la connaissance est devenu instantané.</p>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Temps de recherche</strong>
+        <p>Passé de 20 minutes à 3 secondes par demande</p>
+      </div>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Productivité gagnée</strong>
+        <p>3 heures par semaine libérées pour chaque chargé d'affaires</p>
+      </div>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Impact entreprise</strong>
+        <p>300 heures par mois regagnées, remettant les ingénieurs au cœur de leur vraie valeur : concevoir et produire</p>
       </div>
     </div>
 
-    <div class="security-note">
-      <h4>🔒 Note de Transparence & Sécurité Globale</h4>
-      <p>Notre choix absolu est de conserver vos données chez vous. VotrIA ne stocke rien. Votre infrastructure se connecte directement aux moteurs d'IA sécurisés. Les micro-coûts d'infrastructure tiers (API au prix coûtant fournisseur) restent à votre charge et dépendent uniquement de votre volume d'utilisation réel.</p>
-      <p><strong>Zéro marge cachée pour nous, souveraineté totale pour vous.</strong></p>
-      <p style="margin-top: 1rem; font-weight: 600; color: var(--text);">Déploiement moyen d'une brique métier : entre 2 500 € et 4 000 € HT selon la complexité de votre ERP.</p>
+    <div class="case-study">
+      <h3>Les Chiffres</h3>
+      <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Intégration complète et modélisation sémantique :</strong> 3 290 € HT</li>
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Maintenance et mise à jour de l'index :</strong> 199 € HT/mois</li>
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Infrastructure :</strong> Zéro hébergement cloud opaque, données 100% étanches chez le client</li>
+      </ul>
+    </div>
+
+    <div class="quote-box">
+      <p>"Avec plus de 10 ans d'archives de chantiers, de notices techniques et de contrats complexes répartis sur nos serveurs, nos chargés d'affaires perdaient un temps infini à chercher la bonne information. Nous étions frileux à l'idée d'ouvrir nos données à des IA grand public par peur des fuites et des erreurs de calcul.</p>
+      <p>Nous avons adopté VotrIA BRAIN. Ce moteur de recherche sémantique privé permet à nos ingénieurs de poser des questions en français et d'obtenir la réponse exacte, sourcée au paragraphe près, en 3 secondes. Notre infrastructure est respectée, l'intégration n'a pas nécessité de refonte de nos serveurs, et le retour sur investissement en heures d'ingénieurs économisées s'est mesuré dès le premier mois."</p>
+      <strong>— Dirigeant, Bureau d'Études Industrielles (24 salariés)</strong>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>🔍 Le Protocole Diagnostic</h2>
-    <p style="color: var(--muted); margin: 1rem 0 2rem; font-size: 0.95rem;">Pour garantir la viabilité de votre future infrastructure, aucun déploiement ne se fait sans l'activation de l'un de nos deux protocoles de cadrage.</p>
+    <h2>🔍 Étape 1 : Choisissez votre niveau de diagnostic</h2>
+    <p style="color: var(--muted); margin: 1rem 0 2rem; font-size: 0.95rem;">Le montant de votre diagnostic est 100 % déduit de votre facture de déploiement si vous décidez de travailler avec nous sous 60 jours.</p>
     
     <div style="overflow-x: auto;">
       <table class="diagnostic-table">
@@ -245,27 +251,29 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
 
 <section>
   <div class="container">
-    <h2>✓ L'Engagement de Sûreté</h2>
-    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 1rem; font-style: italic;">L'inversion absolue du risque.</p>
+    <h2>⚙️ Les Étapes Suivantes</h2>
+    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem;">Une fois le diagnostic validé</p>
 
-    <div class="guarantee-box">
-      <h4>💰 Investissement Garanti</h4>
-      <p>Chaque euro versé pour votre protocole d'accès (Cap IA ou Cap IA+) est 100 % recrédité sur votre facture finale de déploiement. Votre diagnostic est virtuellement gratuit.</p>
-    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <h4>Étape 2 : Déploiement de votre Espace Sécurisé</h4>
+        <p>Nous ouvrons l'environnement d'équipe officiel et étanche de votre PME. Cet écran de contrôle intermédiaire isole vos données sensibles, bloque l'usage clandestin d'outils grand public (Shadow AI) et garantit votre conformité au RGPD et à l'IA Act 2026.</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>📅 Souplesse Mensuelle</h4>
-      <p>Les frais d'abonnement de maintenance VotrIA ne débutent qu'au jour de la mise en production réelle de votre système. Vous ne payez rien tant que le système ne tourne pas.</p>
-    </div>
+      <div class="step-card">
+        <h4>Étape 3 : Paramétrage de vos Modules Métiers</h4>
+        <p>Nous raccordons uniquement les modules validés lors de l'audit (FLUX, VOICE ou BRAIN).</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>🛠️ Plan de Modernisation</h4>
-      <p>Si notre audit révèle que vos logiciels actuels sont temporairement incompatibles, nous arrêtons les frais. Notre rapport devient votre feuille de route pour votre prestataire informatique. Nous revenons dès que votre système est prêt, sans jamais vous refacturer l'audit.</p>
-    </div>
+      <div class="step-card">
+        <h4>Étape 4 : Formation Terrain (2h)</h4>
+        <p>Nous passons 2 heures en conditions réelles avec vos collaborateurs pour garantir une prise en main immédiate sur smartphone et PC. Nous ajustons les consignes de l'IA pendant les 30 premiers jours selon leurs retours terrain.</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>👥 Garantie d'Adoption Terrain</h4>
-      <p>Nos déploiements incluent obligatoirement une session de formation de 2 heures avec vos équipes. Si trois mois après la mise en production, vos équipes boudent l'outil par complexité, nous revenons ajuster gratuitement l'interface jusqu'à parfaite adoption.</p>
+      <div class="step-card">
+        <h4>✓ Vous maîtrisez votre IA</h4>
+        <p>Accompagnement complet, documentation personnalisée, support réactif pendant 90 jours post-déploiement.</p>
+      </div>
     </div>
   </div>
 </section>

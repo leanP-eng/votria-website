@@ -9,14 +9,14 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Nos 4 briques technologiques : FLUX (Intelligence Documentaire) | BRAIN (Centralisation Savoir) | VOICE (Interfaçage Vocal) | SHIELD (Gouvernance). Cap IA 490€ | Cap IA+ 1200€">
-<title>VotrIA — Nos Offres | 4 Briques Technologiques & Protocoles Diagnostic</title>
-<link rel="canonical" href="https://votria.pro/offres">
+<meta name="description" content="Mission n°91 - Services & Négoce : Standard téléphonique 24h/24. 58% appels résolus par IA. Brique VOICE + 3CX + Chorum.">
+<title>VotrIA — Services & Négoce | Mission n°91 Standard Syndic Immobilier</title>
+<link rel="canonical" href="https://votria.pro/secteurs/services">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VotrIA">
-<meta property="og:url" content="https://votria.pro/offres">
-<meta property="og:title" content="VotrIA — Nos Offres | FLUX, BRAIN, VOICE, SHIELD">
-<meta property="og:description" content="Diagnostic Cap IA 490€ | Cap IA+ 1200€ | Déploiement 2500-4000€">
+<meta property="og:url" content="https://votria.pro/secteurs/services">
+<meta property="og:title" content="VotrIA — Services & Négoce | Mission n°91">
+<meta property="og:description" content="Cas réel : Syndic immobilier, 65% appels → 58% résolus par IA. Brique VOICE + 3CX.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -67,19 +67,19 @@ section + section { border-top: 1px solid var(--border); }
 
 .hero { padding-block: clamp(3rem, 10vw, 6rem); }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 18ch; margin-bottom: 1rem; }
-.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 60ch; margin-bottom: 2rem; line-height: 1.7; }
+.hero-tag { display: inline-block; background: var(--primary-hi); color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 0.8rem; border-radius: var(--radius-sm); margin-bottom: 1rem; }
 
-.briques-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
-@media (min-width: 650px) { .briques-grid { grid-template-columns: repeat(2, 1fr); } }
-.brique-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 2rem; }
-.brique-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.brique-card h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 0.75rem; }
-.brique-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
-.brique-mission { background: var(--primary-hi); color: var(--primary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; }
+.case-study { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 2rem; margin: 2rem 0; }
+.case-study h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 1rem; }
+.case-detail { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+@media (min-width: 650px) { .case-detail { grid-template-columns: repeat(2, 1fr); } }
+.detail-box { background: var(--primary-hi); padding: 1rem; border-radius: var(--radius-sm); }
+.detail-box strong { color: var(--primary); display: block; font-size: 1.1rem; margin-bottom: 0.25rem; }
+.detail-box p { color: var(--muted); font-size: 0.9rem; }
 
-.security-note { background: var(--surface-2); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius-md); margin: 2rem 0; }
-.security-note h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
-.security-note p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+.quote-box { background: var(--surface-2); border-left: 4px solid var(--primary); padding: 1.75rem; border-radius: var(--radius-md); margin: 2rem 0; }
+.quote-box p { color: var(--text); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+.quote-box strong { color: var(--muted); display: block; font-style: normal; font-weight: 600; margin-top: 1rem; }
 
 .diagnostic-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); margin: 2rem 0; }
 .diagnostic-table th { background: var(--primary-hi); color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 1rem; text-align: left; border-bottom: 2px solid var(--border); }
@@ -88,9 +88,11 @@ section + section { border-top: 1px solid var(--border); }
 .diagnostic-table .label { color: var(--muted); font-weight: 500; font-size: 0.9rem; }
 .diagnostic-table .highlight { color: var(--primary); font-weight: 700; font-size: 1.15rem; }
 
-.guarantee-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 1.75rem; margin: 1.5rem 0; }
-.guarantee-box h4 { color: var(--primary); font-size: 1.05rem; margin-bottom: 0.75rem; }
-.guarantee-box p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+.steps-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
+@media (min-width: 650px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+.step-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 1.75rem; }
+.step-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 0.75rem; }
+.step-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
 
 .btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary); color: var(--on-primary); font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); min-height: 48px; }
 .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
@@ -140,63 +142,67 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
 
 <section class="hero">
   <div class="container">
-    <h1>Votre entreprise, augmentée et configurée pour votre métier.</h1>
-    <p class="hero-sub">Nous n'installons pas de logiciels génériques. Nous intégrons l'Intelligence Artificielle au cœur de vos flux de travail pour libérer le temps de vos équipes, sans toucher à votre informatique actuelle.</p>
+    <div class="hero-tag">💼 Services & Négoce</div>
+    <h1>Nous n'adaptons pas votre PME à l'IA. Nous configurons l'IA pour votre métier.</h1>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2 style="margin-bottom: 1.5rem;">Notre Architecture Adaptative</h2>
-    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 1rem;">Votre métier a ses spécificités, mais votre informatique doit rester simple. Nous ne croyons pas aux packs rigides. Notre approche est pragmatique : un socle technique souverain et robuste, sur lequel nous configurons nos 4 briques éprouvées.</p>
-    
-    <div class="briques-grid">
-      <div class="brique-card">
-        <div class="brique-icon">📄</div>
-        <h3>La Brique FLUX</h3>
-        <p><strong>L'Intelligence Documentaire</strong></p>
-        <p>Notre moteur d'extraction (Factures, BL, Commandes). Il nettoie vos données et les dépose proprement dans votre outil de gestion actuel, sans perturber vos équipes.</p>
-        <div class="brique-mission">🔍 Missions n°84 (Génie Climatique) et n°112 (Logistique)</div>
-      </div>
+    <h2 style="margin-bottom: 1.5rem;">☎️ Mission n°91 : Le standard téléphonique saturé</h2>
+    <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 1rem;">Dans la gestion immobilière et le syndic de copropriété.</p>
 
-      <div class="brique-card">
-        <div class="brique-icon">🧠</div>
-        <h3>La Brique BRAIN</h3>
-        <p><strong>La Centralisation du Savoir</strong></p>
-        <p>Une base de connaissances sécurisée qui digère vos fichiers internes (chantiers, process, contrats). Vos équipes l'interrogent en français pour obtenir une réponse immédiate et sourcée.</p>
-        <div class="brique-mission">🔍 Mission n°102 (Bureau d'études industrielles)</div>
-      </div>
+    <div class="case-study">
+      <h3>La Réalité du Client</h3>
+      <p>À Tarbes, un cabinet de gestion immobilière et syndic de copropriété de 18 salariés gérait 2 500 lots au bord de l'asphyxie téléphonique. Le standard était submergé à <strong>65 %</strong> par des demandes de niveau 1 : des copropriétaires qui appellent pour un duplicata d'appel de fonds, la date de la prochaine AG ou un badge de parking défectueux.</p>
+      <p style="margin-top: 1rem;">Cette marée d'appels répétitifs bloquait constamment les lignes, épuisait l'accueil et empêchait surtout les gestionnaires de se concentrer sur les sinistres lourds et les urgences techniques sur le terrain.</p>
+    </div>
 
-      <div class="brique-card">
-        <div class="brique-icon">🎙️</div>
-        <h3>La Brique VOICE</h3>
-        <p><strong>L'Interfaçage Vocal</strong></p>
-        <p>Notre passerelle parole-texte adaptée à votre jargon métier. Elle transforme vos dictées de terrain en rapports structurés ou gère intelligemment votre standard 24h/24.</p>
-        <div class="brique-mission">🔍 Mission n°91 (Standard Téléphonique Syndic)</div>
-      </div>
+    <div class="case-study">
+      <h3>L'Obstacle Technique Surmonté</h3>
+      <p>La consigne du patron était stricte : hors de question d'installer un serveur vocal interactif rigide (« Tapez 1, tapez 2 ») ou une voix de robot froide qui ferait fuir les clients ou agacerait les copropriétaires âgés.</p>
+      <p style="margin-top: 1rem;">Nous avons déployé la <strong>Brique VOICE</strong>, un agent vocal intelligent directement interconnecté à leur standard <strong>3CX</strong> et à leur CRM <strong>Chorum</strong>. Le rendu est bluffant : la voix est fluide, gère les intonations, les respirations et comprend quand on lui coupe la parole en milieu de phrase.</p>
+      <p style="margin-top: 1rem;">Côté sécurité, si le système détecte de l'agacement ou une demande trop complexe, il transfère immédiatement l'appel au secrétariat avec un résumé texte de ce qui vient d'être dit.</p>
+    </div>
 
-      <div class="brique-card">
-        <div class="brique-icon">🛡️</div>
-        <h3>La Brique SHIELD</h3>
-        <p><strong>La Gouvernance Totale</strong></p>
-        <p>Le garde-fou de votre réseau. Il bloque l'usage clandestin des outils grand public (Shadow AI), anonymise les données sensibles et garantit votre conformité RGPD et IA Act 2026.</p>
-        <div class="brique-mission">🛡️ Sécurité garantie sur tous déploiements</div>
+    <div class="case-study">
+      <h3>Le Bilan Froid</h3>
+      <p style="margin-bottom: 1.5rem;">Les chiffres ont parlé dès le premier mois :</p>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Appels résolus par IA</strong>
+        <p>58 % des appels entrants sont désormais entièrement résolus sans que le secrétariat n'ait à décrocher</p>
+      </div>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Disponibilité 24h/24 7j/7</strong>
+        <p>Le standard répond en continu, capturant 22 % des demandes la nuit ou le week-end</p>
+      </div>
+      <div class="detail-box" style="margin: 1rem 0;">
+        <strong>Temps de concentration</strong>
+        <p>Le temps de concentration des équipes sur leurs vrais dossiers a grimpé de 40 %</p>
       </div>
     </div>
 
-    <div class="security-note">
-      <h4>🔒 Note de Transparence & Sécurité Globale</h4>
-      <p>Notre choix absolu est de conserver vos données chez vous. VotrIA ne stocke rien. Votre infrastructure se connecte directement aux moteurs d'IA sécurisés. Les micro-coûts d'infrastructure tiers (API au prix coûtant fournisseur) restent à votre charge et dépendent uniquement de votre volume d'utilisation réel.</p>
-      <p><strong>Zéro marge cachée pour nous, souveraineté totale pour vous.</strong></p>
-      <p style="margin-top: 1rem; font-weight: 600; color: var(--text);">Déploiement moyen d'une brique métier : entre 2 500 € et 4 000 € HT selon la complexité de votre ERP.</p>
+    <div class="case-study">
+      <h3>Les Chiffres</h3>
+      <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Intégration sur-mesure :</strong> 2 900 € HT</li>
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Maintenance globale :</strong> 249 € HT/mois</li>
+        <li style="padding-left: 1.5rem; border-left: 3px solid var(--primary);"><strong>Coût API voix :</strong> ~0,05 € la minute, payé au prix coûtant fournisseur</li>
+      </ul>
+    </div>
+
+    <div class="quote-box">
+      <p>"Nous avions étudié les solutions des grands call-centers et des plateformes de serveurs vocaux traditionnels. C'était soit hors de prix avec des coûts fixes déconnectés de notre réalité, soit d'une rigidité technique qui aurait détruit notre relation client de proximité.</p>
+      <p>VotrIA a fait la différence en installant une brique qui s'intègre directement à notre 3CX actuel. Notre standard répond 24h/24, trie et qualifie les dossiers, et planifie même les rendez-vous dans nos agendas. Nos clients ont une réponse humaine et immédiate sans attente, et nos équipes respirent enfin. Le fait de payer la consommation de voix à prix coûtant sans marge cachée nous garantit un retour sur investissement imbattable."</p>
+      <strong>— Dirigeant, Cabinet de Gestion Immobilière (18 salariés)</strong>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>🔍 Le Protocole Diagnostic</h2>
-    <p style="color: var(--muted); margin: 1rem 0 2rem; font-size: 0.95rem;">Pour garantir la viabilité de votre future infrastructure, aucun déploiement ne se fait sans l'activation de l'un de nos deux protocoles de cadrage.</p>
+    <h2>🔍 Étape 1 : Choisissez votre niveau de diagnostic</h2>
+    <p style="color: var(--muted); margin: 1rem 0 2rem; font-size: 0.95rem;">Le montant de votre diagnostic est 100 % déduit de votre facture de déploiement si vous décidez de travailler avec nous sous 60 jours.</p>
     
     <div style="overflow-x: auto;">
       <table class="diagnostic-table">
@@ -245,27 +251,29 @@ footer { background: var(--surface); border-top: 1px solid var(--border); }
 
 <section>
   <div class="container">
-    <h2>✓ L'Engagement de Sûreté</h2>
-    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 1rem; font-style: italic;">L'inversion absolue du risque.</p>
+    <h2>⚙️ Les Étapes Suivantes</h2>
+    <p style="color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem;">Une fois le diagnostic validé</p>
 
-    <div class="guarantee-box">
-      <h4>💰 Investissement Garanti</h4>
-      <p>Chaque euro versé pour votre protocole d'accès (Cap IA ou Cap IA+) est 100 % recrédité sur votre facture finale de déploiement. Votre diagnostic est virtuellement gratuit.</p>
-    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <h4>Étape 2 : Déploiement de votre Espace Sécurisé</h4>
+        <p>Nous ouvrons l'environnement d'équipe officiel et étanche de votre PME. Cet écran de contrôle intermédiaire isole vos données sensibles, bloque l'usage clandestin d'outils grand public (Shadow AI) et garantit votre conformité au RGPD et à l'IA Act 2026.</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>📅 Souplesse Mensuelle</h4>
-      <p>Les frais d'abonnement de maintenance VotrIA ne débutent qu'au jour de la mise en production réelle de votre système. Vous ne payez rien tant que le système ne tourne pas.</p>
-    </div>
+      <div class="step-card">
+        <h4>Étape 3 : Paramétrage de vos Modules Métiers</h4>
+        <p>Nous raccordons uniquement les modules validés lors de l'audit (FLUX, VOICE ou BRAIN).</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>🛠️ Plan de Modernisation</h4>
-      <p>Si notre audit révèle que vos logiciels actuels sont temporairement incompatibles, nous arrêtons les frais. Notre rapport devient votre feuille de route pour votre prestataire informatique. Nous revenons dès que votre système est prêt, sans jamais vous refacturer l'audit.</p>
-    </div>
+      <div class="step-card">
+        <h4>Étape 4 : Formation Terrain (2h)</h4>
+        <p>Nous passons 2 heures en conditions réelles avec vos collaborateurs pour garantir une prise en main immédiate sur smartphone et PC. Nous ajustons les consignes de l'IA pendant les 30 premiers jours selon leurs retours terrain.</p>
+      </div>
 
-    <div class="guarantee-box">
-      <h4>👥 Garantie d'Adoption Terrain</h4>
-      <p>Nos déploiements incluent obligatoirement une session de formation de 2 heures avec vos équipes. Si trois mois après la mise en production, vos équipes boudent l'outil par complexité, nous revenons ajuster gratuitement l'interface jusqu'à parfaite adoption.</p>
+      <div class="step-card">
+        <h4>✓ Vous maîtrisez votre IA</h4>
+        <p>Accompagnement complet, documentation personnalisée, support réactif pendant 90 jours post-déploiement.</p>
+      </div>
     </div>
   </div>
 </section>
