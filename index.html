@@ -1,343 +1,1233 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-ancestors 'none';">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Configurez l'IA pour votre métier. Diagnostic express, déploiement sur-mesure. BTP, Logistique, Industrie, Services.">
-<title>VotrIA — Configurez l'IA pour votre métier | Audit & Déploiement</title>
-<link rel="canonical" href="https://votria.pro/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="VotrIA">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:url" content="https://votria.pro/">
-<meta property="og:title" content="VotrIA — Configurez l'IA pour votre métier">
-<meta property="og:description" content="Diagnostic Cap IA 490€ | Cap IA+ 1200€ | Déploiement 2500-4000€">
-<meta property="og:image" content="https://votria.pro/assets/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { min-height: 100dvh; font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.2rem); color: #F8FAFC; background: #0F172A; line-height: 1.68; }
-img { display: block; max-width: 100%; height: auto; }
-ul { list-style: none; }
-button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
-a { color: inherit; text-decoration: none; }
-h1,h2,h3,h4 { text-wrap: balance; line-height: 1.18; letter-spacing: -0.02em; font-family: 'Manrope', system-ui; }
-:focus-visible { outline: 2px solid #F97316; outline-offset: 3px; border-radius: 4px; }
-
-:root {
-  --bg: #0F172A; --surface: #162033; --surface-2: #1E293B; --border: rgba(248,250,252,0.12);
-  --text: #F8FAFC; --muted: #CBD5E1; --faint: #94A3B8;
-  --primary: #F97316; --primary-hover: #EA580C; --primary-hi: rgba(249,115,22,0.16);
-  --on-primary: #0F172A; --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px;
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.28); --t: 180ms cubic-bezier(0.16,1,0.3,1);
-  --max: 960px; --gap: clamp(1.5rem, 5vw, 3rem);
-}
-
-.container { max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
-section { padding-block: clamp(2.5rem, 8vw, 5rem); }
-section + section { border-top: 1px solid var(--border); }
-
-.site-nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; max-width: var(--max); margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
-.nav-logo { font-family: 'Manrope', system-ui; font-size: 1.25rem; font-weight: 700; color: var(--text); }
-.nav-logo-orange { color: var(--primary); }
-.nav-links { display: none; gap: 1.75rem; }
-@media (min-width: 768px) { .nav-links { display: flex; } .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color var(--t); } .nav-links a:hover { color: var(--text); } }
-.nav-cta { display: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.1rem; background: var(--primary); color: var(--on-primary); border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); }
-@media (min-width: 768px) { .nav-cta { display: inline-flex; } }
-.nav-cta:hover { background: var(--primary-hover); transform: translateY(-1px); }
-.nav-right { display: flex; align-items: center; gap: 0.75rem; }
-.theme-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); color: var(--muted); transition: color var(--t), background var(--t); }
-.theme-btn:hover { background: var(--surface); color: var(--text); }
-.burger { display: flex; flex-direction: column; gap: 5px; padding: 6px; border-radius: var(--radius-sm); }
-.burger span { display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px; transition: transform var(--t), opacity var(--t); }
-@media (min-width: 768px) { .burger { display: none; } }
-
-.mobile-menu { display: none; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem clamp(1rem,5vw,2rem) 1.5rem; gap: 0.25rem; }
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.6rem 0; border-bottom: 1px solid var(--border); transition: color var(--t); }
-.mobile-menu a:hover { color: var(--text); }
-
-.hero { padding-block: clamp(3rem, 10vw, 6rem); }
-.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--text); max-width: 18ch; margin-bottom: 1rem; }
-.hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 55ch; margin-bottom: 2.5rem; line-height: 1.7; }
-.filter-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
-.filter-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--surface); color: var(--text); border: 1.5px solid var(--border); font-weight: 500; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: all var(--t); cursor: pointer; }
-.filter-btn:hover { border-color: var(--primary); background: var(--primary-hi); }
-.filter-btn.active { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
-
-.transition-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2rem; margin: 2rem 0; }
-.transition-box p { color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem; }
-.flow-diagram { display: flex; align-items: center; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
-.flow-step { flex: 1; min-width: 150px; }
-.flow-arrow { color: var(--primary); font-weight: 700; }
-
-.example-box { background: var(--primary-hi); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
-.example-box strong { color: var(--primary); }
-
-.diagnostic-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); margin: 2rem 0; }
-.diagnostic-table th { background: var(--primary-hi); color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 1rem; text-align: left; border-bottom: 2px solid var(--border); }
-.diagnostic-table td { padding: 1.25rem; border-bottom: 1px solid var(--border); color: var(--text); }
-.diagnostic-table tbody tr:last-child td { border-bottom: none; }
-.diagnostic-table .label { color: var(--muted); font-weight: 500; font-size: 0.9rem; }
-.diagnostic-table .highlight { color: var(--primary); font-weight: 700; font-size: 1.15rem; }
-
-.transparency-note { background: var(--surface-2); border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius-md); margin: 2rem 0; }
-.transparency-note h4 { color: var(--primary); margin-bottom: 0.75rem; }
-.transparency-note p { color: var(--muted); font-size: 0.95rem; }
-
-.steps-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin: 2rem 0; }
-@media (min-width: 650px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
-.step-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-md); padding: 1.75rem; }
-.step-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 0.75rem; }
-.step-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
-
-.btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary); color: var(--on-primary); font-weight: 600; font-size: 0.95rem; padding: 0.8rem 1.5rem; border-radius: var(--radius-sm); transition: background var(--t), transform var(--t); min-height: 48px; }
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
-
-footer { background: var(--surface); border-top: 1px solid var(--border); }
-.footer-inner { display: grid; grid-template-columns: 1fr; gap: 2rem; padding-block: 2.5rem; }
-@media (min-width: 650px) { .footer-inner { grid-template-columns: 2fr 2fr 1fr; gap: 3rem; } }
-.footer-brand { font-size: 1.15rem; font-weight: 700; color: var(--text); }
-.footer-brand span { display: block; font-size: 0.85rem; color: var(--muted); font-weight: 400; margin-top: 0.4rem; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
-.footer-links a { color: var(--muted); font-size: 0.9rem; transition: color var(--t); }
-.footer-links a:hover { color: var(--text); }
-.footer-credit { color: var(--faint); font-size: 0.8rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; }
-</style>
+    <!-- Meta charset & viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO essentiels -->
+    <title>VotrIA | L'IA utile pour votre PME BTP, Logistique, Industrie & Services</title>
+    <meta name="description" content="Automatisez vos processus admin sans coder. Architecture Cowork : agents IA spécialisés + supervision humaine. Déploiement en 3 jours. BTP, Transport, Industrie.">
+    <meta name="keywords" content="IA PME, automatisation BTP, agents IA, logiciel ERP IA, transform numérique, Occitanie">
+    <meta name="author" content="VotrIA - Lean Perform">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="French">
+    
+    <!-- Open Graph (LinkedIn, FB) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votria.pro/">
+    <meta property="og:title" content="VotrIA | Architecture Cowork pour PME">
+    <meta property="og:description" content="Agents IA spécialisés + supervision humaine = automatisation sans code. Déploiement rapide, ROI en 12 semaines.">
+    <meta property="og:image" content="https://votria.pro/og-image.jpg">
+    <meta property="og:site_name" content="VotrIA">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://votria.pro/">
+    <meta name="twitter:title" content="VotrIA | Architecture Cowork pour PME">
+    <meta name="twitter:description" content="Agents IA spécialisés + supervision humaine = automatisation sans code.">
+    <meta name="twitter:image" content="https://votria.pro/og-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://votria.pro/">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
+        img-src 'self' https: data:;
+        connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google-analytics.com/collect https://calendly.com;
+        frame-src https://calendly.com;
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Analytics 4 (async) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WDMPM0P81V', {
+            'allow_google_signals': false,
+            'anonymize_ip': true
+        });
+    </script>
+    
+    <!-- Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background-color: #0f172a;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+        
+        /* Header/Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo span {
+            color: #f97316;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #f97316;
+        }
+        
+        .nav-spacer {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: #cbd5e1;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            color: #f97316;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                display: none;
+            }
+            
+            nav a.mobile-nav {
+                display: inline;
+            }
+            
+            header .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Typography system */
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: #f1f5f9;
+        }
+        
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+        }
+        
+        .text-orange { color: #f97316; }
+        .text-accent { color: #f97316; }
+        
+        /* Layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Section spacing */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 2.5rem 0;
+            }
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.375rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: #f97316;
+            color: #0f172a;
+        }
+        
+        .btn-primary:hover {
+            background-color: #fb923c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #f97316;
+            border: 2px solid #f97316;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(249, 115, 22, 0.1);
+            border-color: #fb923c;
+        }
+        
+        /* Hero section */
+        #hero {
+            padding: 3rem 0 2rem;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(249, 115, 22, 0) 100%);
+            border-bottom: none;
+        }
+        
+        .hero-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-content h1 {
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subheading {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Sector filter */
+        .sector-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .sector-btn {
+            padding: 0.625rem 1.25rem;
+            border: 2px solid #1e293b;
+            background-color: transparent;
+            color: #cbd5e1;
+            border-radius: 0.375rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .sector-btn:hover,
+        .sector-btn.active {
+            border-color: #f97316;
+            color: #f97316;
+            background-color: rgba(249, 115, 22, 0.1);
+        }
+        
+        /* Cowork flow diagram */
+        .cowork-flow {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #162033;
+            border-radius: 0.5rem;
+            border-left: 4px solid #f97316;
+        }
+        
+        @media (max-width: 768px) {
+            .cowork-flow {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .flow-arrow {
+                display: none;
+            }
+        }
+        
+        .flow-stage {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .flow-stage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .flow-stage-title {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            color: #f1f5f9;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .flow-stage-desc {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+        
+        .flow-arrow {
+            color: #f97316;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Missions grid */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .mission-card {
+            background-color: #162033;
+            border: 1px solid #1e293b;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            border-color: #f97316;
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .mission-number {
+            display: inline-block;
+            background-color: #f97316;
+            color: #0f172a;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mission-card h3 {
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+        
+        .mission-reality {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-reality strong {
+            color: #f97316;
+        }
+        
+        .mission-stats {
+            background-color: #0f172a;
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .stat-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            color: #94a3b8;
+        }
+        
+        .stat-value {
+            color: #f97316;
+            font-weight: 600;
+        }
+        
+        /* Modules grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .module-card {
+            background-color: #162033;
+            border: 1px solid #1e293b;
+            border-radius: 0.5rem;
+            padding: 1.75rem;
+            text-align: center;
+        }
+        
+        .module-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .module-card h3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Diagnostic table */
+        .diagnostic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background-color: #162033;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .diagnostic-table thead {
+            background-color: #1e293b;
+        }
+        
+        .diagnostic-table th {
+            padding: 1.25rem;
+            text-align: left;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            color: #f1f5f9;
+            border-bottom: 2px solid #0f172a;
+        }
+        
+        .diagnostic-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .diagnostic-table tbody tr:hover {
+            background-color: #1e293b;
+        }
+        
+        .price-tag {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            color: #f97316;
+            font-size: 1.25rem;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            text-align: center;
+            padding: 2rem;
+            background-color: #162033;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .cta-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0a0f1a;
+            border-top: 1px solid #1e293b;
+            padding: 2rem 0;
+            margin-top: auto;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #f97316;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            text-align: center;
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* Focus visible */
+        *:focus-visible {
+            outline: 2px solid #f97316;
+            outline-offset: 2px;
+        }
+        
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #f97316;
+            color: #0f172a;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Simulateur CIA */
+        .simulator-container {
+            background-color: #162033;
+            border: 1px solid #1e293b;
+            border-left: 4px solid #f97316;
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .simulator-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .simulator-title h3 {
+            color: #f97316;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .simulator-title p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        
+        .slider-group {
+            margin-bottom: 2rem;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            font-size: 0.95rem;
+        }
+        
+        .slider-value {
+            color: #f97316;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #1e293b;
+            outline: none;
+            -webkit-appearance: none;
+            accent-color: #f97316;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #f97316;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 12px rgba(249, 115, 22, 0.6);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #f97316;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+        }
+        
+        input[type="range"]::-moz-range-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 12px rgba(249, 115, 22, 0.6);
+        }
+        
+        .result-box {
+            background-color: rgba(220, 38, 38, 0.15);
+            border-left: 4px solid #dc2626;
+            border-radius: 0.375rem;
+            padding: 1.75rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        
+        .result-label {
+            color: #dc2626;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .result-value {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-unit {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+        
+        .simulator-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .method-note {
+            margin-top: 2.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            border-top: 1px dashed #1e293b;
+            padding-top: 1.5rem;
+        }
+        
+        .method-note strong {
+            color: #f97316;
+        }
+        
+        /* CIA Simulator Modal */
+        .cia-simulator-modal {
+            animation: slideDown 0.3s ease-out;
+            margin: 2rem 0;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .simulator-close {
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .simulator-close:hover {
+            color: #f97316;
+        }
+    </style>
 </head>
 <body>
-
-<nav class="site-nav" role="navigation" aria-label="Navigation principale">
-  <div class="nav-inner">
-    <div class="nav-logo">Votr<span class="nav-logo-orange">IA</span></div>
-    <ul class="nav-links">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/offres">Offres</a></li>
-      <li><a href="/cas-usage">Cas d'usage</a></li>
-      <li><a href="/a-propos">À propos</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="nav-cta">Réserver mon diagnostic</a>
-      <button class="theme-btn" data-theme-toggle aria-label="Basculer le thème" type="button"></button>
-      <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="/">Accueil</a>
-    <a href="/offres">Offres</a>
-    <a href="/cas-usage">Cas d'usage</a>
-    <a href="/a-propos">À propos</a>
-    <a href="/contact">Contact</a>
-    <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="nav-cta" style="margin-top: 0.75rem; display: block; text-align: center;">Réserver mon diagnostic</a>
-  </div>
-</nav>
-
-<main>
-
-<section class="hero">
-  <div class="container">
-    <h1>Nous n'adaptons pas votre PME à l'IA. Nous configurons l'IA pour votre métier.</h1>
-    <p class="hero-sub">Cliquez sur votre secteur pour ouvrir votre diagnostic et voir le rapport d'audit réel de votre profession, sans toucher à vos logiciels actuels.</p>
-    <div class="filter-buttons">
-      <a href="/cas-usage" class="filter-btn active" onclick="gtag('event', 'filter_sector', {'sector': 'all'})">🌐 Tous les secteurs</a>
-      <a href="/secteurs/btp" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'btp'})">👷‍♂️ BTP : Second Œuvre</a>
-      <a href="/secteurs/logistique" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'logistique'})">🚛 Logistique & Transport</a>
-      <a href="/secteurs/industrie" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'industrie'})">⚙️ Industrie & Production</a>
-      <a href="/secteurs/services" class="filter-btn" onclick="gtag('event', 'filter_sector', {'sector': 'services'})">💼 Services & Négoce</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2 style="margin-bottom: 1.5rem;">Pas de jargon, pas de fausses promesses.</h2>
-    <p style="color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; font-style: italic;">Voici comment notre Architecture Cowork capture la réalité du terrain pour la traduire proprement dans vos bureaux.</p>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     
-    <div class="transition-box">
-      <div class="flow-diagram">
-        <div class="flow-step"><strong style="color: var(--text);">LE TERRAIN</strong><br>Un document brut, froissé ou raturé (Photo, mail, PDF).</div>
-        <div class="flow-arrow">━━━━━━━━▶</div>
-        <div class="flow-step"><strong style="color: var(--primary);">L'ÉCRAN DE CONTRÔLE VotrIA</strong><br>L'IA étanche (nos "Workers") extrait, trie et surligne les doutes en orange pour une validation humaine en un clic.</div>
-        <div class="flow-arrow">━━━━━━━━▶</div>
-        <div class="flow-step"><strong style="color: var(--text);">VOS LOGICIELS</strong><br>Les données propres sont injectées par CSV, sans toucher à l'ERP.</div>
-      </div>
-    </div>
-
-    <h3 style="margin: 2rem 0 1rem;">💡 L'exemple type : Le traitement des Bons de Livraison</h3>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                VotrIA
+            </a>
+            
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/offres.html">Offres</a>
+                <a href="/cas-usage.html">Cas d'usage</a>
+                <a href="/a-propos.html">À propos</a>
+                <a href="/contact.html">Contact</a>
+                <div class="nav-spacer">
+                    <button class="theme-toggle" aria-label="Basculer thème" title="Thème sombre">🌙</button>
+                    <a href="https://calendly.com/jeanfrancois-votria" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        Réserver
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
     
-    <div class="example-box">
-      <p><strong>La capture :</strong> Un collaborateur sur le chantier prend en photo un Bon de Livraison froissé sur un capot de camionnette.</p>
-      <p><strong>L'analyse (5 sec) :</strong> Notre brique FLUX configurée pour votre usage redresse l'image, lit les écritures et extrait les lignes de matériaux par chantier.</p>
-      <p><strong>La sécurité :</strong> En cas de doute ou de tache de graisse sur un prix, l'IA ne bloque rien : elle surligne la case en orange pour votre secrétaire, qui valide d'un clic.</p>
-      <p><strong>L'injection :</strong> Les données propres et parfaites sont poussées directement dans votre logiciel de gestion (Batigest, Sage, Pennylane...), éradiquant la double-saisie manuelle.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>🔍 Étape 1 : Choisissez votre niveau de diagnostic</h2>
-    <p style="color: var(--muted); margin: 1rem 0 2rem; font-size: 0.95rem;">Le montant de votre diagnostic est 100 % déduit de votre facture de déploiement si vous décidez de travailler avec nous sous 60 jours.</p>
+    <main id="main-content">
+        <!-- SECTION 1: HERO + SECTOR FILTER -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Nous n'adaptons pas votre PME à l'IA.<br><span class="text-orange">Nous configurons l'IA pour votre métier.</span></h1>
+                    <p class="hero-subheading">Cliquez sur votre secteur pour découvrir comment nous éliminons les 15+ heures/semaine de tâches répétitives sans toucher à vos logiciels actuels.</p>
+                </div>
+                
+                <div class="sector-filter">
+                    <button class="sector-btn active" data-sector="tous">🌐 Tous les secteurs</button>
+                    <button class="sector-btn" data-sector="btp">👷 BTP & Second Œuvre</button>
+                    <button class="sector-btn" data-sector="transport">🚛 Logistique & Transport</button>
+                    <button class="sector-btn" data-sector="industrie">⚙️ Industrie & Production</button>
+                    <button class="sector-btn" data-sector="services">💼 Services & Négoce</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 2: ARCHITECTURE COWORK -->
+        <section id="cowork">
+            <div class="container">
+                <h2>Le Constat : La Douleur de l'Inefficacité</h2>
+                <p>Votre équipe passe-t-elle plus de 15 heures par semaine à courir après des papiers, saisir des données à la main ou relancer des fournisseurs ? C'est le <strong class="text-accent">Coût de votre Inefficacité Actuelle (CIA)</strong>. Chiffrez-le précisément.</p>
+                
+                <!-- Bouton pour ouvrir le simulateur CIA -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <button class="btn btn-secondary" id="btn-open-cia" onclick="toggleSimulator()" style="font-size: 1rem; padding: 0.875rem 2rem;">
+                        📊 Simuler mon coût d'inefficacité
+                    </button>
+                </div>
+                
+                <!-- Simulateur CIA (caché par défaut, déploie au clic) -->
+                <div id="cia-simulator" class="cia-simulator-modal" style="display: none;">
+                    <div class="simulator-container">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                            <h3 style="margin: 0; font-size: 1.5rem;">📊 Votre Coût d'Inefficacité (CIA)</h3>
+                            <button class="simulator-close" onclick="toggleSimulator()" style="background: none; border: none; font-size: 2rem; color: #cbd5e1; cursor: pointer;">×</button>
+                        </div>
+                        
+                        <div style="background-color: #0f172a; padding: 2rem; border-radius: 0.5rem;">
+                            <!-- Slider 1 -->
+                            <div class="slider-group">
+                                <div class="slider-label">
+                                    <span>Nombre de salariés concernés :</span>
+                                    <span class="slider-value" id="val-salaries">5</span>
+                                </div>
+                                <input type="range" id="input-salaries" min="1" max="50" value="5" oninput="calculerCIA()" aria-label="Nombre de salariés">
+                                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem;">Min: 1 personne | Max: 50 personnes</div>
+                            </div>
+                            
+                            <!-- Slider 2 -->
+                            <div class="slider-group" style="margin-top: 2rem;">
+                                <div class="slider-label">
+                                    <span>Heures perdues par personne / semaine :</span>
+                                    <span class="slider-value" id="val-heures">10<span style="font-size: 0.85rem;"> h</span></span>
+                                </div>
+                                <input type="range" id="input-heures" min="1" max="35" value="10" oninput="calculerCIA()" aria-label="Heures par semaine">
+                                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem;">Min: 1h | Max: 35h par semaine</div>
+                            </div>
+                            
+                            <!-- Slider 3 -->
+                            <div class="slider-group" style="margin-top: 2rem;">
+                                <div class="slider-label">
+                                    <span>Coût horaire moyen (chargé) :</span>
+                                    <span class="slider-value" id="val-tarif">30<span style="font-size: 0.85rem;"> €</span></span>
+                                </div>
+                                <input type="range" id="input-tarif" min="20" max="60" value="30" oninput="calculerCIA()" aria-label="Coût horaire">
+                                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem;">Min: 20€/h | Max: 60€/h (BTP: ~30€)</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Résultat -->
+                        <div class="result-box" style="margin-top: 2.5rem; text-align: center;">
+                            <div class="result-label">💸 Votre perte annuelle estimée</div>
+                            <div class="result-value" id="resultat-cia">78 000</div>
+                            <div class="result-unit">€ HT par an</div>
+                            <div style="font-size: 0.875rem; color: #f97316; margin-top: 1rem; font-weight: 600;">
+                                Calcul : <span id="calc-formula">5 salariés × 10h × 30€ × 52 semaines</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA -->
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#diagnostic" class="btn btn-primary" onclick="toggleSimulator()">
+                                🛑 Arrêter cette perte → Diagnostic Cap IA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 3rem; margin-bottom: 2rem;">La Méthode VotrIA : Architecture Cowork</h3>
+                <p>Plutôt que d'utiliser une seule IA massive et complexe, notre <strong>Architecture Cowork</strong> fait travailler une équipe d'agents IA spécialisés en réseau (les "<strong class="text-accent">Workers</strong>"), sous la supervision d'un opérateur humain (votre secrétaire ou gestionnaire).</p>
+                
+                <div class="cowork-flow">
+                    <div class="flow-stage">
+                        <div class="flow-stage-icon">📄</div>
+                        <div class="flow-stage-title">LE TERRAIN</div>
+                        <div class="flow-stage-desc">Un document brut, froissé ou raturé (Photo, mail, PDF)</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-stage">
+                        <div class="flow-stage-icon">🎯</div>
+                        <div class="flow-stage-title">L'ÉCRAN DE CONTRÔLE VotrIA</div>
+                        <div class="flow-stage-desc">L'IA étanche extrait, trie et surligne les doutes en orange pour validation humaine en un clic</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-stage">
+                        <div class="flow-stage-icon">✅</div>
+                        <div class="flow-stage-title">VOS LOGICIELS</div>
+                        <div class="flow-stage-desc">Les données propres sont injectées par CSV ou API, sans erreur</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 3: MISSIONS RÉELLES -->
+        <section id="missions">
+            <div class="container">
+                <h2>Missions en Conditions Réelles</h2>
+                <p>Pas de promesses théoriques. Voici ce que nous déployons concrètement dans vos secteurs.</p>
+                
+                <div class="missions-grid">
+                    <!-- Mission 124: Plomberie-Chauffage -->
+                    <div class="mission-card">
+                        <span class="mission-number">MISSION N°124</span>
+                        <h3>Le Standard WhatsApp et les Urgences de Dépannage</h3>
+                        <p style="color: #94a3b8; font-size: 0.95rem;"><strong>Secteur :</strong> Plomberie / Chauffage (CVC)</p>
+                        
+                        <div class="mission-reality">
+                            <p><strong>La réalité :</strong> Une entreprise de plomberie-chauffage de 18 salariés perdait 40% de demandes de dépannage le week-end ou en soirée (bureaux fermés). Faute de réponse sous 5 minutes, les prospects appelaient un concurrent.</p>
+                        </div>
+                        
+                        <p style="color: #cbd5e1;"><strong>La solution :</strong> Configuration VOICE sur WhatsApp Business. L'IA répond instantanément le dimanche soir, qualifie la gravité, récupère l'adresse et demande une photo. En cas de doute, alerte orange pour le lundi matin.</p>
+                        
+                        <div class="mission-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">Résultat :</span>
+                                <span class="stat-value">Zéro urgence perdue</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Taux de conversion :</span>
+                                <span class="stat-value">+10%</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Déploiement :</span>
+                                <span class="stat-value">3 200 € HT</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Maintenance :</span>
+                                <span class="stat-value">199 € HT/mois</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mission 132: Électricité Générale -->
+                    <div class="mission-card">
+                        <span class="mission-number">MISSION N°132</span>
+                        <h3>Le Réveil des Devis "Sans Réponse"</h3>
+                        <p style="color: #94a3b8; font-size: 0.95rem;"><strong>Secteur :</strong> Électricité Générale & Mise aux Normes</p>
+                        
+                        <div class="mission-reality">
+                            <p><strong>La réalité :</strong> Une PME d'électricité générale de 14 salariés accumule 350+ devis dormants depuis 24 mois dans Batigest. Le patron cherche de nouveaux clients sans voir la mine d'or sous ses pieds.</p>
+                        </div>
+                        
+                        <p style="color: #cbd5e1;"><strong>La solution :</strong> Déploiement BRAIN via Gateway locale sécurisée sur le serveur local. L'IA analyse l'historique de chaque projet et rédige des relances chirurgicales par email adaptées au contexte d'origine.</p>
+                        
+                        <div class="mission-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">Taux de réactivation :</span>
+                                <span class="stat-value">3% (10 chantiers signés/mois)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Chiffre d'affaires récupéré :</span>
+                                <span class="stat-value">25 000 € HT</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Budget marketing additionnel :</span>
+                                <span class="stat-value">0 €</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Intégration :</span>
+                                <span class="stat-value">3 800 € HT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: MODULES COMPOSABLES -->
+        <section id="modules">
+            <div class="container">
+                <h2>Le Catalogue des Modules Composables</h2>
+                <p>Pour reproduire ces résultats, nous assemblons nos briques technologiques propriétaires et étanches.</p>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-icon">⚡</div>
+                        <h3>VotrIA - FLUX</h3>
+                        <p>Capture, trie et valide la cohérence de vos Bons de Livraison, factures et contrats. Injection directe en 30 secondes dans votre ERP.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">🧠</div>
+                        <h3>VotrIA - BRAIN</h3>
+                        <p>Mémoire centralisée de vos procédures techniques. Réactive vos bases de devis dormantes et va chercher l'argent caché.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">📞</div>
+                        <h3>VotrIA - VOICE</h3>
+                        <p>IA vocale & standard 24h/24 sur WhatsApp. Qualifie vos leads, retranscrit les briefs de vos techniciens sur le terrain.</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">🛡️</div>
+                        <h3>VotrIA - SHIELD</h3>
+                        <p>Sécurité & gouvernance. Anonymise les données sensibles et garantit l'alignement strict avec RGPD et IA Act 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 5: DIAGNOSTIC + PROTOCOLE SÛRETÉ -->
+        <section id="diagnostic">
+            <div class="container">
+                <h2>Lancez Votre Diagnostic IA</h2>
+                <p>La question qu'on pose en audit : <strong>"Si demain 500 nouveaux clients débarquaient chez vous, qu'est-ce qui casserait en premier ?"</strong> Notre rôle est de réparer cette faille opérationnelle avant de pousser le volume de votre activité.</p>
+                
+                <!-- Diagnostic table -->
+                <table class="diagnostic-table">
+                    <thead>
+                        <tr>
+                            <th>Offre</th>
+                            <th>Inclus</th>
+                            <th>Durée</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cap IA</strong></td>
+                            <td>Diagnostic seul + Audit détaillé de votre profession</td>
+                            <td>2–3 jours</td>
+                            <td class="price-tag">490 € HT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cap IA+</strong></td>
+                            <td>Diagnostic + Formation équipe + Crédit 1 200 € vers Deploy IA</td>
+                            <td>3–5 jours</td>
+                            <td class="price-tag">1 200 € HT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deploy IA</strong></td>
+                            <td>Intégration complète + Architecture Cowork + Support 30j</td>
+                            <td>2–4 semaines</td>
+                            <td class="price-tag">À partir de 2 800 € HT</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- Safety guarantee -->
+                <div class="cta-section">
+                    <h3>Protocole Sûreté & Garantie</h3>
+                    <p>Le montant de votre diagnostic (Cap IA ou Cap IA+) est <strong class="text-accent">intégralement crédité</strong> sur votre facture de déploiement si vous décidez de travailler avec nous sous 60 jours. Votre diagnostic initial devient donc <strong>100% gratuit</strong>.</p>
+                    <p style="margin-top: 1.5rem;">Incompatibilité informatique ? Nous transformons notre rapport en <strong>Plan de Modernisation</strong> : 3 actions précises à confier à votre prestataire de confiance, sans vous refacturer le diagnostic.</p>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://calendly.com/jeanfrancois-votria" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            🗓️ Réserver mon diagnostic Cap IA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
-    <div style="overflow-x: auto;">
-      <table class="diagnostic-table">
-        <thead>
-          <tr>
-            <th>Critère</th>
-            <th>🔍 CAP IA</th>
-            <th>🌐 CAP IA+</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="label">Objectif</td>
-            <td>Validation d'urgence sur un flux précis (ex: libérer votre secrétariat de la saisie des BL ou des factures).</td>
-            <td>Audit d'ingénierie global et profond pour cartographier et interconnecter tous vos services (RH, Commerce, Direction, Chantiers).</td>
-          </tr>
-          <tr>
-            <td class="label">Analyse Terrain</td>
-            <td>Test à froid en laboratoire sur 3 à 5 de vos documents types (BL anciens, devis complexes, fiches).</td>
-            <td>Analyse approfondie de l'intégralité de vos flux documentaires, formats de fichiers et processus métiers.</td>
-          </tr>
-          <tr>
-            <td class="label">Intervention Informatique</td>
-            <td>Zéro intervention sur votre système. L'IA s'adapte à vos documents (scans, photos). Votre prestataire informatique n'est pas sollicité.</td>
-            <td>Réunion technique tripartite avec votre prestataire informatique externe (MSP) pour valider les accès API et la sécurité.</td>
-          </tr>
-          <tr>
-            <td class="label">Livrable</td>
-            <td>Visio de 30 min avec démonstration en direct de l'IA sur vos propres pièces.</td>
-            <td>Rapport d'ingénierie complet et Plan de Modernisation écrit pour assainir vos fondations numériques.</td>
-          </tr>
-          <tr>
-            <td class="label">Tarif</td>
-            <td><span class="highlight">490 € HT</span></td>
-            <td><span class="highlight">1 200 € HT</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="transparency-note">
-      <h4>⚙️ Note de Transparence sur le déploiement</h4>
-      <p>À titre indicatif, après validation de votre diagnostic, le coût de déploiement final d'une brique métier (FLUX, BRAIN ou VOICE) configurée sur-mesure oscille entre <strong>2 500 € et 4 000 € HT</strong> selon la complexité et l'ouverture de votre ERP ou de vos logiciels actuels. Zéro coût caché, tout est écrit.</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://calendly.com/contact-lean-perform/cap-ia-diagnostic-ia" class="btn-primary">RÉSERVER MON DIAGNOSTIC EN 2 MINUTES</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>⚙️ Les étapes suivantes (Une fois le diagnostic validé)</h2>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>VotrIA</h4>
+                    <p>Automatisez vos processus admin sans coder. Architecture Cowork pour PME BTP, Transport, Industrie & Services.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <a href="/offres.html">Nos Offres</a>
+                    <a href="/cas-usage.html">Cas d'Usage</a>
+                    <a href="/conformite-ia.html">Conformité RGPD & IA</a>
+                    <a href="https://calendly.com/jeanfrancois-votria" target="_blank" rel="noopener noreferrer">Diagnostic Gratuit</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Secteurs</h4>
+                    <a href="/btp.html">BTP & Second Œuvre</a>
+                    <a href="/logistique.html">Logistique & Transport</a>
+                    <a href="/industrie.html">Industrie & Production</a>
+                    <a href="/services.html">Services & Négoce</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Légal & Confidentialité</h4>
+                    <a href="/mentions-legales.html">Mentions Légales</a>
+                    <a href="/confidentialite.html">Politique de Confidentialité RGPD</a>
+                    <a href="/">Hébergement 100% Européen</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 VotrIA (Lean Perform). Tous droits réservés. | <a href="/" style="color: #f97316;">L'IA utile, pas un outil de plus.</a></p>
+            </div>
+        </div>
+    </footer>
     
-    <div class="steps-grid">
-      <div class="step-card">
-        <h3>Étape 2 : Déploiement de votre Espace Sécurisé</h3>
-        <p>Nous ouvrons l'environnement d'équipe officiel et étanche de votre PME. Cet écran de contrôle intermédiaire isole vos données sensibles, bloque l'usage clandestin d'outils grand public (Shadow AI) et garantit votre conformité stricte au RGPD et à l'IA Act 2026.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>Étape 3 : Paramétrage de vos Modules Métiers</h3>
-        <p>Nous raccordons uniquement les briques validées lors de l'audit (FLUX, VOICE ou BRAIN), orchestrées sous notre architecture Cowork d'agents IA spécialisés.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>Étape 4 : Formation Terrain (2h)</h3>
-        <p>Nous passons 2 heures en conditions réelles avec vos collaborateurs pour garantir une prise en main immédiate sur smartphone et PC. Nous ajustons les consignes de l'IA pendant les 30 premiers jours selon leurs retours terrain.</p>
-      </div>
-
-      <div class="step-card">
-        <h3>✓ Vous maîtrisez votre IA</h3>
-        <p>Accompagnement complet, documentation personnalisée, support réactif pendant 90 jours post-déploiement. Vos données restent chez vous, conformité garantie.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">VotrIA<span>Conseil et intégration IA · Toulouse · Occitanie</span></div>
-      <nav class="footer-links" aria-label="Liens du pied de page">
-        <a href="/">Accueil</a>
-        <a href="/offres">Offres</a>
-        <a href="/cas-usage">Cas d'usage</a>
-        <a href="/a-propos">À propos</a>
-        <a href="/contact">Contact</a>
-        <a href="/mentions-legales">Mentions légales</a>
-        <a href="/confidentialite">Confidentialité RGPD</a>
-      </nav>
-      <p class="footer-zone">09 · 31 · 32 · 47 · 81 · 82</p>
-    </div>
-    <div class="footer-credit">Garantie Souveraineté : Données conservées chez le client | Hébergement 100 % Européen. VotrIA © 2026.</div>
-  </div>
-</footer>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDMPM0P81V"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-WDMPM0P81V', {'page_path': window.location.pathname, 'page_title': document.title});
-</script>
-
-<script>
-(function(){
-  const btn = document.querySelector('[data-theme-toggle]');
-  const root = document.documentElement;
-  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
-  root.setAttribute('data-theme', dark ? 'dark' : 'light');
-  if(btn) {
-    btn.innerHTML = dark ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    btn.addEventListener('click', () => {
-      dark = !dark;
-      root.setAttribute('data-theme', dark ? 'dark' : 'light');
-      btn.innerHTML = dark ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    });
-  }
-  const burgerBtn = document.getElementById('burger-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if(burgerBtn && mobileMenu){
-    burgerBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      burgerBtn.setAttribute('aria-expanded', open);
-      const spans = burgerBtn.querySelectorAll('span');
-      if(open){
-        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-      } else {
-        spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
-      }
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      burgerBtn.setAttribute('aria-expanded', false);
-      const spans = burgerBtn.querySelectorAll('span');
-      spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
-    }));
-  }
-  // Boutons secteurs: la redirection se fait via href + onclick avec GA4
-})();
-</script>
+    <!-- Interactivity -->
+    <script>
+        // Toggle Simulator Modal
+        function toggleSimulator() {
+            const simulator = document.getElementById('cia-simulator');
+            if (simulator.style.display === 'none' || simulator.style.display === '') {
+                simulator.style.display = 'block';
+                // Scroll vers le simulateur
+                setTimeout(() => {
+                    simulator.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+                gtag('event', 'cia_simulator_opened', {});
+            } else {
+                simulator.style.display = 'none';
+                gtag('event', 'cia_simulator_closed', {});
+            }
+        }
+        
+        // Fonction de calcul CIA
+        function calculerCIA() {
+            const salaries = parseInt(document.getElementById('input-salaries').value);
+            const heures = parseInt(document.getElementById('input-heures').value);
+            const tarif = parseInt(document.getElementById('input-tarif').value);
+            
+            // Mise à jour des affichages
+            document.getElementById('val-salaries').innerText = salaries;
+            document.getElementById('val-heures').innerHTML = heures + '<span style="font-size: 0.85rem;"> h</span>';
+            document.getElementById('val-tarif').innerHTML = tarif + '<span style="font-size: 0.85rem;"> €</span>';
+            
+            // Calcul : Salariés × Heures × Tarif × 52 semaines
+            const ciaGlobal = salaries * heures * tarif * 52;
+            
+            // Formatage du nombre (ex: 78000 -> 78 000)
+            const formatCIA = new Intl.NumberFormat('fr-FR').format(ciaGlobal);
+            
+            // Injection du résultat
+            document.getElementById('resultat-cia').innerText = formatCIA;
+            
+            // Afficher la formule de calcul
+            document.getElementById('calc-formula').innerText = 
+                salaries + ' salarié' + (salaries > 1 ? 's' : '') + ' × ' + 
+                heures + 'h × ' + 
+                tarif + '€ × 52 semaines';
+            
+            // GA4 event
+            gtag('event', 'cia_simulator_calc', {
+                'salaries': salaries,
+                'hours_per_week': heures,
+                'hourly_cost': tarif,
+                'annual_loss': ciaGlobal
+            });
+        }
+        
+        // Sector filter buttons
+        document.querySelectorAll('.sector-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Analytics event
+                gtag('event', 'sector_filter_click', {
+                    'sector': this.getAttribute('data-sector')
+                });
+            });
+        });
+        
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                gtag('event', 'cta_click', {
+                    'cta_text': this.innerText
+                });
+            });
+        });
+        
+        // Track mission card interactions
+        document.querySelectorAll('.mission-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                gtag('event', 'mission_card_view', {
+                    'mission': this.querySelector('.mission-number').innerText
+                });
+            });
+        });
+    </script>
 </body>
 </html>
