@@ -1,124 +1,66 @@
-# VotrIA — configuration Netlify du site statique.
+# VotrIA — configuration Netlify du site statique
 
 [build]
-  publish = "."
-  command = "echo 'Site statique VotrIA - aucun build nécessaire'"
+  publish = "site"
 
+# URL d’accueil explicite
 [[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
 
-[[redirects]]
-  from = "/offres"
-  to = "/offres.html"
-  status = 200
-
-[[redirects]]
-  from = "/offres/"
-  to = "/offres.html"
-  status = 200
-
-[[redirects]]
-  from = "/methode"
-  to = "/methode.html"
-  status = 200
-
-[[redirects]]
-  from = "/methode/"
-  to = "/methode.html"
-  status = 200
-
+# Anciennes routes : redirections permanentes vers les nouvelles pages
 [[redirects]]
   from = "/cas-usage"
-  to = "/cas-usage.html"
-  status = 200
-
-[[redirects]]
-  from = "/cas-usage/"
-  to = "/cas-usage.html"
-  status = 200
-
-[[redirects]]
-  from = "/a-propos"
-  to = "/a-propos.html"
-  status = 200
-
-[[redirects]]
-  from = "/a-propos/"
-  to = "/a-propos.html"
-  status = 200
+  to = "/cas-concrets/"
+  status = 301
 
 [[redirects]]
   from = "/conformite-ia-rgpd"
-  to = "/conformite-ia-rgpd.html"
-  status = 200
-
-[[redirects]]
-  from = "/conformite-ia-rgpd/"
-  to = "/conformite-ia-rgpd.html"
-  status = 200
+  to = "/confidentialite/"
+  status = 301
 
 [[redirects]]
   from = "/diagnostic"
-  to = "/diagnostic.html"
-  status = 200
-
-[[redirects]]
-  from = "/diagnostic/"
-  to = "/diagnostic.html"
-  status = 200
+  to = "/estimation/"
+  status = 301
 
 [[redirects]]
   from = "/contact"
-  to = "/contact.html"
-  status = 200
-
-[[redirects]]
-  from = "/contact/"
-  to = "/contact.html"
-  status = 200
-
-[[redirects]]
-  from = "/mentions-legales"
-  to = "/mentions-legales.html"
-  status = 200
-
-[[redirects]]
-  from = "/mentions-legales/"
-  to = "/mentions-legales.html"
-  status = 200
-
-[[redirects]]
-  from = "/confidentialite"
-  to = "/confidentialite.html"
-  status = 200
-
-[[redirects]]
-  from = "/confidentialite/"
-  to = "/confidentialite.html"
-  status = 200
+  to = "/eligibilite-cap-ia/"
+  status = 301
 
 [[redirects]]
   from = "/exemple-cap-ia"
-  to = "/exemple-cap-ia.html"
-  status = 200
-
-[[redirects]]
-  from = "/exemple-cap-ia/"
-  to = "/exemple-cap-ia.html"
-  status = 200
+  to = "/cas-concrets/"
+  status = 301
 
 [[redirects]]
   from = "/demonstrateur-cap-ia-btp"
-  to = "/demonstrateur-cap-ia-btp.html"
-  status = 200
+  to = "/eligibilite-cap-ia-btp/"
+  status = 301
 
 [[redirects]]
-  from = "/demonstrateur-cap-ia-btp/"
-  to = "/demonstrateur-cap-ia-btp.html"
-  status = 200
+  from = "/btp"
+  to = "/solutions/"
+  status = 301
 
+[[redirects]]
+  from = "/industrie"
+  to = "/eligibilite-cap-ia-autres-secteurs/"
+  status = 301
+
+[[redirects]]
+  from = "/logistique"
+  to = "/eligibilite-cap-ia-autres-secteurs/"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/solutions/"
+  status = 301
+
+# En-têtes de sécurité
 [[headers]]
   for = "/*"
 
@@ -130,8 +72,9 @@
     Strict-Transport-Security = "max-age=31536000"
     Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://lean-parform.app.n8n.cloud https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; upgrade-insecure-requests"
 
+# Cache des ressources statiques
 [[headers]]
   for = "/assets/*"
 
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=604800"

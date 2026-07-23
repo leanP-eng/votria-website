@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Estimez le temps et le coût mobilisés par un processus métier dans votre PME du BTP. Une estimation gratuite, sans diagnostic personnalisé ni engagement.">
+  <title>Estimation gratuite — VotrIA</title>
+  <style>
+    :root{
+      --navy:#0F172A;--navy-2:#162033;--orange:#F97316;--orange-dark:#EA580C;
+      --orange-soft:#FFF1E8;--white:#FFFFFF;--paper:#F8FAFC;--line:#E2E8F0;
+      --text:#0F172A;--muted:#64748B;--green:#15803D;--red:#B91C1C;
+      --radius:18px;--shadow:0 18px 50px rgba(15,23,42,.12);--shadow-sm:0 8px 28px rgba(15,23,42,.08);--max:1100px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}h1,h2,h3{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:-.035em;line-height:1.12;margin:0}p{margin:0}.container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-family:Manrope,Inter,sans-serif;font-size:1.45rem;font-weight:850}.brand span{color:var(--orange)}
+    .nav-links{display:flex;gap:24px;font-size:.9rem;font-weight:700;color:#334155}.nav-links a:hover{color:var(--orange-dark)}.nav-actions{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font-weight:800;font-size:.92rem;transition:.18s ease}.btn-primary{background:var(--orange);color:var(--navy);box-shadow:0 10px 24px rgba(249,115,22,.2)}.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px)}.btn-secondary{background:white;border-color:#CBD5E1}.btn-secondary:hover{border-color:var(--navy)}
+    .menu-btn{display:none;border:0;background:none;padding:8px}.menu-btn span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0}.mobile-menu{display:none;position:absolute;top:74px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:14px 20px 20px;box-shadow:var(--shadow-sm)}.mobile-menu.open{display:grid;gap:4px}.mobile-menu a{padding:11px 4px;font-weight:750;border-bottom:1px solid #F1F5F9}
+    .hero{background:var(--navy);color:white;padding:60px 0 72px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-180px;bottom:-280px;background:rgba(249,115,22,.13)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr .72fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}.eyebrow:before{content:"";width:28px;height:2px;background:currentColor}.hero h1{font-size:clamp(2.35rem,4.8vw,4.65rem);max-width:13ch;margin-bottom:20px}.hero p{color:#CBD5E1;font-size:1.1rem;max-width:58ch}.hero-note{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:25px}.hero-note strong{display:block;font-size:1.05rem;margin-bottom:12px}.hero-note ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:#E2E8F0;font-size:.92rem}.hero-note li{display:flex;gap:10px}.hero-note li:before{content:"✓";color:var(--orange);font-weight:900}
+    main{padding:52px 0 88px}.estimator{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden}.panel-head{padding:26px 30px;border-bottom:1px solid var(--line)}.progress-label{display:flex;justify-content:space-between;font-size:.8rem;font-weight:800;color:var(--muted);margin-bottom:10px}.progress-track{height:8px;background:#E2E8F0;border-radius:999px;overflow:hidden}.progress-bar{height:100%;width:14.28%;background:var(--orange);transition:width .25s ease}.step{display:none;padding:32px}.step.active{display:block}.step h2{font-size:clamp(1.65rem,3vw,2.25rem);margin-bottom:10px}.step-intro{color:var(--muted);margin-bottom:26px}.field{display:grid;gap:8px;margin-bottom:20px}.field label,.group-label{font-weight:800;font-size:.94rem}.field select,.field input,.field textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid #CBD5E1;border-radius:11px;background:white;color:var(--text)}.field textarea{min-height:92px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(249,115,22,.18);border-color:var(--orange)}.help{font-size:.79rem;color:var(--muted)}
+    .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice label{display:flex;align-items:flex-start;gap:11px;min-height:64px;padding:15px;border:1px solid #CBD5E1;border-radius:13px;background:white;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s ease}.choice label:before{content:"";width:18px;height:18px;flex:0 0 auto;border:2px solid #94A3B8;border-radius:5px;margin-top:1px}.choice input[type="radio"]+label:before{border-radius:50%}.choice input:checked+label{border-color:var(--orange);background:var(--orange-soft);box-shadow:0 0 0 2px rgba(249,115,22,.11)}.choice input:checked+label:before{border-color:var(--orange);background:var(--orange);box-shadow:inset 0 0 0 4px white}.choice input[type="checkbox"]:checked+label:before{content:"✓";display:grid;place-items:center;color:white;box-shadow:none;font-size:.75rem}
+    .step-actions{display:flex;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.step-actions .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}.error{display:none;margin-top:14px;padding:11px 13px;border-radius:10px;background:#FEF2F2;color:var(--red);font-size:.86rem;font-weight:700}.error.show{display:block}
+    .side{position:sticky;top:100px;display:grid;gap:18px}.side-card{background:var(--navy);color:white;border-radius:20px;padding:25px;box-shadow:var(--shadow-sm)}.side-card h3{font-size:1.3rem;margin-bottom:12px}.side-card p{font-size:.9rem;color:#CBD5E1}.side-list{display:grid;gap:12px;margin-top:20px}.side-item{display:flex;gap:10px;font-size:.86rem;color:#E2E8F0}.side-item span{width:22px;height:22px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:rgba(249,115,22,.16);color:var(--orange);font-weight:900}.privacy{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;font-size:.8rem;color:var(--muted)}.privacy strong{display:block;color:var(--navy);margin-bottom:7px}
+    .preview{display:grid;gap:18px}.preview-title{display:flex;align-items:center;gap:12px}.orientation{display:inline-flex;padding:8px 12px;border-radius:999px;background:var(--orange-soft);color:#9A3412;font-weight:850;font-size:.82rem}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric{border:1px solid var(--line);border-radius:14px;padding:17px;background:var(--paper)}.metric small{display:block;color:var(--muted);font-weight:700;margin-bottom:4px}.metric strong{font-size:1.25rem}.cost-box{padding:20px;border-radius:16px;background:var(--navy);color:white}.cost-box small{color:#CBD5E1}.cost-box strong{display:block;font-size:1.7rem;margin-top:4px;color:white}.disclaimer{font-size:.82rem;color:var(--muted);padding:14px;background:#F8FAFC;border-radius:12px;border-left:3px solid var(--orange)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.checkline{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;color:#475569}.checkline input{margin-top:4px}.success{display:none;padding:18px;border-radius:13px;background:#F0FDF4;color:var(--green);font-weight:750}.success.show{display:block}
+    .gate-summary{display:grid;gap:14px;margin-bottom:24px;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}
+    .gate-summary strong{font-size:1.05rem}.gate-summary p{color:var(--muted);font-size:.9rem}
+    .gate-orientation{display:inline-flex;width:max-content;padding:8px 12px;border-radius:999px;background:var(--orange-soft);color:#9A3412;font-weight:850;font-size:.82rem}
+    .trust-note{font-size:.8rem;color:var(--muted);padding:12px 14px;border-left:3px solid var(--orange);background:#F8FAFC;border-radius:10px}
+    .hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+    footer{background:var(--navy);color:white;padding:44px 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}.footer-brand{font-family:Manrope,Inter,sans-serif;font-size:1.35rem;font-weight:850}.footer-brand span{color:var(--orange)}.footer-copy{color:#94A3B8;font-size:.88rem;margin-top:10px;max-width:39ch}.footer-links{display:grid;gap:9px;color:#CBD5E1;font-size:.88rem}.footer-title{font-weight:850;margin-bottom:10px}.footer-bottom{margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:20px;color:#94A3B8;font-size:.78rem}
+    @media(max-width:900px){.nav-links,.nav-actions .btn-secondary{display:none}.menu-btn{display:block}.hero-grid,.estimator{grid-template-columns:1fr}.hero-note{max-width:620px}.side{position:static;grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+    @media(max-width:640px){.container{width:min(100% - 24px,var(--max))}.hero{padding:46px 0 56px}.hero h1{font-size:2.45rem}.step{padding:24px 18px}.panel-head{padding:22px 18px}.choice-grid,.contact-grid,.metrics,.side{grid-template-columns:1fr}.step-actions{flex-direction:column-reverse}.step-actions .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.nav{height:68px}.mobile-menu{top:68px}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/">Votr<span>IA</span></a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a href="/a-propos">À propos</a>
+    </nav>
+    <div class="nav-actions"><a class="btn btn-secondary" href="/eligibilite-cap-ia">Réserver CAP IA</a><button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu"><a href="/">Accueil</a><a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a href="/a-propos">À propos</a><a class="btn btn-primary" href="/eligibilite-cap-ia">Réserver CAP IA — 490 € HT</a></nav>
+</header>
+<section class="hero">
+  <div class="container hero-grid">
+    <div><span class="eyebrow">Estimation gratuite · PME du BTP</span><h1>Combien vous coûte réellement ce processus&nbsp;?</h1><p>En 3 à 4 minutes, estimez le temps mobilisé, son coût indicatif et la solution métier la plus proche de votre besoin. Cette estimation ne remplace pas un diagnostic personnalisé.</p></div>
+    <aside class="hero-note"><strong>Vous obtenez immédiatement :</strong><ul><li>une estimation en heures par semaine, mois et année ;</li><li>un équivalent en journées de travail ;</li><li>une fourchette de coût, si vous connaissez votre coût horaire ;</li><li>une première orientation vers FLUX ou PILOT.</li></ul></aside>
+  </div>
+</section>
+<main>
+  <div class="container estimator">
+    <section class="panel" aria-live="polite">
+      <div class="panel-head"><div class="progress-label"><span id="progressText">Étape 1 sur 7</span><span>3–4 minutes</span></div><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div></div>
+      <form id="estimateForm" novalidate>
+        <div class="step active" data-step="1">
+          <h2>Votre activité dans le BTP</h2><p class="step-intro">Cette information permet d’adapter les exemples et l’orientation finale.</p>
+          <div class="field"><label for="activity">Activité principale *</label><select id="activity" name="activity" required><option value="">Sélectionnez votre activité</option><option>Maçonnerie, gros œuvre ou béton</option><option>Terrassement, assainissement ou VRD</option><option>Travaux publics ou infrastructures</option><option>Charpente, couverture ou étanchéité</option><option>Menuiserie, métallerie ou serrurerie</option><option>Plâtrerie, cloisons ou isolation</option><option>Électricité ou courants faibles</option><option>Plomberie, chauffage, climatisation ou CVC</option><option>Peinture, revêtements ou finitions</option><option>Façade, ravalement ou ITE</option><option>Construction métallique ou enveloppe</option><option>Entreprise générale, rénovation globale ou TCE</option><option>Maintenance technique, dépannage, SAV ou multitechnique</option><option value="Autre activité BTP">Autre activité BTP</option></select></div>
+          <div class="field" id="otherActivityField" hidden><label for="otherActivity">Précisez votre activité *</label><input id="otherActivity" name="other_activity" maxlength="120"></div>
+          <div class="field"><label for="secondaryActivity">Activité secondaire <span class="help">(facultatif)</span></label><input id="secondaryActivity" name="secondary_activity" maxlength="120" placeholder="Ex. maintenance, rénovation, SAV…"></div>
+          <div class="error" id="error1">Sélectionnez votre activité principale.</div><div class="step-actions"><span></span><button class="btn btn-primary next" type="button">Continuer</button></div>
+        </div>
+        <div class="step" data-step="2">
+          <h2>Quels processus vous prennent du temps&nbsp;?</h2><p class="step-intro">Sélectionnez toutes les situations concernées. Vous choisirez ensuite une seule priorité.</p>
+          <div class="choice-grid" id="processChoices">
+            <div class="choice"><input type="checkbox" id="p1" name="process" value="Saisie et traitement des factures fournisseurs"><label for="p1">Saisie et traitement des factures fournisseurs</label></div>
+            <div class="choice"><input type="checkbox" id="p2" name="process" value="Saisie et suivi des bons de livraison"><label for="p2">Saisie et suivi des bons de livraison</label></div>
+            <div class="choice"><input type="checkbox" id="p3" name="process" value="Comptes rendus de chantier ou d’intervention"><label for="p3">Comptes rendus de chantier ou d’intervention</label></div>
+            <div class="choice"><input type="checkbox" id="p4" name="process" value="Circulation des informations entre chantier et bureau"><label for="p4">Circulation des informations entre chantier et bureau</label></div>
+            <div class="choice"><input type="checkbox" id="p5" name="process" value="Classement et recherche de documents"><label for="p5">Classement et recherche de documents</label></div>
+            <div class="choice"><input type="checkbox" id="p6" name="process" value="Suivi des devis clients après envoi"><label for="p6">Suivi des devis clients après envoi</label></div>
+            <div class="choice"><input type="checkbox" id="p7" name="process" value="Relance des devis en attente"><label for="p7">Relance des devis en attente</label></div>
+            <div class="choice"><input type="checkbox" id="p8" name="process" value="Suivi des prospects et des prochaines actions"><label for="p8">Suivi des prospects et des prochaines actions</label></div>
+            <div class="choice"><input type="checkbox" id="p9" name="process" value="Suivi des réserves, litiges ou SAV"><label for="p9">Suivi des réserves, litiges ou SAV</label></div>
+            <div class="choice"><input type="checkbox" id="p10" name="process" value="Reporting et tableaux de suivi"><label for="p10">Reporting et tableaux de suivi</label></div>
+            <div class="choice"><input type="checkbox" id="p11" name="process" value="Autre"><label for="p11">Autre processus</label></div>
+          </div>
+          <div class="field" id="otherProcessField" hidden style="margin-top:16px"><label for="otherProcess">Précisez l’autre processus *</label><input id="otherProcess" name="other_process" maxlength="160"></div>
+          <div class="error" id="error2">Sélectionnez au moins un processus.</div><div class="step-actions"><button class="btn btn-secondary prev" type="button">Retour</button><button class="btn btn-primary next" type="button">Continuer</button></div>
+        </div>
+        <div class="step" data-step="3">
+          <h2>Quelle est votre priorité&nbsp;?</h2><p class="step-intro">CAP IA porte sur un seul processus métier prioritaire. Choisissez celui qui mérite d’être analysé en premier.</p>
+          <div class="choice-grid" id="priorityChoices"></div>
+          <div class="error" id="error3">Choisissez un processus prioritaire.</div><div class="step-actions"><button class="btn btn-secondary prev" type="button">Retour</button><button class="btn btn-primary next" type="button">Continuer</button></div>
+        </div>
+        <div class="step" data-step="4">
+          <h2>Quel temps ce processus mobilise-t-il&nbsp;?</h2><p class="step-intro">Additionnez le temps de toutes les personnes concernées sur une semaine normale.</p>
+          <div class="field"><span class="group-label">Temps cumulé par semaine *</span><div class="choice-grid">
+            <div class="choice"><input type="radio" id="t1" name="weekly_time" value="lt1"><label for="t1">Moins d’une heure</label></div><div class="choice"><input type="radio" id="t2" name="weekly_time" value="1-3"><label for="t2">De 1 à 3 heures</label></div><div class="choice"><input type="radio" id="t3" name="weekly_time" value="4-7"><label for="t3">De 4 à 7 heures</label></div><div class="choice"><input type="radio" id="t4" name="weekly_time" value="8-15"><label for="t4">De 8 à 15 heures</label></div><div class="choice"><input type="radio" id="t5" name="weekly_time" value="16-30"><label for="t5">De 16 à 30 heures</label></div><div class="choice"><input type="radio" id="t6" name="weekly_time" value="gt30"><label for="t6">Plus de 30 heures</label></div><div class="choice"><input type="radio" id="t7" name="weekly_time" value="unknown"><label for="t7">Je ne sais pas</label></div>
+          </div></div>
+          <div class="field"><span class="group-label">Coût horaire moyen chargé *</span><p class="help">Salaire chargé, temps du dirigeant ou coût interne estimé.</p><div class="choice-grid">
+            <div class="choice"><input type="radio" id="c1" name="hourly_cost" value="lt25"><label for="c1">Moins de 25 €</label></div><div class="choice"><input type="radio" id="c2" name="hourly_cost" value="25-35"><label for="c2">De 25 à 35 €</label></div><div class="choice"><input type="radio" id="c3" name="hourly_cost" value="36-50"><label for="c3">De 36 à 50 €</label></div><div class="choice"><input type="radio" id="c4" name="hourly_cost" value="gt50"><label for="c4">Plus de 50 €</label></div><div class="choice"><input type="radio" id="c5" name="hourly_cost" value="unknown"><label for="c5">Je ne sais pas</label></div>
+          </div></div>
+          <div class="error" id="error4">Indiquez le temps cumulé et une fourchette de coût horaire, ou « Je ne sais pas ».</div><div class="step-actions"><button class="btn btn-secondary prev" type="button">Retour</button><button class="btn btn-primary next" type="button">Voir la suite</button></div>
+        </div>
+        <div class="step" data-step="5">
+          <h2>Quand souhaitez-vous agir&nbsp;?</h2><p class="step-intro">Cette réponse détermine si une analyse plus précise est utile maintenant.</p>
+          <div class="choice-grid">
+            <div class="choice"><input type="radio" id="d1" name="timing" value="Dès que possible"><label for="d1">Dès que possible</label></div><div class="choice"><input type="radio" id="d2" name="timing" value="Dans les 3 prochains mois"><label for="d2">Dans les 3 prochains mois</label></div><div class="choice"><input type="radio" id="d3" name="timing" value="Dans 3 à 6 mois"><label for="d3">Dans 3 à 6 mois</label></div><div class="choice"><input type="radio" id="d4" name="timing" value="Dans plus de 6 mois"><label for="d4">Dans plus de 6 mois</label></div><div class="choice"><input type="radio" id="d5" name="timing" value="Je souhaite seulement évaluer le sujet"><label for="d5">Je souhaite seulement évaluer le sujet</label></div>
+          </div>
+          <div class="error" id="error5">Choisissez une échéance.</div><div class="step-actions"><button class="btn btn-secondary prev" type="button">Retour</button><button class="btn btn-primary next" type="button">Voir mon estimation</button></div>
+        </div>
+        <div class="step" data-step="6">
+          <div class="gate-summary">
+            <span class="eyebrow" style="margin-bottom:0">Premier résultat</span>
+            <strong>Votre orientation initiale est prête.</strong>
+            <span class="gate-orientation" id="gateOrientationBadge">Orientation</span>
+            <p>Le détail du temps annuel, du coût indicatif et des prochaines étapes est réservé aux demandes identifiées.</p>
+          </div>
+          <h2>Recevez le résultat complet par email</h2>
+          <p class="step-intro">Vos coordonnées sont demandées seulement après l’affichage de ce premier résultat.</p>
+          <div class="contact-grid">
+            <div class="field"><label for="firstname">Prénom *</label><input id="firstname" name="firstname" autocomplete="given-name" maxlength="60"></div>
+            <div class="field"><label for="company">Entreprise *</label><input id="company" name="company" autocomplete="organization" maxlength="120"></div>
+            <div class="field"><label for="role">Votre rôle *</label><select id="role" name="role"><option value="">Sélectionnez</option><option>Dirigeant ou gérant</option><option>Direction commerciale</option><option>Direction administrative ou financière</option><option>Responsable d’exploitation</option><option>Autre fonction</option></select></div>
+            <div class="field"><label for="email">Email professionnel *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="160"></div>
+            <div class="field"><label for="phone">Téléphone <span class="help">(facultatif)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="24"></div>
+          </div>
+          <div class="hp-field" aria-hidden="true"><label for="website">Site web</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <label class="checkline"><input type="checkbox" id="followup" name="followup"><span>Je souhaite recevoir quelques informations utiles sur FLUX, PILOT et CAP IA. Désinscription possible à tout moment.</span></label>
+          <p class="trust-note">Les demandes manifestement automatisées, incomplètes ou abusives peuvent être écartées. Les résultats détaillés ne sont pas publiés librement.</p>
+          <div class="error" id="error6">Renseignez votre prénom, votre entreprise, votre rôle et un email professionnel valide.</div>
+          <div class="success" id="successBox"></div>
+          <div class="step-actions"><button class="btn btn-secondary prev" type="button">Retour</button><button class="btn btn-primary" id="submitBtn" type="submit">Afficher et recevoir mon résultat</button></div>
+        </div>
+        <div class="step" data-step="7">
+          <div class="preview">
+            <div class="preview-title"><div><span class="eyebrow" style="margin-bottom:8px">Votre estimation</span><h2>Un premier ordre de grandeur</h2></div><span class="orientation" id="orientationBadge">Orientation</span></div>
+            <div class="metrics"><div class="metric"><small>Temps par semaine</small><strong id="weeklyMetric">—</strong></div><div class="metric"><small>Temps par an</small><strong id="annualMetric">—</strong></div><div class="metric"><small>Jours de travail par an</small><strong id="daysMetric">—</strong></div></div>
+            <div class="cost-box"><small>Coût annuel indicatif du temps mobilisé</small><strong id="costMetric">Non calculé</strong></div>
+            <p class="disclaimer">Cette estimation mesure le temps actuellement mobilisé par le processus. Elle ne représente pas un gain garanti ni une part automatiquement récupérable. Le potentiel réel dépend des données, des outils et des contrôles nécessaires.</p>
+            <div id="qualifiedBlock"><h3>Votre résultat complet a été envoyé</h3><p class="step-intro">Vous recevrez également par email le récapitulatif de votre estimation et les prochaines étapes adaptées à votre situation.</p><a class="btn btn-primary" href="/eligibilite-cap-ia">Vérifier mon éligibilité à CAP IA</a></div>
+            <div id="infoBlock" hidden><h3>Vous êtes encore en phase d’exploration</h3><p class="step-intro">Votre résultat a été envoyé par email. Vous pouvez préparer votre réflexion avant d’engager une analyse personnalisée.</p><a class="btn btn-primary" href="/guide-btp">Consulter le guide de préparation</a></div>
+          </div>
+          <div class="step-actions"><button class="btn btn-secondary prev" type="button">Modifier mes réponses</button><a class="btn btn-secondary" href="/solutions">Découvrir les solutions</a></div>
+        </div>
+      </form>
+    </section>
+    <aside class="side">
+      <div class="side-card"><h3>Ce que cette estimation couvre</h3><p>Un seul processus métier, sur la base des informations que vous déclarez.</p><div class="side-list"><div class="side-item"><span>1</span><div>Temps cumulé de toutes les personnes concernées.</div></div><div class="side-item"><span>2</span><div>Coût indicatif à partir de votre fourchette horaire.</div></div><div class="side-item"><span>3</span><div>Orientation FLUX, PILOT ou analyse mixte.</div></div></div></div>
+      <div class="privacy"><strong>Utilisation de vos réponses</strong>Les réponses détaillées au questionnaire sont conservées au maximum 30 jours. Les coordonnées utilisées pour le suivi commercial sont conservées au maximum 90 jours, sauf relation contractuelle ou demande de suppression antérieure.</div>
+    </aside>
+  </div>
+</main>
+<footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Votr<span>IA</span></div><p class="footer-copy">Amélioration des processus métier pour les PME du BTP. Vos outils, vos comptes et vos données restent sous votre contrôle.</p></div><div><div class="footer-title">Navigation</div><nav class="footer-links"><a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a href="/a-propos">À propos</a></nav></div><div><div class="footer-title">Informations</div><nav class="footer-links"><a href="/mentions-legales">Mentions légales</a><a href="/confidentialite">Confidentialité</a><a href="/cgv">CGV</a><a href="/cookies">Cookies</a><a href="#" data-cookie-settings>Gérer mes cookies</a></nav></div></div><div class="footer-bottom"><span>VotrIA — Jean-François Martin · L’Isle-Jourdain</span><span>© 2026 VotrIA</span></div></div></footer>
+<script>
+(() => {
+  const N8N_WEBHOOK_URL = 'https://lean-parform.app.n8n.cloud/webhook/fast-audit';
+  const form = document.getElementById('estimateForm');
+  const steps = [...document.querySelectorAll('.step')];
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  let current = 1;
+  const startedAt = Date.now();
+  const timeRanges = {
+    lt1:{label:'Moins d’1 h',min:.25,max:1},'1-3':{label:'1 à 3 h',min:1,max:3},'4-7':{label:'4 à 7 h',min:4,max:7},'8-15':{label:'8 à 15 h',min:8,max:15},'16-30':{label:'16 à 30 h',min:16,max:30},gt30:{label:'Plus de 30 h',min:30,max:null},unknown:{label:'Non renseigné',min:null,max:null}
+  };
+  const costRanges = {lt25:{min:0,max:25},'25-35':{min:25,max:35},'36-50':{min:36,max:50},gt50:{min:50,max:null},unknown:{min:null,max:null}};
+  const documentProcesses = ['Saisie et traitement des factures fournisseurs','Saisie et suivi des bons de livraison','Comptes rendus de chantier ou d’intervention','Circulation des informations entre chantier et bureau','Classement et recherche de documents'];
+  const salesProcesses = ['Suivi des devis clients après envoi','Relance des devis en attente','Suivi des prospects et des prochaines actions'];
+  const showStep = n => { current=n; steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===n)); progressBar.style.width=`${n/7*100}%`; progressText.textContent=`Étape ${n} sur 7`; window.scrollTo({top:document.querySelector('.panel').offsetTop-92,behavior:'smooth'}); if(n===3) buildPriority(); if(n===6) buildGate(); if(n===7) buildPreview(); };
+  const value = name => form.querySelector(`[name="${name}"]:checked`)?.value || '';
+  const selectedProcesses = () => [...form.querySelectorAll('input[name="process"]:checked')].map(el=>el.value==='Autre' ? document.getElementById('otherProcess').value.trim() || 'Autre processus' : el.value);
+  const showError = (id, show=true) => document.getElementById(id).classList.toggle('show',show);
+  function validate(n){
+    if(n===1){const ok=document.getElementById('activity').value && (document.getElementById('activity').value!=='Autre activité BTP'||document.getElementById('otherActivity').value.trim());showError('error1',!ok);return ok}
+    if(n===2){const checks=form.querySelectorAll('input[name="process"]:checked');const otherOk=!document.getElementById('p11').checked||document.getElementById('otherProcess').value.trim();const ok=checks.length>0&&otherOk;showError('error2',!ok);return ok}
+    if(n===3){const ok=!!value('priority');showError('error3',!ok);return ok}
+    if(n===4){const ok=!!value('weekly_time')&&!!value('hourly_cost');showError('error4',!ok);return ok}
+    if(n===5){const ok=!!value('timing');showError('error5',!ok);return ok}
+    if(n===6){
+      const email=document.getElementById('email').value.trim();
+      const disposable=['yopmail','mailinator','guerrillamail','tempmail','trashmail','dispostable','10minutemail'];
+      const domain=(email.split('@')[1]||'').toLowerCase();
+      const ok=document.getElementById('firstname').value.trim()&&document.getElementById('company').value.trim()&&document.getElementById('role').value&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&!disposable.some(d=>domain.includes(d))&&!document.getElementById('website').value;
+      showError('error6',!ok);return ok
+    }
+    return true;
+  }
+  function buildPriority(){const box=document.getElementById('priorityChoices');box.innerHTML='';selectedProcesses().forEach((p,i)=>{const wrap=document.createElement('div');wrap.className='choice';wrap.innerHTML=`<input type="radio" id="priority${i}" name="priority" value="${p.replace(/"/g,'&quot;')}"><label for="priority${i}">${p}</label>`;box.appendChild(wrap)})}
+  function formatHours(min,max){if(min==null)return 'Non estimé';if(max==null)return `Plus de ${Math.round(min).toLocaleString('fr-FR')} h`;return `${Math.round(min).toLocaleString('fr-FR')} à ${Math.round(max).toLocaleString('fr-FR')} h`}
+  function formatMoney(min,max){const euro=n=>Math.round(n).toLocaleString('fr-FR')+' €';if(min==null)return 'Non calculé';if(max==null)return `Plus de ${euro(min)}`;if(min===0)return `Jusqu’à ${euro(max)}`;return `${euro(min)} à ${euro(max)}`}
+  function orientation(priority,all){const doc=documentProcesses.includes(priority);const sales=salesProcesses.includes(priority);if(doc)return 'Orientation FLUX';if(sales)return 'Orientation PILOT';const hasDoc=all.some(p=>documentProcesses.includes(p));const hasSales=all.some(p=>salesProcesses.includes(p));return hasDoc&&hasSales?'Orientation à préciser':'Analyse ciblée'}
+  function buildGate(){
+    document.getElementById('gateOrientationBadge').textContent=orientation(value('priority'),selectedProcesses());
+  }
+  function buildPreview(){
+    const tr=timeRanges[value('weekly_time')],cr=costRanges[value('hourly_cost')];const annualMin=tr.min==null?null:tr.min*46,annualMax=tr.max==null?null:tr.max*46;
+    document.getElementById('weeklyMetric').textContent=tr.label;document.getElementById('annualMetric').textContent=formatHours(annualMin,annualMax);document.getElementById('daysMetric').textContent=annualMin==null?'Non estimé':annualMax==null?`Plus de ${Math.round(annualMin/7)} j`:`${Math.round(annualMin/7)} à ${Math.round(annualMax/7)} j`;
+    let costMin=null,costMax=null;if(annualMin!=null&&cr.min!=null){costMin=annualMin*cr.min;if(annualMax!=null&&cr.max!=null)costMax=annualMax*cr.max}
+    document.getElementById('costMetric').textContent=formatMoney(costMin,costMax);document.getElementById('orientationBadge').textContent=orientation(value('priority'),selectedProcesses());
+    const info=['Dans plus de 6 mois','Je souhaite seulement évaluer le sujet'].includes(value('timing'));document.getElementById('qualifiedBlock').hidden=info;document.getElementById('infoBlock').hidden=!info;
+  }
+  function payload(){return {
+    source:'estimation-votria',
+    created_at:new Date().toISOString(),
+    activity:document.getElementById('activity').value==='Autre activité BTP'?document.getElementById('otherActivity').value.trim():document.getElementById('activity').value,
+    secondary_activity:document.getElementById('secondaryActivity').value.trim(),
+    processes:selectedProcesses(),
+    priority:value('priority'),
+    weekly_time:value('weekly_time'),
+    hourly_cost:value('hourly_cost'),
+    timing:value('timing'),
+    orientation:orientation(value('priority'),selectedProcesses()),
+    firstname:document.getElementById('firstname').value.trim(),
+    company:document.getElementById('company').value.trim(),
+    role:document.getElementById('role').value,
+    email:document.getElementById('email').value.trim(),
+    phone:document.getElementById('phone').value.trim(),
+    commercial_followup:document.getElementById('followup').checked,
+    website_honeypot:document.getElementById('website').value,
+    elapsed_seconds:Math.round((Date.now()-startedAt)/1000),
+    page_url:location.href,
+    referrer:document.referrer||''
+  };}
+  document.querySelectorAll('.next').forEach(btn=>btn.addEventListener('click',()=>{if(validate(current))showStep(Math.min(7,current+1))}));document.querySelectorAll('.prev').forEach(btn=>btn.addEventListener('click',()=>showStep(Math.max(1,current-1))));
+  document.getElementById('activity').addEventListener('change',e=>document.getElementById('otherActivityField').hidden=e.target.value!=='Autre activité BTP');document.getElementById('p11').addEventListener('change',e=>document.getElementById('otherProcessField').hidden=!e.target.checked);
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!validate(6))return;
+    const box=document.getElementById('successBox'),btn=document.getElementById('submitBtn');
+    btn.disabled=true;btn.textContent='Vérification en cours…';box.classList.remove('show');
+    try{
+      if(!N8N_WEBHOOK_URL.startsWith('https://'))throw new Error('WEBHOOK_NOT_CONFIGURED');
+      const r=await fetch(N8N_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())});
+      if(!r.ok)throw new Error('HTTP_'+r.status);
+      let result={accepted:true};
+      try{result=await r.json()}catch(_){}
+      if(result.accepted===false){
+        box.textContent='Votre demande a bien été enregistrée. Si elle correspond au périmètre VotrIA, vous recevrez un retour par email.';
+        box.classList.add('show');btn.disabled=true;btn.textContent='Demande transmise';return;
+      }
+      showStep(7);
+    }catch(err){
+      box.textContent=err.message==='WEBHOOK_NOT_CONFIGURED'
+        ?'La page est prête. Le webhook n8n doit être configuré avant la mise en ligne pour protéger l’accès au résultat détaillé.'
+        :'L’envoi n’a pas abouti. Réessayez ou contactez contact@votria.pro.';
+      box.classList.add('show');btn.disabled=false;btn.textContent='Afficher et recevoir mon résultat';
+    }
+  });
+  const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open))});document.querySelectorAll('[data-cookie-settings]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(window.tarteaucitron?.userInterface?.openPanel)window.tarteaucitron.userInterface.openPanel()}));
+})();
+</script>
+</body>
+</html>

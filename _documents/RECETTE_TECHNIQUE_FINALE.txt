@@ -1,0 +1,12 @@
+VOTRIA — PAGES LÉGALES — INFORMATIONS À COMPLÉTER AVANT PUBLICATION
+
+1. Adresse professionnelle complète de Jean-François Martin / VotrIA
+2. Numéro SIREN et SIRET
+3. Numéro de téléphone professionnel
+4. Régime TVA : numéro de TVA intracommunautaire OU mention « TVA non applicable, art. 293 B du CGI »
+5. Confirmer l’hébergeur : OVH SAS
+6. Confirmer les outils réellement actifs : Google Analytics / Tag Manager, Calendly, Stripe, fournisseur email, gestionnaire de consentement
+7. Renseigner la durée exacte du cookie de consentement et des traceurs effectivement déposés
+8. Vérifier que le bandeau bloque tous les traceurs non nécessaires avant consentement
+
+Ces fichiers constituent une base structurée B2B. Ils ne remplacent pas une validation juridique adaptée à la situation exacte de l’entreprise.

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="À propos de VotrIA : un accompagnement direct pour aider les dirigeants de PME du BTP à améliorer un processus métier sans bouleverser leur organisation.">
+<title>À propos de VotrIA — Améliorer votre PME du BTP sans tout changer</title>
+<style>
+:root{
+  --navy:#0F172A;--navy2:#162033;--navy3:#1E293B;--orange:#F97316;--orange-dark:#EA580C;
+  --orange-soft:#FFF1E8;--white:#fff;--paper:#F8FAFC;--line:#E2E8F0;--text:#0F172A;
+  --muted:#64748B;--muted-light:#CBD5E1;--radius:20px;--radius-sm:11px;
+  --shadow:0 20px 55px rgba(15,23,42,.12);--shadow-sm:0 8px 30px rgba(15,23,42,.08);--max:1180px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.58;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}.container{width:min(var(--max),calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:var(--orange)}.eyebrow:before{content:"";width:28px;height:2px;background:currentColor;border-radius:2px}h1,h2,h3{margin:0;font-family:Manrope,Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.035em;line-height:1.08}h1{font-size:clamp(2.55rem,5vw,4.75rem);max-width:15ch}h2{font-size:clamp(1.9rem,3.2vw,3.05rem)}h3{font-size:1.24rem}p{margin:0}section{padding:88px 0}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(226,232,240,.95);backdrop-filter:blur(14px)}.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Manrope,Inter,sans-serif;font-size:1.45rem;font-weight:850;letter-spacing:-.04em}.brand span{color:var(--orange)}.nav-links{display:flex;align-items:center;gap:26px;font-size:.92rem;font-weight:700;color:#334155}.nav-links a{position:relative}.nav-links a:hover,.nav-links a.active{color:var(--orange-dark)}.nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-13px;height:2px;background:var(--orange);border-radius:2px}.nav-actions{display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;border:1px solid transparent;border-radius:999px;font-weight:850;font-size:.92rem;transition:.2s ease;cursor:pointer}.btn-primary{background:var(--orange);color:var(--navy);box-shadow:0 10px 24px rgba(249,115,22,.22)}.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px)}.btn-secondary{background:transparent;color:var(--navy);border-color:#CBD5E1}.btn-secondary:hover{border-color:var(--navy);background:#F8FAFC}.menu-btn{display:none;border:0;background:none;padding:8px;cursor:pointer}.menu-btn span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}.mobile-menu{display:none;position:absolute;left:0;right:0;top:74px;background:#fff;border-bottom:1px solid var(--line);padding:14px 20px 20px;box-shadow:var(--shadow-sm)}.mobile-menu.open{display:grid;gap:4px}.mobile-menu a{padding:11px 4px;font-weight:750;color:#334155;border-bottom:1px solid #F1F5F9}.mobile-menu .btn{margin-top:8px}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:94px 0 102px}.hero:before{content:"";position:absolute;inset:-230px auto auto -170px;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.035)}.hero:after{content:"";position:absolute;right:-190px;bottom:-350px;width:700px;height:700px;border-radius:50%;background:rgba(249,115,22,.13)}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}.hero .eyebrow{margin-bottom:20px}.hero h1{margin-bottom:24px}.hero-copy{color:#CBD5E1;font-size:clamp(1.05rem,1.5vw,1.24rem);max-width:60ch}.hero-copy strong{color:#fff}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.hero .btn-secondary{color:#fff;border-color:rgba(255,255,255,.3)}.hero .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:#fff}.founder-card{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:26px;padding:32px;box-shadow:0 30px 80px rgba(0,0,0,.26);backdrop-filter:blur(10px)}.founder-card:before{content:"JF";position:absolute;right:24px;top:18px;font-family:Manrope,Inter,sans-serif;font-weight:900;font-size:5.6rem;line-height:1;color:rgba(255,255,255,.055)}.founder-label{color:var(--orange);font-weight:850;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem}.founder-name{font-family:Manrope,Inter,sans-serif;font-size:1.75rem;font-weight:850;margin-top:12px}.founder-role{color:#CBD5E1;margin-top:8px;max-width:34ch}.founder-list{display:grid;gap:12px;margin-top:26px}.founder-list div{display:flex;gap:11px;align-items:flex-start;color:#E2E8F0;font-size:.94rem}.dot{width:8px;height:8px;flex:0 0 auto;border-radius:50%;background:var(--orange);margin-top:7px}
+.approach{background:var(--paper)}.section-head{max-width:770px;margin-bottom:40px}.section-head .eyebrow{margin-bottom:16px}.section-head h2{margin-bottom:17px}.section-head p{color:var(--muted);font-size:1.05rem}.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.approach-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm)}.approach-card h3{margin-bottom:12px}.approach-card p{color:var(--muted)}.approach-card ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:11px}.approach-card li{position:relative;padding-left:24px;color:#475569}.approach-card li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:900}.quote-card{background:var(--navy);color:#fff}.quote-card p{color:#CBD5E1;font-size:1.08rem}.quote-card strong{display:block;color:#fff;font-family:Manrope,Inter,sans-serif;font-size:1.36rem;line-height:1.25;margin-bottom:18px}
+.control{background:#fff}.control-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}.control-copy h2{margin:14px 0 18px}.control-copy p{color:var(--muted);font-size:1.05rem}.control-points{display:grid;gap:14px}.control-point{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow-sm)}.control-icon{width:48px;height:48px;border-radius:14px;background:var(--orange-soft);display:grid;place-items:center;color:var(--orange-dark);font-weight:900}.control-point h3{font-size:1.06rem;margin-bottom:5px}.control-point p{color:var(--muted);font-size:.93rem}
+.progress{background:var(--navy);color:#fff}.progress-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.progress h2{margin:14px 0 18px}.progress p{color:#CBD5E1;font-size:1.04rem;max-width:64ch}.progress-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.progress-step{padding:18px 14px;border-radius:15px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);text-align:center}.progress-step span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--orange);color:var(--navy);font-weight:900;margin:0 auto 9px}.progress-step strong{font-size:.88rem}.progress-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.progress .btn-secondary{color:#fff;border-color:rgba(255,255,255,.28)}.progress .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:#fff}
+footer{background:#0B1324;color:#fff;padding:54px 0 26px}.footer-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:50px}.footer-brand{font-family:Manrope,Inter,sans-serif;font-size:1.35rem;font-weight:850}.footer-brand span{color:var(--orange)}.footer-copy{color:#94A3B8;font-size:.9rem;margin-top:10px;max-width:42ch}.footer-title{font-weight:850;margin-bottom:13px}.footer-links{display:grid;gap:9px}.footer-links a{color:#CBD5E1;font-size:.9rem}.footer-links a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:22px;color:#94A3B8;font-size:.82rem;text-align:center}
+@media(max-width:1050px){.nav-links{display:none}.menu-btn{display:block}.hero-grid,.control-grid,.progress-inner{grid-template-columns:1fr}.hero-grid{gap:45px}.founder-card{max-width:620px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){section{padding:66px 0}.container{width:min(100% - 28px,var(--max))}.nav{height:68px}.mobile-menu{top:68px}.nav-actions .btn-primary{display:none}.hero{padding:68px 0 74px}.approach-grid{grid-template-columns:1fr}.progress-steps{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:520px){h1{font-size:2.45rem}.hero-actions .btn,.progress-actions .btn{width:100%}.founder-card{padding:24px}.progress-steps{grid-template-columns:1fr}.control-point{grid-template-columns:42px 1fr}.control-icon{width:42px;height:42px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/">Votr<span>IA</span></a>
+    <nav aria-label="Navigation principale" class="nav-links">
+      <a href="/">Accueil</a><a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a class="active" aria-current="page" href="/a-propos">À propos</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="/estimation">Faire l’estimation gratuite</a>
+      <a class="btn btn-secondary" href="/eligibilite-cap-ia">Réserver CAP IA — 490 € HT</a>
+      <button aria-label="Ouvrir le menu" class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Accueil</a><a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a aria-current="page" href="/a-propos">À propos</a>
+    <a class="btn btn-primary" href="/estimation">Faire l’estimation gratuite</a><a class="btn btn-secondary" href="/eligibilite-cap-ia">Réserver CAP IA — 490 € HT</a>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">À propos de VotrIA</div>
+      <h1>Vous n’avez pas besoin d’un projet technologique de plus</h1>
+      <p class="hero-copy"><strong>Vous avez besoin que votre entreprise fonctionne mieux.</strong> Moins de temps perdu, moins de ressaisies, des informations mieux suivies et des équipes qui gardent le contrôle.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="/solutions">Découvrir les solutions</a><a class="btn btn-secondary" href="/estimation">Faire l’estimation gratuite</a></div>
+    </div>
+    <aside class="founder-card" aria-label="Profil de Jean-François Martin">
+      <div class="founder-label">L’expertise derrière VotrIA</div>
+      <div class="founder-name">Jean-François Martin</div>
+      <p class="founder-role">Consultant indépendant en analyse des processus métier, automatisation no-code et intégration d’outils d’intelligence artificielle.</p>
+      <div class="founder-list">
+        <div><span class="dot"></span><span>Un interlocuteur direct pendant toute la mission</span></div>
+        <div><span class="dot"></span><span>Une approche adaptée aux réalités des PME du BTP</span></div>
+        <div><span class="dot"></span><span>Une coordination avec votre prestataire informatique lorsque nécessaire</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="approach">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Une approche concrète</div><h2>VotrIA part de vos problèmes, pas de la technologie</h2><p>Vous identifiez ce qui fait perdre du temps à votre entreprise. Je transforme ce constat en une amélioration claire, réaliste et adaptée à votre organisation.</p></div>
+    <div class="approach-grid">
+      <article class="approach-card"><h3>Je commence par votre fonctionnement réel</h3><p>Je regarde comment les informations circulent, qui les traite et où apparaissent les erreurs, les oublis ou les retards.</p><ul><li>Outils déjà utilisés</li><li>Pratiques des équipes</li><li>Points de blocage</li><li>Contrôles nécessaires</li></ul></article>
+      <article class="approach-card quote-card"><strong>« Je conserve ce qui fonctionne et j’ajoute uniquement les améliorations nécessaires. »</strong><p>L’objectif n’est pas de multiplier les logiciels. Il est d’améliorer un processus précis sans désorganiser votre entreprise.</p></article>
+    </div>
+  </div>
+</section>
+<section class="control">
+  <div class="container control-grid">
+    <div class="control-copy"><div class="eyebrow">Vous gardez le contrôle</div><h2>Une solution utile pendant la mission, mais aussi après</h2><p>La solution est configurée dans votre environnement, expliquée aux utilisateurs et documentée pour votre entreprise.</p></div>
+    <div class="control-points">
+      <article class="control-point"><div class="control-icon">1</div><div><h3>Vos outils restent les vôtres</h3><p>Les comptes, abonnements et données restent sous le contrôle de votre entreprise.</p></div></article>
+      <article class="control-point"><div class="control-icon">2</div><div><h3>Vos équipes gardent les décisions importantes</h3><p>Les validations humaines sont intégrées lorsqu’elles sont nécessaires.</p></div></article>
+      <article class="control-point"><div class="control-icon">3</div><div><h3>Votre prestataire informatique conserve son rôle</h3><p>Je coordonne mon intervention avec lui sans me substituer à ses responsabilités.</p></div></article>
+    </div>
+  </div>
+</section>
+<section class="progress">
+  <div class="container progress-inner">
+    <div><div class="eyebrow">Avancer progressivement</div><h2>Commencer petit, mesurer, puis décider</h2><p>Je privilégie un processus prioritaire, un test limité et des résultats vérifiables avant tout déploiement plus large.</p><div class="progress-actions"><a class="btn btn-primary" href="/estimation">Faire l’estimation gratuite</a><a class="btn btn-secondary" href="/offres">Découvrir les offres</a></div></div>
+    <div class="progress-steps"><div class="progress-step"><span>1</span><strong>Analyser</strong></div><div class="progress-step"><span>2</span><strong>Tester</strong></div><div class="progress-step"><span>3</span><strong>Mesurer</strong></div><div class="progress-step"><span>4</span><strong>Décider</strong></div></div>
+  </div>
+</section>
+</main>
+<footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Votr<span>IA</span></div><p class="footer-copy">Amélioration des processus métier pour les PME du BTP. Vos outils, vos comptes et vos données restent sous votre contrôle.</p></div><div><div class="footer-title">Navigation</div><div class="footer-links"><a href="/">Accueil</a><a href="/solutions">Solutions</a><a href="/offres">Offres</a><a href="/methode">Méthode</a><a href="/cas-concrets">Cas concrets</a><a aria-current="page" href="/a-propos">À propos</a></div></div><div><div class="footer-title">Informations</div><div class="footer-links"><a href="/estimation">Estimation gratuite</a><a href="/mentions-legales">Mentions légales</a><a href="/confidentialite">Confidentialité</a><a href="/cgv">CGV</a><a href="/cookies">Cookies</a></div></div></div><div class="footer-bottom">VotrIA — Jean-François Martin, consultant indépendant · Toulouse · Occitanie · © 2026</div></div></footer>
+<script>const b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');b&&b.addEventListener('click',()=>m.classList.toggle('open'));</script>
+</body>
+</html>
