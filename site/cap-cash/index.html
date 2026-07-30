@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CAP CASH — Devis et factures suivis — VotrIA</title>
+<meta name="description" content="Suivi des demandes de devis, relance des devis sans réponse et suivi des factures échues, par étapes, sans changer votre logiciel de gestion." />
+<link rel="canonical" href="https://votria.pro/cap-cash/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VotrIA" />
+<meta property="og:title" content="CAP CASH — Devis et factures suivis" />
+<meta property="og:description" content="Des briques progressives, avec un périmètre standard et des tarifs publiés, pour suivre vos devis et vos factures sans changer d'outil." />
+<meta property="og:url" content="https://votria.pro/cap-cash/" />
+<meta property="og:image" content="https://votria.pro/assets/og-image.jpg" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<link rel="stylesheet" href="/assets/css/v3.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/">Votr<span>IA</span></a>
+
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/cap-cash/" aria-current="page">CAP CASH</a>
+      <a href="/cap-chantier/">CAP CHANTIER</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="/diagnostic/">Vérifier mon besoin</a>
+      <button
+        type="button"
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobileMenu" class="mobile-menu" aria-label="Navigation mobile">
+  <a href="/">Accueil</a>
+  <a href="/cap-cash/" aria-current="page">CAP CASH</a>
+  <a href="/cap-chantier/">CAP CHANTIER</a>
+  <a href="/diagnostic/">Diagnostic</a>
+  <a class="btn btn-primary btn-block" href="/diagnostic/">Vérifier mon besoin</a>
+</nav>
+
+<main id="contenu">
+
+  <nav class="container breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> &gt; <span aria-current="page">CAP CASH</span>
+  </nav>
+
+  <!-- HERO CAP CASH -->
+  <section class="hero" style="padding-top:var(--space-4)">
+    <div class="container hero-grid">
+      <div>
+        <h1>CAP CASH : vos devis et vos factures suivis dans une seule liste</h1>
+        <p class="hero-subtitle">CAP CASH avance par étapes : demandes de devis, suivi des devis, puis factures et encaissements. Des briques progressives, avec un périmètre standard et des tarifs publiés.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
+          <a class="btn btn-secondary" href="#progression">Voir les trois étapes</a>
+        </div>
+      </div>
+
+      <div class="hero-flow" aria-label="Exemple de fonctionnement">
+        <p class="hero-flow-label">Exemple de fonctionnement</p>
+        <div class="hero-flow-step">
+          <span class="hero-flow-num">1</span>
+          <span>Demande Dupont — à affecter</span>
+        </div>
+        <div class="hero-flow-step">
+          <span class="hero-flow-num">2</span>
+          <span>Devis Martin — brouillon prêt</span>
+        </div>
+        <div class="hero-flow-step">
+          <span class="hero-flow-num">3</span>
+          <span>Facture Leroy — à vérifier</span>
+        </div>
+        <div class="hero-flow-step is-validated">
+          <span class="hero-flow-num">4</span>
+          <span>Dossier Bernard — reporté</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="price-notice container">Prix exprimés en euros HT. TVA non applicable, article 293 B du Code général des impôts.</p>
+
+  <!-- PROGRESSION DES TROIS BRIQUES -->
+  <section id="progression">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trois briques</span>
+        <h2>Une progression, pas un forfait indivisible</h2>
+      </div>
+      <div class="brick-progress">
+        <div class="brick-progress-item"><h3>Demandes de devis à traiter</h3></div>
+        <div class="brick-progress-arrow" aria-hidden="true">→</div>
+        <div class="brick-progress-item"><h3>Suivi et relance des devis</h3></div>
+        <div class="brick-progress-arrow" aria-hidden="true">→</div>
+        <div class="brick-progress-item"><h3>Factures et encaissements</h3></div>
+      </div>
+      <p class="brick-progress-note">Vous pouvez commencer par une seule brique. Les extensions réutilisent le socle existant uniquement lorsqu'il est réellement réutilisable — les tarifs « en extension » ne s'appliquent pas automatiquement. Un besoin qui sort de ce périmètre standard est vérifié au préalable (voir « Standard ou complexe » plus bas).</p>
+    </div>
+  </section>
+
+  <!-- BRIQUE 1 -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="brick" id="demandes-de-devis">
+        <div class="brick-head">
+          <h3>Demandes de devis à traiter</h3>
+        </div>
+        <p class="brick-promise">Les demandes reçues par email sont identifiées, résumées et conservées dans une seule liste jusqu'à leur prise en charge.</p>
+
+        <div class="brick-cols">
+          <div>
+            <h4>Inclus</h4>
+            <ul class="included">
+              <li>Une adresse professionnelle surveillée</li>
+              <li>Détection des demandes</li>
+              <li>Résumé du besoin</li>
+              <li>Informations manquantes signalées</li>
+              <li>Liste quotidienne des demandes non prises en charge</li>
+              <li>Affectation manuelle à une personne</li>
+              <li>Aucun devis généré automatiquement</li>
+              <li>Aucun message envoyé sans validation</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Périmètre standard</h4>
+            <ul class="included">
+              <li>Une entreprise</li>
+              <li>Une adresse Gmail ou Microsoft 365</li>
+              <li>Une liste de suivi</li>
+              <li>Une personne référente</li>
+              <li>Aucun historique repris</li>
+              <li>Aucune écriture dans le logiciel de gestion</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="brick-price">
+          <span class="price">Installation : 990 € HT</span>
+          <span class="fine-print">Surveillance technique : 99 € HT/mois · Maintien opérationnel : 149 € HT/mois</span>
+          <span class="fine-print">Surveillance technique minimale obligatoire pour ce flux email automatisé.</span>
+          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+        </div>
+        <div class="brick-cta">
+          <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIQUE 2 -->
+  <section>
+    <div class="container">
+      <div class="brick" id="suivi-relance-devis">
+        <div class="brick-head">
+          <h3>Suivi et relance des devis</h3>
+        </div>
+        <p class="brick-promise">Les devis sans réponse sont regroupés, priorisés et préparés pour validation.</p>
+
+        <div class="brick-cols">
+          <div>
+            <h4>Inclus au périmètre standard</h4>
+            <ul class="included">
+              <li>Import de vos devis (fichier Excel ou équivalent)</li>
+              <li>Priorisation selon les règles validées avec vous</li>
+              <li>Brouillons de relance préparés</li>
+              <li>Tableau de validation</li>
+              <li>Dossiers reportés toujours visibles</li>
+              <li>Résumé hebdomadaire</li>
+              <li>Cas ambigus isolés pour vérification</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Non compris au prix minimal</h4>
+            <ul class="excluded">
+              <li>Lecture automatique des réponses reçues</li>
+              <li>Suspension automatique des séquences de relance</li>
+              <li>Envoi par SMS</li>
+              <li>Connexion directe à votre logiciel de gestion</li>
+              <li>Plusieurs sociétés</li>
+              <li>Plusieurs logiciels</li>
+              <li>Reprise d'un historique</li>
+              <li>Écriture dans le logiciel de gestion</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="brick-price">
+          <span class="price">Installation autonome : à partir de 2 200 € HT</span>
+          <span class="price">Extension depuis la première brique : à partir de 1 800 € HT</span>
+          <span class="fine-print">Le prix en extension est applicable uniquement lorsque le socle existant est réellement réutilisable.</span>
+          <span class="fine-print">La formule de surveillance ou de maintien applicable est déterminée selon le nombre et la nature des flux installés — voir « Surveillance et maintien opérationnel » ci-dessous.</span>
+          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+        </div>
+        <div class="brick-cta">
+          <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIQUE 3 -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="brick" id="factures-encaissements">
+        <div class="brick-head">
+          <h3>Factures et encaissements</h3>
+        </div>
+        <p class="brick-promise">Les factures échues sont identifiées, classées et présentées dans l'ordre de priorité.</p>
+
+        <div class="brick-cols">
+          <div>
+            <h4>Inclus</h4>
+            <ul class="included">
+              <li>Import des factures et des acomptes</li>
+              <li>Classement par niveau de retard</li>
+              <li>Relances préparées</li>
+              <li>Accords de règlement signalés lorsqu'ils figurent dans la source</li>
+              <li>Dossiers critiques présentés au dirigeant</li>
+              <li>Courrier préparé avant envoi manuel</li>
+              <li>Validation humaine obligatoire</li>
+            </ul>
+          </div>
+        </div>
+        <p class="fine-print" style="margin-top:var(--space-2)">Un paiement n'est signalé que si l'information figure réellement dans la source utilisée.</p>
+
+        <div class="brick-price">
+          <span class="price">Installation autonome : à partir de 2 200 € HT</span>
+          <span class="price">Extension depuis un socle CAP CASH existant : à partir de 1 600 € HT</span>
+          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+        </div>
+        <div class="brick-cta">
+          <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUDGET INDICATIF -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Budget indicatif</h2>
+      </div>
+      <div class="budget-block">
+        <p class="budget-amount">Environ 4 390 € HT</p>
+        <p style="margin-bottom:var(--space-3)">Un parcours CAP CASH complet représente environ 4 390 € HT lorsque les extensions réutilisent réellement le socle déjà installé.</p>
+        <ul class="budget-caveats">
+          <li>Montant indicatif</li>
+          <li>Pas un forfait garanti</li>
+          <li>Services tiers non inclus</li>
+          <li>Surveillance ou maintien non inclus</li>
+          <li>Périmètre définitif déterminé après qualification ou diagnostic</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXEMPLE DE FONCTIONNEMENT -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Exemple de fonctionnement</span>
+        <h2>À quoi ressemble le quotidien</h2>
+      </div>
+
+      <div class="demo-frame">
+        <p class="demo-label">Exemple de fonctionnement</p>
+
+        <div class="validation-flow" style="margin-bottom:var(--space-4)">
+          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Demande reçue</div>
+          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
+          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Liste de suivi</div>
+          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
+          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Brouillon préparé</div>
+          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
+          <div class="validation-node is-central">VOUS VALIDEZ</div>
+          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
+          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Résumé hebdomadaire</div>
+        </div>
+
+        <h3 style="margin-bottom:var(--space-2)">Tableau de validation</h3>
+        <div style="overflow-x:auto;margin-bottom:var(--space-4)">
+          <table class="demo-table">
+            <caption class="visually-hidden">Exemple illustratif de tableau de validation, non interactif</caption>
+            <thead>
+              <tr><th scope="col">Dossier</th><th scope="col">Prochaine action</th><th scope="col">Statut</th><th scope="col">Décision</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Demande Dupont</td><td>Affecter à un référent</td><td class="status">À traiter</td>
+                <td class="demo-actions">
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Devis Martin</td><td>Vérifier le brouillon de relance</td><td class="status">Brouillon prêt</td>
+                <td class="demo-actions">
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Facture Leroy</td><td>Confirmer le retard</td><td class="status">À vérifier</td>
+                <td class="demo-actions">
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
+                  <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine-print" style="margin-bottom:var(--space-4)">Aperçu de l'interface — boutons illustratifs, non fonctionnels.</p>
+
+        <h3 style="margin-bottom:var(--space-2)">Résumé hebdomadaire</h3>
+        <div class="demo-summary">
+          <ul>
+            <li>3 demandes à affecter</li>
+            <li>4 devis à vérifier</li>
+            <li>2 factures à traiter</li>
+            <li>1 dossier reporté</li>
+          </ul>
+        </div>
+        <p class="fine-print">Exemple de fonctionnement — chiffres illustratifs, pas un résultat client.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALIDATION HUMAINE -->
+  <section class="section-navy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Le système prépare. Votre équipe décide.</span>
+      </div>
+      <ol class="validation-flow">
+        <li class="validation-node">Le système récupère</li>
+        <li class="validation-arrow" aria-hidden="true">→</li>
+        <li class="validation-node">Le système trie</li>
+        <li class="validation-arrow" aria-hidden="true">→</li>
+        <li class="validation-node">Le système prépare</li>
+        <li class="validation-arrow" aria-hidden="true">→</li>
+        <li class="validation-node is-central">VOUS VALIDEZ</li>
+        <li class="validation-arrow" aria-hidden="true">→</li>
+        <li class="validation-node">L'action est exécutée</li>
+      </ol>
+      <p class="validation-note">Aucun message commercial et aucun compte rendu client ne part sans la validation prévue avec votre équipe.</p>
+    </div>
+  </section>
+
+  <!-- SURVEILLANCE ET MAINTIEN OPÉRATIONNEL -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Après l'installation</span>
+        <h2>Surveillance technique et maintien opérationnel</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Surveillance technique — 99 € HT/mois</h3>
+          <ul>
+            <li>Contrôle des exécutions</li>
+            <li>Alerte en cas d'échec</li>
+            <li>Première qualification</li>
+            <li>Rapport de fonctionnement</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Maintien opérationnel — 149 € HT/mois</h3>
+          <ul>
+            <li>Surveillance technique incluse</li>
+            <li>Jusqu'à 30 minutes d'intervention par mois</li>
+            <li>Temps non reportable</li>
+            <li>Prise en compte sous un jour ouvré</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine-print" style="max-width:70ch;margin:var(--space-3) auto 0;text-align:center">Le client choisit le niveau applicable — la surveillance technique et le maintien opérationnel ne se cumulent pas. Une prise en compte ne signifie pas résolution garantie ; une intervention supplémentaire est facturée après accord ; un changement dû au client ou à un fournisseur tiers est facturé séparément.</p>
+      <p class="fine-print" style="max-width:70ch;margin:var(--space-2) auto 0;text-align:center"><strong>Règle commerciale :</strong> la surveillance ou le maintien opérationnel est facturé par environnement client et couvre jusqu'à trois flux standard actifs. Au-delà, le périmètre et le tarif sont adaptés avant engagement.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES TIERS ET ENVIRONNEMENT CLIENT -->
+  <section class="section-navy">
+    <div class="container">
+      <div class="section-head">
+        <h2>Votre environnement, vos abonnements, vos données.</h2>
+        <p>La solution est installée dans un environnement dédié à votre entreprise. Les comptes techniques restent à votre nom. VotrIA configure et maintient le fonctionnement selon la formule choisie. Les services nécessaires et leur coût estimatif sont présentés avant engagement.</p>
+      </div>
+      <ul class="env-list" style="max-width:640px;margin:0 auto">
+        <li>Environnement dédié à l'entreprise</li>
+        <li>Comptes au nom du client</li>
+        <li>Coûts présentés avant engagement</li>
+        <li>Accès VotrIA révocables</li>
+        <li>Aucune plateforme mutualisée VotrIA contenant les données de production</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STANDARD OU COMPLEXE -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Votre besoin est-il standard ou complexe ?</h2>
+      </div>
+      <div class="parcours-grid">
+        <div class="parcours-card">
+          <h3>Besoin standard</h3>
+          <ul>
+            <li>Une entreprise</li>
+            <li>Une source</li>
+            <li>Un processus</li>
+            <li>Aucun historique</li>
+            <li>Aucune règle particulière</li>
+          </ul>
+          <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
+        </div>
+        <div class="parcours-card">
+          <h3>Situation complexe</h3>
+          <ul>
+            <li>Plusieurs outils</li>
+            <li>Plusieurs équipes</li>
+            <li>Plusieurs sociétés</li>
+            <li>Données dispersées</li>
+            <li>Règles spécifiques</li>
+          </ul>
+          <a class="btn btn-outline" href="/diagnostic/#parcours-complexe">Demander un diagnostic — 490 € HT</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section-navy">
+    <div class="container">
+      <div class="section-head">
+        <h2>Par où commencer ?</h2>
+      </div>
+      <div class="final-cta-grid">
+        <div class="final-cta-card">
+          <p style="color:#E2E8F0;margin-bottom:1rem">Mon besoin est standard</p>
+          <a class="btn btn-primary btn-block" href="/diagnostic/#parcours-standard">Qualification courte gratuite</a>
+        </div>
+        <div class="final-cta-card">
+          <p style="color:#E2E8F0;margin-bottom:1rem">Ma situation est plus complexe</p>
+          <a class="btn btn-secondary btn-block" href="/diagnostic/#parcours-complexe">Diagnostic à 490 € HT</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Votr<span>IA</span></p>
+        <p class="footer-copy">Jean-François Martin, entrepreneur individuel — L'Isle-Jourdain, Occitanie</p>
+        <p class="footer-copy"><a href="mailto:contact@votria.pro">contact@votria.pro</a></p>
+      </div>
+      <div>
+        <p class="footer-title">Navigation</p>
+        <nav class="footer-links" aria-label="Navigation du pied de page">
+          <a href="/">Accueil</a>
+          <a href="/cap-cash/" aria-current="page">CAP CASH</a>
+          <a href="/cap-chantier/">CAP CHANTIER</a>
+          <a href="/diagnostic/">Diagnostic</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-title">Légal</p>
+        <nav class="footer-links" aria-label="Pages légales">
+          <a href="/mentions-legales/">Mentions légales</a>
+          <a href="/confidentialite/">Confidentialité</a>
+          <a href="/cookies/">Cookies</a>
+          <a href="/cgv/">Conditions générales de vente</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 VotrIA.</div>
+  </div>
+</footer>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/js/v3.js" defer></script>
+</body>
+</html>
