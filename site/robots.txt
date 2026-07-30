@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /merci/
 
 Sitemap: https://votria.pro/sitemap.xml
