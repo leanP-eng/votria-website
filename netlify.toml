@@ -3,80 +3,75 @@
 [build]
   publish = "site"
 
-# Normalisation trailing-slash
+# /index.html : dédoublonnage — site/index.html existe en tant que fichier physique
 [[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
-
-# /diagnostic sans slash → /diagnostic/ (pas de page physique)
-[[redirects]]
-  from = "/diagnostic"
-  to = "/diagnostic/"
-  status = 301
+  force = true
 
 # Anciennes pages supprimées — force=true car les fichiers physiques existent dans site/
 [[redirects]]
-  from = "/solutions*"
+  from = "/solutions"
   to = "/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/offres*"
+  from = "/offres"
   to = "/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/cas-concrets*"
+  from = "/cas-concrets"
   to = "/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/a-propos*"
+  from = "/a-propos"
   to = "/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/methode*"
+  from = "/methode"
   to = "/diagnostic/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/estimation*"
+  from = "/estimation"
   to = "/diagnostic/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/guide-btp*"
+  from = "/guide-btp"
   to = "/diagnostic/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/eligibilite-cap-ia-autres-secteurs*"
+  from = "/eligibilite-cap-ia-autres-secteurs"
   to = "/diagnostic/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/eligibilite-cap-ia-btp*"
+  from = "/eligibilite-cap-ia-btp"
   to = "/diagnostic/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/eligibilite-cap-ia*"
+  from = "/eligibilite-cap-ia"
   to = "/diagnostic/"
   status = 301
   force = true
 
-# Anciennes routes sans page physique
+# Anciennes routes sans page physique dans site/
 [[redirects]]
   from = "/calculateur"
   to = "/diagnostic/"
