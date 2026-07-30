@@ -95,7 +95,7 @@ Sous-titre :
 1. Le client conserve son ERP et ses outils métier.
 2. Aucune écriture automatique dans l'ERP au lancement.
 3. La validation humaine reste obligatoire avant tout envoi commercial ou toute diffusion client.
-4. Les cas ambigus sont placés dans les cas à vérifier, jamais traités automatiquement.
+4. Les cas ambigus sont signalés au bureau pour vérification ; ils ne sont jamais traités automatiquement.
 5. Les développements spécifiques non réutilisables sont refusés ou facturés séparément.
 6. Le client reste responsable de l'exactitude et de la fraîcheur de ses données.
 7. Les comptes, abonnements et environnements techniques sont détenus par le client.
@@ -137,6 +137,10 @@ Les offres individuelles n'ont pas chacune une entrée de menu.
 
 **Parcours B — situation à clarifier :**
 Diagnostic à **490 € HT** pour les situations impliquant plusieurs outils, plusieurs entreprises, des données dispersées ou des règles spécifiques.
+
+### 3.4 Règle sur les prix
+
+Tous les prix des offres VotrIA correspondent à une installation ponctuelle, sauf lorsqu'un prix porte explicitement la mention « par mois ». Les abonnements techniques et les services tiers sont présentés séparément.
 
 ---
 
@@ -296,7 +300,9 @@ Le client perçoit uniquement un geste de fidélisation. Ne pas lui expliquer l'
 
 ### 6.1 Offre 1 — Aide à la mise en forme du compte rendu d'une réunion enregistrée
 
-**Prix :** 790 € HT
+**Prix d'installation :** 790 € HT
+
+Ce prix correspond à l'installation du fonctionnement, et non au traitement ponctuel d'une seule réunion.
 
 **Problème :**
 Après une réunion, les décisions, responsabilités et échéances restent dans les notes ou dans l'enregistrement.
@@ -314,9 +320,10 @@ Un brouillon de compte rendu déjà structuré, prêt à être relu et corrigé.
 
 **Ce prix s'applique lorsque :**
 
-- un seul enregistrement par demande ;
+- un seul mode de dépôt ;
 - un seul modèle de compte rendu ;
-- une validation par une personne ayant participé à la réunion.
+- des enregistrements en français ;
+- validation par une personne ayant participé à la réunion.
 
 **Non compris :**
 
@@ -328,6 +335,8 @@ Un brouillon de compte rendu déjà structuré, prêt à être relu et corrigé.
 - plusieurs modèles de compte rendu.
 
 Aucun abonnement obligatoire.
+
+Après installation, le client peut déposer de nouveaux enregistrements dans son propre environnement. Les coûts de transcription sont exclus et payés directement par le client.
 
 **Différence avec l'offre WhatsApp :**
 La réunion aide à mettre en forme un enregistrement ponctuel et ne crée aucun suivi après le compte rendu.
@@ -343,8 +352,8 @@ Les informations arrivent par vocaux, photos et messages dispersés.
 
 **Comment cela fonctionne :**
 
-1. VotrIA installe un numéro WhatsApp professionnel.
-2. Le chef d'équipe indique le chantier concerné.
+1. VotrIA configure un numéro WhatsApp professionnel dans l'environnement de votre entreprise.
+2. Le chef d'équipe indique le chantier. VotrIA rattache le vocal, les photos et le compte rendu au chantier indiqué.
 3. Il envoie un vocal et, si nécessaire, des photos.
 4. VotrIA transcrit le vocal.
 5. Les informations sont placées dans un compte rendu.

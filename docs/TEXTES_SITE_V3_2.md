@@ -48,7 +48,7 @@ Deux familles d'offres. Une pour votre trésorerie, une pour votre organisation 
 *H3 :* Recevoir les comptes rendus envoyés depuis le chantier
 
 *Description :*
-Un chef d'équipe envoie un vocal depuis le chantier. VotrIA transcrit, structure et envoie le compte rendu au bureau. Les travaux supplémentaires signalés restent visibles jusqu'à décision.
+Un chef d'équipe indique le chantier, puis envoie un vocal et des photos. Le bureau reçoit un compte rendu structuré prêt à vérifier.
 
 *Prix :*
 À partir de 1 490 € HT
@@ -64,7 +64,7 @@ Un chef d'équipe envoie un vocal depuis le chantier. VotrIA transcrit, structur
 *H3 :* Voir les emails à traiter et ne plus oublier une demande de devis
 
 *Description :*
-VotrIA analyse votre boîte email chaque jour. Les demandes de devis et les emails prioritaires ressortent. Les relances sont préparées pour validation.
+VotrIA analyse une boîte email professionnelle. Les emails à traiter et les nouvelles demandes de devis ressortent chaque jour. Chaque demande reste visible jusqu'à sa prise en charge.
 
 *Prix :*
 À partir de 1 490 € HT
@@ -204,7 +204,7 @@ Une liste claire chaque matin. Les demandes de devis restent visibles jusqu'à c
 
 ---
 
-**PRIX**
+**INSTALLATION**
 1 490 € HT
 
 Surveillance technique : 99 € HT/mois.
@@ -261,7 +261,7 @@ Une liste des devis à relancer avec la prochaine action suggérée. Les message
 
 ---
 
-**PRIX**
+**INSTALLATION**
 À partir de 2 200 € HT
 
 Les abonnements techniques nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.
@@ -318,7 +318,7 @@ Une liste claire des factures à traiter, dans l'ordre de priorité. L'action pr
 
 ---
 
-**PRIX**
+**INSTALLATION**
 À partir de 2 200 € HT
 
 Les abonnements techniques nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.
@@ -369,7 +369,7 @@ Vérifier mon besoin → /diagnostic/
 ### 3.1 Balises méta
 
 ```html
-<title>CAP CHANTIER — Comptes rendus et dossiers chantier sans effort — VotrIA</title>
+<title>CAP CHANTIER — Comptes rendus et dossiers chantier plus faciles à suivre — VotrIA</title>
 <meta name="description" content="Comptes rendus de réunion, vocaux depuis le chantier, suivi des travaux supplémentaires et liste des pièces manquantes. Pour les PME du bâtiment de 10 à 25 salariés." />
 <link rel="canonical" href="https://votria.pro/cap-chantier/" />
 ```
@@ -380,7 +380,7 @@ Vérifier mon besoin → /diagnostic/
 
 **Eyebrow :** CAP CHANTIER
 
-**H1 :** Vos comptes rendus arrivent au bureau. Vos dossiers chantier sont complets.
+**H1 :** Vos comptes rendus arrivent au bureau. Les pièces manquantes ressortent.
 
 **Sous-titre (p.hero-lead) :**
 Cinq offres pour structurer les informations terrain : réunions enregistrées, vocaux depuis le chantier, travaux supplémentaires, pièces manquantes.
@@ -422,17 +422,20 @@ Un brouillon de compte rendu déjà structuré. Une personne ayant participé à
 
 ---
 
-**PRIX**
+**INSTALLATION**
 790 € HT
+
+Ce prix correspond à l'installation du fonctionnement, et non au traitement ponctuel d'une seule réunion.
 
 Aucun abonnement obligatoire.
 
 ---
 
 **CE PRIX S'APPLIQUE LORSQUE**
-- un seul enregistrement par demande ;
+- un seul mode de dépôt ;
 - un seul modèle de compte rendu ;
-- la réunion s'est tenue en français.
+- des enregistrements en français ;
+- validation par une personne ayant participé à la réunion.
 
 ---
 
@@ -442,6 +445,8 @@ Aucun abonnement obligatoire.
 - VotrIA ne relance pas les responsables désignés ;
 - aucun envoi automatique ;
 - aucun modèle de compte rendu supplémentaire.
+
+Après installation, le client peut déposer de nouveaux enregistrements dans son propre environnement. Les coûts de transcription sont exclus et payés directement par le client.
 
 ---
 
@@ -467,7 +472,7 @@ Les informations chantier arrivent par vocaux, photos et messages dispersés. Le
 ---
 
 **CE QUE VOTRIA FAIT**
-VotrIA installe un numéro WhatsApp professionnel. Le chef d'équipe indique le chantier, envoie un vocal et des photos. VotrIA transcrit le vocal, identifie le chantier et place les informations dans un compte rendu. Le bureau vérifie et corrige avant toute utilisation.
+VotrIA configure un numéro WhatsApp professionnel dans l'environnement de votre entreprise. Le chef d'équipe indique le chantier. VotrIA rattache le vocal, les photos et le compte rendu au chantier indiqué. VotrIA transcrit le vocal et place les informations dans un compte rendu. Le bureau vérifie et corrige avant toute utilisation.
 
 Le compte rendu peut contenir :
 - chantier concerné ;
@@ -486,7 +491,7 @@ Un compte rendu chantier prêt à vérifier, avec les vocaux et les photos ratta
 
 ---
 
-**PRIX**
+**INSTALLATION**
 1 490 € HT
 
 Surveillance technique : 99 € HT/mois.
@@ -556,11 +561,11 @@ Le travail supplémentaire reste visible dans la liste jusqu'à ce qu'une décis
 ---
 
 **CE QUE VOUS RECEVEZ**
-Les comptes rendus vocaux arrivent au bureau. Chaque travail supplémentaire reste visible jusqu'à sa résolution. Aucun ne disparaît dans les messages.
+Les comptes rendus vocaux arrivent au bureau. Chaque travail supplémentaire reste visible jusqu'à ce qu'une décision soit enregistrée.
 
 ---
 
-**PRIX**
+**INSTALLATION**
 À partir de 2 690 € HT
 
 Surveillance technique : 99 € HT/mois.
@@ -617,7 +622,7 @@ La liste des pièces manquantes par chantier, prête à utiliser en réunion ou 
 
 ---
 
-**PRIX**
+**INSTALLATION**
 À partir de 1 490 € HT
 
 Les abonnements techniques nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.
@@ -659,16 +664,16 @@ Les documents arrivent par email ou dans un dossier commun. Personne n'a le temp
 ---
 
 **CE QUE VOTRIA FAIT**
-VotrIA reconnaît le type de chaque document (bon de commande, PPSPS, PV de réception, plan, devis, facture…). Il identifie le chantier concerné et propose un emplacement de rangement. Les documents qu'il ne reconnaît pas sont placés dans une liste de vérification pour validation. Une fois les documents rangés, VotrIA sort la liste des pièces manquantes par chantier.
+VotrIA reconnaît le type de document et le rattache au chantier lorsque la règle est claire. Les cas incertains sont présentés au bureau pour vérification. Le bureau reçoit ensuite la liste des pièces manquantes.
 
 ---
 
 **CE QUE VOUS RECEVEZ**
-Un dossier rangé et une liste des pièces manquantes. Les documents non identifiés sont présentés pour vérification avant tout classement.
+Des documents rattachés au bon chantier, une liste des cas à vérifier et la liste des pièces manquantes.
 
 ---
 
-**PRIX**
+**INSTALLATION**
 À partir de 1 990 € HT
 
 Les abonnements techniques nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.

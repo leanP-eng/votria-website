@@ -7,6 +7,8 @@
 >
 > Ne pas créer de `_redirects` ni de `_headers`.
 
+> **RÈGLE DE PRIORITÉ DES TEXTES :** En cas de différence, TEXTES_SITE_V3_2.md prévaut sur le contenu HTML actuel et sur les indications ponctuelles de ce plan. Le HTML existant fournit uniquement la structure, les classes, les identifiants, la navigation et le formulaire.
+
 ---
 
 ## PRIORITÉ D'EXÉCUTION
@@ -92,8 +94,7 @@
 ### 2.C Éléments à conserver impérativement — index.html
 
 - H1 : "Vos demandes de devis restent suivies. Vos factures en retard ressortent. Vos comptes rendus arrivent au bureau." — NE PAS MODIFIER.
-- Carte 1 (WhatsApp → CR, 1 490 € HT) — NE PAS MODIFIER.
-- Carte 3 (Réunion, 790 € HT) — NE PAS MODIFIER.
+- **Trois cartes de la section "trois façons de commencer" :** reprendre exactement les textes de TEXTES_SITE_V3_2.md (section 1.3). Ne pas adapter ni reformuler les descriptions ; copier le texte tel quel depuis le fichier de référence.
 - Section méthode/progression.
 - Section hero complète sauf si elle contient "990 €".
 - Nav, footer, scripts, CSS.
@@ -164,9 +165,12 @@ Les statuts possibles : à confirmer — à chiffrer — devis à préparer — 
 
 ### 3.D Éléments à conserver impérativement — cap-chantier/index.html
 
-- Section réunion (790 € HT) — conserver (mettre à jour le titre si nécessaire).
-- Section WhatsApp → CR (1 490 € HT) — conserver.
-- Section Dossier chantier (1 490 €/1 990 € selon conditions) — conserver avec mise à jour terminologique.
+- Section réunion (790 € HT — prix d'installation) — conserver. Mettre à jour le texte selon TEXTES_SITE_V3_2.md (section 3.4).
+- Section WhatsApp → CR (1 490 € HT) — conserver. Mettre à jour le texte selon TEXTES_SITE_V3_2.md (section 3.5).
+- **Deux sections distinctes pour les dossiers chantier — imposer deux blocs HTML séparés :**
+  - Section "Voir les pièces manquantes dans chaque dossier chantier" — 1 490 € HT. Présenter comme une offre indépendante (TEXTES_SITE_V3_2.md section 3.7).
+  - Section "Ranger les documents reçus et voir les pièces manquantes" — 1 990 € HT. Présenter comme une offre indépendante (TEXTES_SITE_V3_2.md section 3.8).
+  - Ne pas regrouper ces deux offres dans une seule section présentant deux niveaux de prix (ni "à partir de 1 490 € / à partir de 1 990 € selon les conditions").
 - IDs des sections : conserver pour compatibilité.
 - Classes CSS `brick*` : ne pas modifier (classes internes, pas visibles).
 - Nav, footer, scripts, CSS, formulaire.
