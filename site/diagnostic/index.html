@@ -179,19 +179,33 @@
 
       <div class="form-card" style="max-width:760px;margin:0 auto">
 
-        <!-- TODO Lot 3B : brancher le formulaire après validation du payload et du traitement n8n. -->
-        <form action="" method="post">
+        <form
+          name="demande-votria"
+          method="POST"
+          action="/merci/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="demande-votria" />
+
+          <p class="form-honeypot" aria-hidden="true">
+            <label>
+              Ne remplissez pas ce champ :
+              <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+          </p>
+
           <div class="form-grid">
 
             <fieldset class="form-group">
               <legend>Type de demande <span class="required-mark" aria-hidden="true">*</span></legend>
               <div class="radio-row">
                 <label class="radio-option">
-                  <input type="radio" name="type_demande" value="qualification" required />
+                  <input type="radio" name="type-demande" value="qualification-courte" required />
                   Qualification courte gratuite
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="type_demande" value="diagnostic" required />
+                  <input type="radio" name="type-demande" value="diagnostic-complexe" required />
                   Diagnostic pour situation complexe — 490 € HT
                 </label>
               </div>
@@ -239,36 +253,36 @@
             </div>
 
             <div class="form-group">
-              <label for="logiciel">Logiciel de gestion <span class="required-mark" aria-hidden="true">*</span></label>
+              <label for="logiciel-gestion">Logiciel de gestion <span class="required-mark" aria-hidden="true">*</span></label>
               <p class="hint" id="logiciel-hint">Le nom du logiciel utilisé aujourd'hui pour les devis ou les factures.</p>
-              <input type="text" id="logiciel" name="logiciel" aria-describedby="logiciel-hint" required />
+              <input type="text" id="logiciel-gestion" name="logiciel-gestion" aria-describedby="logiciel-hint" required />
             </div>
 
             <div class="form-group">
-              <label for="irritant">Irritant principal <span class="required-mark" aria-hidden="true">*</span></label>
+              <label for="irritant-principal">Irritant principal <span class="required-mark" aria-hidden="true">*</span></label>
               <p class="hint" id="irritant-hint">Ce qui vous fait perdre le plus de temps aujourd'hui.</p>
-              <textarea id="irritant" name="irritant" aria-describedby="irritant-hint" required></textarea>
+              <textarea id="irritant-principal" name="irritant-principal" aria-describedby="irritant-hint" required></textarea>
             </div>
 
             <div class="form-group">
-              <label for="utilisateur">Utilisateur principal <span class="required-mark" aria-hidden="true">*</span></label>
+              <label for="utilisateur-principal">Utilisateur principal <span class="required-mark" aria-hidden="true">*</span></label>
               <p class="hint" id="utilisateur-hint">La personne qui utilisera le plus le système au quotidien.</p>
-              <input type="text" id="utilisateur" name="utilisateur" aria-describedby="utilisateur-hint" required />
+              <input type="text" id="utilisateur-principal" name="utilisateur-principal" aria-describedby="utilisateur-hint" required />
             </div>
 
             <fieldset class="form-group">
               <legend>Prestataire informatique <span class="required-mark" aria-hidden="true">*</span></legend>
               <div class="radio-row">
                 <label class="radio-option">
-                  <input type="radio" name="prestataire_informatique" value="oui" required />
+                  <input type="radio" name="prestataire-informatique" value="oui" required />
                   Oui
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="prestataire_informatique" value="non" required />
+                  <input type="radio" name="prestataire-informatique" value="non" required />
                   Non
                 </label>
                 <label class="radio-option">
-                  <input type="radio" name="prestataire_informatique" value="ne_sait_pas" required />
+                  <input type="radio" name="prestataire-informatique" value="inconnu" required />
                   Je ne sais pas
                 </label>
               </div>

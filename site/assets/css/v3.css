@@ -541,3 +541,14 @@ fieldset.form-group legend{font-weight:700;font-size:.92rem;color:var(--navy);pa
 @media (max-width:600px){
   .radio-row{flex-direction:column;gap:10px}
 }
+
+/* =========================================================
+   16. Antispam — honeypot Netlify Forms
+   ========================================================= */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
