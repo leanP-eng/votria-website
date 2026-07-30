@@ -121,18 +121,14 @@ section{padding:var(--space-6) 0}
 .offer-price{
   margin-top:auto;padding-top:var(--space-3);border-top:1px solid var(--line);
 }
-.offer-price .price{font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy)}
+.offer-price .price{display:block;font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);margin-bottom:.4rem}
 .offer-note{display:block;color:var(--muted);font-size:.82rem;margin-top:.35rem;line-height:1.5}
 .offer-cta{margin-top:var(--space-3)}
 
 /* 6. Badges autorisés ------------------------------------------------ */
-/* Seul badge autorisé au lancement : "Aucun abonnement obligatoire" (offre Réunion chantier). */
-.badge{
-  display:inline-block;font-size:.72rem;font-weight:800;
-  text-transform:uppercase;letter-spacing:.04em;
-  background:var(--orange-soft);color:var(--orange-dark);
-  padding:4px 10px;border-radius:999px;margin-bottom:.5rem;
-}
+/* Aucun badge dominant utilisé : "Aucun abonnement obligatoire" est une
+   mention secondaire sous le prix (voir .fine-print), pas un badge coloré,
+   pour ne jamais concurrencer visuellement le tarif affiché. */
 
 /* 7. Navigation ------------------------------------------------------- */
 .topbar{
@@ -147,8 +143,8 @@ section{padding:var(--space-6) 0}
 .nav-links a:hover{color:var(--orange-dark)}
 .nav-actions{display:flex;align-items:center;gap:10px}
 .menu-btn{
-  display:none;border:0;background:none;padding:10px;cursor:pointer;
-  border-radius:var(--radius-sm);
+  display:none;border:0;background:none;padding:11px;cursor:pointer;
+  border-radius:var(--radius-sm);min-width:44px;min-height:44px;
 }
 .menu-btn-bar{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
 
@@ -257,7 +253,7 @@ body.menu-open{overflow:hidden}
 }
 
 /* Mention services tiers / réassurance */
-.fine-print{color:var(--muted);font-size:.82rem;line-height:1.5;margin-top:.6rem}
+.fine-print{display:block;color:var(--muted);font-size:.82rem;line-height:1.5;margin-top:.4rem}
 .section-navy .fine-print{color:#94A3B8}
 
 /* 9. Pied de page --------------------------------------------------------- */
