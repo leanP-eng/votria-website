@@ -507,3 +507,37 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .conditions-grid .brick-details li,.conditions-grid .brick-details p{color:#CBD5E1}
 .surveil-line{color:#E2E8F0;font-size:.92rem;margin-bottom:.4rem}
 .surveil-line strong{color:var(--white)}
+
+/* =========================================================
+   15. Page Diagnostic — formulaire
+   ========================================================= */
+.form-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);box-shadow:var(--shadow-sm);
+}
+.form-grid{display:grid;gap:var(--space-3)}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-weight:700;font-size:.92rem;color:var(--navy)}
+.form-group .hint{font-size:.8rem;color:var(--muted)}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea{
+  min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  font:inherit;color:var(--text);background:var(--white);width:100%;
+}
+.form-group textarea{min-height:110px;resize:vertical}
+fieldset.form-group{border:0;padding:0;margin:0}
+fieldset.form-group legend{font-weight:700;font-size:.92rem;color:var(--navy);padding:0;margin-bottom:8px}
+.radio-row{display:flex;flex-wrap:wrap;gap:10px 20px}
+.radio-option{display:flex;align-items:center;gap:8px;min-height:44px;font-size:.92rem;cursor:pointer}
+.radio-option input{width:20px;height:20px;flex:none;cursor:pointer}
+.consent-group{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.consent-group input{margin-top:4px;flex:none;width:18px;height:18px;cursor:pointer}
+.form-actions{margin-top:var(--space-2)}
+.required-mark{color:var(--orange-dark)}
+
+@media (max-width:600px){
+  .radio-row{flex-direction:column;gap:10px}
+}
