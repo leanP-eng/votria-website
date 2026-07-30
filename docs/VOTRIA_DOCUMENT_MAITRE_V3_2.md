@@ -88,7 +88,7 @@ Toute mention de « auto-entrepreneur », « Lean Perform », « SARL-U » ou «
 
 Sous-titre :
 
-> Pour les entreprises du second œuvre de 10 à 25 salariés. Sans remplacer votre logiciel. Le système prépare et classe, votre équipe garde la décision.
+> Pour les PME du bâtiment. Sans remplacer vos logiciels. Le système prépare et classe, votre équipe garde la décision.
 
 ### 2.4 Principes non négociables
 

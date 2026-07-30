@@ -11,7 +11,7 @@
 
 ```html
 <title>VotrIA — Devis, factures et comptes rendus chantier sans oublier l'essentiel</title>
-<meta name="description" content="Vos demandes de devis restent suivies. Vos factures en retard ressortent. Vos comptes rendus arrivent au bureau. Pour les entreprises du second œuvre de 10 à 25 salariés." />
+<meta name="description" content="VotrIA aide les PME du bâtiment à suivre leurs demandes de devis, leurs factures en retard et leurs comptes rendus chantier, sans remplacer leurs logiciels." />
 <link rel="canonical" href="https://votria.pro/" />
 ```
 
@@ -23,7 +23,7 @@
 Vos demandes de devis restent suivies. Vos factures en retard ressortent. Vos comptes rendus arrivent au bureau.
 
 **Sous-titre (p.hero-lead) :**
-Pour les entreprises du second œuvre de 10 à 25 salariés. Sans remplacer votre logiciel. Le système prépare et classe, votre équipe garde la décision.
+Pour les PME du bâtiment. Sans remplacer vos logiciels. Le système prépare et classe, votre équipe garde la décision.
 
 **CTA principal :**
 Vérifier mon besoin → /diagnostic/
@@ -118,7 +118,7 @@ Déposez l'enregistrement de votre réunion. VotrIA le transcrit, l'organise et 
 **H2 :** Pour les PME du bâtiment qui ne peuvent pas se permettre d'oublier
 
 **Texte :**
-Un devis oublié, une facture en retard repérée trop tard, un compte rendu chantier qui n'arrive pas au bureau : ces problèmes ont un coût direct. VotrIA est conçu pour les PME du second œuvre qui ont entre 10 et 25 salariés et qui fonctionnent déjà avec un ERP ou un logiciel de gestion.
+Un devis oublié, une facture en retard repérée trop tard, un compte rendu chantier qui n'arrive pas au bureau : ces problèmes ont un coût direct. VotrIA est conçu pour les PME du bâtiment qui utilisent déjà un logiciel de gestion et veulent réduire les oublis entre le bureau et le chantier.
 
 **Pas de remplacement :**
 VotrIA ne remplace pas votre ERP. Le système prépare les informations, votre équipe les utilise dans vos outils habituels.
