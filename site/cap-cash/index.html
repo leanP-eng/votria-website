@@ -66,7 +66,7 @@
     <a href="/">Accueil</a> &gt; <span aria-current="page">CAP CASH</span>
   </nav>
 
-  <!-- HERO CAP CASH -->
+  <!-- 1. HERO -->
   <section class="hero" style="padding-top:var(--space-4)">
     <div class="container hero-grid">
       <div>
@@ -88,13 +88,9 @@
           <span class="hero-flow-num">2</span>
           <span>Devis Martin — brouillon prêt</span>
         </div>
-        <div class="hero-flow-step">
+        <div class="hero-flow-step is-validated">
           <span class="hero-flow-num">3</span>
           <span>Facture Leroy — à vérifier</span>
-        </div>
-        <div class="hero-flow-step is-validated">
-          <span class="hero-flow-num">4</span>
-          <span>Dossier Bernard — reporté</span>
         </div>
       </div>
     </div>
@@ -102,7 +98,7 @@
 
   <p class="price-notice container">Prix exprimés en euros HT. TVA non applicable, article 293 B du Code général des impôts.</p>
 
-  <!-- PROGRESSION DES TROIS BRIQUES -->
+  <!-- 2. PROGRESSION ET TROIS BRIQUES -->
   <section id="progression">
     <div class="container">
       <div class="section-head">
@@ -116,140 +112,121 @@
         <div class="brick-progress-arrow" aria-hidden="true">→</div>
         <div class="brick-progress-item"><h3>Factures et encaissements</h3></div>
       </div>
-      <p class="brick-progress-note">Vous pouvez commencer par une seule brique. Les extensions réutilisent le socle existant uniquement lorsqu'il est réellement réutilisable — les tarifs « en extension » ne s'appliquent pas automatiquement. Un besoin qui sort de ce périmètre standard est vérifié au préalable (voir « Standard ou complexe » plus bas).</p>
+      <p class="brick-progress-note">Vous pouvez commencer par une seule brique. Les extensions réutilisent le socle existant uniquement lorsqu'il est réellement réutilisable. Un besoin qui sort de ce périmètre standard est vérifié au préalable (voir « Standard ou complexe » plus bas).</p>
     </div>
-  </section>
 
-  <!-- BRIQUE 1 -->
-  <section class="section-alt">
     <div class="container">
+      <!-- BRIQUE 1 -->
       <div class="brick" id="demandes-de-devis">
-        <div class="brick-head">
-          <h3>Demandes de devis à traiter</h3>
-        </div>
+        <div class="brick-head"><h3>Demandes de devis à traiter</h3></div>
         <p class="brick-promise">Les demandes reçues par email sont identifiées, résumées et conservées dans une seule liste jusqu'à leur prise en charge.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Inclus</h4>
-            <ul class="included">
-              <li>Une adresse professionnelle surveillée</li>
-              <li>Détection des demandes</li>
-              <li>Résumé du besoin</li>
-              <li>Informations manquantes signalées</li>
-              <li>Liste quotidienne des demandes non prises en charge</li>
-              <li>Affectation manuelle à une personne</li>
-              <li>Aucun devis généré automatiquement</li>
-              <li>Aucun message envoyé sans validation</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Périmètre standard</h4>
-            <ul class="included">
-              <li>Une entreprise</li>
-              <li>Une adresse Gmail ou Microsoft 365</li>
-              <li>Une liste de suivi</li>
-              <li>Une personne référente</li>
-              <li>Aucun historique repris</li>
-              <li>Aucune écriture dans le logiciel de gestion</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Détection des demandes</li>
+          <li>Résumé du besoin</li>
+          <li>Liste quotidienne des demandes non prises en charge</li>
+          <li>Affectation manuelle à une personne</li>
+          <li>Aucun message envoyé sans validation</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : une entreprise, une adresse Gmail ou Microsoft 365, une personne référente — sans reprise d'historique ni écriture dans le logiciel de gestion.</p>
 
         <div class="brick-price">
           <span class="price">Installation : 990 € HT</span>
-          <span class="fine-print">Surveillance technique : 99 € HT/mois · Maintien opérationnel : 149 € HT/mois</span>
-          <span class="fine-print">Surveillance technique minimale obligatoire pour ce flux email automatisé.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Surveillance technique obligatoire pour ce flux (email automatisé) — voir conditions communes.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir le périmètre détaillé</summary>
+          <ul>
+            <li>Une adresse professionnelle surveillée</li>
+            <li>Informations manquantes signalées</li>
+            <li>Aucun devis généré automatiquement</li>
+            <li>Une liste de suivi</li>
+            <li>Aucun historique repris</li>
+          </ul>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BRIQUE 2 -->
-  <section>
-    <div class="container">
+      <!-- BRIQUE 2 -->
       <div class="brick" id="suivi-relance-devis">
-        <div class="brick-head">
-          <h3>Suivi et relance des devis</h3>
-        </div>
+        <div class="brick-head"><h3>Suivi et relance des devis</h3></div>
         <p class="brick-promise">Les devis sans réponse sont regroupés, priorisés et préparés pour validation.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Inclus au périmètre standard</h4>
-            <ul class="included">
-              <li>Import de vos devis (fichier Excel ou équivalent)</li>
-              <li>Priorisation selon les règles validées avec vous</li>
-              <li>Brouillons de relance préparés</li>
-              <li>Tableau de validation</li>
-              <li>Dossiers reportés toujours visibles</li>
-              <li>Résumé hebdomadaire</li>
-              <li>Cas ambigus isolés pour vérification</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Non compris au prix minimal</h4>
-            <ul class="excluded">
-              <li>Lecture automatique des réponses reçues</li>
-              <li>Suspension automatique des séquences de relance</li>
-              <li>Envoi par SMS</li>
-              <li>Connexion directe à votre logiciel de gestion</li>
-              <li>Plusieurs sociétés</li>
-              <li>Plusieurs logiciels</li>
-              <li>Reprise d'un historique</li>
-              <li>Écriture dans le logiciel de gestion</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Import de vos devis (fichier Excel ou équivalent)</li>
+          <li>Priorisation selon les règles validées avec vous</li>
+          <li>Brouillons de relance préparés</li>
+          <li>Tableau de validation</li>
+          <li>Résumé hebdomadaire</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : fonctionne à partir de vos devis exportés, avec les dossiers reportés toujours visibles et les cas ambigus isolés pour vérification.</p>
 
         <div class="brick-price">
           <span class="price">Installation autonome : à partir de 2 200 € HT</span>
           <span class="price">Extension depuis la première brique : à partir de 1 800 € HT</span>
-          <span class="fine-print">Le prix en extension est applicable uniquement lorsque le socle existant est réellement réutilisable.</span>
-          <span class="fine-print">La formule de surveillance ou de maintien applicable est déterminée selon le nombre et la nature des flux installés — voir « Surveillance et maintien opérationnel » ci-dessous.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir ce qui n'est pas compris</summary>
+          <ul>
+            <li>Lecture automatique des réponses reçues</li>
+            <li>Suspension automatique des séquences de relance</li>
+            <li>Envoi par SMS</li>
+            <li>Connexion directe à votre logiciel de gestion</li>
+            <li>Plusieurs sociétés</li>
+            <li>Plusieurs logiciels</li>
+            <li>Reprise d'un historique</li>
+            <li>Écriture dans le logiciel de gestion</li>
+          </ul>
+        </details>
+        <details class="brick-details">
+          <summary>Voir les conditions du tarif en extension</summary>
+          <p>Le prix en extension est applicable uniquement lorsque le socle existant est réellement réutilisable. La formule de surveillance ou de maintien applicable est déterminée selon le nombre et la nature des flux installés — voir conditions communes ci-dessous.</p>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BRIQUE 3 -->
-  <section class="section-alt">
-    <div class="container">
+      <!-- BRIQUE 3 -->
       <div class="brick" id="factures-encaissements">
-        <div class="brick-head">
-          <h3>Factures et encaissements</h3>
-        </div>
+        <div class="brick-head"><h3>Factures et encaissements</h3></div>
         <p class="brick-promise">Les factures échues sont identifiées, classées et présentées dans l'ordre de priorité.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Inclus</h4>
-            <ul class="included">
-              <li>Import des factures et des acomptes</li>
-              <li>Classement par niveau de retard</li>
-              <li>Relances préparées</li>
-              <li>Accords de règlement signalés lorsqu'ils figurent dans la source</li>
-              <li>Dossiers critiques présentés au dirigeant</li>
-              <li>Courrier préparé avant envoi manuel</li>
-              <li>Validation humaine obligatoire</li>
-            </ul>
-          </div>
-        </div>
-        <p class="fine-print" style="margin-top:var(--space-2)">Un paiement n'est signalé que si l'information figure réellement dans la source utilisée.</p>
+        <ul class="check-list">
+          <li>Import des factures et des acomptes</li>
+          <li>Classement par niveau de retard</li>
+          <li>Relances préparées</li>
+          <li>Dossiers critiques présentés au dirigeant</li>
+          <li>Validation humaine obligatoire</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : fonctionne à partir des factures et acomptes importés ; un paiement n'est signalé que si l'information figure dans la source utilisée.</p>
 
         <div class="brick-price">
           <span class="price">Installation autonome : à partir de 2 200 € HT</span>
           <span class="price">Extension depuis un socle CAP CASH existant : à partir de 1 600 € HT</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir le périmètre détaillé</summary>
+          <ul>
+            <li>Accords de règlement signalés lorsqu'ils figurent dans la source</li>
+            <li>Courrier préparé avant envoi manuel</li>
+          </ul>
+        </details>
+        <details class="brick-details">
+          <summary>Voir les conditions du tarif en extension</summary>
+          <p>Le prix en extension est applicable uniquement lorsque le socle existant est réellement réutilisable.</p>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
         </div>
@@ -257,27 +234,7 @@
     </div>
   </section>
 
-  <!-- BUDGET INDICATIF -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <h2>Budget indicatif</h2>
-      </div>
-      <div class="budget-block">
-        <p class="budget-amount">Environ 4 390 € HT</p>
-        <p style="margin-bottom:var(--space-3)">Un parcours CAP CASH complet représente environ 4 390 € HT lorsque les extensions réutilisent réellement le socle déjà installé.</p>
-        <ul class="budget-caveats">
-          <li>Montant indicatif</li>
-          <li>Pas un forfait garanti</li>
-          <li>Services tiers non inclus</li>
-          <li>Surveillance ou maintien non inclus</li>
-          <li>Périmètre définitif déterminé après qualification ou diagnostic</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXEMPLE DE FONCTIONNEMENT -->
+  <!-- 3. EXEMPLE DE FONCTIONNEMENT -->
   <section class="section-alt">
     <div class="container">
       <div class="section-head">
@@ -288,18 +245,6 @@
       <div class="demo-frame">
         <p class="demo-label">Exemple de fonctionnement</p>
 
-        <div class="validation-flow" style="margin-bottom:var(--space-4)">
-          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Demande reçue</div>
-          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
-          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Liste de suivi</div>
-          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
-          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Brouillon préparé</div>
-          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
-          <div class="validation-node is-central">VOUS VALIDEZ</div>
-          <div class="validation-arrow" aria-hidden="true" style="color:var(--muted)">→</div>
-          <div class="validation-node" style="color:var(--navy);background:var(--white);border-color:var(--line)">Résumé hebdomadaire</div>
-        </div>
-
         <h3 style="margin-bottom:var(--space-2)">Tableau de validation</h3>
         <div style="overflow-x:auto;margin-bottom:var(--space-4)">
           <table class="demo-table">
@@ -309,24 +254,24 @@
             </thead>
             <tbody>
               <tr>
-                <td>Demande Dupont</td><td>Affecter à un référent</td><td class="status">À traiter</td>
-                <td class="demo-actions">
+                <td data-label="Dossier">Demande Dupont</td><td data-label="Prochaine action">Affecter à un référent</td><td class="status" data-label="Statut">À traiter</td>
+                <td class="demo-actions" data-label="Décision">
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
                 </td>
               </tr>
               <tr>
-                <td>Devis Martin</td><td>Vérifier le brouillon de relance</td><td class="status">Brouillon prêt</td>
-                <td class="demo-actions">
+                <td data-label="Dossier">Devis Martin</td><td data-label="Prochaine action">Vérifier le brouillon de relance</td><td class="status" data-label="Statut">Brouillon prêt</td>
+                <td class="demo-actions" data-label="Décision">
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
                 </td>
               </tr>
               <tr>
-                <td>Facture Leroy</td><td>Confirmer le retard</td><td class="status">À vérifier</td>
-                <td class="demo-actions">
+                <td data-label="Dossier">Facture Leroy</td><td data-label="Prochaine action">Confirmer le retard</td><td class="status" data-label="Statut">À vérifier</td>
+                <td class="demo-actions" data-label="Décision">
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Valider</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Modifier</button>
                   <button type="button" class="demo-btn" disabled aria-disabled="true">Reporter</button>
@@ -351,77 +296,70 @@
     </div>
   </section>
 
-  <!-- VALIDATION HUMAINE -->
-  <section class="section-navy">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Le système prépare. Votre équipe décide.</span>
-      </div>
-      <ol class="validation-flow">
-        <li class="validation-node">Le système récupère</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">Le système trie</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">Le système prépare</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node is-central">VOUS VALIDEZ</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">L'action est exécutée</li>
-      </ol>
-      <p class="validation-note">Aucun message commercial et aucun compte rendu client ne part sans la validation prévue avec votre équipe.</p>
-    </div>
-  </section>
-
-  <!-- SURVEILLANCE ET MAINTIEN OPÉRATIONNEL -->
+  <!-- 4. BUDGET ET CONDITIONS COMMUNES -->
   <section>
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Après l'installation</span>
-        <h2>Surveillance technique et maintien opérationnel</h2>
+        <h2>Budget indicatif</h2>
       </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Surveillance technique — 99 € HT/mois</h3>
-          <ul>
-            <li>Contrôle des exécutions</li>
-            <li>Alerte en cas d'échec</li>
-            <li>Première qualification</li>
-            <li>Rapport de fonctionnement</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Maintien opérationnel — 149 € HT/mois</h3>
-          <ul>
-            <li>Surveillance technique incluse</li>
-            <li>Jusqu'à 30 minutes d'intervention par mois</li>
-            <li>Temps non reportable</li>
-            <li>Prise en compte sous un jour ouvré</li>
-          </ul>
-        </div>
+      <div class="budget-block">
+        <p class="budget-amount">Environ 4 390 € HT</p>
+        <p style="margin-bottom:var(--space-3)">Un parcours CAP CASH complet représente environ 4 390 € HT lorsque les extensions réutilisent réellement le socle déjà installé.</p>
+        <ul class="budget-caveats">
+          <li>Montant indicatif</li>
+          <li>Pas un forfait garanti</li>
+          <li>Services tiers non inclus</li>
+          <li>Surveillance ou maintien non inclus</li>
+          <li>Périmètre définitif déterminé après qualification ou diagnostic</li>
+        </ul>
       </div>
-      <p class="fine-print" style="max-width:70ch;margin:var(--space-3) auto 0;text-align:center">Le client choisit le niveau applicable — la surveillance technique et le maintien opérationnel ne se cumulent pas. Une prise en compte ne signifie pas résolution garantie ; une intervention supplémentaire est facturée après accord ; un changement dû au client ou à un fournisseur tiers est facturé séparément.</p>
-      <p class="fine-print" style="max-width:70ch;margin:var(--space-2) auto 0;text-align:center"><strong>Règle commerciale :</strong> la surveillance ou le maintien opérationnel est facturé par environnement client et couvre jusqu'à trois flux standard actifs. Au-delà, le périmètre et le tarif sont adaptés avant engagement.</p>
     </div>
   </section>
 
-  <!-- SERVICES TIERS ET ENVIRONNEMENT CLIENT -->
   <section class="section-navy">
     <div class="container">
       <div class="section-head">
-        <h2>Votre environnement, vos abonnements, vos données.</h2>
-        <p>La solution est installée dans un environnement dédié à votre entreprise. Les comptes techniques restent à votre nom. VotrIA configure et maintient le fonctionnement selon la formule choisie. Les services nécessaires et leur coût estimatif sont présentés avant engagement.</p>
+        <h2>Conditions communes à toutes les briques</h2>
       </div>
-      <ul class="env-list" style="max-width:640px;margin:0 auto">
-        <li>Environnement dédié à l'entreprise</li>
-        <li>Comptes au nom du client</li>
-        <li>Coûts présentés avant engagement</li>
-        <li>Accès VotrIA révocables</li>
-        <li>Aucune plateforme mutualisée VotrIA contenant les données de production</li>
-      </ul>
+
+      <p class="validation-banner">Le système prépare. Votre équipe valide avant tout envoi ou diffusion.</p>
+
+      <div class="conditions-grid">
+        <div>
+          <h3>Votre environnement, vos abonnements, vos données</h3>
+          <ul class="env-list">
+            <li>Environnement dédié à l'entreprise</li>
+            <li>Comptes au nom du client</li>
+            <li>Coûts présentés avant engagement</li>
+            <li>Accès VotrIA révocables</li>
+            <li>Aucune plateforme mutualisée VotrIA contenant les données de production</li>
+          </ul>
+          <p class="fine-print" style="margin-top:var(--space-2)">Selon la brique installée, certains services techniques peuvent être nécessaires : hébergement, messagerie, WhatsApp, transcription, stockage, ou d'autres services retenus selon votre cas. Ils sont souscrits directement par vous, à votre nom, et présentés avant tout engagement.</p>
+        </div>
+
+        <div>
+          <h3>Surveillance et maintien opérationnel</h3>
+          <p class="surveil-line"><strong>Surveillance technique — 99 € HT/mois :</strong> contrôle du fonctionnement, alerte et première qualification.</p>
+          <p class="surveil-line"><strong>Maintien opérationnel — 149 € HT/mois :</strong> surveillance plus 30 minutes d'intervention mensuelle.</p>
+          <p class="fine-print">Le client choisit le niveau applicable — les deux montants ne se cumulent pas.</p>
+          <details class="brick-details">
+            <summary>Voir les conditions détaillées</summary>
+            <ul>
+              <li>Surveillance : contrôle des exécutions, alerte en cas d'échec, première qualification, rapport de fonctionnement</li>
+              <li>Ne sont pas compris : temps de correction, changement de format ou de logiciel, nouvelle règle, nouvelle source, évolution fonctionnelle</li>
+              <li>Maintien : jusqu'à 30 minutes d'intervention par mois, temps non reportable, prise en compte sous un jour ouvré</li>
+              <li>Une prise en compte ne signifie pas résolution garantie ; intervention supplémentaire facturée après accord ; changement dû au client ou à un fournisseur tiers facturé séparément</li>
+            </ul>
+            <p>La surveillance ou le maintien opérationnel est facturé par environnement client et couvre jusqu'à trois flux standard actifs. Au-delà, le périmètre et le tarif sont adaptés avant engagement.</p>
+          </details>
+        </div>
+      </div>
+
+      <p class="fine-print" style="max-width:70ch;margin:var(--space-4) auto 0;text-align:center">Un besoin standard (une entreprise, une source, un processus) passe par une qualification courte gratuite. Un besoin qui sort de ce périmètre (plusieurs outils, plusieurs sociétés, données dispersées) nécessite un diagnostic à 490 € HT — voir « Standard ou complexe » ci-dessous. Ce diagnostic n'est pas obligatoire pour installer une brique standard.</p>
     </div>
   </section>
 
-  <!-- STANDARD OU COMPLEXE -->
+  <!-- 5. STANDARD OU COMPLEXE -->
   <section>
     <div class="container">
       <div class="section-head">
@@ -454,7 +392,7 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- 6. CTA FINAL -->
   <section class="section-navy">
     <div class="container">
       <div class="section-head">

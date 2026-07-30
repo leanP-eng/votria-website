@@ -66,7 +66,7 @@
     <a href="/">Accueil</a> &gt; <span aria-current="page">CAP CHANTIER</span>
   </nav>
 
-  <!-- HERO CAP CHANTIER -->
+  <!-- 1. HERO -->
   <section class="hero" style="padding-top:var(--space-4)">
     <div class="container hero-grid">
       <div>
@@ -80,15 +80,10 @@
 
       <div class="hero-flow" aria-label="Exemple de fonctionnement">
         <p class="hero-flow-label">Exemple de fonctionnement</p>
-        <div class="terrain-bubble" style="background:rgba(255,255,255,.08);color:#fff">🎙️ Vocal — 42 secondes</div>
-        <div class="terrain-bubble" style="background:rgba(255,255,255,.08);color:#fff">📷 3 photos jointes</div>
+        <div class="terrain-bubble" style="background:rgba(255,255,255,.08);color:#fff">🎙️ Vocal — 42 secondes · 📷 3 photos</div>
         <div class="hero-flow-step is-validated">
           <span class="hero-flow-num">→</span>
           <span>Compte rendu prêt à vérifier</span>
-        </div>
-        <div class="hero-flow-step">
-          <span class="hero-flow-num">!</span>
-          <span>Travail supplémentaire potentiel signalé</span>
         </div>
       </div>
     </div>
@@ -96,7 +91,7 @@
 
   <p class="price-notice container">Prix exprimés en euros HT. TVA non applicable, article 293 B du Code général des impôts.</p>
 
-  <!-- PROGRESSION DES TROIS BRIQUES -->
+  <!-- 2. PROGRESSION ET TROIS BRIQUES -->
   <section id="progression">
     <div class="container">
       <div class="section-head">
@@ -110,158 +105,121 @@
         <div class="brick-progress-arrow" aria-hidden="true">→</div>
         <div class="brick-progress-item"><h3>Travaux supplémentaires et avenants</h3></div>
       </div>
-      <p class="brick-progress-note">Le terrain continue d'utiliser WhatsApp. Le bureau vérifie chaque compte rendu avant diffusion. Les cas ambigus sont isolés, jamais traités automatiquement. Les extensions réutilisent le socle uniquement lorsqu'il est compatible.</p>
+      <p class="brick-progress-note">Le terrain continue d'utiliser WhatsApp. Le bureau vérifie chaque compte rendu avant diffusion. Les cas ambigus sont isolés dans une file d'exceptions, jamais traités automatiquement. Les extensions réutilisent le socle uniquement lorsqu'il est compatible.</p>
     </div>
-  </section>
 
-  <!-- BRIQUE 1 — WHATSAPP -->
-  <section class="section-alt">
     <div class="container">
+      <!-- BRIQUE 1 -->
       <div class="brick" id="whatsapp-compte-rendu">
-        <div class="brick-head">
-          <h3>WhatsApp → compte rendu chantier</h3>
-        </div>
+        <div class="brick-head"><h3>WhatsApp → compte rendu chantier</h3></div>
         <p class="brick-promise">Le chef d'équipe envoie un vocal et ses photos sur WhatsApp. Le bureau reçoit un compte rendu prêt à vérifier.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Périmètre standard</h4>
-            <ul class="included">
-              <li>Une entreprise</li>
-              <li>Un numéro WhatsApp professionnel</li>
-              <li>Un modèle de compte rendu</li>
-              <li>Un espace documentaire</li>
-              <li>Cinq utilisateurs terrain maximum</li>
-              <li>Aucun envoi automatique au client</li>
-              <li>Aucun groupe WhatsApp existant récupéré</li>
-              <li>Aucun historique repris</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Ce qui se passe, étape par étape</h4>
-            <ul class="included">
-              <li>Vocal et photos reçus</li>
-              <li>Transcription</li>
-              <li>Chantier proposé</li>
-              <li>Compte rendu structuré</li>
-              <li>Décisions et actions proposées</li>
-              <li>Travaux supplémentaires potentiels signalés</li>
-              <li>Validation par le bureau</li>
-              <li>Classement</li>
-              <li>Cas ambigus isolés pour vérification</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Vocal et photos reçus</li>
+          <li>Compte rendu structuré</li>
+          <li>Décisions et actions proposées</li>
+          <li>Travaux supplémentaires potentiels signalés</li>
+          <li>Validation par le bureau</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : une entreprise, un numéro WhatsApp professionnel, cinq utilisateurs terrain maximum — aucun envoi automatique au client, aucun historique repris.</p>
 
         <div class="brick-price">
           <span class="price">Installation : 1 490 € HT</span>
-          <span class="fine-print">Surveillance technique : 99 € HT/mois · Maintien opérationnel : 149 € HT/mois</span>
-          <span class="fine-print">Surveillance technique minimale obligatoire pour le flux WhatsApp.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Surveillance technique obligatoire pour ce flux (WhatsApp) — voir conditions communes.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir le périmètre détaillé</summary>
+          <ul>
+            <li>Transcription</li>
+            <li>Chantier proposé</li>
+            <li>Classement</li>
+            <li>Cas ambigus isolés pour vérification</li>
+            <li>Un modèle de compte rendu, un espace documentaire</li>
+            <li>Aucun groupe WhatsApp existant récupéré</li>
+          </ul>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BRIQUE 2 — DOSSIER CHANTIER -->
-  <section>
-    <div class="container">
+      <!-- BRIQUE 2 -->
       <div class="brick" id="dossier-chantier">
-        <div class="brick-head">
-          <h3>Dossier chantier incomplet</h3>
-        </div>
+        <div class="brick-head"><h3>Dossier chantier incomplet</h3></div>
         <p class="brick-promise">Chaque semaine, le bureau reçoit la liste des pièces manquantes par chantier.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Version standard</h4>
-            <ul class="included">
-              <li>Espace documentaire propre</li>
-              <li>Une checklist</li>
-              <li>Contrôle de présence des pièces</li>
-              <li>Liste des pièces manquantes</li>
-              <li>Résumé hebdomadaire</li>
-              <li>Cas ambigus à valider</li>
-            </ul>
-            <p class="fine-print" style="margin-top:.6rem"><strong style="color:var(--navy)">À partir de 1 490 € HT</strong></p>
-          </div>
-          <div class="brick-variant" style="border-top:0;margin-top:0;padding-top:0">
-            <h4>Version avec lecture et proposition de classement</h4>
-            <ul class="included">
-              <li>Identification du type de document</li>
-              <li>Proposition de rattachement au chantier</li>
-              <li>Classement direct uniquement lorsqu'il n'y a pas d'ambiguïté</li>
-              <li>File d'exceptions pour les autres cas</li>
-            </ul>
-            <p class="fine-print" style="margin-top:.6rem"><strong style="color:var(--navy)">À partir de 1 990 € HT</strong> — reprend toujours le socle de la version standard, ce n'est pas un simple supplément automatique.</p>
-          </div>
-        </div>
-
-        <div class="brick-cols" style="margin-top:var(--space-3)">
-          <div>
-            <h4>Non compris au prix minimal</h4>
-            <ul class="excluded">
-              <li>Nettoyage de l'historique</li>
-              <li>Réparation d'une arborescence complète</li>
-              <li>Renommage manuel massif</li>
-              <li>Plusieurs espaces documentaires</li>
-              <li>Plusieurs checklists métier</li>
-              <li>Classement manuel réalisé par VotrIA</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Une checklist</li>
+          <li>Liste des pièces manquantes</li>
+          <li>Résumé hebdomadaire</li>
+          <li>Identification du type de document (version avancée)</li>
+          <li>Classement direct sans ambiguïté (version avancée)</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : un espace documentaire propre avec contrôle de présence ; la version avancée ajoute une file d'exceptions pour les cas ambigus.</p>
 
         <div class="brick-price">
-          <span class="fine-print">Surveillance technique et maintien opérationnel proposés en option (99 € HT/mois et 149 € HT/mois), non obligatoires pour cette brique.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="price">Version standard : à partir de 1 490 € HT</span>
+          <span class="price">Avec lecture et classement : à partir de 1 990 € HT</span>
+          <span class="fine-print">La version avancée reprend toujours le socle de la version standard — ce n'est pas un simple supplément automatique.</span>
+          <span class="fine-print">Surveillance et maintien proposés en option, non obligatoires pour cette brique — voir conditions communes.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir ce qui n'est pas compris</summary>
+          <ul>
+            <li>Nettoyage de l'historique</li>
+            <li>Réparation d'une arborescence complète</li>
+            <li>Renommage manuel massif</li>
+            <li>Plusieurs espaces documentaires</li>
+            <li>Plusieurs checklists métier</li>
+            <li>Classement manuel réalisé par VotrIA</li>
+          </ul>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BRIQUE 3 — TRAVAUX SUPPLÉMENTAIRES -->
-  <section class="section-alt">
-    <div class="container">
+      <!-- BRIQUE 3 -->
       <div class="brick" id="travaux-supplementaires">
-        <div class="brick-head">
-          <h3>Travaux supplémentaires et avenants</h3>
-        </div>
+        <div class="brick-head"><h3>Travaux supplémentaires et avenants</h3></div>
         <p class="brick-promise">Les travaux supplémentaires mentionnés sur le terrain restent visibles jusqu'à leur traitement.</p>
 
-        <p style="margin-bottom:var(--space-2)"><strong>Statuts illustratifs :</strong></p>
-        <p style="margin-bottom:var(--space-3)">
+        <p style="margin-bottom:.4rem">
           <span class="status-pill">À chiffrer</span>
           <span class="status-pill">Envoyé</span>
           <span class="status-pill">Validé</span>
           <span class="status-pill is-muted">Refusé</span>
         </p>
-        <p class="fine-print" style="margin-bottom:var(--space-3)">Exemple de fonctionnement — un avenant n'est jamais présenté comme validé automatiquement, le statut change seulement après décision humaine.</p>
+        <p class="fine-print" style="margin-bottom:var(--space-2)">Un avenant n'est jamais présenté comme validé automatiquement ; le statut change seulement après décision humaine.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Inclus</h4>
-            <ul class="included">
-              <li>Signalement d'un travail supplémentaire potentiel</li>
-              <li>Responsable identifié</li>
-              <li>Statut du dossier (à chiffrer, envoyé, validé ou refusé)</li>
-              <li>Liste des actions ouvertes</li>
-              <li>Synthèse périodique</li>
-              <li>Validation humaine</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Signalement d'un travail supplémentaire potentiel</li>
+          <li>Responsable identifié</li>
+          <li>Statut du dossier</li>
+          <li>Liste des actions ouvertes</li>
+          <li>Validation humaine</li>
+        </ul>
+        <p class="brick-scope">Périmètre standard : uniquement en extension depuis la brique WhatsApp → compte rendu chantier.</p>
 
         <div class="brick-price">
           <span class="price">À partir de 1 200 € HT</span>
-          <span class="fine-print">Uniquement en extension depuis la brique WhatsApp → compte rendu chantier.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Couverte par l'abonnement déjà souscrit sur la brique WhatsApp — aucun abonnement supplémentaire.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir le périmètre détaillé</summary>
+          <ul>
+            <li>Synthèse périodique</li>
+          </ul>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-outline" href="/diagnostic/">Vérifier si mon besoin correspond</a>
         </div>
@@ -269,27 +227,7 @@
     </div>
   </section>
 
-  <!-- BUDGET INDICATIF -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <h2>Budget indicatif</h2>
-      </div>
-      <div class="budget-block">
-        <p class="budget-amount">Environ 4 180 à 4 680 € HT</p>
-        <p style="margin-bottom:var(--space-3)">Un parcours CAP CHANTIER complet représente environ 4 180 à 4 680 € HT, selon le niveau de traitement documentaire choisi.</p>
-        <ul class="budget-caveats">
-          <li>Montant indicatif</li>
-          <li>Pas un forfait garanti</li>
-          <li>Services tiers non inclus</li>
-          <li>Surveillance ou maintien non inclus</li>
-          <li>Extensions conditionnées par la réutilisation réelle du socle</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXEMPLE VISUEL TERRAIN → BUREAU -->
+  <!-- 3. EXEMPLE TERRAIN VERS BUREAU -->
   <section class="section-alt">
     <div class="container">
       <div class="section-head">
@@ -310,10 +248,8 @@
             <h4>Compte rendu préparé</h4>
             <ul>
               <li>Chantier proposé</li>
-              <li>Travaux réalisés</li>
-              <li>Réserve</li>
-              <li>Décision</li>
-              <li>Action</li>
+              <li>Travaux réalisés, réserve</li>
+              <li>Décision, action</li>
               <li>Travail supplémentaire potentiel</li>
             </ul>
           </div>
@@ -331,48 +267,47 @@
     </div>
   </section>
 
-  <!-- OFFRE AUTONOME RÉUNION CHANTIER -->
+  <!-- 4. OFFRE RÉUNION CHANTIER -->
   <section>
     <div class="container">
       <div class="brick" id="reunion-chantier">
-        <div class="brick-head">
-          <h3>Réunion chantier → compte rendu</h3>
-        </div>
+        <div class="brick-head"><h3>Réunion chantier → compte rendu</h3></div>
         <p class="brick-promise">Déposez l'enregistrement de votre réunion. Récupérez un compte rendu avec les décisions, responsables et échéances.</p>
 
-        <div class="brick-cols">
-          <div>
-            <h4>Inclus</h4>
-            <ul class="included">
-              <li>Dépôt de l'enregistrement audio</li>
-              <li>Transcription</li>
-              <li>Un modèle de compte rendu</li>
-              <li>Décisions</li>
-              <li>Responsables</li>
-              <li>Échéances</li>
-              <li>Réserves</li>
-              <li>Travaux supplémentaires évoqués</li>
-              <li>Plan d'action</li>
-              <li>Validation humaine</li>
-              <li>Prise en main</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Non compris</h4>
-            <ul class="excluded">
-              <li>Connexion directe à un outil de visioconférence</li>
-              <li>Suivi automatique des actions</li>
-              <li>Plusieurs modèles de compte rendu</li>
-              <li>Traitement manuel récurrent réalisé par VotrIA</li>
-            </ul>
-          </div>
-        </div>
+        <ul class="check-list">
+          <li>Dépôt de l'enregistrement audio</li>
+          <li>Transcription</li>
+          <li>Décisions</li>
+          <li>Responsables</li>
+          <li>Validation humaine</li>
+        </ul>
 
         <div class="brick-price">
           <span class="price">Installation : 790 € HT</span>
           <span class="fine-print">Aucun abonnement VotrIA obligatoire.</span>
-          <span class="fine-print">Abonnements techniques non inclus. Les services nécessaires sont souscrits au nom de votre entreprise et détaillés avant engagement.</span>
+          <span class="fine-print">Services techniques éventuels non inclus. Détail avant engagement.</span>
         </div>
+
+        <details class="brick-details">
+          <summary>Voir le périmètre détaillé</summary>
+          <ul>
+            <li>Un modèle de compte rendu</li>
+            <li>Échéances, réserves</li>
+            <li>Travaux supplémentaires évoqués</li>
+            <li>Plan d'action</li>
+            <li>Prise en main</li>
+          </ul>
+        </details>
+        <details class="brick-details">
+          <summary>Voir ce qui n'est pas compris</summary>
+          <ul>
+            <li>Connexion directe à un outil de visioconférence</li>
+            <li>Suivi automatique des actions</li>
+            <li>Plusieurs modèles de compte rendu</li>
+            <li>Traitement manuel récurrent réalisé par VotrIA</li>
+          </ul>
+        </details>
+
         <div class="brick-cta">
           <a class="btn btn-primary" href="/diagnostic/#parcours-standard">Demander une qualification courte</a>
         </div>
@@ -382,77 +317,70 @@
     </div>
   </section>
 
-  <!-- VALIDATION HUMAINE ET FILE D'EXCEPTIONS -->
-  <section class="section-navy">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Le système prépare. Votre équipe décide.</span>
-      </div>
-      <ol class="validation-flow">
-        <li class="validation-node">Le système récupère</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">Le système trie</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">Le système prépare</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node is-central">VOUS VALIDEZ</li>
-        <li class="validation-arrow" aria-hidden="true">→</li>
-        <li class="validation-node">L'action est exécutée</li>
-      </ol>
-      <p class="validation-note">Aucun message commercial et aucun compte rendu client ne part sans la validation prévue avec votre équipe. Les cas ambigus sont isolés dans une file d'exceptions plutôt que traités automatiquement.</p>
-    </div>
-  </section>
-
-  <!-- SURVEILLANCE ET MAINTIEN OPÉRATIONNEL -->
+  <!-- 5. BUDGET ET CONDITIONS COMMUNES -->
   <section>
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Après l'installation</span>
-        <h2>Surveillance technique et maintien opérationnel</h2>
+        <h2>Budget indicatif</h2>
       </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Surveillance technique — 99 € HT/mois</h3>
-          <ul>
-            <li>Contrôle des exécutions</li>
-            <li>Alerte en cas d'échec</li>
-            <li>Première qualification</li>
-            <li>Rapport de fonctionnement</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Maintien opérationnel — 149 € HT/mois</h3>
-          <ul>
-            <li>Surveillance technique incluse</li>
-            <li>Jusqu'à 30 minutes d'intervention par mois</li>
-            <li>Temps non reportable</li>
-            <li>Prise en compte sous un jour ouvré</li>
-          </ul>
-        </div>
+      <div class="budget-block">
+        <p class="budget-amount">Environ 4 180 à 4 680 € HT</p>
+        <p style="margin-bottom:var(--space-3)">Un parcours CAP CHANTIER complet représente environ 4 180 à 4 680 € HT, selon le niveau de traitement documentaire choisi.</p>
+        <ul class="budget-caveats">
+          <li>Montant indicatif</li>
+          <li>Pas un forfait garanti</li>
+          <li>Services tiers non inclus</li>
+          <li>Surveillance ou maintien non inclus</li>
+          <li>Extensions conditionnées par la réutilisation réelle du socle</li>
+        </ul>
       </div>
-      <p class="fine-print" style="max-width:70ch;margin:var(--space-3) auto 0;text-align:center">Le client choisit le niveau applicable — la surveillance technique et le maintien opérationnel ne se cumulent pas. Une prise en compte ne signifie pas résolution garantie ; une intervention supplémentaire est facturée après accord ; un changement dû au client ou à un fournisseur tiers est facturé séparément.</p>
-      <p class="fine-print" style="max-width:70ch;margin:var(--space-2) auto 0;text-align:center"><strong>Règle commerciale :</strong> la surveillance ou le maintien opérationnel est facturé par environnement client et couvre jusqu'à trois flux standard actifs. Au-delà, le périmètre et le tarif sont adaptés avant engagement.</p>
     </div>
   </section>
 
-  <!-- SERVICES TIERS ET ENVIRONNEMENT CLIENT -->
   <section class="section-navy">
     <div class="container">
       <div class="section-head">
-        <h2>Votre environnement, vos abonnements, vos données.</h2>
-        <p>La solution est installée dans un environnement dédié à votre entreprise. Les comptes techniques restent à votre nom. VotrIA configure et maintient le fonctionnement selon la formule choisie. Les services nécessaires et leur coût estimatif sont présentés avant engagement.</p>
+        <h2>Conditions communes à toutes les briques</h2>
       </div>
-      <ul class="env-list" style="max-width:640px;margin:0 auto">
-        <li>Environnement dédié à l'entreprise</li>
-        <li>Comptes au nom du client</li>
-        <li>Coûts présentés avant engagement</li>
-        <li>Accès VotrIA révocables</li>
-        <li>Aucune plateforme mutualisée VotrIA contenant les données de production</li>
-      </ul>
+
+      <p class="validation-banner">Le système prépare. Votre équipe valide avant tout envoi ou diffusion.</p>
+
+      <div class="conditions-grid">
+        <div>
+          <h3>Votre environnement, vos abonnements, vos données</h3>
+          <ul class="env-list">
+            <li>Environnement dédié à l'entreprise</li>
+            <li>Comptes au nom du client</li>
+            <li>Coûts présentés avant engagement</li>
+            <li>Accès VotrIA révocables</li>
+            <li>Aucune plateforme mutualisée VotrIA contenant les données de production</li>
+          </ul>
+          <p class="fine-print" style="margin-top:var(--space-2)">Selon la brique installée, certains services techniques peuvent être nécessaires : hébergement, messagerie, WhatsApp, transcription, stockage, ou d'autres services retenus selon votre cas. Ils sont souscrits directement par vous, à votre nom, et présentés avant tout engagement.</p>
+        </div>
+
+        <div>
+          <h3>Surveillance et maintien opérationnel</h3>
+          <p class="surveil-line"><strong>Surveillance technique — 99 € HT/mois :</strong> contrôle du fonctionnement, alerte et première qualification.</p>
+          <p class="surveil-line"><strong>Maintien opérationnel — 149 € HT/mois :</strong> surveillance plus 30 minutes d'intervention mensuelle.</p>
+          <p class="fine-print">Le client choisit le niveau applicable — les deux montants ne se cumulent pas.</p>
+          <details class="brick-details">
+            <summary>Voir les conditions détaillées</summary>
+            <ul>
+              <li>Surveillance : contrôle des exécutions, alerte en cas d'échec, première qualification, rapport de fonctionnement</li>
+              <li>Ne sont pas compris : temps de correction, changement de format ou de logiciel, nouvelle règle, nouvelle source, évolution fonctionnelle</li>
+              <li>Maintien : jusqu'à 30 minutes d'intervention par mois, temps non reportable, prise en compte sous un jour ouvré</li>
+              <li>Une prise en compte ne signifie pas résolution garantie ; intervention supplémentaire facturée après accord ; changement dû au client ou à un fournisseur tiers facturé séparément</li>
+            </ul>
+            <p>La surveillance ou le maintien opérationnel est facturé par environnement client et couvre jusqu'à trois flux standard actifs. Au-delà, le périmètre et le tarif sont adaptés avant engagement.</p>
+          </details>
+        </div>
+      </div>
+
+      <p class="fine-print" style="max-width:70ch;margin:var(--space-4) auto 0;text-align:center">Un besoin standard (une entreprise, une source, un processus) passe par une qualification courte gratuite. Un besoin qui sort de ce périmètre (plusieurs outils, plusieurs sociétés, données dispersées) nécessite un diagnostic à 490 € HT — voir « Standard ou complexe » ci-dessous. Ce diagnostic n'est pas obligatoire pour installer une brique standard.</p>
     </div>
   </section>
 
-  <!-- STANDARD OU COMPLEXE -->
+  <!-- 6. STANDARD OU COMPLEXE -->
   <section>
     <div class="container">
       <div class="section-head">
@@ -485,7 +413,7 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- 7. CTA FINAL -->
   <section class="section-navy">
     <div class="container">
       <div class="section-head">

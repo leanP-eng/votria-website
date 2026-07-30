@@ -449,5 +449,61 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .parcours-grid{grid-template-columns:1fr}
   .brick-progress{flex-direction:column}
   .brick-progress-arrow{transform:rotate(90deg)}
-  .demo-table{display:block;overflow-x:auto}
+  .conditions-grid{grid-template-columns:1fr}
 }
+
+/* Tableau de validation : lignes empilées en carte sur mobile, sans défilement horizontal */
+@media (max-width:600px){
+  .demo-table thead{display:none}
+  .demo-table,.demo-table tbody,.demo-table tr,.demo-table td{display:block;width:100%}
+  .demo-table{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .demo-table tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .demo-table tr:last-child{border-bottom:0}
+  .demo-table td{border-bottom:0;padding:4px 0}
+  .demo-table td::before{
+    content:attr(data-label);display:block;font-size:.72rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:2px;
+  }
+}
+
+/* =========================================================
+   14. Lot 2B — allègement éditorial (cartes compactes,
+   détails <details>/<summary>, conditions communes)
+   ========================================================= */
+
+/* Liste compacte "inclus" (3 à 5 éléments visibles par brique) */
+.check-list{display:grid;gap:.5rem;margin:var(--space-3) 0}
+.check-list li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text)}
+.check-list li::before{content:"✓";position:absolute;left:0;color:var(--orange-dark);font-weight:700}
+
+.brick-scope{color:var(--muted);font-size:.9rem;font-style:italic;margin-bottom:var(--space-2)}
+
+/* <details> natifs — accessibles sans JavaScript */
+.brick-details{
+  border-top:1px dashed var(--line);padding-top:.6rem;margin-top:.6rem;
+}
+.brick-details summary{
+  cursor:pointer;font-weight:700;font-size:.88rem;color:var(--navy);
+  padding:4px 0;list-style:revert;
+}
+.brick-details summary:hover{color:var(--orange-dark)}
+.brick-details[open] summary{margin-bottom:.5rem}
+.brick-details ul{display:grid;gap:.4rem;margin-top:.4rem}
+.brick-details li{position:relative;padding-left:18px;font-size:.88rem;color:var(--muted)}
+.brick-details li::before{content:"–";position:absolute;left:0}
+.brick-details p{color:var(--muted);font-size:.88rem}
+
+/* Bandeau validation humaine (une seule fois par page) */
+.validation-banner{
+  text-align:center;font-weight:700;font-size:1.05rem;color:var(--white);
+  max-width:60ch;margin:0 auto var(--space-4);
+}
+
+/* Bloc conditions communes */
+.conditions-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-4)}
+.conditions-grid h3{color:var(--white);margin-bottom:.6rem;font-size:1.05rem}
+.conditions-grid .brick-details summary{color:var(--white)}
+.conditions-grid .brick-details{border-top-color:rgba(255,255,255,.2)}
+.conditions-grid .brick-details li,.conditions-grid .brick-details p{color:#CBD5E1}
+.surveil-line{color:#E2E8F0;font-size:.92rem;margin-bottom:.4rem}
+.surveil-line strong{color:var(--white)}
