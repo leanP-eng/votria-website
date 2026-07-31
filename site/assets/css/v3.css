@@ -1,0 +1,640 @@
+/* =========================================================
+   VotrIA V3.1 — Socle CSS partagé
+   HTML/CSS/JS natifs. Aucune dépendance externe.
+   ========================================================= */
+
+/* 1. Variables ------------------------------------------------ */
+:root{
+  --navy:#0F172A;
+  --navy-2:#162033;
+  --orange:#F97316;
+  --orange-dark:#EA580C;
+  --orange-soft:#FFF1E8;
+  --white:#FFFFFF;
+  --paper:#F8FAFC;
+  --line:#E2E8F0;
+  --text:#0F172A;
+  --muted:#64748B;
+
+  --space-1:.5rem;
+  --space-2:1rem;
+  --space-3:1.5rem;
+  --space-4:2rem;
+  --space-5:3rem;
+  --space-6:4.5rem;
+
+  --max:1180px;
+  --radius:18px;
+  --radius-sm:10px;
+  --shadow-sm:0 8px 28px rgba(15,23,42,.08);
+  --shadow:0 18px 50px rgba(15,23,42,.12);
+
+  --focus-ring:0 0 0 3px rgba(249,115,22,.45);
+}
+
+/* 2. Reset & typographie --------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+img,svg{display:block;max-width:100%}
+ul,ol{margin:0;padding:0;list-style:none}
+p{margin:0}
+
+h1,h2,h3,h4{
+  margin:0;
+  font-family:Manrope,Inter,ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.15;
+  color:var(--navy);
+}
+h1{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+h2{font-size:clamp(1.5rem,2.8vw,2.2rem)}
+h3{font-size:1.2rem}
+h4{font-size:1rem}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--orange);
+}
+
+/* 3. Layout ------------------------------------------------------ */
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+section{padding:var(--space-6) 0}
+.section-alt{background:var(--paper)}
+.section-navy{background:var(--navy);color:var(--white)}
+.section-navy h2,.section-navy h3{color:var(--white)}
+.section-head{max-width:760px;margin:0 auto var(--space-4);text-align:center}
+.section-head p{color:var(--muted);margin-top:var(--space-2)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3)}
+
+/* 4. Boutons ------------------------------------------------------ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 22px;border-radius:999px;
+  font-weight:700;font-size:.95rem;border:1px solid transparent;
+  cursor:pointer;transition:transform .15s ease,background-color .15s ease,border-color .15s ease;
+}
+.btn-primary{background:var(--orange);color:var(--navy)}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-secondary{background:transparent;color:var(--white);border-color:rgba(255,255,255,.35)}
+.btn-secondary:hover{border-color:var(--white)}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--navy)}
+.btn-block{width:100%}
+
+/* 5. Cartes -------------------------------------------------------- */
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:var(--space-4);
+  box-shadow:var(--shadow-sm);
+}
+.card ul{display:grid;gap:.6rem;margin:var(--space-3) 0}
+.card ul li{position:relative;padding-left:22px;color:var(--text);font-size:.95rem}
+.card ul li::before{
+  content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;
+  border-radius:50%;background:var(--orange);
+}
+
+/* Cartes tarifaires (portes d'entrée) */
+.offer-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;height:100%;
+}
+.offer-card h3{margin-bottom:.4rem}
+.offer-card .offer-desc{color:var(--muted);font-size:.92rem;margin-bottom:var(--space-3)}
+.offer-price{
+  margin-top:auto;padding-top:var(--space-3);border-top:1px solid var(--line);
+}
+.offer-price .price{display:block;font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);margin-bottom:.4rem}
+.offer-note{display:block;color:var(--muted);font-size:.82rem;margin-top:.35rem;line-height:1.5}
+.offer-cta{margin-top:var(--space-3)}
+
+/* 6. Badges autorisés ------------------------------------------------ */
+/* Aucun badge dominant utilisé : "Aucun abonnement obligatoire" est une
+   mention secondaire sous le prix (voir .fine-print), pas un badge coloré,
+   pour ne jamais concurrencer visuellement le tarif affiché. */
+
+/* 7. Navigation ------------------------------------------------------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{min-height:74px;padding:12px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 20px}
+.brand{font-family:Manrope,Inter,sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-.03em;color:var(--navy)}
+.brand span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:.92rem;font-weight:700;color:var(--navy)}
+.nav-links a:hover{color:var(--orange-dark)}
+.nav-links a[aria-current="page"],
+.mobile-menu a[aria-current="page"]{color:var(--orange-dark);text-decoration:underline;text-underline-offset:4px}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.menu-btn{
+  display:none;border:0;background:none;padding:11px;cursor:pointer;
+  border-radius:var(--radius-sm);min-width:44px;min-height:44px;
+}
+.menu-btn-bar{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+/* Menu mobile */
+.mobile-menu{
+  display:none;position:fixed;inset:74px 0 0 0;z-index:49;
+  background:var(--white);overflow-y:auto;padding:var(--space-3) 20px var(--space-5);
+}
+.mobile-menu.is-open{display:block}
+.mobile-menu a{
+  display:block;padding:16px 4px;font-weight:700;font-size:1.05rem;color:var(--navy);
+  border-bottom:1px solid var(--line);
+}
+.mobile-menu .btn{margin-top:var(--space-3)}
+body.menu-open{overflow:hidden}
+
+/* 8. Sections spécifiques ----------------------------------------------- */
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding:var(--space-6) 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-5);align-items:center}
+.hero h1{color:var(--white);margin-bottom:var(--space-3)}
+.hero-subtitle{color:#CBD5E1;font-size:1.05rem;max-width:56ch;margin-bottom:var(--space-4)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Illustration hero : mini séquence statique */
+.hero-flow{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);padding:var(--space-3);
+}
+.hero-flow-label{color:#94A3B8;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-2)}
+.hero-flow-step{
+  display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:var(--radius-sm);
+  background:rgba(255,255,255,.06);margin-bottom:8px;
+}
+.hero-flow-step:last-child{margin-bottom:0}
+.hero-flow-num{
+  flex:none;width:30px;height:30px;border-radius:50%;
+  background:rgba(249,115,22,.18);color:#FDBA74;font-weight:800;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-flow-step span:last-child{font-size:.92rem;color:var(--white)}
+.hero-flow-step.is-validated{border:1px solid rgba(249,115,22,.5)}
+
+/* Domaines CAP CASH / CAP CHANTIER */
+.domain-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;height:100%;
+}
+.domain-card p.result{color:var(--muted);margin:.5rem 0 var(--space-3)}
+.domain-card .btn{margin-top:auto;align-self:flex-start}
+
+/* Progression par briques */
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);counter-reset:step}
+.step-item{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-3);text-align:center;
+}
+.step-item .step-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:50%;background:var(--orange-soft);
+  color:var(--orange-dark);font-weight:800;margin-bottom:.6rem;
+}
+
+/* Validation humaine */
+.validation-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
+.validation-node{
+  padding:12px 18px;border-radius:999px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);color:#E2E8F0;font-size:.9rem;font-weight:600;
+}
+.validation-node.is-central{
+  background:var(--orange);color:var(--navy);border-color:var(--orange);
+  font-weight:800;font-size:1rem;padding:14px 24px;
+}
+.validation-arrow{color:#64748B;font-weight:700}
+.validation-note{max-width:60ch;margin:var(--space-3) auto 0;text-align:center;color:#CBD5E1}
+
+/* Chacun garde son rôle */
+.role-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-3);display:flex;gap:14px;align-items:flex-start;
+}
+.role-icon{flex:none;width:40px;height:40px}
+.role-icon svg{width:100%;height:100%}
+
+/* Environnement client */
+.env-list{display:grid;gap:.6rem;margin-top:var(--space-3)}
+.env-list li{position:relative;padding-left:24px;color:#E2E8F0;font-size:.95rem}
+.env-list li::before{content:"✓";position:absolute;left:0;color:var(--orange)}
+
+/* Offre secondaire */
+.secondary-offer{
+  background:var(--white);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:var(--space-3) var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-3);
+  align-items:center;justify-content:space-between;
+}
+
+/* Qui intervient */
+.about-block{max-width:70ch;margin:0 auto;text-align:center}
+
+/* Double CTA final */
+.final-cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);max-width:900px;margin:0 auto}
+.final-cta-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--radius);padding:var(--space-4);text-align:center;
+}
+
+/* Mention services tiers / réassurance */
+.fine-print{display:block;color:var(--muted);font-size:.82rem;line-height:1.5;margin-top:.4rem}
+.section-navy .fine-print{color:#94A3B8}
+
+/* 9. Pied de page --------------------------------------------------------- */
+.footer{background:var(--navy);color:var(--white);padding:var(--space-5) 0 var(--space-3)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}
+.footer-brand{font-family:Manrope,Inter,sans-serif;font-size:1.3rem;font-weight:800}
+.footer-brand span{color:var(--orange)}
+.footer-copy{color:#94A3B8;font-size:.9rem;margin-top:.6rem;max-width:36ch}
+.footer-title{font-weight:800;margin-bottom:.8rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:#94A3B8}
+.footer-links{display:grid;gap:.55rem}
+.footer-links a{color:#CBD5E1;font-size:.9rem}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:var(--space-3);color:#94A3B8;font-size:.82rem;text-align:center}
+
+/* 10. États focus ----------------------------------------------------------- */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:none;box-shadow:var(--focus-ring);border-radius:6px;
+}
+.skip-link{
+  position:absolute;left:-9999px;top:0;background:var(--orange);color:var(--navy);
+  padding:10px 16px;border-radius:0 0 8px 0;font-weight:700;z-index:100;
+}
+.skip-link:focus{left:0}
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* 11. Responsive -------------------------------------------------------------- */
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+/* Le menu compact (hamburger) ne remplace la navigation en ligne que si
+   JavaScript est disponible (classe .js posée par une ligne inline dans
+   le <head>). Sans JavaScript, .nav-links reste visible et passe à la
+   ligne : la navigation complète reste toujours accessible. */
+@media (max-width:1050px){
+  .js .nav-links{display:none}
+  .js .menu-btn{display:block}
+}
+@media (max-width:768px){
+  .container{width:min(100% - 32px,var(--max))}
+  section{padding:var(--space-5) 0}
+  .hero-grid{grid-template-columns:1fr}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr}
+  .final-cta-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:var(--space-3)}
+  .validation-flow{flex-direction:column;align-items:stretch}
+  .validation-arrow{text-align:center;transform:rotate(90deg)}
+}
+@media (max-width:520px){
+  .footer-grid{grid-template-columns:1fr}
+  .secondary-offer{flex-direction:column;align-items:flex-start}
+  .grid-4{grid-template-columns:1fr}
+  .hero-actions .btn,.final-cta-grid .btn{width:100%}
+}
+
+/* 12. Mouvement réduit -------------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition-duration:.001ms !important;animation-duration:.001ms !important}
+}
+
+/* =========================================================
+   13. Pages CAP CASH / CAP CHANTIER
+   Composants supplémentaires, réutilisant les jetons existants.
+   ========================================================= */
+
+/* Fil d'Ariane */
+.breadcrumb{font-size:.85rem;color:var(--muted);padding:14px 0}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--orange-dark)}
+.breadcrumb [aria-current="page"]{color:var(--navy);font-weight:700}
+
+/* Bandeau prix HT / TVA (affiché une seule fois par page) */
+.price-notice{
+  text-align:center;color:var(--muted);font-size:.85rem;
+  padding:var(--space-2) 0;border-bottom:1px solid var(--line);margin-bottom:var(--space-2);
+}
+
+/* Progression des briques (3 étapes reliées) */
+.brick-progress{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:12px}
+.brick-progress-item{
+  flex:1 1 220px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-3);text-align:center;
+}
+.brick-progress-arrow{align-self:center;color:var(--muted);font-weight:700;padding:0 4px}
+.brick-progress-note{max-width:70ch;margin:var(--space-3) auto 0;text-align:center;color:var(--muted)}
+
+/* Bloc Brique détaillé */
+.brick{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);box-shadow:var(--shadow-sm);margin-bottom:var(--space-4);
+}
+.brick:last-child{margin-bottom:0}
+.brick-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:.5rem}
+.brick-promise{color:var(--muted);margin-bottom:var(--space-3)}
+.brick-variant{border-top:1px dashed var(--line);padding-top:var(--space-3);margin-top:var(--space-3)}
+.brick-cols{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-3)}
+.brick-cols h4{margin-bottom:.5rem;font-size:.95rem}
+.brick-cols ul{display:grid;gap:.5rem}
+.brick-cols li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text)}
+.brick-cols .included li::before{content:"✓";position:absolute;left:0;color:var(--orange-dark);font-weight:700}
+.brick-cols .excluded li::before{content:"–";position:absolute;left:0;color:var(--muted);font-weight:700}
+.brick-price{
+  margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--line);
+}
+.brick-price .price{display:block;font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
+.brick-cta{margin-top:var(--space-3)}
+
+/* Budget indicatif : montant + réserves à visibilité égale */
+.budget-block{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);
+}
+.budget-amount{font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:1.4rem;color:var(--navy);margin-bottom:var(--space-2)}
+.budget-caveats{display:grid;gap:.5rem}
+.budget-caveats li{position:relative;padding-left:20px;color:var(--muted);font-size:.92rem}
+.budget-caveats li::before{content:"•";position:absolute;left:2px;color:var(--muted)}
+
+/* Démonstrateurs "Exemple de fonctionnement" */
+.demo-frame{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);
+}
+.demo-label{
+  display:inline-block;color:var(--muted);font-size:.78rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-3);
+}
+.demo-list{display:grid;gap:8px;margin-bottom:var(--space-4)}
+.demo-list-row{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px 16px;font-size:.92rem;
+}
+.demo-list-row .status{color:var(--muted);font-size:.85rem}
+
+.demo-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden}
+.demo-table caption{text-align:left;padding:10px 16px;font-weight:700;background:var(--white);color:var(--navy)}
+.demo-table th,.demo-table td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:.9rem}
+.demo-table th{color:var(--muted);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.demo-actions{display:flex;gap:6px;flex-wrap:wrap}
+.demo-btn{
+  border:1px solid var(--line);background:var(--paper);color:var(--muted);
+  border-radius:999px;padding:4px 12px;font-size:.8rem;font-weight:700;cursor:default;
+}
+
+.demo-summary{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-3) var(--space-4)}
+.demo-summary li{padding:4px 0;font-size:.92rem}
+
+/* Statuts illustratifs (avenants) */
+.status-pill{
+  display:inline-block;border-radius:999px;padding:3px 12px;font-size:.78rem;font-weight:700;
+  border:1px solid var(--line);color:var(--muted);background:var(--white);
+}
+.status-pill.is-muted{opacity:.7}
+
+/* Terrain → Bureau (CAP CHANTIER) */
+.terrain-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3)}
+.terrain-col{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-3)}
+.terrain-col h4{margin-bottom:.6rem}
+.terrain-col ul{display:grid;gap:.4rem}
+.terrain-col li{font-size:.9rem;color:var(--text)}
+.terrain-bubble{
+  background:var(--paper);border-radius:var(--radius-sm);padding:10px 12px;font-size:.88rem;
+  margin-bottom:.5rem;
+}
+
+/* Standard ou complexe */
+.parcours-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+.parcours-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);display:flex;flex-direction:column;height:100%;
+}
+.parcours-card ul{margin-bottom:var(--space-3);display:grid;gap:.5rem}
+.parcours-card li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text)}
+.parcours-card li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+.parcours-card .btn{margin-top:auto}
+
+/* Note discrète (CAP SUIVI CHANTIER) */
+.future-note{
+  max-width:70ch;margin:0 auto;text-align:center;color:var(--muted);
+  font-size:.88rem;padding:var(--space-3) 0;
+}
+
+@media (max-width:768px){
+  .brick-cols{grid-template-columns:1fr}
+  .terrain-flow{grid-template-columns:1fr}
+  .parcours-grid{grid-template-columns:1fr}
+  .brick-progress{flex-direction:column}
+  .brick-progress-arrow{transform:rotate(90deg)}
+  .conditions-grid{grid-template-columns:1fr}
+}
+
+/* Tableau de validation : lignes empilées en carte sur mobile, sans défilement horizontal */
+@media (max-width:600px){
+  .demo-table thead{display:none}
+  .demo-table,.demo-table tbody,.demo-table tr,.demo-table td{display:block;width:100%}
+  .demo-table{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .demo-table tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .demo-table tr:last-child{border-bottom:0}
+  .demo-table td{border-bottom:0;padding:4px 0}
+  .demo-table td::before{
+    content:attr(data-label);display:block;font-size:.72rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-bottom:2px;
+  }
+}
+
+/* =========================================================
+   14. Lot 2B — allègement éditorial (cartes compactes,
+   détails <details>/<summary>, conditions communes)
+   ========================================================= */
+
+/* Liste compacte "inclus" (3 à 5 éléments visibles par brique) */
+.check-list{display:grid;gap:.5rem;margin:var(--space-3) 0}
+.check-list li{position:relative;padding-left:20px;font-size:.92rem;color:var(--text)}
+.check-list li::before{content:"✓";position:absolute;left:0;color:var(--orange-dark);font-weight:700}
+
+.brick-scope{color:var(--muted);font-size:.9rem;font-style:italic;margin-bottom:var(--space-2)}
+
+/* <details> natifs — accessibles sans JavaScript */
+.brick-details{
+  border-top:1px dashed var(--line);padding-top:.6rem;margin-top:.6rem;
+}
+.brick-details summary{
+  cursor:pointer;font-weight:700;font-size:.88rem;color:var(--navy);
+  padding:4px 0;list-style:revert;
+}
+.brick-details summary:hover{color:var(--orange-dark)}
+.brick-details[open] summary{margin-bottom:.5rem}
+.brick-details ul{display:grid;gap:.4rem;margin-top:.4rem}
+.brick-details li{position:relative;padding-left:18px;font-size:.88rem;color:var(--muted)}
+.brick-details li::before{content:"–";position:absolute;left:0}
+.brick-details p{color:var(--muted);font-size:.88rem}
+
+/* Bandeau validation humaine (une seule fois par page) */
+.validation-banner{
+  text-align:center;font-weight:700;font-size:1.05rem;color:var(--white);
+  max-width:60ch;margin:0 auto var(--space-4);
+}
+
+/* Bloc conditions communes */
+.conditions-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-4)}
+.conditions-grid h3{color:var(--white);margin-bottom:.6rem;font-size:1.05rem}
+.conditions-grid .brick-details summary{color:var(--white)}
+.conditions-grid .brick-details{border-top-color:rgba(255,255,255,.2)}
+.conditions-grid .brick-details li,.conditions-grid .brick-details p{color:#CBD5E1}
+.surveil-line{color:#E2E8F0;font-size:.92rem;margin-bottom:.4rem}
+.surveil-line strong{color:var(--white)}
+
+/* =========================================================
+   15. Page Diagnostic — formulaire
+   ========================================================= */
+.form-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-4);box-shadow:var(--shadow-sm);
+}
+.form-grid{display:grid;gap:var(--space-3)}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-weight:700;font-size:.92rem;color:var(--navy)}
+.form-group .hint{font-size:.8rem;color:var(--muted)}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea{
+  min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  font:inherit;color:var(--text);background:var(--white);width:100%;
+}
+.form-group textarea{min-height:110px;resize:vertical}
+fieldset.form-group{border:0;padding:0;margin:0}
+fieldset.form-group legend{font-weight:700;font-size:.92rem;color:var(--navy);padding:0;margin-bottom:8px}
+.radio-row{display:flex;flex-wrap:wrap;gap:10px 20px}
+.radio-option{display:flex;align-items:center;gap:8px;min-height:44px;font-size:.92rem;cursor:pointer}
+.radio-option input{width:20px;height:20px;flex:none;cursor:pointer}
+.consent-group{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.consent-group input{margin-top:4px;flex:none;width:18px;height:18px;cursor:pointer}
+.form-actions{margin-top:var(--space-2)}
+.required-mark{color:var(--orange-dark)}
+
+@media (max-width:600px){
+  .radio-row{flex-direction:column;gap:10px}
+}
+
+/* =========================================================
+   16. Antispam — honeypot Netlify Forms
+   ========================================================= */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   17. Pages légales — layout
+   ========================================================= */
+.legal-hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#081426 0%,#0f1d34 100%);
+  color:var(--white);padding:var(--space-6) 0;
+}
+.legal-hero::after{
+  content:"";position:absolute;right:-180px;bottom:-360px;
+  width:680px;height:680px;border-radius:50%;
+  background:rgba(249,115,22,.13);pointer-events:none;
+}
+.legal-hero h1,.legal-hero .eyebrow{position:relative;z-index:1}
+.legal-hero h1{color:var(--white);max-width:28ch}
+.legal-hero p{
+  position:relative;z-index:1;color:#CBD5E1;font-size:1.05rem;
+  margin-top:var(--space-2);max-width:72ch;
+}
+.legal-update{
+  display:inline-flex;padding:6px 12px;border-radius:999px;
+  background:rgba(255,255,255,.12);color:#E2E8F0;
+  font-size:.78rem;font-weight:700;margin-top:var(--space-3);
+}
+.legal-main{padding:var(--space-6) 0;background:var(--paper)}
+.legal-layout{
+  display:grid;grid-template-columns:220px minmax(0,1fr);
+  gap:var(--space-4);align-items:start;
+}
+.toc{
+  position:sticky;top:90px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--space-3);box-shadow:var(--shadow-sm);
+}
+.toc-title{font-weight:700;font-size:.9rem;color:var(--navy);margin-bottom:var(--space-2)}
+.toc a{
+  display:block;padding:7px 0;color:var(--muted);
+  font-size:.875rem;border-bottom:1px solid var(--line);
+}
+.toc a:last-child{border-bottom:0}
+.toc a:hover{color:var(--orange-dark)}
+.legal-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(24px,4vw,48px);
+  box-shadow:var(--shadow-sm);
+}
+.legal-card section{
+  padding-bottom:var(--space-4);margin-bottom:var(--space-4);
+  border-bottom:1px solid var(--line);
+}
+.legal-card section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.legal-card h2{margin-bottom:.75rem}
+.legal-card p{color:#475569;margin-top:.65rem}
+.legal-card ul,.legal-card ol{
+  padding-left:1.2rem;list-style:disc;
+  margin:.65rem 0 .65rem;
+}
+.legal-card li{color:#475569;margin:.3rem 0}
+.legal-card a{color:var(--orange-dark);text-decoration:underline;text-underline-offset:3px}
+.notice{
+  border-left:4px solid var(--orange);background:var(--orange-soft);
+  padding:14px 16px;border-radius:var(--radius-sm);
+  margin-bottom:var(--space-3);color:#9A3412;
+}
+.notice strong{color:#9A3412}
+.table-wrap{overflow-x:auto;margin:var(--space-2) 0;-webkit-overflow-scrolling:touch}
+.legal-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}
+.legal-table th,.legal-table td{
+  border:1px solid var(--line);padding:10px 12px;
+  text-align:left;vertical-align:top;
+}
+.legal-table th{background:var(--paper);font-weight:700;color:var(--navy)}
+.legal-table td{color:#475569}
+
+/* Mention RGPD sous formulaire */
+.form-rgpd-notice{
+  font-size:.82rem;color:var(--muted);line-height:1.55;
+  margin-top:var(--space-2);
+}
+.form-rgpd-notice a{color:var(--orange-dark);text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:900px){
+  .legal-layout{grid-template-columns:1fr}
+  .toc{position:relative;top:auto}
+}
