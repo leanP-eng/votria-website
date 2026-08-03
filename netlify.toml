@@ -37,54 +37,68 @@
 
 [[redirects]]
   from = "/methode"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/estimation"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/guide-btp"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/eligibilite-cap-ia-autres-secteurs"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/eligibilite-cap-ia-btp"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/eligibilite-cap-ia"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
+  status = 301
+  force = true
+
+# Jalon 7 — Lot 1 : ancienne page /diagnostic/ remplacée par /verifier-mon-besoin/
+# force=true car le fichier physique site/diagnostic/index.html existe encore
+[[redirects]]
+  from = "/diagnostic"
+  to = "/verifier-mon-besoin/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
   force = true
 
 # Anciennes routes sans page physique dans site/
 [[redirects]]
   from = "/calculateur"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
 
 [[redirects]]
   from = "/contact"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
 
 [[redirects]]
   from = "/demonstrateur-cap-ia-btp"
-  to = "/diagnostic/"
+  to = "/verifier-mon-besoin/"
   status = 301
 
 [[redirects]]

@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vérifier mon besoin — VotrIA</title>
+<meta name="description" content="Un échange de 20 minutes pour savoir si VotrIA peut vous aider. Ou un diagnostic à 490 € HT si votre situation est complexe." />
+<link rel="canonical" href="https://votria.pro/verifier-mon-besoin/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="VotrIA" />
+<meta property="og:title" content="Vérifier mon besoin — VotrIA" />
+<meta property="og:description" content="Un échange de 20 minutes pour savoir si VotrIA peut vous aider. Ou un diagnostic à 490 € HT si votre situation est complexe." />
+<meta property="og:url" content="https://votria.pro/verifier-mon-besoin/" />
+<meta property="og:image" content="https://votria.pro/assets/og-image.jpg" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<link rel="stylesheet" href="/assets/css/v3.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/">Votr<span>IA</span></a>
+
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/#votre-quotidien">Votre quotidien</a>
+      <a href="/#notre-approche">Notre approche</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="/verifier-mon-besoin/" aria-current="page">Vérifier mon besoin</a>
+      <button
+        type="button"
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+        <span class="menu-btn-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobileMenu" class="mobile-menu" aria-label="Navigation mobile">
+  <a href="/#votre-quotidien">Votre quotidien</a>
+  <a href="/#notre-approche">Notre approche</a>
+  <a class="btn btn-primary btn-block" href="/verifier-mon-besoin/" aria-current="page">Vérifier mon besoin</a>
+</nav>
+
+<main id="contenu">
+
+  <nav class="container breadcrumb" aria-label="Fil d'Ariane">
+    <a href="/">Accueil</a> &gt; <span aria-current="page">Vérifier mon besoin</span>
+  </nav>
+
+  <!-- INTRODUCTION -->
+  <section class="hero" id="qual-intro" style="padding-top:var(--space-4)">
+    <div class="container" style="max-width:760px">
+      <span class="eyebrow">Vérifier avant de proposer</span>
+      <h1 id="qualH1" tabindex="-1">Voyons d'abord ce qui vous ralentit.</h1>
+      <p class="hero-subtitle">VotrIA ne convient pas à toutes les difficultés d'organisation. Certaines situations peuvent être qualifiées lors d'un échange court. D'autres exigent d'étudier plusieurs logiciels, fichiers ou règles avant de pouvoir répondre sérieusement.</p>
+      <p class="hero-subtitle">Ces quelques questions servent uniquement à vous orienter vers la prochaine étape adaptée.</p>
+      <p class="fine-print" style="color:#94A3B8"><strong>Aucun fichier demandé. Aucun audit gratuit déguisé. Aucune démonstration imposée.</strong></p>
+      <p class="fine-print" style="color:#94A3B8">Cette vérification repose sur vos réponses. Elle ne confirme pas la compatibilité technique de vos outils et ne constitue pas une proposition commerciale.</p>
+      <div class="hero-actions">
+        <button type="button" id="qualStartBtn" class="btn btn-primary">Commencer la vérification</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONNAIRE -->
+  <section class="section-alt" id="qual-wizard" hidden>
+    <div class="container" style="max-width:760px">
+
+      <div class="qual-progress">
+        <span id="qualProgressLabel">Étape 1 sur 5</span>
+        <div class="qual-progress-track"><div class="qual-progress-bar" id="qualProgressBar"></div></div>
+      </div>
+
+      <form
+        name="verification-besoin"
+        method="POST"
+        action="/merci/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        id="qualForm"
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="verification-besoin" />
+        <input type="hidden" name="orientation" id="qualOrientationField" value="" />
+
+        <p class="form-honeypot" aria-hidden="true">
+          <label>
+            Ne remplissez pas ce champ :
+            <input name="bot-field" tabindex="-1" autocomplete="off" />
+          </label>
+        </p>
+
+        <!-- ÉTAPE 1 — FRICTION DOMINANTE -->
+        <div class="qual-step" data-step="1">
+          <h2 tabindex="-1">Où l'information se perd-elle le plus souvent ?</h2>
+
+          <fieldset class="form-group">
+            <legend>À quel moment rencontrez-vous le plus de difficultés ? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" id="qualZoneGroup" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option">
+                <input type="radio" name="zone" value="bureau" required />
+                <span><strong>Au bureau</strong> — Demandes, emails, devis, factures, documents ou échéances difficiles à suivre.</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zone" value="chantier_bureau" />
+                <span><strong>Entre le chantier et le bureau</strong> — Vocaux, photos, comptes rendus, réserves ou travaux supplémentaires difficiles à exploiter.</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zone" value="direction" />
+                <span><strong>Au niveau de la direction</strong> — Montants bloqués, chantiers à risque ou décisions prioritaires visibles trop tard.</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zone" value="plusieurs_zones" />
+                <span><strong>À plusieurs endroits</strong> — Les difficultés concernent à la fois le bureau, le terrain et la direction.</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="zone" value="inconnue" />
+                <span><strong>Je ne sais pas encore</strong> — Le problème est réel, mais son origine n'est pas clairement identifiée.</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="qualSituation" id="qualSituationLabel">Quelle situation revient le plus souvent ? <span class="required-mark" aria-hidden="true">*</span></label>
+            <select id="qualSituation" name="situation" required disabled>
+              <option value="">— Choisissez d'abord un moment ci-dessus —</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="qualExempleLibre">En une phrase, quel exemple récent résume le mieux le problème ? <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+            <textarea id="qualExempleLibre" name="exemple_libre" maxlength="300" placeholder="Exemple : un travail supplémentaire a été signalé par vocal, mais il n'a été chiffré que plusieurs jours plus tard."></textarea>
+          </div>
+        </div>
+
+        <!-- ÉTAPE 2 — FRÉQUENCE ET CONSÉQUENCE -->
+        <div class="qual-step" data-step="2" hidden>
+          <h2 tabindex="-1">À quelle fréquence cela vous ralentit-il ?</h2>
+
+          <fieldset class="form-group">
+            <legend>Fréquence <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="frequence" value="plusieurs_par_jour" required /> Plusieurs fois par jour</label>
+              <label class="radio-option"><input type="radio" name="frequence" value="presque_chaque_jour" /> Presque chaque jour</label>
+              <label class="radio-option"><input type="radio" name="frequence" value="plusieurs_par_semaine" /> Plusieurs fois par semaine</label>
+              <label class="radio-option"><input type="radio" name="frequence" value="quelques_par_mois" /> Quelques fois par mois</label>
+              <label class="radio-option"><input type="radio" name="frequence" value="occasionnellement" /> Occasionnellement</label>
+              <label class="radio-option"><input type="radio" name="frequence" value="inconnue" /> Difficile à estimer</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>Quelle est la conséquence principale ? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="consequence" value="temps_perdu" required /> Du temps perdu à rechercher ou ressaisir</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="decision_retardee" /> Une réponse ou une décision retardée</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="facturation_encaissement" /> Une difficulté à facturer ou encaisser</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="risque_marge" /> Un risque sur la marge d'un chantier</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="surcharge_bureau" /> Une surcharge pour le bureau</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="manque_visibilite" /> Un manque de visibilité pour la direction</label>
+              <label class="radio-option"><input type="radio" name="consequence" value="autre" /> Autre conséquence</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- ÉTAPE 3 — STRUCTURE DE L'ENTREPRISE -->
+        <div class="qual-step" data-step="3" hidden>
+          <h2 tabindex="-1">Dans quel type d'entreprise cela se produit-il ?</h2>
+
+          <fieldset class="form-group">
+            <legend>Activité principale <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="activite" value="gros_oeuvre" required /> Gros œuvre</label>
+              <label class="radio-option"><input type="radio" name="activite" value="second_oeuvre" /> Second œuvre</label>
+              <label class="radio-option"><input type="radio" name="activite" value="travaux_publics" /> Travaux publics</label>
+              <label class="radio-option"><input type="radio" name="activite" value="renovation_energetique" /> Rénovation énergétique</label>
+              <label class="radio-option"><input type="radio" name="activite" value="maintenance_depannage" /> Maintenance ou dépannage</label>
+              <label class="radio-option"><input type="radio" name="activite" value="entreprise_generale" /> Entreprise générale</label>
+              <label class="radio-option"><input type="radio" name="activite" value="negoce_hors_travaux" /> Négoce ou activité hors entreprise de travaux</label>
+              <label class="radio-option"><input type="radio" name="activite" value="autre" /> Autre activité</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group" id="qualActiviteAutreGroup" hidden>
+            <label for="qualActiviteAutre">Précisez votre activité <span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="qualActiviteAutre" name="activite_autre" maxlength="120" />
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Combien de personnes travaillent dans l'entreprise ? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="effectif" value="moins_10" required /> Moins de 10</label>
+              <label class="radio-option"><input type="radio" name="effectif" value="de_10_a_24" /> 10 à 24</label>
+              <label class="radio-option"><input type="radio" name="effectif" value="de_25_a_34" /> 25 à 34</label>
+              <label class="radio-option"><input type="radio" name="effectif" value="de_35_a_50" /> 35 à 50</label>
+              <label class="radio-option"><input type="radio" name="effectif" value="plus_50" /> Plus de 50</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- ÉTAPE 4 — COMPLEXITÉ APPARENTE -->
+        <div class="qual-step" data-step="4" hidden>
+          <h2 tabindex="-1">Où se trouvent aujourd'hui les informations concernées ?</h2>
+
+          <fieldset class="form-group">
+            <legend>Quelle situation décrit le mieux votre fonctionnement actuel ? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="repartition" value="logiciel_et_messagerie" required /> Un logiciel principal et une messagerie</label>
+              <label class="radio-option"><input type="radio" name="repartition" value="logiciel_et_fichiers" /> Un logiciel principal avec quelques fichiers Excel ou CSV</label>
+              <label class="radio-option"><input type="radio" name="repartition" value="plusieurs_outils" /> Plusieurs logiciels, tableaux ou espaces documentaires</label>
+              <label class="radio-option"><input type="radio" name="repartition" value="informations_dispersees" /> Des informations dispersées entre emails, messages, fichiers et téléphones</label>
+              <label class="radio-option"><input type="radio" name="repartition" value="plusieurs_entites" /> Plusieurs entreprises ou entités utilisent des règles différentes</label>
+              <label class="radio-option"><input type="radio" name="repartition" value="inconnue" /> Je ne sais pas précisément</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="qualOutilPrincipal">Quel outil utilisez-vous principalement pour les devis ou la facturation ? <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+            <input type="text" id="qualOutilPrincipal" name="outil_principal" list="qualOutilSuggestions" maxlength="80" placeholder="Sage Batigest, EBP Bâtiment, Obat, ProGBat, Excel..." />
+            <datalist id="qualOutilSuggestions">
+              <option value="Sage Batigest"></option>
+              <option value="EBP Bâtiment"></option>
+              <option value="Obat"></option>
+              <option value="ProGBat"></option>
+              <option value="Excel"></option>
+              <option value="Aucun outil identifié"></option>
+            </datalist>
+          </div>
+
+          <p class="qual-limit-note"><strong>À cette étape, aucun accès ni fichier n'est demandé.</strong> La compatibilité des logiciels, des exports et des droits d'accès ne peut être confirmée qu'après une vérification facturée lorsqu'elle est nécessaire.</p>
+        </div>
+
+        <!-- ÉTAPE 5 — ATTENTE ET MODÈLE D'ENGAGEMENT -->
+        <div class="qual-step" data-step="5" hidden>
+          <h2 tabindex="-1">Qu'attendez-vous principalement de VotrIA ?</h2>
+
+          <fieldset class="form-group">
+            <legend>Attente principale <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="attente" value="dossiers_action" required /> Faire ressortir les dossiers qui attendent une action</label>
+              <label class="radio-option"><input type="radio" name="attente" value="transmission_chantier_bureau" /> Fiabiliser la transmission entre le chantier et le bureau</label>
+              <label class="radio-option"><input type="radio" name="attente" value="priorites_direction" /> Donner à la direction une vue plus claire des priorités</label>
+              <label class="radio-option"><input type="radio" name="attente" value="relier_sans_remplacer" /> Relier plusieurs informations déjà disponibles sans remplacer les outils officiels</label>
+              <label class="radio-option"><input type="radio" name="attente" value="remplacer_erp" /> Remplacer complètement notre ERP, logiciel de gestion ou comptabilité</label>
+              <label class="radio-option"><input type="radio" name="attente" value="outil_sur_mesure" /> Construire un outil entièrement spécifique à notre entreprise</label>
+              <label class="radio-option"><input type="radio" name="attente" value="technologie_seule" /> Acheter uniquement une technologie ou un accès à un logiciel</label>
+              <label class="radio-option"><input type="radio" name="attente" value="inconnue" /> Je ne sais pas encore</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>Le fonctionnement VotrIA repose sur une mise en service initiale, puis un abonnement mensuel obligatoire couvrant l'usage, le fonctionnement et l'accompagnement prévu. Ce principe est-il compatible avec votre recherche ? <span class="required-mark" aria-hidden="true">*</span></legend>
+            <div class="radio-row" style="flex-direction:column;align-items:stretch">
+              <label class="radio-option"><input type="radio" name="modele_recurrent" value="oui" required /> Oui</label>
+              <label class="radio-option"><input type="radio" name="modele_recurrent" value="a_comprendre" /> Peut-être, j'ai besoin de comprendre ce qui est inclus</label>
+              <label class="radio-option"><input type="radio" name="modele_recurrent" value="non_ponctuel" /> Non, je cherche uniquement une intervention ponctuelle</label>
+              <label class="radio-option"><input type="radio" name="modele_recurrent" value="inconnue" /> Je ne sais pas</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="qual-nav-buttons" id="qualNavButtons">
+          <button type="button" id="qualPrevBtn" class="btn btn-outline" disabled>Précédent</button>
+          <button type="button" id="qualNextBtn" class="btn btn-primary" disabled>Continuer</button>
+        </div>
+
+        <!-- RÉSULTAT -->
+        <div class="qual-step" data-step="resultat" hidden>
+          <h2 tabindex="-1" id="qualResultHeading">Résultat</h2>
+
+          <div class="brick qual-outcome" data-outcome="standard" hidden>
+            <h3>Votre situation paraît suffisamment claire pour un premier échange.</h3>
+            <p>La difficulté décrite semble correspondre à un périmètre que VotrIA peut qualifier sans demander immédiatement une étude technique.</p>
+            <p style="margin-top:var(--space-2)">La prochaine étape est un échange de 15 à 20 minutes pour vérifier :</p>
+            <ul class="check-list">
+              <li>le fonctionnement réel ;</li>
+              <li>les personnes concernées ;</li>
+              <li>les outils utilisés ;</li>
+              <li>la fréquence et la conséquence du problème ;</li>
+              <li>la compatibilité apparente avec le périmètre VotrIA.</li>
+            </ul>
+            <p class="fine-print">Cet échange ne comprend ni audit de fichiers, ni test d'accès, ni proposition technique détaillée.</p>
+            <p style="font-weight:700;color:var(--navy);margin-top:var(--space-3)">Demander un échange court</p>
+            <p class="fine-print">Vous serez recontacté pour convenir du créneau adapté. Aucune démonstration standard n'est imposée.</p>
+          </div>
+
+          <div class="brick qual-outcome" data-outcome="complexe" hidden>
+            <h3>Votre situation nécessite une vérification avant toute proposition fiable.</h3>
+            <p>Plusieurs outils, personnes, sources ou règles semblent concernés.</p>
+            <p style="margin-top:var(--space-2)">Dans ce type de situation, un simple rendez-vous ne suffit pas pour confirmer la faisabilité, définir un périmètre ou établir un prix ferme sans prendre de risque pour votre entreprise et pour VotrIA.</p>
+            <p style="margin-top:var(--space-2)">Le diagnostic à <strong>490 € HT</strong> sert à vérifier et cadrer les éléments nécessaires avant toute proposition.</p>
+            <div class="qual-outcome-block">
+              <h3>Ce que le diagnostic peut couvrir</h3>
+              <ul>
+                <li>identification des sources et outils concernés ;</li>
+                <li>vérification documentaire de la compatibilité apparente ;</li>
+                <li>clarification des utilisateurs, responsabilités et règles ;</li>
+                <li>repérage des risques de données, d'accès ou de sur-mesure ;</li>
+                <li>définition de la suite recommandée.</li>
+              </ul>
+            </div>
+            <div class="qual-outcome-block is-excluded">
+              <h3>Ce qu'il ne comprend pas</h3>
+              <ul>
+                <li>développement ;</li>
+                <li>prototype personnalisé ;</li>
+                <li>connexion réelle à tous les outils ;</li>
+                <li>nettoyage massif de données ;</li>
+                <li>reprise complète d'historique ;</li>
+                <li>étude illimitée ;</li>
+                <li>engagement de faisabilité avant vérification.</li>
+              </ul>
+            </div>
+            <p style="font-weight:700;color:var(--navy);margin-top:var(--space-3)">Demander les conditions du diagnostic</p>
+            <p class="fine-print">Le diagnostic n'est proposé qu'après vérification humaine de votre demande. Le formulaire ne déclenche aucun paiement automatique.</p>
+          </div>
+
+          <div class="brick qual-outcome" data-outcome="hors_perimetre" hidden>
+            <h3>Votre demande ne correspond pas au périmètre actuel de VotrIA.</h3>
+            <p>VotrIA intervient sur la circulation et la préparation des informations utiles dans les PME du bâtiment, sans remplacer les outils métier officiels.</p>
+            <p style="margin-top:var(--space-2)">La demande décrite semble relever principalement :</p>
+            <ul class="check-list">
+              <li>d'un ERP, d'un logiciel de comptabilité ou d'un CRM généraliste ;</li>
+              <li>d'un développement entièrement spécifique ;</li>
+              <li>d'un besoin situé hors du segment actuellement servi ;</li>
+              <li>ou d'une intervention ponctuelle sans fonctionnement récurrent.</li>
+            </ul>
+            <p style="margin-top:var(--space-2)">VotrIA préfère l'indiquer maintenant plutôt que d'engager un échange qui ne déboucherait pas sur une proposition adaptée.</p>
+            <div class="hero-actions" style="margin-top:var(--space-3)">
+              <a class="btn btn-outline" href="/#notre-approche">Revenir à notre approche</a>
+            </div>
+          </div>
+
+          <div class="brick qual-outcome" data-outcome="revue_humaine" hidden>
+            <h3>Votre situation mérite une lecture humaine avant de vous orienter.</h3>
+            <p>Certaines réponses ne permettent pas de distinguer immédiatement une situation standard d'un besoin plus complexe.</p>
+            <p style="margin-top:var(--space-2)">Vous pouvez laisser vos coordonnées et une phrase de contexte. VotrIA relira la demande avant de vous proposer, selon le cas :</p>
+            <ul class="check-list">
+              <li>un échange court ;</li>
+              <li>un diagnostic ;</li>
+              <li>ou une réponse de non-adéquation.</li>
+            </ul>
+            <p style="font-weight:700;color:var(--navy);margin-top:var(--space-3)">Envoyer ma situation</p>
+          </div>
+
+          <!-- COORDONNÉES — masqué pour hors_perimetre -->
+          <div id="qualCoordonnees">
+            <div class="form-group">
+              <label for="qualNom">Prénom et nom <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="qualNom" name="nom" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="qualEntreprise">Entreprise <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="qualEntreprise" name="entreprise" autocomplete="organization" />
+            </div>
+            <div class="form-group">
+              <label for="qualFonction">Fonction <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="qualFonction" name="fonction" autocomplete="organization-title" />
+            </div>
+            <div class="form-group">
+              <label for="qualEmail">Email professionnel <span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="email" id="qualEmail" name="email" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="qualTelephone">Téléphone <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+              <input type="tel" id="qualTelephone" name="telephone" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="qualCommune">Commune ou département <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+              <input type="text" id="qualCommune" name="commune" maxlength="80" />
+            </div>
+            <div class="form-group">
+              <label for="qualPreference">Préférence de contact <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+              <select id="qualPreference" name="preference_contact">
+                <option value="">— Aucune préférence —</option>
+                <option value="email">Email</option>
+                <option value="telephone">Téléphone</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qualCommentaire">Précision complémentaire <span style="color:var(--muted);font-weight:400">— optionnel</span></label>
+              <textarea id="qualCommentaire" name="commentaire" maxlength="500"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="consent-group">
+                <input type="checkbox" id="qualConsentement" name="consentement" value="oui" />
+                <span>J'accepte d'être recontacté(e) par VotrIA au sujet de cette demande. <span class="required-mark" aria-hidden="true">*</span></span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="qualSubmitBtn" class="btn btn-primary btn-block" disabled>Envoyer ma demande</button>
+              <p class="form-rgpd-notice">
+                Les champs marqués d'un astérisque sont nécessaires pour traiter votre demande. Les informations transmises sont utilisées par VotrIA pour vous répondre et préparer, le cas échéant, une proposition.
+                <a href="/confidentialite/">En savoir plus dans notre politique de confidentialité.</a>
+                Aucune inscription à une prospection automatisée n'est réalisée depuis ce formulaire.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <p class="qual-limit-note">Cette vérification repose sur vos réponses. Elle ne confirme pas la compatibilité technique de vos outils et ne constitue pas une proposition commerciale. Toute orientation reste relue humainement avant tout engagement.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand">Votr<span>IA</span></p>
+        <p class="footer-copy">Pour les PME du bâtiment</p>
+        <p class="footer-copy">Jean-François Martin, entrepreneur individuel — L'Isle-Jourdain, Occitanie</p>
+        <p class="footer-copy"><a href="mailto:contact@votria.pro">contact@votria.pro</a></p>
+      </div>
+      <div>
+        <p class="footer-title">Navigation</p>
+        <nav class="footer-links" aria-label="Navigation du pied de page">
+          <a href="/verifier-mon-besoin/" aria-current="page">Vérifier mon besoin</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-title">Légal</p>
+        <nav class="footer-links" aria-label="Pages légales">
+          <a href="/mentions-legales/">Mentions légales</a>
+          <a href="/confidentialite/">Confidentialité</a>
+          <a href="/cookies/">Cookies</a>
+          <a href="/cgv/">Conditions générales de vente</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 VotrIA.</div>
+  </div>
+</footer>
+
+<script src="/assets/cookie-consent.js" defer></script>
+<script src="/assets/js/v3.js" defer></script>
+<script src="/assets/js/qualification-engine.js" defer></script>
+<script defer>
+(function () {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var STEP_ORDER = ['1', '2', '3', '4', '5', 'resultat'];
+    var TOTAL_QUESTION_STEPS = 5;
+
+    var wizard = document.getElementById('qual-wizard');
+    var intro = document.getElementById('qual-intro');
+    var startBtn = document.getElementById('qualStartBtn');
+    var form = document.getElementById('qualForm');
+    var prevBtn = document.getElementById('qualPrevBtn');
+    var nextBtn = document.getElementById('qualNextBtn');
+    var navButtons = document.getElementById('qualNavButtons');
+    var progressLabel = document.getElementById('qualProgressLabel');
+    var progressBar = document.getElementById('qualProgressBar');
+    var situationSelect = document.getElementById('qualSituation');
+    var situationLabel = document.getElementById('qualSituationLabel');
+    var activiteAutreGroup = document.getElementById('qualActiviteAutreGroup');
+    var activiteAutreInput = document.getElementById('qualActiviteAutre');
+    var coordonnees = document.getElementById('qualCoordonnees');
+    var submitBtn = document.getElementById('qualSubmitBtn');
+    var orientationField = document.getElementById('qualOrientationField');
+
+    var currentIndex = 0;
+
+    var SITUATION_OPTIONS = {
+      bureau: {
+        label: 'Quelle situation revient le plus souvent ?',
+        options: [
+          ['devis_sans_action', "Un devis reste sans prochaine action"],
+          ['email_sans_reponse', "Une demande ou un email reste sans réponse"],
+          ['facture_bloquee', "Une facture, un règlement ou un document bloque"],
+          ['information_repartie', "L'information est répartie entre plusieurs endroits"],
+          ['autre', "Autre situation"]
+        ]
+      },
+      chantier_bureau: {
+        label: 'Quelle situation revient le plus souvent ?',
+        options: [
+          ['vocaux_a_reformuler', "Les vocaux ou messages doivent être réécoutés et reformulés"],
+          ['photos_difficiles', "Les photos sont difficiles à rattacher au bon chantier"],
+          ['comptes_rendus_tardifs', "Les comptes rendus arrivent tard ou incomplets"],
+          ['travaux_reserves_sans_action', "Les travaux supplémentaires ou réserves ne déclenchent pas toujours une action"],
+          ['autre', "Autre situation"]
+        ]
+      },
+      direction: {
+        label: 'Quelle situation revient le plus souvent ?',
+        options: [
+          ['montants_tardifs', "Les montants bloqués sont visibles trop tard"],
+          ['decisions_peu_visibles', "Les décisions attendues ne ressortent pas clairement"],
+          ['chantiers_noyes', "Les chantiers à surveiller sont noyés dans plusieurs tableaux"],
+          ['dirigeant_demande_un_par_un', "Le dirigeant doit demander l'état des dossiers un par un"],
+          ['autre', "Autre situation"]
+        ]
+      },
+      plusieurs_zones: {
+        label: 'Quelle phrase décrit le mieux votre situation ?',
+        options: [
+          ['informations_dispersees', "Les informations sont dispersées entre plusieurs personnes et outils"],
+          ['prochaine_action_invisible', "Personne ne voit clairement la prochaine action"],
+          ['ressaisie_repetee', "Les mêmes informations sont recherchées ou ressaisies plusieurs fois"],
+          ['problemes_reperes_tard', "Les problèmes sont repérés trop tard"],
+          ['autre', "Autre situation"]
+        ]
+      }
+    };
+    SITUATION_OPTIONS.inconnue = SITUATION_OPTIONS.plusieurs_zones;
+
+    function trackEvent(name, params) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, params || {});
+      }
+    }
+
+    function fillSituationOptions(zoneValue) {
+      var config = SITUATION_OPTIONS[zoneValue];
+      situationSelect.innerHTML = '';
+      if (!config) {
+        situationSelect.disabled = true;
+        var placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = "— Choisissez d'abord un moment ci-dessus —";
+        situationSelect.appendChild(placeholder);
+        return;
+      }
+      situationLabel.firstChild.textContent = config.label + ' ';
+      situationSelect.disabled = false;
+      var empty = document.createElement('option');
+      empty.value = '';
+      empty.textContent = '— Choisir —';
+      situationSelect.appendChild(empty);
+      config.options.forEach(function (pair) {
+        var opt = document.createElement('option');
+        opt.value = pair[0];
+        opt.textContent = pair[1];
+        situationSelect.appendChild(opt);
+      });
+    }
+
+    document.querySelectorAll('input[name="zone"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        fillSituationOptions(radio.value);
+        updateNextButtonState();
+      });
+    });
+
+    document.querySelectorAll('input[name="activite"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        var isAutre = radio.value === 'autre';
+        activiteAutreGroup.hidden = !isAutre;
+        activiteAutreInput.required = isAutre;
+        if (!isAutre) activiteAutreInput.value = '';
+        updateNextButtonState();
+      });
+    });
+
+    function getStepElement(step) {
+      return form.querySelector('.qual-step[data-step="' + step + '"]');
+    }
+
+    function isStepValid(step) {
+      var el = getStepElement(step);
+      if (!el) return true;
+      var requiredFields = el.querySelectorAll('[required]');
+      for (var i = 0; i < requiredFields.length; i++) {
+        var field = requiredFields[i];
+        if (field.type === 'radio') {
+          var group = el.querySelectorAll('input[name="' + field.name + '"]');
+          var checked = false;
+          for (var g = 0; g < group.length; g++) {
+            if (group[g].checked) { checked = true; break; }
+          }
+          if (!checked) return false;
+        } else if (field.tagName === 'SELECT') {
+          if (field.disabled || !field.value) return false;
+        } else if (!field.value || !field.value.trim()) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function updateNextButtonState() {
+      var step = STEP_ORDER[currentIndex];
+      if (step === 'resultat') return;
+      nextBtn.disabled = !isStepValid(step);
+    }
+
+    form.addEventListener('change', updateNextButtonState);
+    form.addEventListener('input', updateNextButtonState);
+
+    function focusStepHeading(step) {
+      var el = getStepElement(step);
+      if (!el) return;
+      var heading = el.querySelector('h2');
+      if (heading) heading.focus();
+    }
+
+    function goToStep(index) {
+      var previousStep = STEP_ORDER[currentIndex];
+      var previousEl = getStepElement(previousStep);
+      if (previousEl) previousEl.hidden = true;
+
+      currentIndex = index;
+      var step = STEP_ORDER[currentIndex];
+      var el = getStepElement(step);
+      if (el) el.hidden = false;
+
+      if (step === 'resultat') {
+        progressLabel.textContent = 'Résultat';
+        progressBar.style.width = '100%';
+        navButtons.hidden = true;
+      } else {
+        var stepNumber = currentIndex + 1;
+        progressLabel.textContent = 'Étape ' + stepNumber + ' sur ' + TOTAL_QUESTION_STEPS;
+        progressBar.style.width = Math.round((stepNumber / TOTAL_QUESTION_STEPS) * 100) + '%';
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.textContent = currentIndex === TOTAL_QUESTION_STEPS - 1 ? 'Voir le résultat' : 'Continuer';
+        updateNextButtonState();
+      }
+
+      focusStepHeading(step === 'resultat' ? 'resultat' : step);
+      trackEvent('questionnaire_step_complete', { step: step });
+    }
+
+    function collectAnswers() {
+      var formData = new FormData(form);
+      return {
+        zone: formData.get('zone') || '',
+        situation: formData.get('situation') || '',
+        frequence: formData.get('frequence') || '',
+        consequence: formData.get('consequence') || '',
+        activite: formData.get('activite') || '',
+        effectif: formData.get('effectif') || '',
+        repartition: formData.get('repartition') || '',
+        outil_principal: formData.get('outil_principal') || '',
+        attente: formData.get('attente') || '',
+        modele_recurrent: formData.get('modele_recurrent') || ''
+      };
+    }
+
+    function showOutcome(orientation) {
+      var outcomes = form.querySelectorAll('.qual-outcome');
+      outcomes.forEach(function (block) {
+        block.hidden = block.getAttribute('data-outcome') !== orientation;
+      });
+      coordonnees.hidden = orientation === 'hors_perimetre';
+      submitBtn.disabled = orientation === 'hors_perimetre';
+      updateCoordonneesRequiredState(orientation !== 'hors_perimetre');
+    }
+
+    function updateCoordonneesRequiredState(isRequired) {
+      ['qualNom', 'qualEntreprise', 'qualFonction', 'qualEmail'].forEach(function (id) {
+        document.getElementById(id).required = isRequired;
+      });
+      document.getElementById('qualConsentement').required = isRequired;
+      if (isRequired) {
+        coordonnees.addEventListener('input', updateSubmitState);
+        coordonnees.addEventListener('change', updateSubmitState);
+        updateSubmitState();
+      }
+    }
+
+    function updateSubmitState() {
+      if (coordonnees.hidden) return;
+      var requiredFields = coordonnees.querySelectorAll('[required]');
+      var valid = true;
+      requiredFields.forEach(function (field) {
+        if (field.type === 'checkbox') {
+          if (!field.checked) valid = false;
+        } else if (!field.value || !field.value.trim()) {
+          valid = false;
+        }
+      });
+      submitBtn.disabled = !valid;
+    }
+
+    startBtn.addEventListener('click', function () {
+      intro.hidden = true;
+      wizard.hidden = false;
+      trackEvent('questionnaire_start', {});
+      goToStep(0);
+    });
+
+    prevBtn.addEventListener('click', function () {
+      if (currentIndex > 0) goToStep(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', function () {
+      var step = STEP_ORDER[currentIndex];
+      if (!isStepValid(step)) return;
+
+      if (currentIndex === TOTAL_QUESTION_STEPS - 1) {
+        var answers = collectAnswers();
+        var orientation = window.VotrIAQualification.evaluateOrientation(answers);
+        orientationField.value = orientation;
+        showOutcome(orientation);
+        trackEvent('qualification_orientation', { orientation: orientation });
+        goToStep(currentIndex + 1);
+      } else {
+        goToStep(currentIndex + 1);
+      }
+    });
+
+    form.addEventListener('submit', function () {
+      trackEvent('contact_submit', {});
+    });
+
+    fillSituationOptions('');
+  });
+})();
+</script>
+</body>
+</html>
